@@ -20,6 +20,9 @@
     <div class="header-navbar-shadow"></div>
     <div class="content-wrapper" id="app">
         <example-component></example-component>
+
+
+
         @yield('content')
     </div>
 </div>
