@@ -13,15 +13,17 @@ class SliderController extends Controller {
     public $views;
     public $module;
 
-    public function __construct(Slider $model) {
-        $this->module = 'slider';
-        $this->views = 'Slider';
-        $this->title = trans('app.Slider');
-        $this->model = $model;
-        $this->rules = $model->rules;
+    public function __construct() {
+//        Slider $model
+//        $this->module = 'slider';
+//        $this->views = 'Slider';
+//        $this->title = trans('app.Slider');
+//        $this->model = $model;
+//        $this->rules = $model->rules;
     }
 
     public function getIndex() {
+        return'slider pages';
         authorize('view-' . $this->module);
         $data['module'] = $this->module;
         $data['page_title'] = trans('app.List') . " " . $this->title;

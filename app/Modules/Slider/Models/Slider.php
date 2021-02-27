@@ -3,14 +3,10 @@
 namespace App\Modules\Slider\Models;
 use App\Modules\BaseApp\BaseModel;
 use App\Modules\BaseApp\Traits\HasAttach;
-use Astrotomic\Translatable\Translatable;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Slider extends BaseModel
 {
-    use SoftDeletes,
-        HasAttach,
-        Translatable;
+    use HasAttach;
     ///////////////////////////// has translation
     protected $table = "sliders";
 

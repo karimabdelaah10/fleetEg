@@ -7,11 +7,12 @@ abstract class UserEnum
     /**
      * List of all Work types used in customers table
      */
-    public const IOS  = "ios",
-                ANDROID = "android";
+    public const SUPER_ADMIN  = "super_admin",
+                 ADMIN = "admin",
+                 CUSTOMER='customer';
 
-    public static function deviceTypes()
+    public static function usersTypes()
     {
-        return [self::ANDROID , self::IOS];
+        return [self::SUPER_ADMIN, self::ADMIN , self::CUSTOMER];
     }
 }

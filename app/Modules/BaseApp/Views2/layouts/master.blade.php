@@ -330,7 +330,7 @@
                 <div aria-labelledby="dropdown-user" class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="page-profile.html">
                         <i class="mr-50" data-feather="user"></i> Profile</a>
-                    <a class="dropdown-item" href="index.html">
+                    <a class="dropdown-item" href="{{url('/')}}">
                         <i class="mr-50" data-feather="power"></i> Logout</a>
                 </div>
             </li>

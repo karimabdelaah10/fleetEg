@@ -247,7 +247,7 @@
                    data-toggle="dropdown" href="javascript:void(0);"
                    id="dropdown-user">
                     <div class="user-nav d-sm-flex d-none">
-                        <span class="user-name font-weight-bolder">John Doe</span>
+                        <span class="user-name font-weight-bolder">{{auth()->user()->name}}</span>
                         <span class="user-status">Admin</span>
                     </div>
                     <span class="avatar">
@@ -259,7 +259,7 @@
                 <div aria-labelledby="dropdown-user" class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="page-profile.html">
                         <i class="mr-50" data-feather="user"></i> Profile</a>
-                    <a class="dropdown-item" href="index.html">
+                    <a class="dropdown-item" href="{{route('logout')}}">
                         <i class="mr-50" data-feather="power"></i> Logout</a>
                 </div>
             </li>

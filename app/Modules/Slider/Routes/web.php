@@ -1,5 +1,5 @@
 <?php
-    Route::group(['prefix' => 'slider' , 'as' => 'slider.'], function () {
+    Route::group(['middleware'=>'auth','prefix' => 'slider' , 'as' => 'slider.'], function () {
         Route::get('/', 'SliderController@getIndex');
 
         Route::get('/create', 'SliderController@getCreate');

@@ -38,9 +38,9 @@ if (! function_exists('getConfigs')) {
 if (! function_exists('appName')) {
     function appName()
     {
-        $configs = getConfigs();
-        $appName = (@$configs['application_name']) ?? env('APP_NAME');
-        return $appName;
+//        $configs = getConfigs();
+//        $appName = (@$configs['application_name']) ?? env('APP_NAME');
+        return $appName =env('APP_NAME');
     }
 }
 

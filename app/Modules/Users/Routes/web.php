@@ -1,12 +1,17 @@
 <?php
 
-include_once 'roles.php';
-Route::group([
-    'prefix' => LaravelLocalization::setLocale(),
-    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ,'auth']
-], function () {
+//include_once 'roles.php';
     Route::group(['prefix' => 'users'], function () {
-        Route::get('/', '\App\Modules\Users\Controllers\UsersController@getIndex')->name('users');
+
+        Route::get('/', function (){
+//            dd(env('MAIL_HOST'));
+
+            \Mail::to('karimabdelaah@gmail.com')
+                ->send(new \App\Modules\Users\Mail\ResetPassword());
+            return "Mail Sent";
+
+        });
+//        Route::get('/', '\App\Modules\Users\Controllers\UsersController@getIndex')->name('users');
 
         Route::get('/create', '\App\Modules\Users\Controllers\UsersController@getCreate');
         Route::post('/create', '\App\Modules\Users\Controllers\UsersController@postCreate');
@@ -23,4 +28,3 @@ Route::group([
 
         Route::get('/export', '\App\Modules\Users\Controllers\UsersController@getExport');
     });
-});

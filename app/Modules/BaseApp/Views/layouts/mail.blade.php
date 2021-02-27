@@ -104,7 +104,7 @@
 <body>
 <div class="container">
     <div class="card bg-primary text-white">
-        <img class="card-img" src="https://tamweelmg-web.dev.bluecrunch.com/_nuxt/img/welcome.d5e669f.png" alt="Card image">
+        <img class="card-img" src="./images/mail-temaplet.png" alt="Card image">
         <div class="card-img-overlay">
             @yield('content')
         </div>

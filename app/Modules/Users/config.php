@@ -2,7 +2,7 @@
 return [
     'name' => 'Users Module',
     'description' => 'Users Modules',
-    'status' => false,
+    'status' => true,
     'autoload' => [
 
     ],

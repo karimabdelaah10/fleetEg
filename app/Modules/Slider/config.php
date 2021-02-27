@@ -2,7 +2,7 @@
 return [
     'name' => 'Slider',
     'description' => 'Slider Modules',
-    'status' => false,
+    'status' => true,
     'autoload' => [
         'Helpers/functions.php'
     ],
