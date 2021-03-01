@@ -14,7 +14,7 @@ class SliderController extends Controller {
 
     public function __construct(Slider $model) {
         $this->module = 'slider';
-        $this->module_url = 'slider';
+        $this->module_url = '/slider';
         $this->views = 'Slider';
         $this->title = trans('app.slider');
         $this->model = $model;
@@ -29,27 +29,11 @@ class SliderController extends Controller {
         return view($this->views . '::index', $data);
     }
 
-    public function getCreate() {
-        authorize('create-' . $this->module);
-        $data['module'] = $this->module;
-        $data['views'] = $this->views;
-        $data['page_title'] = trans('app.Create') . " " . $this->title;
-        $data['breadcrumb'] = [$this->title => $this->module];
-        $data['row'] = $this->model;
-        $data['row']->is_active = 1;
-        // default value of index is count pf rows +1
-        $data['row']->index = $data['row']->count() + 1;
-
-        return view($this->views . '::create', $data);
-    }
 
     public function postCreate(SliderRequest $request) {
-        authorize('create-' . $this->module);
-        $current_index=$this->model->count() +1;
-        $new_index= (integer) $request->index;
+        !empty($request->is_active) ? $request['is_active'] =1 : $request['is_active'] =0;
         if ($row = $this->model->create($request->all())) {
-            reArrangeIndex($current_index , $new_index , $row->id ,$this->model);
-            flash()->success(trans('app.Created successfully'));
+            flash()->success(trans('app.created successfully'));
             return redirect('/' . $this->module);
         }
         flash()->error(trans('app.failed to save'));
@@ -57,52 +41,31 @@ class SliderController extends Controller {
     }
 
     public function getEdit($id) {
-        authorize('edit-' . $this->module);
+//        authorize('edit-' . $this->module);
         $data['module'] = $this->module;
         $data['views'] = $this->views;
-        $data['page_title'] = trans('app.Edit') . " " . $this->title;
-        $data['breadcrumb'] = [$this->title => $this->module];
+        $data['page_title'] = trans('app.edit') . " " . $this->title;
+        $data['breadcrumb'] = [$this->title => $this->module_url];
         $data['row'] = $this->model->findOrFail($id);
         return view($this->views . '::edit', $data);
     }
 
     public function postEdit(SliderRequest $request , $id) {
-        authorize('edit-' . $this->module);
+//        authorize('edit-' . $this->module);
+        !empty($request->is_active) ? $request['is_active'] =1 : $request['is_active'] =0;
         $row = $this->model->findOrFail($id);
-        $current_index=$row->index;
-        $new_index= (integer) $request->index;
         if ($row->update($request->all())) {
-            reArrangeIndex($current_index , $new_index , $row->id ,$this->model);
-            flash(trans('app.Update successfully'))->success();
+            flash(trans('app.update successfully'))->success();
             return back();
         }
     }
 
-    public function getView($id) {
-        authorize('view-' . $this->module);
-        $data['module'] = $this->module;
-        $data['page_title'] = trans('app.View') . " " . $this->title;
-        $data['breadcrumb'] = [$this->title => $this->module];
-        $data['row'] = $this->model->findOrFail($id);
-        return view($this->views . '::view', $data);
-    }
 
     public function getDelete($id) {
-        authorize('delete-' . $this->module);
+//        authorize('delete-' . $this->module);
         $row = $this->model->findOrFail($id);
         $row->delete();
-        flash()->success(trans('app.Deleted Successfully'));
+        flash()->success(trans('app.deleted successfully'));
         return redirect( '/' . $this->module);
     }
-
-    public function getExport() {
-        authorize('view-' . $this->module);
-        $rows = $this->model->getData()->get();
-        if ($rows->isEmpty()) {
-            flash()->error(trans('app.There is no results to export'));
-            return back();
-        }
-        $this->model->export($rows,$this->module);
-    }
-
 }

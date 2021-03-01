@@ -13,7 +13,10 @@ return [
     |
     */
 
-    'previous' => '&laquo; Previous',
-    'next' => 'Next &raquo;',
+    'first' => 'الاول',
+    'last' => 'الاخير',
+    'previous' => 'السابق',
+    'next' => 'التالى',
+    'per_page' => 'عدد العناصر فى الصفحه الواحده',
 
 ];

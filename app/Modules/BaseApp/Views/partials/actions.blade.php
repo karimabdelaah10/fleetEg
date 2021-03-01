@@ -1,4 +1,4 @@
-<div class="dropdown">
+<div class="dropdown dropright">
     <button type="button" class="btn btn-sm dropdown-toggle hide-arrow " data-toggle="dropdown">
         <i data-feather="more-vertical"></i>
     </button>

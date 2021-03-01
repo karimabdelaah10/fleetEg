@@ -24,12 +24,7 @@ class SliderRequest extends FormRequest
     public function rules()
     {
         $rules =  [
-            'title:en'=>'required|min:3',
-            'title:ar'=>'required|min:3',
-            'description:en'=>'required|min:3',
-            'description:ar'=>'required|min:3',
-            "link:ar"  =>  'required',
-            "link:en"  =>  'required',
+            'link'=>'nullable|url',
             'image' =>   'required|mimes:png,jpg,jpeg'
         ];
         if ($this->route('id')) {

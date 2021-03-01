@@ -48,4 +48,11 @@ class Slider extends BaseModel
         }
         return  'https://via.placeholder.com';
     }
+    public function getLinkAttribute($value)
+    {
+        if (!empty($value)){
+            return $value ;
+        }
+        return  '#';
+    }
 }
