@@ -10,7 +10,7 @@ class SliderController extends Controller {
 
     public $model;
     public $views;
-    public $module;
+    public $module,$module_url ,$title;
 
     public function __construct(Slider $model) {
         $this->module = 'slider';
@@ -43,6 +43,7 @@ class SliderController extends Controller {
     public function getEdit($id) {
 //        authorize('edit-' . $this->module);
         $data['module'] = $this->module;
+        $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
         $data['page_title'] = trans('app.edit') . " " . $this->title;
         $data['breadcrumb'] = [$this->title => $this->module_url];

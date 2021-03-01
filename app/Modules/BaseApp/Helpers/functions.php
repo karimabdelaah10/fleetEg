@@ -312,7 +312,7 @@ if (! function_exists('image')) {
 if (! function_exists('profile_picture')) {
     function profile_picture()
     {
-        if (auth()->user() && !empty(auth()->user()->profile_picture)){
+        if (!empty(auth()->user()) && !empty(auth()->user()->profile_picture)){
             image(auth()->user()->profile_picture , 'large');
         }
         return  'https://via.placeholder.com/150';

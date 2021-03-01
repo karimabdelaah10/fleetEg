@@ -10,11 +10,11 @@
                     {{request('per_page') ?? 15}}
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/{{$module_url}}?page={{$paginator->currentPage()}}&per_page=10">10</a>
-                    <a class="dropdown-item" href="/{{$module_url}}?page={{$paginator->currentPage()}}&per_page=15">15</a>
-                    <a class="dropdown-item" href="/{{$module_url}}?page={{$paginator->currentPage()}}&per_page=20">20</a>
-                    <a class="dropdown-item" href="/{{$module_url}}?page={{$paginator->currentPage()}}&per_page=50">50</a>
-                    <a class="dropdown-item" href="/{{$module_url}}?page={{$paginator->currentPage()}}&per_page=100">100</a>
+                    <a class="dropdown-item" href="{{$module_url}}?page={{$paginator->currentPage()}}&per_page=10">10</a>
+                    <a class="dropdown-item" href="{{$module_url}}?page={{$paginator->currentPage()}}&per_page=15">15</a>
+                    <a class="dropdown-item" href="{{$module_url}}?page={{$paginator->currentPage()}}&per_page=20">20</a>
+                    <a class="dropdown-item" href="{{$module_url}}?page={{$paginator->currentPage()}}&per_page=50">50</a>
+                    <a class="dropdown-item" href="{{$module_url}}?page={{$paginator->currentPage()}}&per_page=100">100</a>
                 </div>
             </div>
         </ul>

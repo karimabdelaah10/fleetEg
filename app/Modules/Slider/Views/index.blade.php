@@ -31,8 +31,8 @@
                                 <th >{{trans('slider.description')}}</th>
                                 <th >{{trans('slider.link')}}</th>
                                 <th >{{trans('slider.bannar')}}</th>
-                                <th >{{trans('slider.status')}}</th>
-                                <th >{{trans('slider.actions')}}</th>
+                                <th >{{trans('app.status')}}</th>
+                                <th >{{trans('app.actions')}}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -67,7 +67,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <span class="badge badge-pill {{$row->is_active ? 'badge-light-success':'badge-light-danger'}} mr-1"> {{$row->is_active ? trans('slider.active'):trans('slider.inactive')}} </span>
+                                            <span class="badge badge-pill {{$row->is_active ? 'badge-light-success':'badge-light-danger'}} mr-1"> {{$row->is_active ? trans('app.active'):trans('app.inactive')}} </span>
                                         </td>
                                         <td>
                                             @include('BaseApp::partials.actions' ,['actions'=>['edit' ,'delete'] , $row])
@@ -86,7 +86,7 @@
         <!-- Modal to add new record -->
         <div class="modal modal-slide-in fade" id="modals-slide-in">
             <div class="modal-dialog sidebar-sm">
-                <form class="add-new-record modal-content pt-0" action="/slider/create" method="post" enctype="multipart/form-data">
+                <form class="add-new-record modal-content pt-0" action="{{$module_url}}/create" method="post" enctype="multipart/form-data">
                     @csrf
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
                     <div class="modal-header mb-1">
@@ -124,7 +124,7 @@
                         </div>
                         <div class="form-group">
                                 <div class="custom-control custom-control-primary custom-switch">
-                                    <label class="form-label" for="basic-icon-default-post">{{trans('slider.status')}}</label>
+                                    <label class="form-label" for="basic-icon-default-post">{{trans('app.status')}}</label>
                                     <input type="checkbox" checked="" class="custom-control-input" id="statusSwitchAdd">
                                     <label class="custom-control-label" for="statusSwitchAdd"></label>
                                 </div>

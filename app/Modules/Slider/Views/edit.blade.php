@@ -10,7 +10,7 @@
         </div>
     @endif
     <div class="content-body">
-        <form class="add-new-record modal-content pt-0" action="/slider/edit/{{$row->id}}" method="post" enctype="multipart/form-data">
+        <form class="add-new-record modal-content pt-0" action="{{$module_url}}/edit/{{$row->id}}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="modal-header mb-1">

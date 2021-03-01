@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li class=" nav-item">
-                <a class="d-flex align-items-center" href="users.html">
+                <a class="d-flex align-items-center" href="/users">
                     <i data-feather="users"></i>
                     <span class="menu-title text-truncate" data-i18n="User">{{trans('navigation.users')}}</span>
                 </a>

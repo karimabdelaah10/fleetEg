@@ -10,7 +10,7 @@ return [
     'list' => 'عرض بيانات',
     'edit'  =>'تعديل',
     'delete'  =>'حذف',
-    'view'  =>'عرض',
+    'view'  =>'عرض ',
     'choose file'=>'اختر الملف',
     'deleted successfully'=>'تم حذف العنصر بنجاح',
     'failed to save'=>'خطأ اثناء اضافه العنصر الجديد',
@@ -18,9 +18,14 @@ return [
     'update successfully'=>'تم تعديل العنصر بنجاح',
 
 
+    'status'=>'الحاله',
+    'active'=>'نشط',
+    'inactive'=>'غير نشط',
+    'actions'=>'الأجرائات',
 
 
 
     'slider'=>'البانر الأعلامى',
+    'users'=>'المستخدمين',
     ''=>''
 ];
