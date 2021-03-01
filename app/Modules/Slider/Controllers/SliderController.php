@@ -3,7 +3,6 @@
 namespace App\Modules\Slider\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Modules\Slider\Models\Category;
 use App\Modules\Slider\Models\Slider;
 use App\Modules\Slider\Requests\SliderRequest;
 
@@ -13,21 +12,20 @@ class SliderController extends Controller {
     public $views;
     public $module;
 
-    public function __construct() {
-//        Slider $model
-//        $this->module = 'slider';
-//        $this->views = 'Slider';
-//        $this->title = trans('app.Slider');
-//        $this->model = $model;
-//        $this->rules = $model->rules;
+    public function __construct(Slider $model) {
+        $this->module = 'slider';
+        $this->module_url = 'slider';
+        $this->views = 'Slider';
+        $this->title = trans('app.slider');
+        $this->model = $model;
     }
 
     public function getIndex() {
-        return'slider pages';
-        authorize('view-' . $this->module);
         $data['module'] = $this->module;
-        $data['page_title'] = trans('app.List') . " " . $this->title;
-        $data['rows'] = $this->model->getData()->orderBy("id","DESC")->get();
+        $data['module_url'] = $this->module_url;
+        $data['page_title'] = trans('app.list') . " " . $this->title;
+        $data['page_description'] = trans('slider.page description');
+        $data['rows'] = $this->model->getData()->orderBy("id","DESC")->paginate(request('per_page'));
         return view($this->views . '::index', $data);
     }
 

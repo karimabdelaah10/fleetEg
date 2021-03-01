@@ -1,39 +1,3 @@
-{{--<x-guest-layout>--}}
-{{--    <x-auth-card>--}}
-{{--        <x-slot name="logo">--}}
-{{--            <a href="/">--}}
-{{--                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />--}}
-{{--            </a>--}}
-{{--        </x-slot>--}}
-
-{{--        <div class="mb-4 text-sm text-gray-600">--}}
-{{--            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}--}}
-{{--        </div>--}}
-
-{{--        <!-- Session Status -->--}}
-{{--        <x-auth-session-status class="mb-4" :status="session('status')" />--}}
-
-{{--        <!-- Validation Errors -->--}}
-{{--        <x-auth-validation-errors class="mb-4" :errors="$errors" />--}}
-
-{{--        <form method="POST" action="{{ route('password.email') }}">--}}
-{{--            @csrf--}}
-
-{{--            <!-- Email Address -->--}}
-{{--            <div>--}}
-{{--                <x-label for="email" :value="__('Email')" />--}}
-
-{{--                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />--}}
-{{--            </div>--}}
-
-{{--            <div class="flex items-center justify-end mt-4">--}}
-{{--                <x-button>--}}
-{{--                    {{ __('Email Password Reset Link') }}--}}
-{{--                </x-button>--}}
-{{--            </div>--}}
-{{--        </form>--}}
-{{--    </x-auth-card>--}}
-{{--</x-guest-layout>--}}
 @extends('BaseApp::layouts.auth')
 @push('css')
     <link rel="stylesheet" href="css/auth.css">
@@ -41,7 +5,7 @@
 @section('page-title')
     نسيت الرقم السرى ؟
 @endsection
-@section('title')
+@section('page-title')
     <h6 class="slim-pagetitle">
         نسيت الرقم السرى ؟
     </h6>
@@ -57,12 +21,12 @@
                     <div class="auth-inner row m-0">
                         <!-- Brand logo-->
                         <a class="brand-logo" href="{{route('dashboard')}}">
-                            <h2 class="brand-text text-primary ml-1">Fleet EG</h2></a>
+                            <h2 class="brand-text text-primary ml-1">{{ appName() }}</h2></a>
                         <!-- /Brand logo-->
                         <!-- Left Text-->
                         <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
                             <div class="w-100 d-lg-flex align-items-center justify-content-center px-5">
-                                <img class="img-fluid" src="images/forgot-password-v2.png"
+                                <img class="img-fluid" src="/images/forgot-password-v2.png"
                                      alt="Forgot password V2"/>
                             </div>
                         </div>
@@ -76,13 +40,28 @@
                                    @csrf
                                     <div class="form-group">
                                         <label class="form-label" for="forgot-password-email">رقم الهاتف الخاص  بك</label>
-                                        <input class="form-control" id="forgot-password-email" type="text" name="mobile_number" placeholder="010xxxxxxxx" aria-describedby="forgot-password-email" autofocus="" tabindex="1"/>
+                                        <input class="form-control"
+                                               id="forgot-password-email"
+                                               type="text"
+                                               name="mobile_number"
+                                               placeholder="010xxxxxxxx"
+                                               aria-describedby="forgot-password-email"
+                                               autofocus=""
+                                               tabindex="1"/>
+                                        @if($errors->has('mobile_number'))
+                                            @foreach ($errors->get('mobile_number') as $message)
+                                                <span class="text-danger">
+                                                    {{$message}}
+                                                </span>
+                                            @endforeach
+
+                                        @endif
                                     </div>
                                     <button class="btn btn-primary btn-block" tabindex="2">أرسل كلمه المرور</button>
                                 </form>
                                 <p class="text-center mt-2"><a href="{{route('login')}}">
                                         <i data-feather="chevron-left"></i> العودة إلى تسجيل الدخول</a></p>
-                                <button type="button" class="btn btn-outline-success" id="type-success">Success</button>
+{{--                                <button type="button" class="btn btn-outline-success" id="type-success">Success</button>--}}
 
                             </div>
                         </div>

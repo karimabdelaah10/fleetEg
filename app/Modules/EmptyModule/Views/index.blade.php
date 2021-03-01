@@ -1,5 +1,5 @@
 @extends('BaseApp::layouts.master')
-@section('title')
+@section('page-title')
 <h6 class="slim-pagetitle">
 Homepage
 </h6>

@@ -1,15 +1,16 @@
 <?php
 
-//include_once 'roles.php';
+include_once 'profile.php';
     Route::group(['prefix' => 'users'], function () {
 
         Route::get('/', function (){
+            flash('Welcome Aboard!')->success();
 //            dd(env('MAIL_HOST'));
-
-            \Mail::to('karimabdelaah@gmail.com')
-                ->send(new \App\Modules\Users\Mail\ResetPassword());
-            return "Mail Sent";
-
+//            \Mail::to('karimabdelaah@gmail.com')
+//                ->send(new \App\Modules\Users\Mail\ResetPassword());
+//            return redirect(route('dashboard'));
+//return view('welcome');
+return view('dashboard');
         });
 //        Route::get('/', '\App\Modules\Users\Controllers\UsersController@getIndex')->name('users');
 

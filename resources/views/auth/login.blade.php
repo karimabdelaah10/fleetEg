@@ -5,7 +5,7 @@
 @section('page-title')
         تسجيل الدخول
 @endsection
-@section('title')
+@section('page-title')
     <h6 class="slim-pagetitle">
         تسجيل الدخول
     </h6>
@@ -23,7 +23,7 @@
                     <div class="auth-inner row m-0">
                         <!-- Brand logo-->
                         <a class="brand-logo" href="{{url('/')}}">
-                            <h2 class="brand-text text-primary ml-1">Fleet EG</h2></a>
+                            <h2 class="brand-text text-primary ml-1">{{ appName() }}</h2></a>
                         <!-- /Brand logo-->
                         <!-- Left Text-->
                         <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
@@ -33,7 +33,7 @@
                         <!-- Login-->
                         <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
-                                <h2 class="card-title font-weight-bold mb-1">اهلا و مرحباك بك فى Fleet EG! 👋</h2>
+                                <h2 class="card-title font-weight-bold mb-1">اهلا و مرحباك بك فى {{ appName() }}! 👋</h2>
                                 <p class="card-text mb-2">الرجاء تسجيل الدخول للحساب الخاص بك</p>
                                 <form class="auth-login-form mt-2" action="{{ route('login') }}" method="POST">
                                     @csrf

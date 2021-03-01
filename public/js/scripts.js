@@ -1,10 +1,10 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./resources/js/app-menu.min.js":
-/*!**************************************!*\
-  !*** ./resources/js/app-menu.min.js ***!
-  \**************************************/
+/***/ "./resources/js/libs/app-menu.min.js":
+/*!*******************************************!*\
+  !*** ./resources/js/libs/app-menu.min.js ***!
+  \*******************************************/
 /***/ (() => {
 
 !function (e, n, a) {
@@ -334,10 +334,10 @@
 
 /***/ }),
 
-/***/ "./resources/js/customizer.min.js":
-/*!****************************************!*\
-  !*** ./resources/js/customizer.min.js ***!
-  \****************************************/
+/***/ "./resources/js/libs/customizer.min.js":
+/*!*********************************************!*\
+  !*** ./resources/js/libs/customizer.min.js ***!
+  \*********************************************/
 /***/ (() => {
 
 !function (a, e, n) {
@@ -398,10 +398,10 @@
 
 /***/ }),
 
-/***/ "./resources/js/front.min.js":
-/*!***********************************!*\
-  !*** ./resources/js/front.min.js ***!
-  \***********************************/
+/***/ "./resources/js/libs/front.min.js":
+/*!****************************************!*\
+  !*** ./resources/js/libs/front.min.js ***!
+  \****************************************/
 /***/ (() => {
 
 function featherSVG(a) {
@@ -585,7 +585,7 @@ window.colors = {
     debug: !1,
     fallbackLng: "en",
     backend: {
-      loadPath: r + "data/locales/{{lng}}.json"
+      loadPath: r
     },
     returnObjects: !0
   }, function (a, e) {
@@ -850,10 +850,10 @@ window.colors = {
 
 /***/ }),
 
-/***/ "./resources/js/toastr.min.js":
-/*!************************************!*\
-  !*** ./resources/js/toastr.min.js ***!
-  \************************************/
+/***/ "./resources/js/libs/toastr.min.js":
+/*!*****************************************!*\
+  !*** ./resources/js/libs/toastr.min.js ***!
+  \*****************************************/
 /***/ ((module, exports, __webpack_require__) => {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// version 2.1.4
@@ -12083,11 +12083,11 @@ return jQuery;
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	__webpack_require__("./resources/js/toastr.min.js");
+/******/ 	__webpack_require__("./resources/js/libs/toastr.min.js");
 /******/ 	// This entry module used 'module' so it can't be inlined
-/******/ 	__webpack_require__("./resources/js/app-menu.min.js");
-/******/ 	__webpack_require__("./resources/js/front.min.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./resources/js/customizer.min.js");
+/******/ 	__webpack_require__("./resources/js/libs/app-menu.min.js");
+/******/ 	__webpack_require__("./resources/js/libs/front.min.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./resources/js/libs/customizer.min.js");
 /******/ 	
 /******/ })()
 ;

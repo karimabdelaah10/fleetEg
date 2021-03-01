@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\ForgetPasswordRequest;
 use App\Modules\Users\Enums\UserEnum;
 use App\Modules\Users\User;
 use Illuminate\Http\Request;
@@ -28,22 +29,16 @@ class PasswordResetLinkController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request)
+    public function store(ForgetPasswordRequest $request)
     {
-
-        $request->validate([
-            'mobile_number' => 'required',
-        ]);
-
         $user =User::where('mobile_number' , $request->mobile_number)->first();
-        if (!$user){
-         return  'worng number';
-        }
         // ToDo to change the new password to be rand text
         $user->update([
             'password' => 'password1'
         ]);
         // ToDo to SendEmail with new password to this user
+
+        flash(trans('auth.forget password done'))->success();
 
         return back();
     }

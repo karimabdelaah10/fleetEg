@@ -39,6 +39,19 @@ class User extends Authenticatable
             $this->attributes['password'] = bcrypt(trim($value));
         }
     }
+    public function getProfilePictureAttribute($value)
+    {
+        if (!empty($value)){
+            return image($value , 'large');
+        }
+        return  'https://via.placeholder.com/150';
+    }
+    public function gettypeAttribute($value)
+    {
+        if (!empty($value)){
+            return  trans('user.'.$value);
+        }
+    }
 
     public function scopeActive($query)
     {

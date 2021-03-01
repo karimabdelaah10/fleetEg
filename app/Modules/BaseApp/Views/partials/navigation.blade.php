@@ -6,7 +6,7 @@
             <li class="nav-item mr-auto">
                 <a class="navbar-brand" href="home-page.html">
                     <span class="brand-logo"></span>
-                    <h2 class="brand-text">Fleet EG</h2>
+                    <h2 class="brand-text">{{ appName() }}</h2>
                 </a>
             </li>
             <li class="nav-item nav-toggle">
@@ -26,39 +26,39 @@
                 <i data-feather="more-horizontal"></i>
             </li>
             <li class=" nav-item">
-                <a class="d-flex align-items-center" href="home-page.html">
+                <a class="d-flex align-items-center" href="{{route('dashboard')}}">
                     <i data-feather="home"></i>
-                    <span class="menu-title text-truncate" data-i18n="HomePage">الرئيسية</span>
+                    <span class="menu-title text-truncate" data-i18n="HomePage">{{trans('navigation.home')}}</span>
                 </a>
             </li>
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="users.html">
                     <i data-feather="users"></i>
-                    <span class="menu-title text-truncate" data-i18n="User">المستخدمين</span>
+                    <span class="menu-title text-truncate" data-i18n="User">{{trans('navigation.users')}}</span>
                 </a>
             </li>
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="products-admin.html">
                     <i data-feather="grid"></i>
-                    <span class="menu-title text-truncate" data-i18n="Products">المنتجات</span>
+                    <span class="menu-title text-truncate" data-i18n="Products">{{trans('navigation.products')}}</span>
                 </a>
                 <ul class="menu-content">
                     <li>
                         <a class="d-flex align-items-center" href="products-categories.html">
                             <i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="product-categories">فثات المنتجات</span>
+                            <span class="menu-item text-truncate" data-i18n="product-categories">{{trans('navigation.products categories')}}</span>
                         </a>
                     </li>
                     <li>
                         <a class="d-flex align-items-center" href="products-specs.html">
                             <i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="View">خصائص فئات المنتجات</span>
+                            <span class="menu-item text-truncate" data-i18n="View">{{trans('navigation.products specs')}}</span>
                         </a>
                     </li>
                     <li>
                         <a class="d-flex align-items-center" href="products-admin.html">
                             <i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="View"> المنتجات</span>
+                            <span class="menu-item text-truncate" data-i18n="View">{{trans('navigation.products')}}</span>
                         </a>
                     </li>
 
@@ -67,25 +67,25 @@
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="orders.html">
                     <i data-feather="shopping-cart"></i>
-                    <span class="menu-title text-truncate" data-i18n="Orders">الطلبات</span>
+                    <span class="menu-title text-truncate" data-i18n="Orders">{{trans('navigation.orders')}}</span>
                 </a>
             </li>
             <li class=" nav-item">
-                <a class="d-flex align-items-center" href="bannars.html">
+                <a class="d-flex align-items-center" href="/slider">
                     <i data-feather="image"></i>
-                    <span class="menu-title text-truncate" data-i18n="admins">البانر الاعلامى</span>
+                    <span class="menu-title text-truncate" data-i18n="admins">{{trans('navigation.sliders')}}</span>
                 </a>
             </li>
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="money-requests-admin.html">
                     <i data-feather="dollar-sign"></i>
-                    <span class="menu-title text-truncate" data-i18n="Orders">طلبات السحب المالى </span>
+                    <span class="menu-title text-truncate" data-i18n="Orders">{{trans('navigation.money requests')}}</span>
                 </a>
             </li>
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="admins.html">
                     <i data-feather="database"></i>
-                    <span class="menu-title text-truncate" data-i18n="admins">المديرين</span>
+                    <span class="menu-title text-truncate" data-i18n="admins">{{trans('navigation.admins')}}</span>
                 </a>
             </li>
             <!-- ///////////////////////////////////////////////// -->
@@ -96,63 +96,63 @@
             <li class=" nav-item" class="active">
                 <a class="d-flex align-items-center" href="home-page.html">
                     <i data-feather="home"></i>
-                    <span class="menu-title text-truncate" data-i18n="HomePage">الرئيسية</span>
+                    <span class="menu-title text-truncate" data-i18n="HomePage">{{trans('navigation.home')}}</span>
                 </a>
             </li>
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="products.html">
                     <i data-feather="grid"></i>
-                    <span class="menu-title text-truncate" data-i18n="Products">المنتجات</span>
+                    <span class="menu-title text-truncate" data-i18n="Products">{{trans('navigation.products')}}</span>
                     <span class="badge badge-light-warning badge-pill ml-auto mr-1">3</span></a>
                 <ul class="menu-content">
                     <li>
                         <a class="d-flex align-items-center" href="products.html">
                             <i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="AllProducts">كل المنتجات</span>
+                            <span class="menu-item text-truncate" data-i18n="AllProducts">{{trans('navigation.all products')}}</span>
                         </a>
                     </li>
                     <li>
                         <a class="d-flex align-items-center" href="products.html">
                             <i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="FavouriteProducts">المنتجات المفضله</span></a>
+                            <span class="menu-item text-truncate" data-i18n="FavouriteProducts">{{trans('navigation.favourite products')}}</span></a>
                     </li>
                 </ul>
             </li>
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="orders.html">
                     <i data-feather="shopping-cart"></i>
-                    <span class="menu-title text-truncate" data-i18n="Orders">الطلبات</span>
+                    <span class="menu-title text-truncate" data-i18n="Orders">{{trans('navigation.orders')}}</span>
                 </a>
             </li>
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="products.html">
                     <i data-feather="dollar-sign"></i>
-                    <span class="menu-title text-truncate" data-i18n="Products">المعاملات الماليه</span>
+                    <span class="menu-title text-truncate" data-i18n="Products">{{trans('navigation.financial processes')}}</span>
                     <span class="badge badge-light-warning badge-pill ml-auto mr-1">3</span></a>
                 <ul class="menu-content">
                     <li>
                         <a class="d-flex align-items-center" href="money-requests.html">
                             <i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="AllProducts">طلبات التصفيه الماليه</span>
+                            <span class="menu-item text-truncate" data-i18n="AllProducts">{{trans('navigation.money requests')}}</span>
                         </a>
                     </li>
                     <li>
                         <a class="d-flex align-items-center" href="payment-methods.html">
                             <i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="FavouriteProducts">طرق الدفع</span></a>
+                            <span class="menu-item text-truncate" data-i18n="FavouriteProducts">{{trans('navigations.payment methods')}}</span></a>
                     </li>
 
                     <li>
                         <a class="d-flex align-items-center" href="wallet-history.html">
                             <i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="FavouriteProducts">تاريخ المحفظه</span></a>
+                            <span class="menu-item text-truncate" data-i18n="FavouriteProducts">{{trans('navigation.wallet history')}}</span></a>
                     </li>
                 </ul>
             </li>
             <li class=" nav-item">
-                <a class="d-flex align-items-center" href="page-account-settings.html">
+                <a class="d-flex align-items-center" href="{{route('profile.edit')}}">
                     <i data-feather="settings"></i>
-                    <span class="menu-item text-truncate" data-i18n="Account Settings">اعدادات الحساب</span>
+                    <span class="menu-item text-truncate" data-i18n="Account Settings">{{trans('navigation.account settings')}}</span>
                 </a>
             </li>
         </ul>

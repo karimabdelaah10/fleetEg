@@ -120,7 +120,7 @@
                     <li class="scrollable-container media-list">
                         <div class="media align-items-center"><img alt="donuts"
                                                                    class="d-block rounded mr-1"
-                                                                   src="images/pages/eCommerce/1.png"
+                                                                   src="/images/pages/eCommerce/1.png"
                                                                    width="62">
                             <div class="media-body"><i class="ficon cart-item-remove" data-feather="x"></i>
                                 <div class="media-heading">
@@ -137,7 +137,7 @@
                         </div>
                         <div class="media align-items-center"><img alt="donuts"
                                                                    class="d-block rounded mr-1"
-                                                                   src="images/pages/eCommerce/7.png"
+                                                                   src="/images/pages/eCommerce/7.png"
                                                                    width="62">
                             <div class="media-body"><i class="ficon cart-item-remove" data-feather="x"></i>
                                 <div class="media-heading">
@@ -154,7 +154,7 @@
                         </div>
                         <div class="media align-items-center"><img alt="donuts"
                                                                    class="d-block rounded mr-1"
-                                                                   src="images/pages/eCommerce/2.png"
+                                                                   src="/images/pages/eCommerce/2.png"
                                                                    width="62">
                             <div class="media-body"><i class="ficon cart-item-remove" data-feather="x"></i>
                                 <div class="media-heading">
@@ -171,7 +171,7 @@
                         </div>
                         <div class="media align-items-center"><img alt="donuts"
                                                                    class="d-block rounded mr-1"
-                                                                   src="images/pages/eCommerce/3.png"
+                                                                   src="/images/pages/eCommerce/3.png"
                                                                    width="62">
                             <div class="media-body"><i class="ficon cart-item-remove" data-feather="x"></i>
                                 <div class="media-heading">
@@ -188,7 +188,7 @@
                         </div>
                         <div class="media align-items-center"><img alt="donuts"
                                                                    class="d-block rounded mr-1"
-                                                                   src="images/pages/eCommerce/5.png"
+                                                                   src="/images/pages/eCommerce/5.png"
                                                                    width="62">
                             <div class="media-body"><i class="ficon cart-item-remove" data-feather="x"></i>
                                 <div class="media-heading">
@@ -228,7 +228,7 @@
                             <div class="media d-flex align-items-start">
                                 <div class="media-left">
                                     <div class="avatar"><img alt="avatar" height="32"
-                                                             src="images/portrait/small/avatar-s-15.jpg" width="32"></div>
+                                                             src="/images/portrait/small/avatar-s-15.jpg" width="32"></div>
                                 </div>
                                 <div class="media-body">
                                     <p class="media-heading"><span class="font-weight-bolder">Congratulation Sam 🎉</span>winner!
@@ -239,7 +239,7 @@
                             <div class="media d-flex align-items-start">
                                 <div class="media-left">
                                     <div class="avatar"><img alt="avatar" height="32"
-                                                             src="images/portrait/small/avatar-s-3.jpg" width="32"></div>
+                                                             src="/images/portrait/small/avatar-s-3.jpg" width="32"></div>
                                 </div>
                                 <div class="media-body">
                                     <p class="media-heading"><span class="font-weight-bolder">New message</span>&nbsp;received
@@ -323,7 +323,7 @@
                     </div>
                     <span class="avatar">
                     <img alt="avatar" class="round" height="40"
-                         src="images/portrait/small/avatar-s-11.jpg" width="40">
+                         src="/images/portrait/small/avatar-s-11.jpg" width="40">
                     <span class="avatar-status-online"></span>
                 </span>
                 </a>
@@ -343,7 +343,7 @@
     <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100"
                                    href="app-file-manager.html">
             <div class="d-flex">
-                <div class="mr-75"><img alt="png" height="32" src="images/icons/xls.png"></div>
+                <div class="mr-75"><img alt="png" height="32" src="/images/icons/xls.png"></div>
                 <div class="search-data">
                     <p class="search-data-title mb-0">Two new item submitted</p><small class="text-muted">Marketing
                         Manager</small>
@@ -353,7 +353,7 @@
     <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100"
                                    href="app-file-manager.html">
             <div class="d-flex">
-                <div class="mr-75"><img alt="png" height="32" src="images/icons/jpg.png"></div>
+                <div class="mr-75"><img alt="png" height="32" src="/images/icons/jpg.png"></div>
                 <div class="search-data">
                     <p class="search-data-title mb-0">52 JPG file Generated</p><small class="text-muted">FontEnd
                         Developer</small>
@@ -363,7 +363,7 @@
     <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100"
                                    href="app-file-manager.html">
             <div class="d-flex">
-                <div class="mr-75"><img alt="png" height="32" src="images/icons/pdf.png"></div>
+                <div class="mr-75"><img alt="png" height="32" src="/images/icons/pdf.png"></div>
                 <div class="search-data">
                     <p class="search-data-title mb-0">25 PDF File Uploaded</p><small class="text-muted">Digital Marketing
                         Manager</small>
@@ -373,7 +373,7 @@
     <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100"
                                    href="app-file-manager.html">
             <div class="d-flex">
-                <div class="mr-75"><img alt="png" height="32" src="images/icons/doc.png"></div>
+                <div class="mr-75"><img alt="png" height="32" src="/images/icons/doc.png"></div>
                 <div class="search-data">
                     <p class="search-data-title mb-0">Anna_Strong.doc</p><small class="text-muted">Web Designer</small>
                 </div>
@@ -384,7 +384,7 @@
     <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100"
                                    href="app-user-view.html">
             <div class="d-flex align-items-center">
-                <div class="avatar mr-75"><img alt="png" height="32" src="images/portrait/small/avatar-s-8.jpg"></div>
+                <div class="avatar mr-75"><img alt="png" height="32" src="/images/portrait/small/avatar-s-8.jpg"></div>
                 <div class="search-data">
                     <p class="search-data-title mb-0">John Doe</p><small class="text-muted">UI designer</small>
                 </div>
@@ -393,7 +393,7 @@
     <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100"
                                    href="app-user-view.html">
             <div class="d-flex align-items-center">
-                <div class="avatar mr-75"><img alt="png" height="32" src="images/portrait/small/avatar-s-1.jpg"></div>
+                <div class="avatar mr-75"><img alt="png" height="32" src="/images/portrait/small/avatar-s-1.jpg"></div>
                 <div class="search-data">
                     <p class="search-data-title mb-0">Michal Clark</p><small class="text-muted">FontEnd Developer</small>
                 </div>
@@ -402,7 +402,7 @@
     <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100"
                                    href="app-user-view.html">
             <div class="d-flex align-items-center">
-                <div class="avatar mr-75"><img alt="png" height="32" src="images/portrait/small/avatar-s-14.jpg"></div>
+                <div class="avatar mr-75"><img alt="png" height="32" src="/images/portrait/small/avatar-s-14.jpg"></div>
                 <div class="search-data">
                     <p class="search-data-title mb-0">Milena Gibson</p><small class="text-muted">Digital Marketing
                         Manager</small>
@@ -412,7 +412,7 @@
     <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100"
                                    href="app-user-view.html">
             <div class="d-flex align-items-center">
-                <div class="avatar mr-75"><img alt="png" height="32" src="images/portrait/small/avatar-s-6.jpg"></div>
+                <div class="avatar mr-75"><img alt="png" height="32" src="/images/portrait/small/avatar-s-6.jpg"></div>
                 <div class="search-data">
                     <p class="search-data-title mb-0">Anna Strong</p><small class="text-muted">Web Designer</small>
                 </div>
@@ -436,7 +436,7 @@
             <li class="nav-item mr-auto">
                 <a class="navbar-brand" href="home-page.html">
                     <span class="brand-logo"></span>
-                    <h2 class="brand-text">Fleet EG</h2>
+                    <h2 class="brand-text">{{ appName() }}</h2>
                 </a>
             </li>
             <li class="nav-item nav-toggle">
@@ -700,7 +700,7 @@
                                 <div class="carousel-inner" role="listbox">
                                     <div class="carousel-item active">
                                         <a href="one-product.html">
-                                            <img class="img-fluid" style="width: 100%" src="images/slider/09.jpg" alt="First slide" />
+                                            <img class="img-fluid" style="width: 100%" src="/images/slider/09.jpg" alt="First slide" />
                                             <div class="carousel-caption">
                                                 <h3 class="text-white">First Slide Label</h3>
                                                 <p class="text-white">
@@ -712,7 +712,7 @@
                                         </a>
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="img-fluid" style="width: 100%"src="images/slider/08.jpg" alt="Second slide" />
+                                        <img class="img-fluid" style="width: 100%"src="/images/slider/08.jpg" alt="Second slide" />
                                         <div class="carousel-caption">
                                             <a href="one-product.html">
                                                 <h3 class="text-white">Second Slide Label</h3>
@@ -725,7 +725,7 @@
                                     </div>
                                     <div class="carousel-item">
                                         <a href="one-product.html">
-                                            <img class="img-fluid" style="width: 100%"src="images/slider/10.jpg" alt="Third slide" />
+                                            <img class="img-fluid" style="width: 100%"src="/images/slider/10.jpg" alt="Third slide" />
                                             <div class="carousel-caption">
                                                 <h3 class="text-white">Third Slide Label</h3>
                                                 <p class="text-white">

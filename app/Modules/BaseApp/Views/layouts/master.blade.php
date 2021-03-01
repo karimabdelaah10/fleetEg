@@ -14,17 +14,23 @@
 
 @include('BaseApp::partials.header')
 @include('BaseApp::partials.navigation')
-@include('BaseApp::partials.flash_messages')
 
 <!-- BEGIN: Content-->
 <div class="app-content content ">
     <div class="content-overlay"></div>
     <div class="header-navbar-shadow"></div>
     <div class="content-wrapper" id="app">
-        <example-component></example-component>
-        <example-component2></example-component2>
+        <div class="content-wrapper">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    @include('BaseApp::partials.flash_messages')
+                    @include('BaseApp::partials.breadcrumb')
+                </div>
+            </div>
         @yield('content')
     </div>
+
+</div>
 </div>
 <!-- END: Content-->
 

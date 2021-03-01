@@ -49,7 +49,7 @@ class RegisteredUserController extends Controller
         ]));
 
         event(new Registered($user));
-
+        flash(trans('auth.registration done'))->success();
         return redirect(RouteServiceProvider::HOME);
     }
 }

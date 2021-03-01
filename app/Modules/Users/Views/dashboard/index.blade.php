@@ -1,6 +1,6 @@
 @extends('BaseApp::layouts.master')
 
-@section('title')
+@section('page-title')
     <h6 class="slim-pagetitle"> {{ trans('dashboard.Welcome') .', '.auth()->user()->name }}</h6>
 @endsection
 

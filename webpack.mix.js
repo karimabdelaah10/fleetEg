@@ -36,15 +36,19 @@ mix.styles([
 ], 'public/css/auth.css');
 
 
+
+
+
+
 mix.js('resources/js/app.js', 'public/js/vendors.js')
     .vue()
     .sass('resources/sass/app.scss', 'public/css/vendors.css');
 
 
 mix.js([
-    'resources/js/toastr.min.js',
-    'resources/js/app-menu.min.js',
-    'resources/js/front.min.js',
-    'resources/js/customizer.min.js'
+    'resources/js/libs/toastr.min.js',
+    'resources/js/libs/app-menu.min.js',
+    'resources/js/libs/front.min.js',
+    'resources/js/libs/customizer.min.js'
     ],
     'public/js/scripts.js');

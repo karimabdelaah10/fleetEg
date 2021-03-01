@@ -19,18 +19,14 @@ class Slider extends BaseModel
     // To Share this info with import from excel class
     // to upload image with the same dimensions
     public static $attachFieldsAttributes =[
-        'sizes' => ['small' => 'crop,400x300', 'large' => 'resize,1520x650'],
+        'sizes' => ['small' => 'resize,235x100', 'large' => 'resize,1520x650'],
         'path' => 'storage/uploads'
     ];
-    protected $fillable = ['is_active','image' ,'index'];
-
-    protected $translatedAttributes = [
-        'title',
+    protected $fillable = [
         'description',
         "link",
-        "meta_title",
-        "meta_keywords",
-        "meta_description"
+        'is_active',
+        'image'
     ];
 
     public $useTranslationFallback = true;
@@ -45,5 +41,11 @@ class Slider extends BaseModel
     {
         return $this;
     }
-
+    public function getImageAttribute($value)
+    {
+        if (!empty($value)){
+            return image($value , 'large');
+        }
+        return  'https://via.placeholder.com';
+    }
 }

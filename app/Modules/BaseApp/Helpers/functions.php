@@ -72,6 +72,16 @@ if (! function_exists('getListOfFiles')) {
     }
 }
 
+if (! function_exists('splitString')) {
+    function splitString($string , $from , $to)
+    {
+        if (!empty($string)){
+          return  mb_substr(trim($string), $from, $to);
+        }
+        return ' ';
+    }
+}
+
 if (! function_exists('hideEmail')) {
     function hideEmail($email)
     {
@@ -297,6 +307,15 @@ if (! function_exists('image')) {
         }
         return $img;
 
+    }
+}
+if (! function_exists('profile_picture')) {
+    function profile_picture()
+    {
+        if (auth()->user() && !empty(auth()->user()->profile_picture)){
+            image(auth()->user()->profile_picture , 'large');
+        }
+        return  'https://via.placeholder.com/150';
     }
 }
 
