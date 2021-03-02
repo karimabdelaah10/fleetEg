@@ -37,29 +37,29 @@
                             </thead>
                             <tbody>
                             @if(!empty($rows))
-                                @foreach($rows as $row)
+                                @foreach($rows as $element)
                                     <tr>
-                                        <td>{{$row->id}}</td>
+                                        <td>{{$element->id}}</td>
                                         <td>
-                                            @if(!empty($row->description))
+                                            @if(!empty($element->description))
                                             <p
                                                 class=""
                                                 data-toggle="popover"
-                                                data-content="{{$row->description}}"
+                                                data-content="{{$element->description}}"
                                                 data-trigger="hover"
                                                 data-original-title="{{trans('slider.description popover title')}}"
                                             >
-                                                {{splitString($row->description , 0 , 20)}}..
+                                                {{splitString($element->description , 0 , 20)}}..
                                             </p>
                                             @endif
                                             </td>
                                         <td>
-                                            <a href="{{$row->link}}">{{$row->link}}</a>
+                                            <a href="{{$element->link}}">{{$element->link}}</a>
                                             </td>
                                         <td>
                                             <div class="avatar-group">
                                                     <img
-                                                        src="{{$row->image}}"
+                                                        src="{{$element->image}}"
                                                         alt="Avatar"
                                                         height="50"
                                                         width="120"
@@ -67,10 +67,10 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <span class="badge badge-pill {{$row->is_active ? 'badge-light-success':'badge-light-danger'}} mr-1"> {{$row->is_active ? trans('app.active'):trans('app.inactive')}} </span>
+                                            <span class="badge badge-pill {{$element->is_active ? 'badge-light-success':'badge-light-danger'}} mr-1"> {{$element->is_active ? trans('app.active'):trans('app.inactive')}} </span>
                                         </td>
                                         <td>
-                                            @include('BaseApp::partials.actions' ,['actions'=>['edit' ,'delete'] , $row])
+                                            @include('BaseApp::partials.actions' ,['actions'=>['edit' ,'delete'] , $element])
                                         </td>
                                     </tr>
                                 @endforeach
@@ -93,54 +93,57 @@
                         <h5 class="modal-title" id="exampleModalLabel">{{trans('slider.add bannar')}}</h5>
                     </div>
                     <div class="modal-body flex-grow-1">
-                        <div class="form-group">
-                            <label class="form-label" for="basic-icon-default-fullname">{{trans('slider.description')}}</label>
-                            <textarea
-                                class="form-control dt-full-name"
-                                id="basic-icon-default-fullname"
-                                placeholder="{{trans('slider.description')}}"
-                                name="description"
-                            ></textarea>
-                            @if($errors->has('description'))
-                                <span class="text-danger">
-                                        {{$errors->first('description')}}
-                                    </span>
-                            @endif
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="basic-icon-default-post">{{trans('slider.link')}}</label>
-                            <input
-                                type="url"
-                                id="basic-icon-default-post"
-                                class="form-control dt-post"
-                                placeholder="{{trans('slider.link')}}"
-                                name="link"
-                            />
-                            @if($errors->has('link'))
-                                <span class="text-danger">
-                                        {{$errors->first('link')}}
-                                    </span>
-                            @endif
-                        </div>
-                        <div class="form-group">
-                                <div class="custom-control custom-control-primary custom-switch">
-                                    <label class="form-label" for="basic-icon-default-post">{{trans('app.status')}}</label>
-                                    <input type="checkbox" checked="" class="custom-control-input" id="statusSwitchAdd">
-                                    <label class="custom-control-label" for="statusSwitchAdd"></label>
-                                </div>
-                        </div>
-                        <div class="form-group col-8" >
-                            <label class="form-label" for="customFile">{{trans('slider.bannar')}}</label>
-                            <div class="custom-file">
-                                <input type="file" name="image" required class="custom-file-input" id="addBannar">
-                                <label class="custom-file-label" for="addBannar">{{trans('app.choose file')}}</label>
-                                @if($errors->has('image'))
-                                    <span class="text-danger">
-                                        {{$errors->first('image')}}
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        @include($views.'::form',$row)
+
+{{--                        <div class="form-group">--}}
+{{--                            <label class="form-label" for="basic-icon-default-fullname">{{trans('slider.description')}}</label>--}}
+{{--                            <textarea--}}
+{{--                                class="form-control dt-full-name"--}}
+{{--                                id="basic-icon-default-fullname"--}}
+{{--                                placeholder="{{trans('slider.description')}}"--}}
+{{--                                name="description"--}}
+{{--                            ></textarea>--}}
+{{--                            @if($errors->has('description'))--}}
+{{--                                <span class="text-danger">--}}
+{{--                                        {{$errors->first('description')}}--}}
+{{--                                    </span>--}}
+{{--                            @endif--}}
+{{--                        </div>--}}
+{{--                        <div class="form-group">--}}
+{{--                            <label class="form-label" for="basic-icon-default-post">{{trans('slider.link')}}</label>--}}
+{{--                            <input--}}
+{{--                                type="url"--}}
+{{--                                id="basic-icon-default-post"--}}
+{{--                                class="form-control dt-post"--}}
+{{--                                placeholder="{{trans('slider.link')}}"--}}
+{{--                                name="link"--}}
+{{--                            />--}}
+{{--                            @if($errors->has('link'))--}}
+{{--                                <span class="text-danger">--}}
+{{--                                        {{$errors->first('link')}}--}}
+{{--                                    </span>--}}
+{{--                            @endif--}}
+{{--                        </div>--}}
+{{--                        <div class="form-group">--}}
+{{--                                <div class="custom-control custom-control-primary custom-switch">--}}
+{{--                                    <label class="form-label" for="basic-icon-default-post">{{trans('app.status')}}</label>--}}
+{{--                                    <input type="checkbox" checked="" class="custom-control-input" id="statusSwitchAdd">--}}
+{{--                                    <label class="custom-control-label" for="statusSwitchAdd"></label>--}}
+{{--                                </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="form-group col-8" >--}}
+{{--                            <label class="form-label" for="customFile">{{trans('slider.bannar')}}</label>--}}
+{{--                            <div class="custom-file">--}}
+{{--                                <input type="file" name="image" required class="custom-file-input" id="addBannar">--}}
+{{--                                <label class="custom-file-label" for="addBannar">{{trans('app.choose file')}}</label>--}}
+{{--                                @if($errors->has('image'))--}}
+{{--                                    <span class="text-danger">--}}
+{{--                                        {{$errors->first('image')}}--}}
+{{--                                    </span>--}}
+{{--                                @endif--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
                         <button type="submit" class="btn btn-primary data-submit mr-1">{{trans('app.save')}}</button>
                         <button type="reset" class="btn btn-outline-secondary" data-dismiss="modal">{{trans('app.cancel')}}</button>
                     </div>

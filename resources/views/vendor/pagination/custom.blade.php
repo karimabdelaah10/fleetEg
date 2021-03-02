@@ -1,5 +1,5 @@
 <nav aria-label="Page navigation example">
-        <ul class="pagination mt-2 justify-content-start col-1 float-left ml-2">
+        <ul class="pagination mt-2 justify-content-start col-lg-1 col-md-12 float-left ml-2">
             <div class="btn-group">
                 <button
                     class="btn btn-primary btn-sm dropdown-toggle waves-effect waves-float waves-light"
@@ -18,7 +18,7 @@
                 </div>
             </div>
         </ul>
-        <ul class="pagination mt-2 justify-content-end col-10 float-right">
+        <ul class="pagination mt-2 justify-content-end col-lg-9 col-md-12 float-right">
             @if ($paginator->onFirstPage())
                 <li class="page-item first disabled"><a href="#" class="page-link"> << {{trans('pagination.first')}} </a></li>
                 <li class="page-item prev disabled"><a class="page-link" href="#">{{trans('pagination.previous')}}</a></li>

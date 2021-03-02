@@ -5,8 +5,8 @@ namespace App\Modules\BaseApp\Enums;
 abstract class ResourceTypes
 {
     const USER = 'user',
-        Agent = 'agent',
-        PAGE = 'page',
+          Agent = 'agent',
+          PAGE = 'page',
         NEWS = 'news',
         GARBAGE_MEDIA = 'garbage_media',
         CATEGORIES = 'categories',

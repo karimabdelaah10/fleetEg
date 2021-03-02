@@ -27,6 +27,7 @@ class UsersTable extends Migration
             $table->timestamp('last_logged_in_at')->nullable();
             $table->boolean('is_active')->nullable()->default(1)->index();
             $table->string('profile_picture', 190)->nullable();
+            $table->float('available_balance')->default(0);
 
             $table->timestamps();
         });

@@ -1,2 +1,7 @@
 <?php
-Route::get('/', 'DashboardController@getIndex')->middleware(['auth'])->name('dashboard');
+Route::group([
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ,'auth']
+], function () {
+Route::get('/', 'DashboardController@getIndex')->name('dashboard');
+    });

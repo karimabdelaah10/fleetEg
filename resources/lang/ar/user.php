@@ -11,12 +11,12 @@ return [
 
     'name' => 'الاسم',
     'address' => 'العنوان',
-    'email' => 'البريد الالكرتونى',
+    'email' => 'البريد الالكترونى',
     'mobile_number' => 'رقم الهاتف',
     'old_password' => 'الرقم السرى القديم',
     'new_password' => 'الرقم السرى الجديد',
     're_new_password' => 'اعاده الرقم السرى',
-    'profile picture' => 'الصوره الشخصيه',
+    'profile_picture' => 'الصوره الشخصيه',
 
 
     ''=>''

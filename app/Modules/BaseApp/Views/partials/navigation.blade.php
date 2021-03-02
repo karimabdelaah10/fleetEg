@@ -77,7 +77,7 @@
                 </a>
             </li>
             <li class=" nav-item">
-                <a class="d-flex align-items-center" href="money-requests-admin.html">
+                <a class="d-flex align-items-center" href="/money-request">
                     <i data-feather="dollar-sign"></i>
                     <span class="menu-title text-truncate" data-i18n="Orders">{{trans('navigation.money requests')}}</span>
                 </a>

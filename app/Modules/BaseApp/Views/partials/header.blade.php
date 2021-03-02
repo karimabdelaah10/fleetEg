@@ -29,7 +29,8 @@
             </ul>
         </div>
         <ul class="nav navbar-nav align-items-center ml-auto">
-            <li class="nav-item dropdown dropdown-cart mr-25">
+{{--            @include('BaseApp::partials.la  ngSwitch')--}}
+            <li class="nav-item dropdown-money mr-25">
                 <a class="nav-link" data-toggle="dropdown" href="">
                     <i class="ficon" data-feather="dollar-sign"></i><span
                         class="badge badge-pill badge-primary badge-up cart-item-count">63084</span></a>

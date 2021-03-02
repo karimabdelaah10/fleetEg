@@ -313,7 +313,7 @@ if (! function_exists('profile_picture')) {
     function profile_picture()
     {
         if (!empty(auth()->user()) && !empty(auth()->user()->profile_picture)){
-            image(auth()->user()->profile_picture , 'large');
+           return image(auth()->user()->profile_picture , 'large');
         }
         return  'https://via.placeholder.com/150';
     }
@@ -326,9 +326,12 @@ if (! function_exists('viewImage')) {
             $folder = 'uploads';
         }
         $width = 50;
+        $height = 50;
+        $class='';
         if ($attributes) {
-            $width = @$attributes['width'];
-            $class = @$attributes['class'];
+            $height = @$attributes['height'] ?? 50;
+            $width = @$attributes['width'] ?? 50;
+            $class = @$attributes['image_class'];
             $id = @$attributes['id'];
         }
         $src = $folder . '/' . $type . '/' . $img;
@@ -337,7 +340,8 @@ if (! function_exists('viewImage')) {
         } else {
             $src = 'https://via.placeholder.com/500x500';
         }
-        return '<img  width="' . $width . '" src="' . $src . '" class="' . @$class . '" id="' . @$id . '" >';
+
+        return '<div class="'.$class.'" style="width:'. $width .'px;height:'.$height.'px;"><img  width="' . $width . '" height="' . $height . '"src="' . $src  . '" id="' . @$id . '" ></div>';
     }
 }
 

@@ -1,10 +1,14 @@
 <?php
 
 include_once 'profile.php';
-    Route::group(['middleware'=>'auth','prefix' => 'users'], function () {
+Route::group([
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ,'auth']
+], function () {
+    Route::group(['prefix' => 'users'], function () {
         Route::get('/', '\App\Modules\Users\Controllers\UsersController@getIndex')->name('users');
 
-        Route::post('/create', '\App\Modules\Users\Controllers\UsersController@postCreate');
+        Route::post('/create', '\App\Modules\Users\Controllers\UsersController@postCreate')->name('users.create');
 
         Route::get('/edit/{id}', '\App\Modules\Users\Controllers\UsersController@getEdit');
         Route::put('/edit/{id}', '\App\Modules\Users\Controllers\UsersController@postEdit')
@@ -16,3 +20,4 @@ include_once 'profile.php';
         Route::get('/delete/{id}', '\App\Modules\Users\Controllers\UsersController@getDelete')
             ->name('users.delete');
     });
+});

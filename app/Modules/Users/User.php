@@ -31,6 +31,7 @@ class User extends Authenticatable
         'is_active',
         'password',
         'profile_picture',
+        'available_balance',
     ];
 
     public function setPasswordAttribute($value)

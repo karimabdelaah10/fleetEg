@@ -30,7 +30,8 @@ class UsersController extends Controller
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
-
+        $data['row']=$this->model;
+        $data['row']->is_active = 1;
         $data['page_title'] = trans('app.list') . ' ' . $this->title;
         $data['page_description'] = trans('user.page description');
         $data['rows'] = $this->model->getData()->latest()->paginate(request('per_page'));
