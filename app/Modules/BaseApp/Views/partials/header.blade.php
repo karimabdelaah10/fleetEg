@@ -29,7 +29,7 @@
             </ul>
         </div>
         <ul class="nav navbar-nav align-items-center ml-auto">
-{{--            @include('BaseApp::partials.la  ngSwitch')--}}
+            @include('BaseApp::partials.langSwitch')
             <li class="nav-item dropdown-money mr-25">
                 <a class="nav-link" data-toggle="dropdown" href="">
                     <i class="ficon" data-feather="dollar-sign"></i><span
