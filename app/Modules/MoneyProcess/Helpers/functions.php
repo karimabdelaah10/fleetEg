@@ -20,14 +20,14 @@ if (! function_exists('getRequestStatus')) {
 
     }
 }
-if (! function_exists('getRequestStatus')) {
+if (! function_exists('createTransaction')) {
     function createTransaction($user_id ,$available_balance_before_transaction , $available_balance_after_transaction , $amount ,$transaction_type ){
         Transaction::create([
-            'user_id'=>$row->user_id,
-            'available_balance_before_transaction' =>$row->user->available_balance,
-            'available_balance_after_transaction'  =>$new_available_balance,
-            'amount'                               =>$row->requested_amount,
-            'transaction_type' => MoneyProcessEnum::MONEY_REQUEST
+            'user_id'=>$user_id,
+            'available_balance_before_transaction' =>$available_balance_before_transaction,
+            'available_balance_after_transaction'  =>$available_balance_after_transaction,
+            'amount'                               =>$amount,
+            'transaction_type' => $transaction_type
         ]);
 
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Modules\Users\Enums\AdminEnum;
 use App\Modules\Users\Enums\UserEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -17,6 +18,7 @@ class UsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->enum('type' , UserEnum::usersTypes())->index(); // required
+            $table->enum('admin_type' , AdminEnum::adminsTypes())->nullable(); // required
             $table->string('name')->nullable();
             $table->mediumText('address')->nullable(); //address
             $table->string('email')->nullable()->index();

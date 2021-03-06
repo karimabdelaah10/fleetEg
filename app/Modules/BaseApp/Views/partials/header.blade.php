@@ -249,7 +249,7 @@
                    id="dropdown-user">
                     <div class="user-nav d-sm-flex d-none">
                         <span class="user-name font-weight-bolder">{{auth()->user()->name}}</span>
-                        <span class="user-status">Admin</span>
+                        <span class="user-status">{{trans('user.'.auth()->user()->type)}}</span>
                     </div>
                     <span class="avatar">
                     <img alt="avatar" class="round" height="40"

@@ -4,7 +4,7 @@
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item mr-auto">
-                <a class="navbar-brand" href="home-page.html">
+                <a class="navbar-brand" href="{{route('dashboard')}}">
                     <span class="brand-logo"></span>
                     <h2 class="brand-text">{{ appName() }}</h2>
                 </a>
@@ -83,7 +83,13 @@
                 </a>
             </li>
             <li class=" nav-item">
-                <a class="d-flex align-items-center" href="admins.html">
+                <a class="d-flex align-items-center" href="/governorates">
+                    <i data-feather="map"></i>
+                    <span class="menu-title text-truncate" data-i18n="Orders">{{trans('navigation.governorates')}}</span>
+                </a>
+            </li>
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/admins">
                     <i data-feather="database"></i>
                     <span class="menu-title text-truncate" data-i18n="admins">{{trans('navigation.admins')}}</span>
                 </a>

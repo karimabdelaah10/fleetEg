@@ -18,7 +18,7 @@
                         <h4 class="card-title">
                             {{ @$page_description }}
                         </h4>
-                        <a href="{{$module_url}}/create" class="add-new btn btn-primary mt-50">{{trans('slider.add bannar')}}</a>
+                        <a href="{{$module_url}}/create" class="add-new btn btn-primary mt-50">{{trans('governorate.add governorate')}}</a>
                     </div>
 
                     <div class="table-responsive">
@@ -26,9 +26,7 @@
                             <thead>
                             <tr>
                                 <th >#</th>
-                                <th >{{trans('slider.description')}}</th>
-                                <th >{{trans('slider.link')}}</th>
-                                <th >{{trans('slider.bannar')}}</th>
+                                <th >{{trans('governorate.title')}}</th>
                                 <th >{{trans('app.status')}}</th>
                                 <th >{{trans('app.actions')}}</th>
                             </tr>
@@ -38,32 +36,7 @@
                                 @foreach($rows as $element)
                                     <tr>
                                         <td>{{$element->id}}</td>
-                                        <td>
-                                            @if(!empty($element->description))
-                                            <p
-                                                class=""
-                                                data-toggle="popover"
-                                                data-content="{{$element->description}}"
-                                                data-trigger="hover"
-                                                data-original-title="{{trans('slider.description popover title')}}"
-                                            >
-                                                {{splitString($element->description , 0 , 20)}}..
-                                            </p>
-                                            @endif
-                                            </td>
-                                        <td>
-                                            <a href="{{$element->link}}">{{$element->link}}</a>
-                                            </td>
-                                        <td>
-                                            <div class="avatar-group">
-                                                    <img
-                                                        src="{{$element->image}}"
-                                                        alt="Avatar"
-                                                        height="50"
-                                                        width="120"
-                                                    />
-                                            </div>
-                                        </td>
+                                        <td>{{$element->title}}</td>
                                         <td>
                                             <span class="badge badge-pill {{$element->is_active ? 'badge-light-success':'badge-light-danger'}} mr-1"> {{$element->is_active ? trans('app.active'):trans('app.inactive')}} </span>
                                         </td>

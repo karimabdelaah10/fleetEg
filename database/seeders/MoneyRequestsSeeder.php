@@ -19,77 +19,80 @@ class MoneyRequestsSeeder extends Seeder
     public function run()
     {
 
+        $available_balance=[10000 , 11000 , 12000 ,13000 ,14000 ,15000];
+        $requested_amount =[1000 , 2000 , 3000 , 4000 ,5000];
         $requests = [
             [
                 'user_id'              => User::all()->random()->id,
-                'available_balance'    =>9000,
-                'requested_amount'     =>2000,
+                'available_balance'    =>$available_balance[array_rand($available_balance)],
+                'requested_amount'     =>$requested_amount[array_rand($requested_amount)],
                 'status'               =>MoneyProcessEnum::moneyRequestStatuses()[array_rand(MoneyProcessEnum::moneyRequestStatuses())],
             ],
             [
                 'user_id'              => User::all()->random()->id,
-                'available_balance'    =>9000,
-                'requested_amount'     =>2000,
+                'available_balance'    =>$available_balance[array_rand($available_balance)],
+                'requested_amount'     =>$requested_amount[array_rand($requested_amount)],
                 'status'               =>MoneyProcessEnum::moneyRequestStatuses()[array_rand(MoneyProcessEnum::moneyRequestStatuses())],
             ],
             [
                 'user_id'              => User::all()->random()->id,
-                'available_balance'    =>9000,
-                'requested_amount'     =>2000,
+                'available_balance'    =>$available_balance[array_rand($available_balance)],
+                'requested_amount'     =>$requested_amount[array_rand($requested_amount)],
                 'status'               =>MoneyProcessEnum::moneyRequestStatuses()[array_rand(MoneyProcessEnum::moneyRequestStatuses())],
             ],
             [
                 'user_id'              => User::all()->random()->id,
-                'available_balance'    =>9000,
-                'requested_amount'     =>2000,
+                'available_balance'    =>$available_balance[array_rand($available_balance)],
+                'requested_amount'     =>$requested_amount[array_rand($requested_amount)],
                 'status'               =>MoneyProcessEnum::moneyRequestStatuses()[array_rand(MoneyProcessEnum::moneyRequestStatuses())],
             ],
             [
                 'user_id'              => User::all()->random()->id,
-                'available_balance'    =>9000,
-                'requested_amount'     =>2000,
+                'available_balance'    =>$available_balance[array_rand($available_balance)],
+                'requested_amount'     =>$requested_amount[array_rand($requested_amount)],
                 'status'               =>MoneyProcessEnum::moneyRequestStatuses()[array_rand(MoneyProcessEnum::moneyRequestStatuses())],
             ],
             [
                 'user_id'              => User::all()->random()->id,
-                'available_balance'    =>9000,
-                'requested_amount'     =>2000,
+                'available_balance'    =>$available_balance[array_rand($available_balance)],
+                'requested_amount'     =>$requested_amount[array_rand($requested_amount)],
                 'status'               =>MoneyProcessEnum::moneyRequestStatuses()[array_rand(MoneyProcessEnum::moneyRequestStatuses())],
             ],
             [
                 'user_id'              => User::all()->random()->id,
-                'available_balance'    =>9000,
-                'requested_amount'     =>2000,
+                'available_balance'    =>$available_balance[array_rand($available_balance)],
+                'requested_amount'     =>$requested_amount[array_rand($requested_amount)],
                 'status'               =>MoneyProcessEnum::moneyRequestStatuses()[array_rand(MoneyProcessEnum::moneyRequestStatuses())],
             ],
             [
                 'user_id'              => User::all()->random()->id,
-                'available_balance'    =>9000,
-                'requested_amount'     =>2000,
+                'available_balance'    =>$available_balance[array_rand($available_balance)],
+                'requested_amount'     =>$requested_amount[array_rand($requested_amount)],
                 'status'               =>MoneyProcessEnum::moneyRequestStatuses()[array_rand(MoneyProcessEnum::moneyRequestStatuses())],
             ],
             [
                 'user_id'              => User::all()->random()->id,
-                'available_balance'    =>9000,
-                'requested_amount'     =>2000,
+                'available_balance'    =>$available_balance[array_rand($available_balance)],
+                'requested_amount'     =>$requested_amount[array_rand($requested_amount)],
                 'status'               =>MoneyProcessEnum::moneyRequestStatuses()[array_rand(MoneyProcessEnum::moneyRequestStatuses())],
             ],
             [
                 'user_id'              => User::all()->random()->id,
-                'available_balance'    =>9000,
-                'requested_amount'     =>2000,
+                'available_balance'    =>$available_balance[array_rand($available_balance)],
+                'requested_amount'     =>$requested_amount[array_rand($requested_amount)],
                 'status'               =>MoneyProcessEnum::moneyRequestStatuses()[array_rand(MoneyProcessEnum::moneyRequestStatuses())],
             ],
             [
                 'user_id'              => User::all()->random()->id,
-                'available_balance'    =>9000,
-                'requested_amount'     =>2000,
+                'available_balance'    =>$available_balance[array_rand($available_balance)],
+                'requested_amount'     =>$requested_amount[array_rand($requested_amount)],
                 'status'               =>MoneyProcessEnum::moneyRequestStatuses()[array_rand(MoneyProcessEnum::moneyRequestStatuses())],
             ],
 
         ];
 
         foreach ($requests as $request){
+            User::find($request['user_id'])->update(['available_balance'=>$request['available_balance']]);
             Moneyrequest::create($request);
         }
     }

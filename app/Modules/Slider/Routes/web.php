@@ -6,6 +6,7 @@ Route::group([
     Route::group(['prefix' => 'slider', 'as' => 'slider.'], function () {
         Route::get('/', 'SliderController@getIndex');
 
+        Route::get('/create', 'SliderController@getCreate');
         Route::post('/create', 'SliderController@postCreate');
 
         Route::get('/edit/{id}', 'SliderController@getEdit');

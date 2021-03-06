@@ -10,6 +10,7 @@ return [
     'orders' => 'الطلبات',
     'sliders' => 'البانر الاعلامى',
     'money requests' => 'طلبت السحب المالى',
+    'governorates' => 'المحافظات',
     'admins' => 'المديرين',
     'all products' => 'كل المنتجات',
     'favourite products' => 'المنتجات المفضله',

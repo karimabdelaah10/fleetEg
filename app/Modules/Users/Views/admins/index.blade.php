@@ -18,7 +18,7 @@
                         <h4 class="card-title">
                             {{ @$page_description }}
                         </h4>
-                        <a href="{{$module_url}}/create" class="add-new btn btn-primary mt-50">{{trans('slider.add bannar')}}</a>
+                        <a href="{{$module_url}}/create" class="add-new btn btn-primary mt-50">{{trans('admin.add admin')}}</a>
                     </div>
 
                     <div class="table-responsive">
@@ -26,9 +26,12 @@
                             <thead>
                             <tr>
                                 <th >#</th>
-                                <th >{{trans('slider.description')}}</th>
-                                <th >{{trans('slider.link')}}</th>
-                                <th >{{trans('slider.bannar')}}</th>
+                                <th >{{trans('admin.name')}}</th>
+                                <th >{{trans('admin.admin_type')}}</th>
+                                <th >{{trans('admin.address')}}</th>
+                                <th >{{trans('admin.email')}}</th>
+                                <th >{{trans('admin.mobile_number')}}</th>
+                                <th >{{trans('admin.profile_picture')}}</th>
                                 <th >{{trans('app.status')}}</th>
                                 <th >{{trans('app.actions')}}</th>
                             </tr>
@@ -38,37 +41,29 @@
                                 @foreach($rows as $element)
                                     <tr>
                                         <td>{{$element->id}}</td>
-                                        <td>
-                                            @if(!empty($element->description))
-                                            <p
-                                                class=""
-                                                data-toggle="popover"
-                                                data-content="{{$element->description}}"
-                                                data-trigger="hover"
-                                                data-original-title="{{trans('slider.description popover title')}}"
-                                            >
-                                                {{splitString($element->description , 0 , 20)}}..
-                                            </p>
-                                            @endif
-                                            </td>
-                                        <td>
-                                            <a href="{{$element->link}}">{{$element->link}}</a>
-                                            </td>
+                                        <td>{{$element->name}}</td>
+                                        <td>{{trans('admin.'.$element->admin_type)}}</td>
+                                        <td>{{$element->address}}</td>
+                                        <td>{{$element->email}}</td>
+                                        <td>{{$element->mobile_number}}</td>
                                         <td>
                                             <div class="avatar-group">
-                                                    <img
-                                                        src="{{$element->image}}"
-                                                        alt="Avatar"
-                                                        height="50"
-                                                        width="120"
-                                                    />
+                                                <div data-toggle="tooltip"
+                                                     data-popup="tooltip-custom"
+                                                     data-placement="top"
+                                                     title="" class="avatar pull-up my-0"
+                                                     data-original-title="{{$element->name}}">
+                                                    <img src="{{$element->profile_picture}}"
+                                                         alt="Avatar"
+                                                         height="35" width="35">
+                                                </div>
                                             </div>
                                         </td>
                                         <td>
                                             <span class="badge badge-pill {{$element->is_active ? 'badge-light-success':'badge-light-danger'}} mr-1"> {{$element->is_active ? trans('app.active'):trans('app.inactive')}} </span>
                                         </td>
                                         <td>
-                                            @include('BaseApp::partials.actions' ,['actions'=>['edit' ,'delete'] , $element])
+                                            @include('BaseApp::partials.actions' ,['actions'=>['edit' ,'delete' ,'view'] , $element])
                                         </td>
                                     </tr>
                                 @endforeach
@@ -84,11 +79,6 @@
     </div>
 @endsection
 @push('js')
-    <script src="/js/pages/components-popovers.min.js"></script>
-
-    <script src="/js/pages/jquery.bootpag.min.js"></script>
     <script src="/js/pages/jquery.twbsPagination.min.js"></script>
-
     <script src="/js/pages/components-pagination.js"></script>
-
 @endpush

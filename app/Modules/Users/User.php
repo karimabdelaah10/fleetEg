@@ -22,6 +22,7 @@ class User extends Authenticatable
     protected $table = "users";
     protected $fillable = [
         'type',
+        'admin_type',
         'name',
         'address',
         'email',
@@ -68,6 +69,15 @@ class User extends Authenticatable
     public function scopeNotSuperAdmin($query)
     {
         return $query->where('type', '!=', UserEnum::SUPER_ADMIN);
+    }
+    public function scopeAdmin($query)
+    {
+        return $query->where('type', '=', UserEnum::ADMIN);
+    }
+
+    public function scopeCustomer($query)
+    {
+        return $query->where('type', '=', UserEnum::CUSTOMER);
     }
 
     public function scopeWithoutLoggedUser($query)

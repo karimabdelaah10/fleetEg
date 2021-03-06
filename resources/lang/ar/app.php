@@ -9,6 +9,7 @@ return [
     'success message' => 'تم',
     'list' => 'عرض بيانات',
     'edit'  =>'تعديل',
+    'add'  =>'اضافه',
     'delete'  =>'حذف',
     'view'  =>'عرض ',
     'choose file'=>'اختر الملف',
@@ -32,6 +33,8 @@ return [
 
     'slider'=>'البانر الأعلامى',
     'users'=>'المستخدمين',
+    'admins'=>'المديرين',
+    'governorate'=>'المحافظات',
     'money requests'=>'طلبات السحب المالى',
     ''=>''
 ];

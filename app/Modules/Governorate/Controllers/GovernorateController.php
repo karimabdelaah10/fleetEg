@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Modules\Slider\Controllers;
+namespace App\Modules\Governorate\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Modules\Slider\Models\Slider;
-use App\Modules\Slider\Requests\SliderRequest;
+use App\Modules\Governorate\Models\Governorate;
+use App\Modules\Governorate\Requests\GovernorateRequest;
 
-class SliderController extends Controller {
+class GovernorateController extends Controller {
 
     public $model;
     public $views;
     public $module,$module_url ,$title;
 
-    public function __construct(Slider $model) {
-        $this->module = 'slider';
-        $this->module_url = '/slider';
-        $this->views = 'Slider';
-        $this->title = trans('app.slider');
+    public function __construct(Governorate $model) {
+        $this->module = 'governorates';
+        $this->module_url = '/governorates';
+        $this->views = 'Governorate';
+        $this->title = trans('app.governorate');
         $this->model = $model;
     }
 
@@ -27,7 +27,7 @@ class SliderController extends Controller {
         $data['row']=$this->model;
         $data['row']->is_active = 1;
         $data['page_title'] = trans('app.list') . " " . $this->title;
-        $data['page_description'] = trans('slider.page description');
+        $data['page_description'] = trans('governorate.page description');
         $data['rows'] = $this->model->getData()->orderBy("id","DESC")->paginate(request('per_page'));
         return view($this->views . '::index', $data);
     }
@@ -44,7 +44,7 @@ class SliderController extends Controller {
         $data['row']->is_active = 1;
         return view($this->views . '::create', $data);
     }
-    public function postCreate(SliderRequest $request) {
+    public function postCreate(GovernorateRequest $request) {
         !empty($request->is_active) ? $request['is_active'] =1 : $request['is_active'] =0;
         if ($row = $this->model->create($request->all())) {
             flash()->success(trans('app.created successfully'));
@@ -65,7 +65,7 @@ class SliderController extends Controller {
         return view($this->views . '::edit', $data);
     }
 
-    public function postEdit(SliderRequest $request , $id) {
+    public function postEdit(GovernorateRequest $request , $id) {
 //        authorize('edit-' . $this->module);
         !empty($request->is_active) ? $request['is_active'] =1 : $request['is_active'] =0;
         $row = $this->model->findOrFail($id);

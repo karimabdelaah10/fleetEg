@@ -11,17 +11,17 @@ use App\Modules\Users\User;
 use App\Modules\Users\UserEnums;
 use App\Http\Controllers\Controller;
 
-class UsersController extends Controller
+class AdminsController extends Controller
 {
     public $model;
     public $module,$module_url, $views ,$title;
 
     public function __construct(User $model)
     {
-        $this->module = 'users';
-        $this->module_url = '/users';
-        $this->views = 'Users::users';
-        $this->title = trans('app.users');
+        $this->module = 'admins';
+        $this->module_url = '/admins';
+        $this->views = 'Users::admins';
+        $this->title = trans('app.admins');
         $this->model = $model;
     }
 
@@ -33,12 +33,14 @@ class UsersController extends Controller
         $data['row']=$this->model;
         $data['row']->is_active = 1;
         $data['page_title'] = trans('app.list') . ' ' . $this->title;
-        $data['page_description'] = trans('user.page description');
-        $data['rows'] = $this->model->getData()->Customer()->latest()->paginate(request('per_page'));
+        $data['page_description'] = trans('admin.page description');
+        $data['rows'] = $this->model->getData()->Admin()->latest()->paginate(request('per_page'));
 
         return view($this->views . '.index', $data);
     }
-    public function getCreate(){
+    public function getCreate()
+    {
+//        authorize('edit-' . $this->module);
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
@@ -51,7 +53,7 @@ class UsersController extends Controller
     public function postCreate(CreateUserRequest $request)
     {
 //        authorize('create-' . $this->module);
-        $request['type'] = UserEnum::CUSTOMER;
+        $request['type'] = UserEnum::ADMIN;
         !empty($request->is_active) ? $request['is_active'] =1 : $request['is_active'] =0;
         if ($row = $this->model->create($request->all()))
         {

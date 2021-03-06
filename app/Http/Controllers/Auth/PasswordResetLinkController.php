@@ -34,7 +34,7 @@ class PasswordResetLinkController extends Controller
         $user =User::where('mobile_number' , $request->mobile_number)->first();
         // ToDo to change the new password to be rand text
         $user->update([
-            'password' => 'password1'
+            'password' => 'password'
         ]);
         // ToDo to SendEmail with new password to this user
 
