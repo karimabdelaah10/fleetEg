@@ -36,5 +36,8 @@ return [
     'admins'=>'المديرين',
     'governorate'=>'المحافظات',
     'money requests'=>'طلبات السحب المالى',
+    'categories'=>'فئات المنتجات',
+    'specs'=>'صفات المنتجات',
+    'specvalues'=>'قيم صفات المنتجات',
     ''=>''
 ];

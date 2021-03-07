@@ -17,11 +17,14 @@ class CreateProductspecsTable extends Migration
             $table->id();
 
             $table->integer('stock')->default(0);
+            $table->string('image')->nullable();
             $table->unsignedBigInteger('product_id')->nullable();
             $table->unsignedBigInteger('spec_value_id')->nullable();
+            $table->unsignedBigInteger('parent_spec_value_id')->nullable();
 
             $table->foreign('product_id')->references('id')->on('products')->onDelete('SET NULL');
             $table->foreign('spec_value_id')->references('id')->on('specvalues')->onDelete('SET NULL');
+            $table->foreign('parent_spec_value_id')->references('id')->on('specvalues')->onDelete('SET NULL');
 
             $table->timestamps();
         });

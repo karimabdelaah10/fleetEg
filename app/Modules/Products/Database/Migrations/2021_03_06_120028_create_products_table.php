@@ -18,9 +18,12 @@ class CreateProductsTable extends Migration
             $table->string('title')->nullable();
             $table->boolean('is_active')->default(1);
             $table->integer('price')->default(0);
+            $table->string('commission')->nullable();
             $table->boolean('discount')->default(0);
             $table->integer('2pc_discount')->default(0);
             $table->integer('plus_2pc_discount')->default(0);
+            $table->string('image')->nullable();
+            $table->string('media_url')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('SET NULL');
 

@@ -48,7 +48,7 @@ class GovernorateController extends Controller {
         !empty($request->is_active) ? $request['is_active'] =1 : $request['is_active'] =0;
         if ($row = $this->model->create($request->all())) {
             flash()->success(trans('app.created successfully'));
-            return redirect('/' . $this->module);
+             return back();
         }
         flash()->error(trans('app.failed to save'));
         return back();

@@ -46,7 +46,7 @@ class DashboardController extends Controller {
         if ($row = $this->model->create($request->all())) {
             reArrangeIndex($current_index , $new_index , $row->id ,$this->model);
             flash()->success(trans('app.Created successfully'));
-            return redirect('/' . $this->module);
+             return back();
         }
         flash()->error(trans('app.failed to save'));
         return back();

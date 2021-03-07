@@ -19,11 +19,7 @@ class CreateSpecvaluesTable extends Migration
             $table->boolean('is_active')->default(1);
 
             $table->unsignedBigInteger('spec_id')->nullable();
-            $table->unsignedBigInteger('category_id')->nullable();
-
             $table->foreign('spec_id')->references('id')->on('specs')->onDelete('SET NULL');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('SET NULL');
-
             $table->timestamps();
         });
     }

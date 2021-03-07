@@ -44,15 +44,21 @@
                 </a>
                 <ul class="menu-content">
                     <li>
-                        <a class="d-flex align-items-center" href="products-categories.html">
+                        <a class="d-flex align-items-center" href="/categories">
                             <i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="product-categories">{{trans('navigation.products categories')}}</span>
                         </a>
                     </li>
                     <li>
-                        <a class="d-flex align-items-center" href="products-specs.html">
+                        <a class="d-flex align-items-center" href="/specs">
                             <i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="View">{{trans('navigation.products specs')}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="d-flex align-items-center" href="/specvalues">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="View">{{trans('navigation.products specs values')}}</span>
                         </a>
                     </li>
                     <li>
