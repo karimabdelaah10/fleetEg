@@ -19,4 +19,9 @@ class Specvalue extends Model
     {
         return $this;
     }
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', '=', 1);
+    }
+
 }

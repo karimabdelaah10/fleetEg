@@ -29,14 +29,23 @@ window.Vue = require('vue').default;
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('example-component2', require('./components/ExampleComponent2.vue').default);
+Vue.component('product-discount', require('./components/ProductDiscountComponent.vue').default);
+Vue.component('product-specs', require('./components/ProductSpecsComponent.vue').default);
+Vue.component('new-product-specs', require('./components/NewProductSpecsComponent.vue').default);
+Vue.component('specs-values', require('./components/SpecsValuesComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
+Vue.mixin({
+    data: function() {
+        return {
+            SelectedSpecId:null
+        }
+    }
+})
 const app = new Vue({
     el: '#app',
 });

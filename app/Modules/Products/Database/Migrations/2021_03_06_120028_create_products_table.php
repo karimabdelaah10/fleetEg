@@ -20,8 +20,8 @@ class CreateProductsTable extends Migration
             $table->integer('price')->default(0);
             $table->string('commission')->nullable();
             $table->boolean('discount')->default(0);
-            $table->integer('2pc_discount')->default(0);
-            $table->integer('plus_2pc_discount')->default(0);
+            $table->integer('two_pc_discount')->default(0);
+            $table->integer('plus_two_pc_discount')->default(0);
             $table->string('image')->nullable();
             $table->string('media_url')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();

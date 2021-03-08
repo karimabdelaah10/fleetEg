@@ -101,7 +101,7 @@ class ModulesServiceProvider extends ServiceProvider
 
     protected function mapApiRoutes($namespace, $path)
     {
-        Route::prefix('api/v1/{language}')->middleware(['api','locale', 'throttle:600,1'])->namespace($namespace)->group($path);
+        Route::prefix('api/v1')->middleware(['api', 'throttle:600,1'])->namespace($namespace)->group($path);
     }
 
     public function registerMiddleware(Router $router, $config, $module)
