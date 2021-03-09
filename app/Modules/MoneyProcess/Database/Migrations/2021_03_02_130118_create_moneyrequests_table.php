@@ -22,7 +22,7 @@ class CreateMoneyrequestsTable extends Migration
             $table->enum('status' ,[MoneyProcessEnum::moneyRequestStatuses()]);
 
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

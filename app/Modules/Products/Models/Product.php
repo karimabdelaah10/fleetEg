@@ -34,6 +34,6 @@ class Product extends Model
     public function specs()
     {
         return $this->belongsToMany(Spec::class,
-            'productspecs');
+            'productspecs')->withPivot('id');
     }
 }

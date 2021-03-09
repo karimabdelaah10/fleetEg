@@ -19,8 +19,8 @@ class CreateProductspecsTable extends Migration
             $table->unsignedBigInteger('product_id')->nullable();
             $table->unsignedBigInteger('spec_id')->nullable();
 
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('SET NULL');
-            $table->foreign('spec_id')->references('id')->on('specs')->onDelete('SET NULL');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->foreign('spec_id')->references('id')->on('specs')->onDelete('cascade');
 
             $table->timestamps();
         });

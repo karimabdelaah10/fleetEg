@@ -21,7 +21,7 @@ class CreateTransactionsTable extends Migration
             $table->float('amount')->default(0);
             $table->string('transaction_type');
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->timestamps();
         });

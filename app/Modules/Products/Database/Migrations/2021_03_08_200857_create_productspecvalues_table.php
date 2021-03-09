@@ -20,10 +20,12 @@ class CreateProductspecvaluesTable extends Migration
             $table->unsignedBigInteger('product_id')->nullable();
             $table->unsignedBigInteger('spec_value_id')->nullable();
             $table->unsignedBigInteger('parent_spec_value_id')->nullable();
+            $table->unsignedBigInteger('spec_id')->nullable();
 
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('SET NULL');
-            $table->foreign('spec_value_id')->references('id')->on('specvalues')->onDelete('SET NULL');
-            $table->foreign('parent_spec_value_id')->references('id')->on('specvalues')->onDelete('SET NULL');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->foreign('spec_value_id')->references('id')->on('specvalues')->onDelete('cascade');
+            $table->foreign('parent_spec_value_id')->references('id')->on('specvalues')->onDelete('cascade');
+            $table->foreign('spec_id')->references('id')->on('specs')->onDelete('cascade');
 
             $table->timestamps();
         });

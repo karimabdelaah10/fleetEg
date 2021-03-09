@@ -10,7 +10,7 @@ class Productspecvalue extends Model
 {
     use HasFactory,HasAttach;
     protected $table='productspecvalues';
-    protected $fillable =['stock' , 'image','product_id','spec_value_id'];
+    protected $fillable =['stock' , 'image','product_id','parent_spec_value_id','spec_id','spec_value_id'];
 
 
     protected static $attachFields = [
@@ -19,4 +19,9 @@ class Productspecvalue extends Model
             'path' => 'storage/uploads'
         ],
     ];
+
+    public function value()
+    {
+        return $this->belongsTo(Specvalue::class ,'spec_value_id');
+    }
 }

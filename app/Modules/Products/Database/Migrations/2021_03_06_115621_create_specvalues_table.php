@@ -19,7 +19,7 @@ class CreateSpecvaluesTable extends Migration
             $table->boolean('is_active')->default(1);
 
             $table->unsignedBigInteger('spec_id')->nullable();
-            $table->foreign('spec_id')->references('id')->on('specs')->onDelete('SET NULL');
+            $table->foreign('spec_id')->references('id')->on('specs')->onDelete('cascade');
             $table->timestamps();
         });
     }
