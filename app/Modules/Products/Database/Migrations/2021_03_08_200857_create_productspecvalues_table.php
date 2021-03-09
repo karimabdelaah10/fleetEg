@@ -24,7 +24,7 @@ class CreateProductspecvaluesTable extends Migration
 
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->foreign('spec_value_id')->references('id')->on('specvalues')->onDelete('cascade');
-            $table->foreign('parent_spec_value_id')->references('id')->on('specvalues')->onDelete('cascade');
+            $table->foreign('parent_spec_value_id')->references('id')->on('productspecvalues')->onDelete('cascade');
             $table->foreign('spec_id')->references('id')->on('specs')->onDelete('cascade');
 
             $table->timestamps();

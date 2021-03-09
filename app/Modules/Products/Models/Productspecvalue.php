@@ -10,7 +10,8 @@ class Productspecvalue extends Model
 {
     use HasFactory,HasAttach;
     protected $table='productspecvalues';
-    protected $fillable =['stock' , 'image','product_id','parent_spec_value_id','spec_id','spec_value_id'];
+    protected $fillable =['stock' , 'image','product_id',
+        'parent_spec_value_id','spec_id','spec_value_id'];
 
 
     protected static $attachFields = [

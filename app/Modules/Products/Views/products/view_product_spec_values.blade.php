@@ -36,7 +36,7 @@
                             @if(!empty($rows))
                                 @foreach($rows as $element)
                                     <tr>
-                                        <td>{{@$element->value->id}}</td>
+                                        <td>{{@$element->id}}</td>
                                         <td>{{@$element->value->title}}</td>
                                         <td>{{@$element->stock}}</td>
                                         <td>
@@ -61,10 +61,6 @@
                                                             <i data-feather="eye" class="mr-50"></i>
                                                             <span>{{trans('products.view inner spec value')}}</span>
                                                         </a>
-{{--                                                        <a class="dropdown-item" href="{{$module_url}}/edit/{{$element->id}}">--}}
-{{--                                                            <i data-feather="edit-2" class="mr-50"></i>--}}
-{{--                                                            <span>{{trans('app.edit')}}</span>--}}
-{{--                                                        </a>--}}
                                                         <a class="dropdown-item" href="{{$module_url}}/delete_products_spec_value/{{@$element->id}}">
                                                             {{--            data-confirm="ssss"--}}
                                                             <i data-feather="trash" class="mr-50"></i>

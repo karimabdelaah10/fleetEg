@@ -114,7 +114,7 @@
                             @if(!empty($row->specs))
                                 @foreach($row->specs as $element)
                                     <tr>
-                                        <td>{{$element->id}}</td>
+                                        <td>{{$element->pivot->id}}</td>
                                         <td>{{$element->title}}</td>
                                         <td>
                                             <div class="dropdown dropright">

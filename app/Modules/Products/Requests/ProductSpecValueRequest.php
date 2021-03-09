@@ -4,7 +4,7 @@ namespace App\Modules\Products\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProductRequest extends FormRequest
+class ProductSpecValueRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,17 +23,10 @@ class ProductRequest extends FormRequest
      */
     public function rules()
     {
-        $rules=  [
-            'category_id' =>'required|exists:categories,id',
-            'title' =>'required',
-            'price' =>'required',
-            'commission' =>'required',
-            'media_url' =>'required',
-            'image' =>'required',
+        return  [
+            'product_id' =>'required|exists:products,id',
+            'spec_value_id' =>'required|exists:specvalues,id',
         ];
-        if ($this->route('id')){
-            $rules['image']='nullable';
-        }
-        return $rules;
+
     }
 }
