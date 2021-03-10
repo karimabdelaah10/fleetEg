@@ -31,6 +31,8 @@ Route::group([
 
 
         Route::get('/view_product_spec_values_inner/{product_spec_value_id}', 'ProductController@getViewProductSpecValuesInner');
+        Route::get('/add_product_spec_values_inner/{product_spec_value_id}', 'ProductController@getAddProductSpecValueInner');
+        Route::post('/add_product_spec_values_inner/{product_spec_value_id}', 'ProductController@postAddProductSpecValueInner');
 
         //        Route::post('/add_products_spec/{product_id}', 'ProductController@postAddProductSpec');
 

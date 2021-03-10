@@ -15,4 +15,9 @@ class Governorate extends Model
     {
         return $this;
     }
+
+    public function scopeActive($query)
+    {
+        return $query->where('is_Active' , 1);
+    }
 }

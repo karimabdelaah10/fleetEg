@@ -222,6 +222,64 @@ class ProductController extends Controller {
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public function getAddProductSpecValueInner($product_spec_value_id)
+    {
+        $productSpecValue =Productspecvalue::findOrFail($product_spec_value_id);
+        $productSpec=Productspec::where([['product_id',$productSpecValue->product_id],['spec_id',$productSpecValue->spec_id]])->first();
+        $data['module'] = $this->module;
+        $data['module_url'] = $this->module_url;
+        $data['views'] = $this->views;
+        $data['page_title'] = trans('products.add inner spec value');
+        $data['breadcrumb'] = [
+            $this->title => $this->module_url ,
+            trans('app.view') .' '.$this->title =>$this->module_url.'/view/'.$productSpecValue->product_id,
+            trans('products.view spec values')=>$this->module_url.'/view_product_spec_values/'.$productSpec->id,
+            trans('products.view inner spec value')=>$this->module_url.'/view_product_spec_values_inner/'.$product_spec_value_id
+        ];
+        $data['rows'] = Specvalue::Active()->get();
+        $data['row']=$this->model;
+        $data['row']->product_id=$productSpecValue->product_id;
+        $data['row']->product_spec_value_id=$product_spec_value_id;
+        return view($this->views . '.create_product_spec_value_inner', $data);
+    }
+    public function postAddProductSpecValueInner(ProductSpecValueRequest $request,$product_spec_value_id)
+    {
+        $spec_value =Specvalue::findOrFail($request->spec_value_id);
+        $request['spec_id'] = $spec_value->spec_id;
+        Productspecvalue::create($request->all());
+        flash()->success(trans('app.created successfully'));
+        return back();
+    }
+
+
     public function getViewProductSpecValuesInner($product_spec_value_id)
     {
 
@@ -230,7 +288,7 @@ class ProductController extends Controller {
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
-        $data['page_title'] = trans('products.view spec values');
+        $data['page_title'] = trans('products.view inner spec value');
         $data['breadcrumb'] = [$this->title => $this->module_url ,
             trans('app.view') .' '.$this->title =>$this->module_url.'/view/'.$productSpecValue->product_id ,
             trans('products.view spec values')=>$this->module_url.'/view_product_spec_values/'.$productSpec->id

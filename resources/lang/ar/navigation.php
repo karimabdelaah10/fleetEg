@@ -19,6 +19,7 @@ return [
     'payment methods' => 'طرق الدفع',
     'wallet history' => 'تاريخ المحفظه',
     'account settings' => 'اعدادات الحساب',
+    'configs'=>'الاعدادات',
 
 
 

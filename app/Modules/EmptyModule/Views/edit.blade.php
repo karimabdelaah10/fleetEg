@@ -11,7 +11,8 @@
         @include($views.'::form',$row)
         <!-- custom-file -->
         <div class="form-layout-footer mg-t-30">
-            <button class="btn btn-primary bd-0">{{ trans('app.Save') }}</button>
+            <button type="submit" class="btn btn-primary data-submit mr-1">{{trans('app.save')}}</button>
+            <button type="reset" class="btn btn-outline-secondary" data-dismiss="modal">{{trans('app.cancel')}}</button>
         </div>
         {!! Form::close() !!}
         <!-- form-layout-footer -->

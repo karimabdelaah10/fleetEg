@@ -12,6 +12,7 @@ return [
     'specs values'=>'اختر قيمه للصفات',
     'parent specs values'=>'اختر قيمه خارجيه للقيمه ',
     'view inner spec value'=>'عرض القيم الداخليه',
+    'add inner spec value'=>'اضافه قيمه داخليه اخرى',
     'select specs'=>'اختر صفه من هنا ',
     'title'=>'اسم المنتج',
     'price'=>'سعر المنتج',

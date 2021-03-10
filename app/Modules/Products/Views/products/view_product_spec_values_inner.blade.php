@@ -15,9 +15,9 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">
-                            {{ trans('products.view spec values') }}
+                            {{ trans('products.view inner spec value') }}
                         </h4>
-                        <a href="{{$module_url}}/add_products_spec_value/{{$row->spec_value_id}}" class="add-new btn btn-primary mt-50">{{trans('products.add spec value')}}</a>
+                        <a href="{{$module_url}}/add_product_spec_values_inner/{{$row->spec_value_id}}" class="add-new btn btn-primary mt-50">{{trans('products.add inner spec value')}}</a>
 
                     </div>
 

@@ -58,4 +58,5 @@ class ProfileController extends Controller {
     ]);
         return redirect()->back()->with('success', trans('profile.update password success message'));
     }
+
 }

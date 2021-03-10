@@ -100,6 +100,12 @@
                     <span class="menu-title text-truncate" data-i18n="admins">{{trans('navigation.admins')}}</span>
                 </a>
             </li>
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/configs/edit">
+                    <i data-feather="settings"></i>
+                    <span class="menu-title text-truncate" data-i18n="admins">{{trans('navigation.configs')}}</span>
+                </a>
+            </li>
             <!-- ///////////////////////////////////////////////// -->
             <li class=" navigation-header">
                 <span data-i18n="Apps &amp; Pages">صفحات المستخدم</span>
