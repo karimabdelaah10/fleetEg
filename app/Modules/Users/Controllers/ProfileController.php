@@ -4,6 +4,7 @@ namespace App\Modules\Users\Controllers;
 
 
 use App\Http\Controllers\Controller;
+use App\Modules\MoneyProcess\Models\Moneyrequest;
 use App\Modules\Users\Requests\ChangeProfilePasswordRequest;
 use App\Modules\Users\Requests\UpdateProfileRequest;
 use App\Modules\Users\User;
@@ -32,6 +33,7 @@ class ProfileController extends Controller {
         $data['page_title'] = $this->title;
         $data['breadcrumb'] = [$this->title => $this->module_url];
         $data['row'] = $this->model->find(Auth::user()->id);
+//        return  $data['row']->moneyRequests;
         return view($this->views . '::profile.index', $data);
     }
 
@@ -59,4 +61,16 @@ class ProfileController extends Controller {
         return redirect()->back()->with('success', trans('profile.update password success message'));
     }
 
+    public function getMoneyRequests()
+    {
+        $data['module'] = $this->module;
+        $data['module_url'] = $this->module_url;
+        $data['views'] = $this->views;
+        $data['breadcrumb'] = [$this->title => $this->module_url];
+        $data['page_title'] = trans('user.all money requests');
+        $data['page_description'] = trans('user.all money requests');
+        $data['rows'] =Moneyrequest::where('user_id' , Auth::user()->id)->latest()->paginate(request('per_page'));
+        return view($this->views . '::profile.money-requests', $data);
+
+    }
 }

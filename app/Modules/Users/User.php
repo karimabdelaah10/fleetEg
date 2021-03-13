@@ -4,6 +4,7 @@ namespace App\Modules\Users;
 
 use App\Modules\BaseApp\Traits\CreatedBy;
 use App\Modules\BaseApp\Traits\HasAttach;
+use App\Modules\MoneyProcess\Models\Moneyrequest;
 use App\Modules\Users\Enums\UserEnum;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -98,11 +99,8 @@ class User extends Authenticatable
         return $query;
     }
 
-    public function export()
+    public function moneyRequests()
     {
-        return \Maatwebsite\Excel\Facades\Excel::download(
-            new   \App\Modules\Users\Exports\UsersExport,
-            'users' . "_" . date("Y-m-d H:i:s").'.xlsx');
+        return $this->hasMany(Moneyrequest::class , 'user_id')->orderByDesc('id');
     }
-
 }

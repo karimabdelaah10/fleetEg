@@ -10,6 +10,7 @@ Route::group([
         Route::get('/edit', 'ProfileController@getEdit')->name('profile.edit');
         Route::post('/edit', 'ProfileController@postEdit')->name('profile.edit');
         Route::post('/change-password', 'ProfileController@changePassword')->name('profile.changePassword');
+        Route::get('/money-requests', 'ProfileController@getMoneyRequests');
 
     });
 });

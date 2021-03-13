@@ -3,6 +3,7 @@
 namespace App\Modules\Users\Controllers;
 
 use App\Modules\Cars\Car;
+use App\Modules\MoneyProcess\Models\Moneyrequest;
 use App\Modules\Users\Enums\UserEnum;
 use App\Modules\Users\Models\Customer;
 use App\Modules\Users\Requests\CreateUserRequest;
@@ -107,5 +108,21 @@ class UsersController extends Controller
         $row->delete();
         flash()->success(trans('app.deleted successfully'));
         return back();
+    }
+
+    public function getMoneyRequests($id)
+    {
+        $data['module'] = $this->module;
+        $data['module_url'] = $this->module_url;
+        $data['views'] = $this->views;
+        $data['breadcrumb'] = [
+            $this->title => $this->module_url,
+            trans('app.view') . " " . $this->title => $this->module_url.'/view/'.$id
+        ];
+        $data['page_title'] = trans('user.all money requests');
+        $data['page_description'] = trans('user.all money requests');
+        $data['rows'] =Moneyrequest::where('user_id' , $id)->latest()->paginate(request('per_page'));
+        return view($this->views . '.money-requests', $data);
+
     }
 }

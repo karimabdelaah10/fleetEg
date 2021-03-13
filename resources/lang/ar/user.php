@@ -17,6 +17,9 @@ return [
     'new_password' => 'الرقم السرى الجديد',
     're_new_password' => 'اعاده الرقم السرى',
     'profile_picture' => 'الصوره الشخصيه',
+    'money requests' => 'طلبات السحب المالى',
+    'last 10 money requests' => 'اخر 10 طالبات للسحب المالى',
+    'all money requests' => ' كل طالبات السحب المالى',
 
 
     ''=>''

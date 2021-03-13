@@ -189,6 +189,141 @@
                     </div>
                 </div>
             </div>
+            <div class="row match-height">
+                <!-- Company Table Card -->
+                <div class="col-lg-8 col-12">
+                    <div class="card card-company-table">
+                        <div class="card-header">
+                            <h4 class="card-title">{{trans('user.last 10 money requests')}}</h4>
+                            <div class="dropdown chart-dropdown">
+                                <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-toggle="dropdown"></i>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="/profile/money-requests">{{trans('user.all money requests')}}</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th >#</th>
+                                        <th >{{trans('moneyrequest.available_balance')}}</th>
+                                        <th >{{trans('moneyrequest.requested_amount')}}</th>
+                                        <th >{{trans('app.status')}}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+{{--                                    @if(!empty($row->moneyRequests))--}}
+                                        @forelse($row->moneyRequests->take(10) as $element)
+                                            <tr>
+                                                <td>{{$element->id}}</td>
+                                                <td> {{$element->available_balance}}</td>
+                                                <td> {{$element->requested_amount}}</td>
+                                                <td> {!! getRequestStatus($element->status) !!} </td>
+                                            </tr>
+                                        @empty
+                                        @endforelse
+{{--                                    @endif--}}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/ Company Table Card -->
+                <!-- Transaction Card -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card card-transaction">
+                        <div class="card-header">
+                            <h4 class="card-title">Transactions</h4>
+                            <div class="dropdown chart-dropdown">
+                                <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-toggle="dropdown"></i>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
+                                    <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
+                                    <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="transaction-item">
+                                <div class="media">
+                                    <div class="avatar bg-light-primary rounded">
+                                        <div class="avatar-content">
+                                            <i data-feather="pocket" class="avatar-icon font-medium-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h6 class="transaction-title">Wallet</h6>
+                                        <small>Starbucks</small>
+                                    </div>
+                                </div>
+                                <div class="font-weight-bolder text-danger">- $74</div>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="media">
+                                    <div class="avatar bg-light-success rounded">
+                                        <div class="avatar-content">
+                                            <i data-feather="check" class="avatar-icon font-medium-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h6 class="transaction-title">Bank Transfer</h6>
+                                        <small>Add Money</small>
+                                    </div>
+                                </div>
+                                <div class="font-weight-bolder text-success">+ $480</div>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="media">
+                                    <div class="avatar bg-light-danger rounded">
+                                        <div class="avatar-content">
+                                            <i data-feather="dollar-sign" class="avatar-icon font-medium-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h6 class="transaction-title">Paypal</h6>
+                                        <small>Add Money</small>
+                                    </div>
+                                </div>
+                                <div class="font-weight-bolder text-success">+ $590</div>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="media">
+                                    <div class="avatar bg-light-warning rounded">
+                                        <div class="avatar-content">
+                                            <i data-feather="credit-card" class="avatar-icon font-medium-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h6 class="transaction-title">Mastercard</h6>
+                                        <small>Ordered Food</small>
+                                    </div>
+                                </div>
+                                <div class="font-weight-bolder text-danger">- $23</div>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="media">
+                                    <div class="avatar bg-light-info rounded">
+                                        <div class="avatar-content">
+                                            <i data-feather="trending-up" class="avatar-icon font-medium-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h6 class="transaction-title">Transfer</h6>
+                                        <small>Refund</small>
+                                    </div>
+                                </div>
+                                <div class="font-weight-bolder text-success">+ $98</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/ Transaction Card -->
+            </div>
+
         </section>
         <!-- Dashboard Ecommerce ends -->
 

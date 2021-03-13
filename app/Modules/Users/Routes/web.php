@@ -21,5 +21,8 @@ Route::group([
 
         Route::get('/delete/{id}', '\App\Modules\Users\Controllers\UsersController@getDelete')
             ->name('users.delete');
+
+        Route::get('/money-requests/{id}', '\App\Modules\Users\Controllers\UsersController@getMoneyRequests');
+
     });
 });
