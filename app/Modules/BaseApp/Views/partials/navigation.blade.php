@@ -71,7 +71,7 @@
                 </ul>
             </li>
             <li class=" nav-item">
-                <a class="d-flex align-items-center" href="orders.html">
+                <a class="d-flex align-items-center" href="/orders">
                     <i data-feather="shopping-cart"></i>
                     <span class="menu-title text-truncate" data-i18n="Orders">{{trans('navigation.orders')}}</span>
                 </a>

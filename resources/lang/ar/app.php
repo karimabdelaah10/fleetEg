@@ -26,6 +26,9 @@ return [
     'pending'=>'قيدالانتظار',
     'under_review'=>'قيدالمراجعه',
     'transformed'=>'تم تحويل المبلغ',
+    'with_shipping_company'=>'مع شركه الشحن',
+    'delivered'=>'تم التوصيل',
+    'in_stock'=>'فى المخزن',
 
     'actions'=>'الأجرائات',
 
@@ -41,5 +44,7 @@ return [
     'specvalues'=>'قيم صفات المنتجات',
     'products'=>'المنتجات',
     'configs'=>'الاعدادات',
+    'orders'=>'الطلبات',
+    'egyptian_pound'=>'جنيه مصرى',
     ''=>''
 ];

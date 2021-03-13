@@ -14,4 +14,13 @@ class Orderproduct extends Model
         'order_id',
         'amount',
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class , 'product_id');
+    }
+    public function details()
+    {
+        return $this->hasMany(Orderproductdetail::class);
+    }
 }

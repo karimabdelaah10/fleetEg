@@ -16,6 +16,7 @@ class CreateGovernoratesTable extends Migration
         Schema::create('governorates', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
+            $table->integer('shipping_coast')->default(0);
             $table->boolean('is_active')->default(0);
             $table->timestamps();
         });

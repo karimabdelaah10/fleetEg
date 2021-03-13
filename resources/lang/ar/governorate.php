@@ -7,6 +7,7 @@ return [
     'edit governorate' => 'تعديل محافظه',
 
     'title'=>'اسم المحافظه',
+    'shipping_coast'=>'تكلفه الشحن',
 
 
 

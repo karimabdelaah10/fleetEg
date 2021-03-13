@@ -18,18 +18,18 @@
                         <h4 class="card-title">
                             {{ @$page_description }}
                         </h4>
-                        <a href="{{$module_url}}/create" class="add-new btn btn-primary mt-50">{{trans('governorate.add governorate')}}</a>
                     </div>
 
                     <div class="table-responsive">
                         <table class="table mb-4">
                             <thead>
                             <tr>
-                                <th >#</th>
-                                <th >{{trans('governorate.title')}}</th>
-                                <th >{{trans('governorate.shipping_coast')}}  ( {{trans('app.egyptian_pound')}} )</th>
-                                <th >{{trans('app.status')}}</th>
-                                <th >{{trans('app.actions')}}</th>
+                                <th>{{trans('orders.serial')}}</th>
+                                <th>{{trans('orders.user_name')}}</th>
+                                <th>{{trans('orders.price')}}</th>
+                                <th>{{trans('orders.date')}}</th>
+                                <th>{{trans('orders.status')}}</th>
+                                <th>{{trans('app.actions')}}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -37,13 +37,15 @@
                                 @foreach($rows as $element)
                                     <tr>
                                         <td>{{@$element->id}}</td>
-                                        <td>{{@$element->title}}</td>
-                                        <td>{{@$element->shipping_coast}}</td>
+                                        <td>{{@$element->user->name}}</td>
+                                        <td>{{@$element->total_price}}</td>
+                                        <td>{{@$element->created_at ? \Carbon\Carbon::parse($element->created_at)->format('Y-m-d') : '' }}</td>
                                         <td>
-                                            <span class="badge badge-pill {{$element->is_active ? 'badge-light-success':'badge-light-danger'}} mr-1"> {{$element->is_active ? trans('app.active'):trans('app.inactive')}} </span>
+                                            {!! get_status_for_blade($element->status) !!}
+
                                         </td>
                                         <td>
-                                            @include('BaseApp::partials.actions' ,['actions'=>['edit' ,'delete'] , $element])
+                                            @include('BaseApp::partials.actions' ,['actions'=>['view','edit'] , $element])
                                         </td>
                                     </tr>
                                 @endforeach
@@ -59,7 +61,6 @@
     </div>
 @endsection
 @push('js')
-    <script src="/js/pages/components-popovers.min.js"></script>
 
     <script src="/js/pages/jquery.bootpag.min.js"></script>
     <script src="/js/pages/jquery.twbsPagination.min.js"></script>

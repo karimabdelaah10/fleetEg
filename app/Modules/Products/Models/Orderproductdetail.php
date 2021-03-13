@@ -14,4 +14,9 @@ class Orderproductdetail extends Model
         'spec_value_id',
         'detail'
     ];
+
+    public function specValue()
+    {
+        return $this->belongsTo(Specvalue::class , 'spec_value_id');
+    }
 }

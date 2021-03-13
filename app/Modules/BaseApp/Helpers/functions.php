@@ -4,6 +4,7 @@ use App\Imports\ProductsImport;
 use App\Modules\BaseApp\BaseModel;
 use App\Modules\Configs\Configs;
 use App\Modules\GarbageMedia\GarbageMedia;
+use App\Modules\Users\Enums\UserEnum;
 use App\Modules\Users\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
@@ -1014,6 +1015,18 @@ if (! function_exists('checkUserNotificationSettingsFlag')) {
     {
            $user = User::findOrFail($user_id);
            return $user->notification_flag;
+    }
+}
+if (! function_exists('is_admin')) {
+    function is_admin()
+    {
+        return auth()->user()->type != UserEnum::CUSTOMER ? true : false;
+    }
+}
+if (! function_exists('is_user')) {
+    function is_user()
+    {
+        return auth()->user()->type == UserEnum::CUSTOMER ? true : false;
     }
 }
 

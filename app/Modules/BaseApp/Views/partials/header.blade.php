@@ -30,11 +30,13 @@
         </div>
         <ul class="nav navbar-nav align-items-center ml-auto">
             @include('BaseApp::partials.langSwitch')
+            @if(is_user())
             <li class="nav-item dropdown-money mr-25">
                 <a class="nav-link" data-toggle="dropdown" href="">
                     <i class="ficon" data-feather="dollar-sign"></i><span
-                        class="badge badge-pill badge-primary badge-up cart-item-count">63084</span></a>
+                        class="badge badge-pill badge-primary badge-up cart-item-count">{{auth()->user()->available_balance}}</span></a>
             </li>
+            @endif
             <li class="nav-item dropdown dropdown-cart mr-25">
                 <a class="nav-link" data-toggle="dropdown"  href="javascript:void(0);">
                     <i class="ficon" data-feather="shopping-cart"></i>

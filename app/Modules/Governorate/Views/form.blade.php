@@ -10,6 +10,17 @@
      'placeholder'=>trans('governorate.title'),
      'required'=>0]
      ])
+@include('BaseApp::form.input',[
+    'name'=>'shipping_coast',
+     'value'=> $row->shipping_coast ?? null,
+     'type'=>'text',
+     'attributes'=>[
+         'id'=>'title',
+         'class'=>'form-control',
+     'label'=>trans('governorate.shipping_coast'),
+     'placeholder'=>trans('governorate.shipping_coast'),
+     'required'=>0]
+     ])
 @include('BaseApp::form.switch',[
     'name'=>'is_active',
     'value'=> $row->is_active ?? null,

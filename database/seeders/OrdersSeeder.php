@@ -29,7 +29,7 @@ class OrdersSeeder extends Seeder
         DB::table('orderproducts')->delete();
         DB::table('orders')->delete();
 
-        $faker =Faker::create('en_US');
+        $faker =Faker::create('ar_JO');
         $orders =[
             [
                 'customer_name'=>$faker->name,
