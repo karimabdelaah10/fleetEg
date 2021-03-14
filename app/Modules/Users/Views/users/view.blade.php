@@ -5,10 +5,9 @@
 @section('content')
     <div class="content-body"><!-- Dashboard Ecommerce Starts -->
         <section id="dashboard-ecommerce">
-            <div class="row match-height">
-                <!-- Medal Card -->
-                <!-- Profile Card -->
-                <div class="col-xl-9 col-lg-9 col-md-7">
+            <div class="row">
+                <!-- User Card starts-->
+                <div class="col-xl-9 col-lg-8 col-md-7">
                     <div class="card user-card">
                         <div class="card-body">
                             <div class="row">
@@ -24,16 +23,17 @@
                                             />
                                             <div class="d-flex flex-column ml-1">
                                                 <div class="user-info mb-1">
-                                                    <h4 class="mb-0">Eleanor Aguilar</h4>
-                                                    <span class="card-text">eleanor.aguilar@gmail.com</span>
+                                                    <h4 class="mb-0">{{$row->name}}</h4>
+                                                    <span class="card-text">{{$row->email}}</span>
                                                 </div>
                                                 <div class="d-flex flex-wrap">
-                                                    <a href="app-user-edit.html" class="btn btn-primary">Edit</a>
-                                                    <button class="btn btn-outline-danger ml-1">Delete</button>
+                                                    <a href="/users/edit/{{$row->id}}" class="btn btn-primary">{{trans('app.edit')}}</a>
+                                                    <a href="/users/delete/{{$row->id}}" class="btn btn-outline-danger ml-1">{{trans('app.delete')}}</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <br>
                                     <div class="d-flex align-items-center user-total-numbers">
                                         <div class="d-flex align-items-center mr-2">
                                             <div class="color-box bg-light-primary">
@@ -58,39 +58,39 @@
                                 <div class="col-xl-6 col-lg-12 mt-2 mt-xl-0">
                                     <div class="user-info-wrapper">
                                         <div class="d-flex flex-wrap">
-                                            <div class="user-info-title">
+                                            <div class="user-info-title" style="width: 11.785rem;">
                                                 <i data-feather="user" class="mr-1"></i>
-                                                <span class="card-text user-info-title font-weight-bold mb-0">Username</span>
+                                                <span class="card-text user-info-title font-weight-bold mb-0">{{trans('user.address')}}</span>
                                             </div>
-                                            <p class="card-text mb-0">eleanor.aguilar</p>
+                                            <p class="card-text mb-0">{{$row->address}}</p>
                                         </div>
                                         <div class="d-flex flex-wrap my-50">
-                                            <div class="user-info-title">
+                                            <div class="user-info-title" style="width: 11.785rem;">
                                                 <i data-feather="check" class="mr-1"></i>
-                                                <span class="card-text user-info-title font-weight-bold mb-0">Status</span>
+                                                <span class="card-text user-info-title font-weight-bold mb-0">{{trans('app.status')}}</span>
                                             </div>
-                                            <p class="card-text mb-0">Active</p>
+                                            <p class="card-text mb-0">{{$row->is_active ? trans('app.active') : trans('app.inactive')}}</p>
                                         </div>
                                         <div class="d-flex flex-wrap my-50">
-                                            <div class="user-info-title">
+                                            <div class="user-info-title" style="width: 11.785rem;">
                                                 <i data-feather="star" class="mr-1"></i>
-                                                <span class="card-text user-info-title font-weight-bold mb-0">Role</span>
+                                                <span class="card-text user-info-title font-weight-bold mb-0">{{trans('user.role')}}</span>
                                             </div>
-                                            <p class="card-text mb-0">Admin</p>
+                                            <p class="card-text mb-0">{{$row->type}}</p>
                                         </div>
                                         <div class="d-flex flex-wrap my-50">
-                                            <div class="user-info-title">
-                                                <i data-feather="flag" class="mr-1"></i>
-                                                <span class="card-text user-info-title font-weight-bold mb-0">Country</span>
+                                            <div class="user-info-title" style="width: 11.785rem;">
+                                                <i data-feather="dollar-sign" class="mr-1"></i>
+                                                <span class="card-text user-info-title font-weight-bold mb-0">{{trans('user.available_balance')}}</span>
                                             </div>
-                                            <p class="card-text mb-0">England</p>
+                                            <p class="card-text mb-0">{{$row->available_balance}} {{trans('app.egyptian_pound')}}</p>
                                         </div>
                                         <div class="d-flex flex-wrap">
-                                            <div class="user-info-title">
+                                            <div class="user-info-title" style="width: 11.785rem;">
                                                 <i data-feather="phone" class="mr-1"></i>
-                                                <span class="card-text user-info-title font-weight-bold mb-0">Contact</span>
+                                                <span class="card-text user-info-title font-weight-bold mb-0">{{trans('user.mobile_number')}}</span>
                                             </div>
-                                            <p class="card-text mb-0">(123) 456-7890</p>
+                                            <p class="card-text mb-0">{{$row->mobile_number}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -98,130 +98,157 @@
                         </div>
                     </div>
                 </div>
+                <!-- /User Card Ends-->
 
-                <!--/ Statistics Card -->
-            </div>
-            <div class="row match-height">
-                <!-- Medal Card -->
-                <!-- Profile Card -->
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="card card-profile">
-                        <img
-                            src="/images/banner/banner-12.jpg"
-                            class="img-fluid card-img-top"
-                            alt="Profile Cover Photo"
-                        />
+                <!-- Plan Card starts-->
+                <div class="col-xl-3 col-lg-4 col-md-5">
+                    <div class="card plan-card border-primary">
+                        <div class="card-header d-flex justify-content-between align-items-center pt-75 pb-1">
+                            <h5 class="mb-0">Current Plan</h5>
+                            <span class="badge badge-light-secondary" data-toggle="tooltip" data-placement="top" title="Expiry Date"
+                            >July 22, <span class="nextYear"></span>
+          </span>
+                        </div>
                         <div class="card-body">
-                            <div class="profile-image-wrapper">
-                                <div class="profile-image">
-                                    <div class="avatar">
-                                        <img src="{{$row->profile_picture}}"
-                                             alt="Profile Picture" />
-                                    </div>
-                                </div>
-                            </div>
-                            <h3>{{$row->name}}</h3>
-                            <h6 class="text-muted">{{$row->type}}</h6>
-                            <h6 class="text-capitalize">{{$row->email}}</h6>
-                            <h6 class="text-capitalize">{{$row->address}}</h6>
-                            <div class="badge badge-light-primary profile-badge">{{$row->mobile_number}}</div>
-                            <br>
-                            <div class="badge badge-primary ">
-                                <a href="{{$module_url}}/edit/{{$row->id}}">
-                                    {{trans('app.edit')}}
-                                </a>
-                            </div>
-                            <hr class="mb-2" />
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h6 class="text-muted font-weight-bolder">Followers</h6>
-                                    <h3 class="mb-0">10.3k</h3>
-                                </div>
-                                <div>
-                                    <h6 class="text-muted font-weight-bolder">Projects</h6>
-                                    <h3 class="mb-0">156</h3>
-                                </div>
-                                <div>
-                                    <h6 class="text-muted font-weight-bolder">Rank</h6>
-                                    <h3 class="mb-0">23</h3>
-                                </div>
-                            </div>
+                            <div class="badge badge-light-primary">Basic</div>
+                            <ul class="list-unstyled my-1">
+                                <li>
+                                    <span class="align-middle">5 Users</span>
+                                </li>
+                                <li class="my-25">
+                                    <span class="align-middle">10 GB storage</span>
+                                </li>
+                                <li>
+                                    <span class="align-middle">Basic Support</span>
+                                </li>
+                            </ul>
+                            <button class="btn btn-primary text-center btn-block">Upgrade Plan</button>
                         </div>
                     </div>
                 </div>
-                <!--/ Profile Card -->
-
-                <!--/ Medal Card -->
-
-                <!-- Statistics Card -->
-                <div class="col-xl-8 col-md-6 col-12">
-                    <div class="card card-statistics">
-                        <div class="card-header">
-                            <h4 class="card-title">الارقام الاحصائيه الخاصه بك</h4>
-                            <div class="d-flex align-items-center">
-                                <p class="card-text font-small-2 mr-25 mb-0">يتم تجديد الارقام تلقائيا</p>
-                            </div>
-                        </div>
-                        <div class="card-body statistics-body">
-                            <div class="row">
-                                <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
-                                    <div class="media">
-                                        <div class="avatar bg-light-primary mr-2">
-                                            <div class="avatar-content">
-                                                <i class="avatar-icon" data-feather="trending-up"></i>
-                                            </div>
-                                        </div>
-                                        <div class="media-body my-auto">
-                                            <h4 class="font-weight-bolder mb-0">230k</h4>
-                                            <p class="card-text font-small-3 mb-0">عدد الطلبات التى تم تسليمها</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
-                                    <div class="media">
-                                        <div class="avatar bg-light-info mr-2">
-                                            <div class="avatar-content">
-                                                <i class="avatar-icon" data-feather="box"></i>
-                                            </div>
-                                        </div>
-                                        <div class="media-body my-auto">
-                                            <h4 class="font-weight-bolder mb-0">8.549k</h4>
-                                            <p class="card-text font-small-3 mb-0">عدد الطلبات فى حاله الانتظار</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
-                                    <div class="media">
-                                        <div class="avatar bg-light-danger mr-2">
-                                            <div class="avatar-content">
-                                                <i class="avatar-icon" data-feather="heart"></i>
-                                            </div>
-                                        </div>
-                                        <div class="media-body my-auto">
-                                            <h4 class="font-weight-bolder mb-0">1.423k</h4>
-                                            <p class="card-text font-small-3 mb-0">عدد المنتجات المفضله لك</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-sm-6 col-12">
-                                    <div class="media">
-                                        <div class="avatar bg-light-success mr-2">
-                                            <div class="avatar-content">
-                                                <i class="avatar-icon" data-feather="dollar-sign"></i>
-                                            </div>
-                                        </div>
-                                        <div class="media-body my-auto">
-                                            <h4 class="font-weight-bolder mb-0">$9745</h4>
-                                            <p class="card-text font-small-3 mb-0">اجمالى العموالات الخاصه بك</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--/ Statistics Card -->
+                <!-- /Plan CardEnds -->
             </div>
+{{--            <div class="row match-height">--}}
+{{--                <!-- Medal Card -->--}}
+{{--                <!-- Profile Card -->--}}
+{{--                <div class="col-lg-4 col-md-6 col-12">--}}
+{{--                    <div class="card card-profile">--}}
+{{--                        <img--}}
+{{--                            src="/images/banner/banner-12.jpg"--}}
+{{--                            class="img-fluid card-img-top"--}}
+{{--                            alt="Profile Cover Photo"--}}
+{{--                        />--}}
+{{--                        <div class="card-body">--}}
+{{--                            <div class="profile-image-wrapper">--}}
+{{--                                <div class="profile-image">--}}
+{{--                                    <div class="avatar">--}}
+{{--                                        <img src="{{$row->profile_picture}}"--}}
+{{--                                             alt="Profile Picture" />--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <h3>{{$row->name}}</h3>--}}
+{{--                            <h6 class="text-muted">{{$row->type}}</h6>--}}
+{{--                            <h6 class="text-capitalize">{{$row->email}}</h6>--}}
+{{--                            <h6 class="text-capitalize">{{$row->address}}</h6>--}}
+{{--                            <div class="badge badge-light-primary profile-badge">{{$row->mobile_number}}</div>--}}
+{{--                            <br>--}}
+{{--                            <div class="badge badge-primary ">--}}
+{{--                                <a href="{{$module_url}}/edit/{{$row->id}}">--}}
+{{--                                    {{trans('app.edit')}}--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                            <hr class="mb-2" />--}}
+{{--                            <div class="d-flex justify-content-between align-items-center">--}}
+{{--                                <div>--}}
+{{--                                    <h6 class="text-muted font-weight-bolder">Followers</h6>--}}
+{{--                                    <h3 class="mb-0">10.3k</h3>--}}
+{{--                                </div>--}}
+{{--                                <div>--}}
+{{--                                    <h6 class="text-muted font-weight-bolder">Projects</h6>--}}
+{{--                                    <h3 class="mb-0">156</h3>--}}
+{{--                                </div>--}}
+{{--                                <div>--}}
+{{--                                    <h6 class="text-muted font-weight-bolder">Rank</h6>--}}
+{{--                                    <h3 class="mb-0">23</h3>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <!--/ Profile Card -->--}}
+
+{{--                <!--/ Medal Card -->--}}
+
+{{--                <!-- Statistics Card -->--}}
+{{--                <div class="col-xl-8 col-md-6 col-12">--}}
+{{--                    <div class="card card-statistics">--}}
+{{--                        <div class="card-header">--}}
+{{--                            <h4 class="card-title">الارقام الاحصائيه الخاصه بك</h4>--}}
+{{--                            <div class="d-flex align-items-center">--}}
+{{--                                <p class="card-text font-small-2 mr-25 mb-0">يتم تجديد الارقام تلقائيا</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="card-body statistics-body">--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">--}}
+{{--                                    <div class="media">--}}
+{{--                                        <div class="avatar bg-light-primary mr-2">--}}
+{{--                                            <div class="avatar-content">--}}
+{{--                                                <i class="avatar-icon" data-feather="trending-up"></i>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="media-body my-auto">--}}
+{{--                                            <h4 class="font-weight-bolder mb-0">230k</h4>--}}
+{{--                                            <p class="card-text font-small-3 mb-0">عدد الطلبات التى تم تسليمها</p>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">--}}
+{{--                                    <div class="media">--}}
+{{--                                        <div class="avatar bg-light-info mr-2">--}}
+{{--                                            <div class="avatar-content">--}}
+{{--                                                <i class="avatar-icon" data-feather="box"></i>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="media-body my-auto">--}}
+{{--                                            <h4 class="font-weight-bolder mb-0">8.549k</h4>--}}
+{{--                                            <p class="card-text font-small-3 mb-0">عدد الطلبات فى حاله الانتظار</p>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">--}}
+{{--                                    <div class="media">--}}
+{{--                                        <div class="avatar bg-light-danger mr-2">--}}
+{{--                                            <div class="avatar-content">--}}
+{{--                                                <i class="avatar-icon" data-feather="heart"></i>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="media-body my-auto">--}}
+{{--                                            <h4 class="font-weight-bolder mb-0">1.423k</h4>--}}
+{{--                                            <p class="card-text font-small-3 mb-0">عدد المنتجات المفضله لك</p>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-xl-3 col-sm-6 col-12">--}}
+{{--                                    <div class="media">--}}
+{{--                                        <div class="avatar bg-light-success mr-2">--}}
+{{--                                            <div class="avatar-content">--}}
+{{--                                                <i class="avatar-icon" data-feather="dollar-sign"></i>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="media-body my-auto">--}}
+{{--                                            <h4 class="font-weight-bolder mb-0">$9745</h4>--}}
+{{--                                            <p class="card-text font-small-3 mb-0">اجمالى العموالات الخاصه بك</p>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <!--/ Statistics Card -->--}}
+{{--            </div>--}}
             <div class="row match-height">
                 <div class="col-lg-12 col-12">
                     <div class="card card-company-table">
@@ -417,5 +444,9 @@
     </div>
 @endsection
 @push('css')
+    <style>
+
+    </style>
+{{--    <link rel="stylesheet" href="/css/pages/app-invoice-list.min.css">--}}
 {{--    <link rel="stylesheet" href="/css/pages/app-user.min.css">--}}
 @endpush
