@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Users\Middleware;
+namespace App\Http\Middleware;
 
 use App\Modules\Users\Enums\UserEnum;
 use Closure;
@@ -22,8 +22,6 @@ class IsAdmin
                 return $next($request);
             }
         }
-
-        flash()->error(trans('app.You are not authorized to do this action'));
-        return redirect('/');
+        abort(403, 'Unauthorized action.');
     }
 }

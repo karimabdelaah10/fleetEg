@@ -7,6 +7,5 @@ return [
 
     ],
     'middleware' => [
-        'isSuperAdmin' => 'IsSuperAdmin'
     ]
 ];

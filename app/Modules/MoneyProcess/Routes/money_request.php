@@ -2,7 +2,8 @@
 
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
-    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ,'auth']
+    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect',
+        'localeViewPath' ,'auth','IsAdmin']
 ], function () {
     Route::group(['prefix' => 'money-request' , 'as' => 'money-request.'], function () {
         Route::get('/', 'MoneyRequestsController@getIndex');

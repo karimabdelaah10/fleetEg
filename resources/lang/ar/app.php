@@ -19,7 +19,7 @@ return [
     'update successfully'=>'تم تعديل العنصر بنجاح',
     'profile'=>'الصفحه الشخصيه',
     'logout'=>'تسجيل الخروج',
-
+    'go home page'=>'الذهاب الى الصفحه الرئيسيه',
 
     'status'=>'الحاله',
     'active'=>'نشط',

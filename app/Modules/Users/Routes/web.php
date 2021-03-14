@@ -4,7 +4,8 @@ include_once 'profile.php';
 include_once 'admin.php';
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
-    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ,'auth']
+    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect',
+        'localeViewPath' ,'auth','IsAdmin']
 ], function () {
     Route::group(['prefix' => 'users'], function () {
         Route::get('/', '\App\Modules\Users\Controllers\UsersController@getIndex')->name('users');

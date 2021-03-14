@@ -10,21 +10,18 @@
                 </a>
             </li>
             <li class="nav-item nav-toggle">
-                <a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse">
-                    <i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i>
-                    <i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc"
-                       data-ticon="disc"></i>
-                </a>
+{{--                <a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse">--}}
+{{--                    <i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i>--}}
+{{--                    <i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc"--}}
+{{--                       data-ticon="disc"></i>--}}
+{{--                </a>--}}
             </li>
         </ul>
     </div>
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" data-menu="menu-navigation" id="main-menu-navigation">
-            <li class=" navigation-header">
-                <span data-i18n="Apps &amp; Pages">صفحات الادمن</span>
-                <i data-feather="more-horizontal"></i>
-            </li>
+            @if(is_admin())
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="{{route('dashboard')}}">
                     <i data-feather="home"></i>
@@ -106,12 +103,9 @@
                     <span class="menu-title text-truncate" data-i18n="admins">{{trans('navigation.configs')}}</span>
                 </a>
             </li>
+            @elseif(is_user())
             <!-- ///////////////////////////////////////////////// -->
-            <li class=" navigation-header">
-                <span data-i18n="Apps &amp; Pages">صفحات المستخدم</span>
-                <i data-feather="more-horizontal"></i>
-            </li>
-            <li class=" nav-item" class="active">
+            <li class=" nav-item">
                 <a class="d-flex align-items-center" href="home-page.html">
                     <i data-feather="home"></i>
                     <span class="menu-title text-truncate" data-i18n="HomePage">{{trans('navigation.home')}}</span>
@@ -167,8 +161,9 @@
                     </li>
                 </ul>
             </li>
+            @endif
             <li class=" nav-item">
-                <a class="d-flex align-items-center" href="{{route('profile.edit')}}">
+                <a class="d-flex align-items-center" href="/profile/edit">
                     <i data-feather="settings"></i>
                     <span class="menu-item text-truncate" data-i18n="Account Settings">{{trans('navigation.account settings')}}</span>
                 </a>

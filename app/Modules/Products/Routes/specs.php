@@ -1,7 +1,8 @@
 <?php
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
-    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ,'auth']
+    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect',
+        'localeViewPath' ,'auth','IsAdmin']
 ], function () {
     Route::group(['prefix' => 'specs' , 'as' => 'specs.'], function () {
         Route::get('/', 'SpecsController@getIndex');

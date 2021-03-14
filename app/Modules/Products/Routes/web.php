@@ -5,7 +5,8 @@ include_once ('specsvalues.php');
 include_once ('orders.php');
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
-    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ,'auth']
+    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect',
+        'localeViewPath' ,'auth','IsAdmin']
 ], function () {
     Route::group(['prefix' => 'products' , 'as' => 'products.'], function () {
         Route::get('/', 'ProductController@getIndex');
