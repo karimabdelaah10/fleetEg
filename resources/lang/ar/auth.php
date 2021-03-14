@@ -18,5 +18,6 @@ return [
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'forget password done'=>'تم ارسال الرقم السرى الجديد للبريد الالكترونى الخص بك',
     'registration done'=>'مرحبا بك فى عالمنا , لنبدأ الرحله',
+    'user_inactive'=>'تم تعطيل هذا الحساب , الرجاء التواصل مع القسم الفنى',
 ''=>''
 ];

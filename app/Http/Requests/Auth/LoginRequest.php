@@ -55,7 +55,13 @@ class LoginRequest extends FormRequest
                 'mobile_number' => __('auth.failed'),
             ]);
         }
+        if (!Auth::user()->is_active){
+            Auth::logout();
+            throw ValidationException::withMessages([
+                'user_inactive' => __('auth.user_inactive'),
 
+            ]);
+        }
         RateLimiter::clear($this->throttleKey());
     }
 
