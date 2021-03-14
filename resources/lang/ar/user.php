@@ -20,6 +20,9 @@ return [
     'money requests' => 'طلبات السحب المالى',
     'last 10 money requests' => 'اخر 10 طالبات للسحب المالى',
     'all money requests' => ' كل طالبات السحب المالى',
+    'last 10 orders' => 'اخر 10 طالبات',
+    'all orders' => ' كل الطالبات',
+    'list one order' => 'عرض بيانات الطلب',
 
 
     ''=>''

@@ -4,9 +4,11 @@ namespace App\Modules\Products\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Modules\BaseApp\Enums\GeneralEnum;
+use App\Modules\MoneyProcess\Enums\MoneyProcessEnum;
 use App\Modules\Products\Enums\OrdersEnum;
 use App\Modules\Products\Models\Order;
 use App\Modules\Products\Requests\OrderRequest;
+use App\Modules\Users\User;
 
 class OrderController extends Controller {
 
@@ -61,6 +63,15 @@ class OrderController extends Controller {
 //        authorize('edit-' . $this->module);
         $row = $this->model->findOrFail($id);
         if ($row->update($request->all())) {
+            if ($row->status == GeneralEnum::DELIVERED){
+               $user= User::findOrFail($row->user_id);
+                // Todo To add this process to transactions db
+                createTransaction($row->user_id , $user->available_balance ,
+                    $user->available_balance + $row->total_price ,
+                    $row->total_price , MoneyProcessEnum::New_ORDER_PRICE);
+
+                $user->increment('available_balance',$row->total_price);
+            }
             flash(trans('app.update successfully'))->success();
             return back();
         }

@@ -7,7 +7,9 @@ use App\Modules\BaseApp\Enums\GeneralEnum;
 abstract class MoneyProcessEnum
 {
 
-    const MONEY_REQUEST = 'money request';
+    const MONEY_REQUEST = 'money request',
+          New_ORDER_PRICE='new order price'
+;
     public static function moneyRequestStatuses()
     {
         return [GeneralEnum::PENDING, GeneralEnum::UNDER_REVIEW , GeneralEnum::TRANSFORMED];

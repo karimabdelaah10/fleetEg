@@ -7,14 +7,14 @@
                     aria-haspopup="true"
                     aria-expanded="false"
                 >
-                    {{request('per_page') ?? 15}}
+                    {{request()->per_page ?? 15}}
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{$module_url}}?page={{$paginator->currentPage()}}&per_page=10">10</a>
-                    <a class="dropdown-item" href="{{$module_url}}?page={{$paginator->currentPage()}}&per_page=15">15</a>
-                    <a class="dropdown-item" href="{{$module_url}}?page={{$paginator->currentPage()}}&per_page=20">20</a>
-                    <a class="dropdown-item" href="{{$module_url}}?page={{$paginator->currentPage()}}&per_page=50">50</a>
-                    <a class="dropdown-item" href="{{$module_url}}?page={{$paginator->currentPage()}}&per_page=100">100</a>
+                    <a class="dropdown-item" href="{{url()->current()}}?page=1&per_page=10">10</a>
+                    <a class="dropdown-item" href="{{url()->current()}}?page=1&per_page=15">15</a>
+                    <a class="dropdown-item" href="{{url()->current()}}?page=1&per_page=20">20</a>
+                    <a class="dropdown-item" href="{{url()->current()}}?page=1&per_page=50">50</a>
+                    <a class="dropdown-item" href="{{url()->current()}}?page=1&per_page=100">100</a>
                 </div>
             </div>
         </ul>
@@ -37,7 +37,7 @@
                             @if ($page == $paginator->currentPage())
                                     <li class="page-item active"><a class="page-link" href="#">{{ $page }}</a></li>
                                 @else
-                                    <li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
+                                    <li class="page-item"><a class="page-link" href="{{request()->per_page ?  $url.'&per_page='. request()->per_page: $url}}">{{ $page }}</a></li>
                                 @endif
                         @endforeach
                     @endif

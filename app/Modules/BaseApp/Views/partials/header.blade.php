@@ -260,10 +260,12 @@
                 </span>
                 </a>
                 <div aria-labelledby="dropdown-user" class="dropdown-menu dropdown-menu-right">
+                    @if(is_user())
                     <a class="dropdown-item" href="{{route('profile.index')}}">
-                        <i class="mr-50" data-feather="user"></i> Profile</a>
-                    <a class="dropdown-item" href="{{route('logout')}}">
-                        <i class="mr-50" data-feather="power"></i> Logout</a>
+                        <i class="mr-50" data-feather="user"></i> {{trans('app.profile')}}</a>
+                    @endif
+                        <a class="dropdown-item" href="{{route('logout')}}">
+                        <i class="mr-50" data-feather="power"></i> {{trans('app.logout')}}</a>
                 </div>
             </li>
         </ul>

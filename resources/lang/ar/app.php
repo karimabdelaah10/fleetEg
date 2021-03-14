@@ -17,6 +17,8 @@ return [
     'failed to save'=>'خطأ اثناء اضافه العنصر الجديد',
     'created successfully'=>'تم اضافه عنصر جديد بنجاح',
     'update successfully'=>'تم تعديل العنصر بنجاح',
+    'profile'=>'الصفحه الشخصيه',
+    'logout'=>'تسجيل الخروج',
 
 
     'status'=>'الحاله',

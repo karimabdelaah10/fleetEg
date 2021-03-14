@@ -5,6 +5,7 @@ namespace App\Modules\Users;
 use App\Modules\BaseApp\Traits\CreatedBy;
 use App\Modules\BaseApp\Traits\HasAttach;
 use App\Modules\MoneyProcess\Models\Moneyrequest;
+use App\Modules\Products\Models\Order;
 use App\Modules\Users\Enums\UserEnum;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -42,7 +43,7 @@ class User extends Authenticatable
             $this->attributes['password'] = bcrypt(trim($value));
         }
     }
-    public function getProfilePictureAttribute($value)
+    public function getProfilePictureAttribute($value): string
     {
         if (!empty($value)){
             return image($value , 'large');
@@ -61,10 +62,6 @@ class User extends Authenticatable
         return $query->where('is_active', '=', 1);
     }
 
-    public function getUserTypes()
-    {
-        return UserEnums::creatableUserTypes();
-    }
 
 
     public function scopeNotSuperAdmin($query)
@@ -88,7 +85,7 @@ class User extends Authenticatable
 
     public function getData()
     {
-        $query = $this->withoutLoggedUser()
+        return $this->withoutLoggedUser()
             ->notsuperadmin()
             ->when(request('type'), function ($q) {
                 return $q->where('type', request('type'));
@@ -96,11 +93,14 @@ class User extends Authenticatable
             ->when(request('deleted') == 'yes', function ($q) {
                 return $q->onlyTrashed();
             });
-        return $query;
     }
 
-    public function moneyRequests()
+    public function moneyRequests(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Moneyrequest::class , 'user_id')->orderByDesc('id');
+    }
+    public function orders(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Order::class , 'user_id')->orderByDesc('id');
     }
 }

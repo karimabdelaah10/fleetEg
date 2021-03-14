@@ -23,6 +23,8 @@ Route::group([
             ->name('users.delete');
 
         Route::get('/money-requests/{id}', '\App\Modules\Users\Controllers\UsersController@getMoneyRequests');
+        Route::get('/orders/{user_id}', '\App\Modules\Users\Controllers\UsersController@getOrders');
+        Route::get('/order/{order_id}', '\App\Modules\Users\Controllers\UsersController@getOrderDetails');
 
     });
 });

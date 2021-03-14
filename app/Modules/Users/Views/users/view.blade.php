@@ -8,6 +8,102 @@
             <div class="row match-height">
                 <!-- Medal Card -->
                 <!-- Profile Card -->
+                <div class="col-xl-9 col-lg-9 col-md-7">
+                    <div class="card user-card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-12 d-flex flex-column justify-content-between border-container-lg">
+                                    <div class="user-avatar-section">
+                                        <div class="d-flex justify-content-start">
+                                            <img
+                                                class="img-fluid rounded"
+                                                src="{{$row->profile_picture}}"
+                                                height="104"
+                                                width="104"
+                                                alt="User avatar"
+                                            />
+                                            <div class="d-flex flex-column ml-1">
+                                                <div class="user-info mb-1">
+                                                    <h4 class="mb-0">Eleanor Aguilar</h4>
+                                                    <span class="card-text">eleanor.aguilar@gmail.com</span>
+                                                </div>
+                                                <div class="d-flex flex-wrap">
+                                                    <a href="app-user-edit.html" class="btn btn-primary">Edit</a>
+                                                    <button class="btn btn-outline-danger ml-1">Delete</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center user-total-numbers">
+                                        <div class="d-flex align-items-center mr-2">
+                                            <div class="color-box bg-light-primary">
+                                                <i data-feather="dollar-sign" class="text-primary"></i>
+                                            </div>
+                                            <div class="ml-1">
+                                                <h5 class="mb-0">23.3k</h5>
+                                                <small>Monthly Sales</small>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="color-box bg-light-success">
+                                                <i data-feather="trending-up" class="text-success"></i>
+                                            </div>
+                                            <div class="ml-1">
+                                                <h5 class="mb-0">$99.87K</h5>
+                                                <small>Annual Profit</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-12 mt-2 mt-xl-0">
+                                    <div class="user-info-wrapper">
+                                        <div class="d-flex flex-wrap">
+                                            <div class="user-info-title">
+                                                <i data-feather="user" class="mr-1"></i>
+                                                <span class="card-text user-info-title font-weight-bold mb-0">Username</span>
+                                            </div>
+                                            <p class="card-text mb-0">eleanor.aguilar</p>
+                                        </div>
+                                        <div class="d-flex flex-wrap my-50">
+                                            <div class="user-info-title">
+                                                <i data-feather="check" class="mr-1"></i>
+                                                <span class="card-text user-info-title font-weight-bold mb-0">Status</span>
+                                            </div>
+                                            <p class="card-text mb-0">Active</p>
+                                        </div>
+                                        <div class="d-flex flex-wrap my-50">
+                                            <div class="user-info-title">
+                                                <i data-feather="star" class="mr-1"></i>
+                                                <span class="card-text user-info-title font-weight-bold mb-0">Role</span>
+                                            </div>
+                                            <p class="card-text mb-0">Admin</p>
+                                        </div>
+                                        <div class="d-flex flex-wrap my-50">
+                                            <div class="user-info-title">
+                                                <i data-feather="flag" class="mr-1"></i>
+                                                <span class="card-text user-info-title font-weight-bold mb-0">Country</span>
+                                            </div>
+                                            <p class="card-text mb-0">England</p>
+                                        </div>
+                                        <div class="d-flex flex-wrap">
+                                            <div class="user-info-title">
+                                                <i data-feather="phone" class="mr-1"></i>
+                                                <span class="card-text user-info-title font-weight-bold mb-0">Contact</span>
+                                            </div>
+                                            <p class="card-text mb-0">(123) 456-7890</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--/ Statistics Card -->
+            </div>
+            <div class="row match-height">
+                <!-- Medal Card -->
+                <!-- Profile Card -->
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="card card-profile">
                         <img
@@ -127,73 +223,58 @@
                 <!--/ Statistics Card -->
             </div>
             <div class="row match-height">
-                <div class="col-6">
-                    <div class="card">
-                        <div class="card-header d-flex justify-content-between">
-                            <h4 class="card-title">Product Orders</h4>
+                <div class="col-lg-12 col-12">
+                    <div class="card card-company-table">
+                        <div class="card-header">
+                            <h4 class="card-title">{{trans('user.last 10 orders')}}</h4>
                             <div class="dropdown chart-dropdown">
-                                <button
-                                    class="btn btn-sm border-0 dropdown-toggle px-50"
-                                    type="button"
-                                    id="dropdownItem2"
-                                    data-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false"
-                                >
-                                    Last 7 Days
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownItem2">
-                                    <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
-                                    <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
-                                    <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
+                                <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-toggle="dropdown"></i>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="/users/orders/{{$row->id}}">{{trans('user.all orders')}}</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <div id="product-order-chart"></div>
-                            <div class="d-flex justify-content-between mb-1">
-                                <div class="d-flex align-items-center">
-                                    <i data-feather="circle" class="font-medium-1 text-primary"></i>
-                                    <span class="font-weight-bold ml-75">Finished</span>
-                                </div>
-                                <span>23043</span>
-                            </div>
-                            <div class="d-flex justify-content-between mb-1">
-                                <div class="d-flex align-items-center">
-                                    <i data-feather="circle" class="font-medium-1 text-warning"></i>
-                                    <span class="font-weight-bold ml-75">Pending</span>
-                                </div>
-                                <span>14658</span>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex align-items-center">
-                                    <i data-feather="circle" class="font-medium-1 text-danger"></i>
-                                    <span class="font-weight-bold ml-75">Rejected</span>
-                                </div>
-                                <span>4758</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="card earnings-card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h4 class="card-title mb-1">Earnings</h4>
-                                    <div class="font-small-2">This Month</div>
-                                    <h5 class="mb-1">$4055.56</h5>
-                                    <p class="card-text text-muted font-small-2">
-                                        <span class="font-weight-bolder">68.2%</span><span> more earnings than last month.</span>
-                                    </p>
-                                </div>
-                                <div class="col-6">
-                                    <div id="earnings-donut-chart"></div>
-                                </div>
+
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>{{trans('orders.serial')}}</th>
+                                        <th>{{trans('orders.price')}}</th>
+                                        <th>{{trans('orders.date')}}</th>
+                                        <th>{{trans('orders.status')}}</th>
+                                        <th>{{trans('app.actions')}}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @forelse($row->orders->take(10) as $element)
+                                        <tr>
+                                            <td>{{@$element->id}}</td>
+                                            <td>{{@$element->total_price}}</td>
+                                            <td>{{@$element->created_at ? \Carbon\Carbon::parse($element->created_at)->format('Y-m-d') : '' }}</td>
+                                            <td>
+                                                {!! get_status_for_blade($element->status) !!}
+
+                                            </td>
+                                            <td>
+                                                <div class="dropdown chart-dropdown">
+                                                    <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-toggle="dropdown"></i>
+                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                        <a class="dropdown-item" href="/users/order/{{@$element->id}}">{{trans('user.list one order')}}</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                    @endforelse
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
             <div class="row match-height">
                 <!-- Company Table Card -->
@@ -221,16 +302,17 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @if(!empty($row->moneyRequests))
-                                        @foreach($row->moneyRequests->take(10) as $element)
-                                            <tr>
-                                                <td>{{$element->id}}</td>
-                                                <td> {{$element->available_balance}}</td>
-                                                <td> {{$element->requested_amount}}</td>
-                                                <td> {!! getRequestStatus($element->status) !!} </td>
-                                            </tr>
-                                        @endforeach
-                                    @endif
+                                    {{--                                    @if(!empty($row->moneyRequests))--}}
+                                    @forelse($row->moneyRequests->take(10) as $element)
+                                        <tr>
+                                            <td>{{$element->id}}</td>
+                                            <td> {{$element->available_balance}}</td>
+                                            <td> {{$element->requested_amount}}</td>
+                                            <td> {!! getRequestStatus($element->status) !!} </td>
+                                        </tr>
+                                    @empty
+                                    @endforelse
+                                    {{--                                    @endif--}}
                                     </tbody>
                                 </table>
                             </div>
@@ -334,3 +416,6 @@
 
     </div>
 @endsection
+@push('css')
+{{--    <link rel="stylesheet" href="/css/pages/app-user.min.css">--}}
+@endpush

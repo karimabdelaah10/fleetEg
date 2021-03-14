@@ -4,6 +4,7 @@ namespace App\Modules\Users\Controllers;
 
 use App\Modules\Cars\Car;
 use App\Modules\MoneyProcess\Models\Moneyrequest;
+use App\Modules\Products\Models\Order;
 use App\Modules\Users\Enums\UserEnum;
 use App\Modules\Users\Models\Customer;
 use App\Modules\Users\Requests\CreateUserRequest;
@@ -11,6 +12,7 @@ use App\Modules\Users\Requests\UpdateUserRequest;
 use App\Modules\Users\User;
 use App\Modules\Users\UserEnums;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -123,6 +125,39 @@ class UsersController extends Controller
         $data['page_description'] = trans('user.all money requests');
         $data['rows'] =Moneyrequest::where('user_id' , $id)->latest()->paginate(request('per_page'));
         return view($this->views . '.money-requests', $data);
+
+    }
+    public function getOrders($user_id)
+    {
+        $data['module'] = $this->module;
+        $data['module_url'] = $this->module_url;
+        $data['views'] = $this->views;
+        $data['breadcrumb'] = [
+            $this->title => $this->module_url,
+            trans('app.view') . " " . $this->title => $this->module_url.'/view/'.$user_id
+];
+        $data['page_title'] = trans('user.all orders');
+        $data['page_description'] = trans('user.all orders');
+        $data['rows'] =Order::where('user_id' , $user_id)->latest()->paginate(request('per_page'));
+        return view($this->views . '.all_orders', $data);
+
+    }
+
+    public function getOrderDetails($id)
+    {
+        $data['module'] = $this->module;
+        $data['module_url'] = $this->module_url;
+        $data['views'] = $this->views;
+        $data['row'] = Order::findOrFail($id);
+        $data['page_title'] = trans('user.list one order');
+        $data['page_description'] = trans('user.list one order');
+        $data['breadcrumb'] = [
+            $this->title => $this->module_url,
+                    trans('app.view') . " " . $this->title => $this->module_url.'/view/'.$data['row']->user_id,
+            trans('user.all orders') => $this->module_url.'/orders/'.$data['row']->user_id,
+
+        ];
+        return view($this->views . '.one_order', $data);
 
     }
 }

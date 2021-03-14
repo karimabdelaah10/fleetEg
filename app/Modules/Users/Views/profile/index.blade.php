@@ -121,73 +121,58 @@
                 <!--/ Statistics Card -->
             </div>
             <div class="row match-height">
-                <div class="col-6">
-                    <div class="card">
-                        <div class="card-header d-flex justify-content-between">
-                            <h4 class="card-title">Product Orders</h4>
+                <div class="col-lg-12 col-12">
+                    <div class="card card-company-table">
+                        <div class="card-header">
+                            <h4 class="card-title">{{trans('user.last 10 orders')}}</h4>
                             <div class="dropdown chart-dropdown">
-                                <button
-                                    class="btn btn-sm border-0 dropdown-toggle px-50"
-                                    type="button"
-                                    id="dropdownItem2"
-                                    data-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false"
-                                >
-                                    Last 7 Days
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownItem2">
-                                    <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
-                                    <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
-                                    <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
+                                <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-toggle="dropdown"></i>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="/profile/orders">{{trans('user.all orders')}}</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <div id="product-order-chart"></div>
-                            <div class="d-flex justify-content-between mb-1">
-                                <div class="d-flex align-items-center">
-                                    <i data-feather="circle" class="font-medium-1 text-primary"></i>
-                                    <span class="font-weight-bold ml-75">Finished</span>
-                                </div>
-                                <span>23043</span>
-                            </div>
-                            <div class="d-flex justify-content-between mb-1">
-                                <div class="d-flex align-items-center">
-                                    <i data-feather="circle" class="font-medium-1 text-warning"></i>
-                                    <span class="font-weight-bold ml-75">Pending</span>
-                                </div>
-                                <span>14658</span>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex align-items-center">
-                                    <i data-feather="circle" class="font-medium-1 text-danger"></i>
-                                    <span class="font-weight-bold ml-75">Rejected</span>
-                                </div>
-                                <span>4758</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="card earnings-card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h4 class="card-title mb-1">Earnings</h4>
-                                    <div class="font-small-2">This Month</div>
-                                    <h5 class="mb-1">$4055.56</h5>
-                                    <p class="card-text text-muted font-small-2">
-                                        <span class="font-weight-bolder">68.2%</span><span> more earnings than last month.</span>
-                                    </p>
-                                </div>
-                                <div class="col-6">
-                                    <div id="earnings-donut-chart"></div>
-                                </div>
+
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>{{trans('orders.serial')}}</th>
+                                        <th>{{trans('orders.price')}}</th>
+                                        <th>{{trans('orders.date')}}</th>
+                                        <th>{{trans('orders.status')}}</th>
+                                        <th>{{trans('app.actions')}}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @forelse($row->orders->take(10) as $element)
+                                        <tr>
+                                            <td>{{@$element->id}}</td>
+                                            <td>{{@$element->total_price}}</td>
+                                            <td>{{@$element->created_at ? \Carbon\Carbon::parse($element->created_at)->format('Y-m-d') : '' }}</td>
+                                            <td>
+                                                {!! get_status_for_blade($element->status) !!}
+
+                                            </td>
+                                            <td>
+                                                <div class="dropdown chart-dropdown">
+                                                    <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-toggle="dropdown"></i>
+                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                        <a class="dropdown-item" href="/profile/order/{{@$element->id}}">{{trans('user.list one order')}}</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                    @endforelse
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
             <div class="row match-height">
                 <!-- Company Table Card -->
