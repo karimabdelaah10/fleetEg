@@ -59,7 +59,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="d-flex align-items-center" href="/products">
+                        <a class="d-flex align-items-center" href="/product">
                             <i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="View">{{trans('navigation.products')}}</span>
                         </a>
@@ -112,13 +112,13 @@
                 </a>
             </li>
             <li class=" nav-item">
-                <a class="d-flex align-items-center" href="/products/all">
+                <a class="d-flex align-items-center" href="/product/all">
                     <i data-feather="grid"></i>
                     <span class="menu-title text-truncate" data-i18n="Products">{{trans('navigation.products')}}</span>
                     <span class="badge badge-light-warning badge-pill ml-auto mr-1">3</span></a>
                 <ul class="menu-content">
                     <li>
-                        <a class="d-flex align-items-center" href="/products/all">
+                        <a class="d-flex align-items-center" href="/product/all">
                             <i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="AllProducts">{{trans('navigation.all products')}}</span>
                         </a>

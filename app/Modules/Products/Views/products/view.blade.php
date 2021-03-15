@@ -30,6 +30,12 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td>{{trans('products.description')}}</td>
+                                <td>
+                                    {{@$row->description}}
+                                </td>
+                            </tr>
+                            <tr>
                                 <td>{{trans('products.category')}}</td>
                                 <td>
                                     {{@$row->category->title}}

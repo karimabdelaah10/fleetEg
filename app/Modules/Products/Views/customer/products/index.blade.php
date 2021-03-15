@@ -3,5 +3,5 @@
     {{ @$page_title }}
 @endsection
 @section('content')
-    <products-component></products-component>
+    <products-component :row="{{$row}}"></products-component>
 @endsection

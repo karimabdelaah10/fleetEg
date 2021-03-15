@@ -30,6 +30,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "toastr": "^2.1.4"
+        "toastr": "^2.1.4",
+        "vue-observe-visibility": "^1.0.0"
     }
 }

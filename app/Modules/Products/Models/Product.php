@@ -11,7 +11,7 @@ class Product extends Model
     use HasFactory ,HasAttach;
 
     protected $table ='products';
-    protected $fillable =['title' ,'is_active' ,
+    protected $fillable =['title' ,'description','is_active' ,
         'price' ,'commission','discount' ,'two_pc_discount',
         'plus_two_pc_discount','category_id' ,'media_url','image'];
 

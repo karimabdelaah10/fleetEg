@@ -6,6 +6,7 @@ return [
     'specs list' => 'قائمه بالصفات',
     'add product' => 'اضافه منتج',
     'edit product' => 'تعديل منتج',
+    'view product' => 'عرض تفاصيل  المنتج',
 
     'category'=>'فئه المنتج',
     'specs'=>'الصفات',
@@ -15,6 +16,7 @@ return [
     'add inner spec value'=>'اضافه قيمه داخليه اخرى',
     'select specs'=>'اختر صفه من هنا ',
     'title'=>'اسم المنتج',
+    'description'=>'وصف المنتج',
     'price'=>'سعر المنتج',
     'amount'=>'الكميه',
     'commission'=>' العموله',

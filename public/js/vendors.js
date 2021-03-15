@@ -1,6 +1,17 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/@babel/runtime/regenerator/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime.js");
+
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -2146,469 +2157,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -2857,19 +2425,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      'facebook_url': null
+      products: [],
+      resultsCount: 0,
+      pagination: null,
+      per_page: 1,
+      page: 1,
+      last_page: 1
     };
   },
-  props: [],
+  props: ['row'],
   created: function created() {},
-  mounted: function mounted() {
-    this.getFilteredProducts();
+  mounted: function mounted() {},
+  beforeMount: function beforeMount() {
+    this.fetch();
   },
   methods: {
-    getFilteredProducts: function getFilteredProducts() {
-      axios.get('/api/v1/configs/').then(function (response) {
-        console.log(response);
-      });
+    fetch: function fetch() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return axios.get('/api/v1/products/?page=' + _this.page + '&per_page=' + _this.per_page).then(function (response) {
+                  var _this$products;
+
+                  (_this$products = _this.products).push.apply(_this$products, _toConsumableArray(response.data.data));
+
+                  _this.pagination = response.data.pagination;
+                  _this.resultsCount = _this.pagination.total;
+                  _this.last_page = _this.pagination.last_page;
+                });
+
+              case 2:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    handleScrolledToBottom: function handleScrolledToBottom(isVisible) {
+      if (!isVisible) {
+        return;
+      }
+
+      if (this.page >= this.last_page) {
+        return;
+      }
+
+      this.page++;
+      this.fetch();
     }
   }
 });
@@ -2959,8 +2567,11 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_observe_visibility__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-observe-visibility */ "./node_modules/vue-observe-visibility/dist/vue-observe-visibility.esm.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -2999,6 +2610,8 @@ Vue.component('specs-values', __webpack_require__(/*! ./components/SpecsValuesCo
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+
+Vue.use(vue_observe_visibility__WEBPACK_IMPORTED_MODULE_0__.default);
 var app = new Vue({
   el: '#app'
 });
@@ -3026,6 +2639,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "\n.whatsapp_image[data-v-abfbddf2]{\n    height: 20px;\n    width: 20px;\n    margin-bottom: 1px;\n}\n.btn-social-icon>svg[data-v-abfbddf2]{\n    height: 1.4285rem;\n    width: 1.4285rem;\n    font-size: 1.45rem;\n    margin-left: 1.1rem;\n    flex-shrink: 0;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProductsComponent.vue?vue&type=style&index=0&id=5ecce49e&scoped=true&lang=css&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProductsComponent.vue?vue&type=style&index=0&id=5ecce49e&scoped=true&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n#more_btn[data-v-5ecce49e]{\n    width: 100%;\n    background-color: #fff;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3315,6 +2952,764 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/regenerator-runtime/runtime.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime.js ***!
+  \*****************************************************/
+/***/ ((module) => {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var runtime = (function (exports) {
+  "use strict";
+
+  var Op = Object.prototype;
+  var hasOwn = Op.hasOwnProperty;
+  var undefined; // More compressible than void 0.
+  var $Symbol = typeof Symbol === "function" ? Symbol : {};
+  var iteratorSymbol = $Symbol.iterator || "@@iterator";
+  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+
+  function define(obj, key, value) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+    return obj[key];
+  }
+  try {
+    // IE 8 has a broken Object.defineProperty that only works on DOM objects.
+    define({}, "");
+  } catch (err) {
+    define = function(obj, key, value) {
+      return obj[key] = value;
+    };
+  }
+
+  function wrap(innerFn, outerFn, self, tryLocsList) {
+    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+    var generator = Object.create(protoGenerator.prototype);
+    var context = new Context(tryLocsList || []);
+
+    // The ._invoke method unifies the implementations of the .next,
+    // .throw, and .return methods.
+    generator._invoke = makeInvokeMethod(innerFn, self, context);
+
+    return generator;
+  }
+  exports.wrap = wrap;
+
+  // Try/catch helper to minimize deoptimizations. Returns a completion
+  // record like context.tryEntries[i].completion. This interface could
+  // have been (and was previously) designed to take a closure to be
+  // invoked without arguments, but in all the cases we care about we
+  // already have an existing method we want to call, so there's no need
+  // to create a new function object. We can even get away with assuming
+  // the method takes exactly one argument, since that happens to be true
+  // in every case, so we don't have to touch the arguments object. The
+  // only additional allocation required is the completion record, which
+  // has a stable shape and so hopefully should be cheap to allocate.
+  function tryCatch(fn, obj, arg) {
+    try {
+      return { type: "normal", arg: fn.call(obj, arg) };
+    } catch (err) {
+      return { type: "throw", arg: err };
+    }
+  }
+
+  var GenStateSuspendedStart = "suspendedStart";
+  var GenStateSuspendedYield = "suspendedYield";
+  var GenStateExecuting = "executing";
+  var GenStateCompleted = "completed";
+
+  // Returning this object from the innerFn has the same effect as
+  // breaking out of the dispatch switch statement.
+  var ContinueSentinel = {};
+
+  // Dummy constructor functions that we use as the .constructor and
+  // .constructor.prototype properties for functions that return Generator
+  // objects. For full spec compliance, you may wish to configure your
+  // minifier not to mangle the names of these two functions.
+  function Generator() {}
+  function GeneratorFunction() {}
+  function GeneratorFunctionPrototype() {}
+
+  // This is a polyfill for %IteratorPrototype% for environments that
+  // don't natively support it.
+  var IteratorPrototype = {};
+  IteratorPrototype[iteratorSymbol] = function () {
+    return this;
+  };
+
+  var getProto = Object.getPrototypeOf;
+  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+  if (NativeIteratorPrototype &&
+      NativeIteratorPrototype !== Op &&
+      hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+    // This environment has a native %IteratorPrototype%; use it instead
+    // of the polyfill.
+    IteratorPrototype = NativeIteratorPrototype;
+  }
+
+  var Gp = GeneratorFunctionPrototype.prototype =
+    Generator.prototype = Object.create(IteratorPrototype);
+  GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
+  GeneratorFunctionPrototype.constructor = GeneratorFunction;
+  GeneratorFunction.displayName = define(
+    GeneratorFunctionPrototype,
+    toStringTagSymbol,
+    "GeneratorFunction"
+  );
+
+  // Helper for defining the .next, .throw, and .return methods of the
+  // Iterator interface in terms of a single ._invoke method.
+  function defineIteratorMethods(prototype) {
+    ["next", "throw", "return"].forEach(function(method) {
+      define(prototype, method, function(arg) {
+        return this._invoke(method, arg);
+      });
+    });
+  }
+
+  exports.isGeneratorFunction = function(genFun) {
+    var ctor = typeof genFun === "function" && genFun.constructor;
+    return ctor
+      ? ctor === GeneratorFunction ||
+        // For the native GeneratorFunction constructor, the best we can
+        // do is to check its .name property.
+        (ctor.displayName || ctor.name) === "GeneratorFunction"
+      : false;
+  };
+
+  exports.mark = function(genFun) {
+    if (Object.setPrototypeOf) {
+      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+    } else {
+      genFun.__proto__ = GeneratorFunctionPrototype;
+      define(genFun, toStringTagSymbol, "GeneratorFunction");
+    }
+    genFun.prototype = Object.create(Gp);
+    return genFun;
+  };
+
+  // Within the body of any async function, `await x` is transformed to
+  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+  // `hasOwn.call(value, "__await")` to determine if the yielded value is
+  // meant to be awaited.
+  exports.awrap = function(arg) {
+    return { __await: arg };
+  };
+
+  function AsyncIterator(generator, PromiseImpl) {
+    function invoke(method, arg, resolve, reject) {
+      var record = tryCatch(generator[method], generator, arg);
+      if (record.type === "throw") {
+        reject(record.arg);
+      } else {
+        var result = record.arg;
+        var value = result.value;
+        if (value &&
+            typeof value === "object" &&
+            hasOwn.call(value, "__await")) {
+          return PromiseImpl.resolve(value.__await).then(function(value) {
+            invoke("next", value, resolve, reject);
+          }, function(err) {
+            invoke("throw", err, resolve, reject);
+          });
+        }
+
+        return PromiseImpl.resolve(value).then(function(unwrapped) {
+          // When a yielded Promise is resolved, its final value becomes
+          // the .value of the Promise<{value,done}> result for the
+          // current iteration.
+          result.value = unwrapped;
+          resolve(result);
+        }, function(error) {
+          // If a rejected Promise was yielded, throw the rejection back
+          // into the async generator function so it can be handled there.
+          return invoke("throw", error, resolve, reject);
+        });
+      }
+    }
+
+    var previousPromise;
+
+    function enqueue(method, arg) {
+      function callInvokeWithMethodAndArg() {
+        return new PromiseImpl(function(resolve, reject) {
+          invoke(method, arg, resolve, reject);
+        });
+      }
+
+      return previousPromise =
+        // If enqueue has been called before, then we want to wait until
+        // all previous Promises have been resolved before calling invoke,
+        // so that results are always delivered in the correct order. If
+        // enqueue has not been called before, then it is important to
+        // call invoke immediately, without waiting on a callback to fire,
+        // so that the async generator function has the opportunity to do
+        // any necessary setup in a predictable way. This predictability
+        // is why the Promise constructor synchronously invokes its
+        // executor callback, and why async functions synchronously
+        // execute code before the first await. Since we implement simple
+        // async functions in terms of async generators, it is especially
+        // important to get this right, even though it requires care.
+        previousPromise ? previousPromise.then(
+          callInvokeWithMethodAndArg,
+          // Avoid propagating failures to Promises returned by later
+          // invocations of the iterator.
+          callInvokeWithMethodAndArg
+        ) : callInvokeWithMethodAndArg();
+    }
+
+    // Define the unified helper method that is used to implement .next,
+    // .throw, and .return (see defineIteratorMethods).
+    this._invoke = enqueue;
+  }
+
+  defineIteratorMethods(AsyncIterator.prototype);
+  AsyncIterator.prototype[asyncIteratorSymbol] = function () {
+    return this;
+  };
+  exports.AsyncIterator = AsyncIterator;
+
+  // Note that simple async functions are implemented on top of
+  // AsyncIterator objects; they just return a Promise for the value of
+  // the final result produced by the iterator.
+  exports.async = function(innerFn, outerFn, self, tryLocsList, PromiseImpl) {
+    if (PromiseImpl === void 0) PromiseImpl = Promise;
+
+    var iter = new AsyncIterator(
+      wrap(innerFn, outerFn, self, tryLocsList),
+      PromiseImpl
+    );
+
+    return exports.isGeneratorFunction(outerFn)
+      ? iter // If outerFn is a generator, return the full iterator.
+      : iter.next().then(function(result) {
+          return result.done ? result.value : iter.next();
+        });
+  };
+
+  function makeInvokeMethod(innerFn, self, context) {
+    var state = GenStateSuspendedStart;
+
+    return function invoke(method, arg) {
+      if (state === GenStateExecuting) {
+        throw new Error("Generator is already running");
+      }
+
+      if (state === GenStateCompleted) {
+        if (method === "throw") {
+          throw arg;
+        }
+
+        // Be forgiving, per 25.3.3.3.3 of the spec:
+        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+        return doneResult();
+      }
+
+      context.method = method;
+      context.arg = arg;
+
+      while (true) {
+        var delegate = context.delegate;
+        if (delegate) {
+          var delegateResult = maybeInvokeDelegate(delegate, context);
+          if (delegateResult) {
+            if (delegateResult === ContinueSentinel) continue;
+            return delegateResult;
+          }
+        }
+
+        if (context.method === "next") {
+          // Setting context._sent for legacy support of Babel's
+          // function.sent implementation.
+          context.sent = context._sent = context.arg;
+
+        } else if (context.method === "throw") {
+          if (state === GenStateSuspendedStart) {
+            state = GenStateCompleted;
+            throw context.arg;
+          }
+
+          context.dispatchException(context.arg);
+
+        } else if (context.method === "return") {
+          context.abrupt("return", context.arg);
+        }
+
+        state = GenStateExecuting;
+
+        var record = tryCatch(innerFn, self, context);
+        if (record.type === "normal") {
+          // If an exception is thrown from innerFn, we leave state ===
+          // GenStateExecuting and loop back for another invocation.
+          state = context.done
+            ? GenStateCompleted
+            : GenStateSuspendedYield;
+
+          if (record.arg === ContinueSentinel) {
+            continue;
+          }
+
+          return {
+            value: record.arg,
+            done: context.done
+          };
+
+        } else if (record.type === "throw") {
+          state = GenStateCompleted;
+          // Dispatch the exception by looping back around to the
+          // context.dispatchException(context.arg) call above.
+          context.method = "throw";
+          context.arg = record.arg;
+        }
+      }
+    };
+  }
+
+  // Call delegate.iterator[context.method](context.arg) and handle the
+  // result, either by returning a { value, done } result from the
+  // delegate iterator, or by modifying context.method and context.arg,
+  // setting context.delegate to null, and returning the ContinueSentinel.
+  function maybeInvokeDelegate(delegate, context) {
+    var method = delegate.iterator[context.method];
+    if (method === undefined) {
+      // A .throw or .return when the delegate iterator has no .throw
+      // method always terminates the yield* loop.
+      context.delegate = null;
+
+      if (context.method === "throw") {
+        // Note: ["return"] must be used for ES3 parsing compatibility.
+        if (delegate.iterator["return"]) {
+          // If the delegate iterator has a return method, give it a
+          // chance to clean up.
+          context.method = "return";
+          context.arg = undefined;
+          maybeInvokeDelegate(delegate, context);
+
+          if (context.method === "throw") {
+            // If maybeInvokeDelegate(context) changed context.method from
+            // "return" to "throw", let that override the TypeError below.
+            return ContinueSentinel;
+          }
+        }
+
+        context.method = "throw";
+        context.arg = new TypeError(
+          "The iterator does not provide a 'throw' method");
+      }
+
+      return ContinueSentinel;
+    }
+
+    var record = tryCatch(method, delegate.iterator, context.arg);
+
+    if (record.type === "throw") {
+      context.method = "throw";
+      context.arg = record.arg;
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    var info = record.arg;
+
+    if (! info) {
+      context.method = "throw";
+      context.arg = new TypeError("iterator result is not an object");
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    if (info.done) {
+      // Assign the result of the finished delegate to the temporary
+      // variable specified by delegate.resultName (see delegateYield).
+      context[delegate.resultName] = info.value;
+
+      // Resume execution at the desired location (see delegateYield).
+      context.next = delegate.nextLoc;
+
+      // If context.method was "throw" but the delegate handled the
+      // exception, let the outer generator proceed normally. If
+      // context.method was "next", forget context.arg since it has been
+      // "consumed" by the delegate iterator. If context.method was
+      // "return", allow the original .return call to continue in the
+      // outer generator.
+      if (context.method !== "return") {
+        context.method = "next";
+        context.arg = undefined;
+      }
+
+    } else {
+      // Re-yield the result returned by the delegate method.
+      return info;
+    }
+
+    // The delegate iterator is finished, so forget it and continue with
+    // the outer generator.
+    context.delegate = null;
+    return ContinueSentinel;
+  }
+
+  // Define Generator.prototype.{next,throw,return} in terms of the
+  // unified ._invoke helper method.
+  defineIteratorMethods(Gp);
+
+  define(Gp, toStringTagSymbol, "Generator");
+
+  // A Generator should always return itself as the iterator object when the
+  // @@iterator function is called on it. Some browsers' implementations of the
+  // iterator prototype chain incorrectly implement this, causing the Generator
+  // object to not be returned from this call. This ensures that doesn't happen.
+  // See https://github.com/facebook/regenerator/issues/274 for more details.
+  Gp[iteratorSymbol] = function() {
+    return this;
+  };
+
+  Gp.toString = function() {
+    return "[object Generator]";
+  };
+
+  function pushTryEntry(locs) {
+    var entry = { tryLoc: locs[0] };
+
+    if (1 in locs) {
+      entry.catchLoc = locs[1];
+    }
+
+    if (2 in locs) {
+      entry.finallyLoc = locs[2];
+      entry.afterLoc = locs[3];
+    }
+
+    this.tryEntries.push(entry);
+  }
+
+  function resetTryEntry(entry) {
+    var record = entry.completion || {};
+    record.type = "normal";
+    delete record.arg;
+    entry.completion = record;
+  }
+
+  function Context(tryLocsList) {
+    // The root entry object (effectively a try statement without a catch
+    // or a finally block) gives us a place to store values thrown from
+    // locations where there is no enclosing try statement.
+    this.tryEntries = [{ tryLoc: "root" }];
+    tryLocsList.forEach(pushTryEntry, this);
+    this.reset(true);
+  }
+
+  exports.keys = function(object) {
+    var keys = [];
+    for (var key in object) {
+      keys.push(key);
+    }
+    keys.reverse();
+
+    // Rather than returning an object with a next method, we keep
+    // things simple and return the next function itself.
+    return function next() {
+      while (keys.length) {
+        var key = keys.pop();
+        if (key in object) {
+          next.value = key;
+          next.done = false;
+          return next;
+        }
+      }
+
+      // To avoid creating an additional object, we just hang the .value
+      // and .done properties off the next function object itself. This
+      // also ensures that the minifier will not anonymize the function.
+      next.done = true;
+      return next;
+    };
+  };
+
+  function values(iterable) {
+    if (iterable) {
+      var iteratorMethod = iterable[iteratorSymbol];
+      if (iteratorMethod) {
+        return iteratorMethod.call(iterable);
+      }
+
+      if (typeof iterable.next === "function") {
+        return iterable;
+      }
+
+      if (!isNaN(iterable.length)) {
+        var i = -1, next = function next() {
+          while (++i < iterable.length) {
+            if (hasOwn.call(iterable, i)) {
+              next.value = iterable[i];
+              next.done = false;
+              return next;
+            }
+          }
+
+          next.value = undefined;
+          next.done = true;
+
+          return next;
+        };
+
+        return next.next = next;
+      }
+    }
+
+    // Return an iterator with no values.
+    return { next: doneResult };
+  }
+  exports.values = values;
+
+  function doneResult() {
+    return { value: undefined, done: true };
+  }
+
+  Context.prototype = {
+    constructor: Context,
+
+    reset: function(skipTempReset) {
+      this.prev = 0;
+      this.next = 0;
+      // Resetting context._sent for legacy support of Babel's
+      // function.sent implementation.
+      this.sent = this._sent = undefined;
+      this.done = false;
+      this.delegate = null;
+
+      this.method = "next";
+      this.arg = undefined;
+
+      this.tryEntries.forEach(resetTryEntry);
+
+      if (!skipTempReset) {
+        for (var name in this) {
+          // Not sure about the optimal order of these conditions:
+          if (name.charAt(0) === "t" &&
+              hasOwn.call(this, name) &&
+              !isNaN(+name.slice(1))) {
+            this[name] = undefined;
+          }
+        }
+      }
+    },
+
+    stop: function() {
+      this.done = true;
+
+      var rootEntry = this.tryEntries[0];
+      var rootRecord = rootEntry.completion;
+      if (rootRecord.type === "throw") {
+        throw rootRecord.arg;
+      }
+
+      return this.rval;
+    },
+
+    dispatchException: function(exception) {
+      if (this.done) {
+        throw exception;
+      }
+
+      var context = this;
+      function handle(loc, caught) {
+        record.type = "throw";
+        record.arg = exception;
+        context.next = loc;
+
+        if (caught) {
+          // If the dispatched exception was caught by a catch block,
+          // then let that catch block handle the exception normally.
+          context.method = "next";
+          context.arg = undefined;
+        }
+
+        return !! caught;
+      }
+
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        var record = entry.completion;
+
+        if (entry.tryLoc === "root") {
+          // Exception thrown outside of any try block that could handle
+          // it, so set the completion value of the entire function to
+          // throw the exception.
+          return handle("end");
+        }
+
+        if (entry.tryLoc <= this.prev) {
+          var hasCatch = hasOwn.call(entry, "catchLoc");
+          var hasFinally = hasOwn.call(entry, "finallyLoc");
+
+          if (hasCatch && hasFinally) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            } else if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else if (hasCatch) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            }
+
+          } else if (hasFinally) {
+            if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else {
+            throw new Error("try statement without catch or finally");
+          }
+        }
+      }
+    },
+
+    abrupt: function(type, arg) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc <= this.prev &&
+            hasOwn.call(entry, "finallyLoc") &&
+            this.prev < entry.finallyLoc) {
+          var finallyEntry = entry;
+          break;
+        }
+      }
+
+      if (finallyEntry &&
+          (type === "break" ||
+           type === "continue") &&
+          finallyEntry.tryLoc <= arg &&
+          arg <= finallyEntry.finallyLoc) {
+        // Ignore the finally entry if control is not jumping to a
+        // location outside the try/catch block.
+        finallyEntry = null;
+      }
+
+      var record = finallyEntry ? finallyEntry.completion : {};
+      record.type = type;
+      record.arg = arg;
+
+      if (finallyEntry) {
+        this.method = "next";
+        this.next = finallyEntry.finallyLoc;
+        return ContinueSentinel;
+      }
+
+      return this.complete(record);
+    },
+
+    complete: function(record, afterLoc) {
+      if (record.type === "throw") {
+        throw record.arg;
+      }
+
+      if (record.type === "break" ||
+          record.type === "continue") {
+        this.next = record.arg;
+      } else if (record.type === "return") {
+        this.rval = this.arg = record.arg;
+        this.method = "return";
+        this.next = "end";
+      } else if (record.type === "normal" && afterLoc) {
+        this.next = afterLoc;
+      }
+
+      return ContinueSentinel;
+    },
+
+    finish: function(finallyLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.finallyLoc === finallyLoc) {
+          this.complete(entry.completion, entry.afterLoc);
+          resetTryEntry(entry);
+          return ContinueSentinel;
+        }
+      }
+    },
+
+    "catch": function(tryLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc === tryLoc) {
+          var record = entry.completion;
+          if (record.type === "throw") {
+            var thrown = record.arg;
+            resetTryEntry(entry);
+          }
+          return thrown;
+        }
+      }
+
+      // The context.catch method must only be called with a location
+      // argument that corresponds to a known catch block.
+      throw new Error("illegal catch attempt");
+    },
+
+    delegateYield: function(iterable, resultName, nextLoc) {
+      this.delegate = {
+        iterator: values(iterable),
+        resultName: resultName,
+        nextLoc: nextLoc
+      };
+
+      if (this.method === "next") {
+        // Deliberately forget the last sent value so that we don't
+        // accidentally pass it on to the delegate.
+        this.arg = undefined;
+      }
+
+      return ContinueSentinel;
+    }
+  };
+
+  // Regardless of whether this script is executing as a CommonJS module
+  // or not, return the runtime object so that we can declare the variable
+  // regeneratorRuntime in the outer scope, which allows this module to be
+  // injected easily by `bin/regenerator --include-runtime script.js`.
+  return exports;
+
+}(
+  // If this script is executing as a CommonJS module, use module.exports
+  // as the regeneratorRuntime namespace. Otherwise create a new empty
+  // object. Either way, the resulting object will be used to initialize
+  // the regeneratorRuntime variable at the top of this file.
+   true ? module.exports : 0
+));
+
+try {
+  regeneratorRuntime = runtime;
+} catch (accidentalStrictMode) {
+  // This module should not be running in strict mode, so the above
+  // assignment should always work unless something is misconfigured. Just
+  // in case runtime.js accidentally runs in strict mode, we can escape
+  // strict mode using a global Function call. This could conceivably fail
+  // if a Content Security Policy forbids using Function, but in that case
+  // the proper solution is to fix the accidental strict mode problem. If
+  // you've misconfigured your bundler to force strict mode and applied a
+  // CSP to forbid Function, and you're not willing to fix either of those
+  // problems, please detail your unique predicament in a GitHub issue.
+  Function("r", "regeneratorRuntime = r")(runtime);
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FooterComponent.vue?vue&type=style&index=0&id=abfbddf2&scoped=true&lang=css&":
 /*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FooterComponent.vue?vue&type=style&index=0&id=abfbddf2&scoped=true&lang=css& ***!
@@ -3342,6 +3737,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterComponent_vue_vue_type_style_index_0_id_abfbddf2_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProductsComponent.vue?vue&type=style&index=0&id=5ecce49e&scoped=true&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProductsComponent.vue?vue&type=style&index=0&id=5ecce49e&scoped=true&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductsComponent_vue_vue_type_style_index_0_id_5ecce49e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ProductsComponent.vue?vue&type=style&index=0&id=5ecce49e&scoped=true&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProductsComponent.vue?vue&type=style&index=0&id=5ecce49e&scoped=true&lang=css&");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductsComponent_vue_vue_type_style_index_0_id_5ecce49e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductsComponent_vue_vue_type_style_index_0_id_5ecce49e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -3834,15 +4259,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _ProductsComponent_vue_vue_type_template_id_5ecce49e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProductsComponent.vue?vue&type=template&id=5ecce49e&scoped=true& */ "./resources/js/components/ProductsComponent.vue?vue&type=template&id=5ecce49e&scoped=true&");
 /* harmony import */ var _ProductsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProductsComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ProductsComponent.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _ProductsComponent_vue_vue_type_style_index_0_id_5ecce49e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProductsComponent.vue?vue&type=style&index=0&id=5ecce49e&scoped=true&lang=css& */ "./resources/js/components/ProductsComponent.vue?vue&type=style&index=0&id=5ecce49e&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
+;
 
 
 /* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__.default)(
   _ProductsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
   _ProductsComponent_vue_vue_type_template_id_5ecce49e_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
   _ProductsComponent_vue_vue_type_template_id_5ecce49e_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
@@ -4020,6 +4447,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterComponent_vue_vue_type_style_index_0_id_abfbddf2_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FooterComponent.vue?vue&type=style&index=0&id=abfbddf2&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FooterComponent.vue?vue&type=style&index=0&id=abfbddf2&scoped=true&lang=css&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/ProductsComponent.vue?vue&type=style&index=0&id=5ecce49e&scoped=true&lang=css&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/js/components/ProductsComponent.vue?vue&type=style&index=0&id=5ecce49e&scoped=true&lang=css& ***!
+  \****************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductsComponent_vue_vue_type_style_index_0_id_5ecce49e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ProductsComponent.vue?vue&type=style&index=0&id=5ecce49e&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProductsComponent.vue?vue&type=style&index=0&id=5ecce49e&scoped=true&lang=css&");
 
 
 /***/ }),
@@ -4611,1691 +5051,180 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "content-detached content-right" }, [
-        _c("div", { staticClass: "content-body" }, [
-          _c("section", { attrs: { id: "ecommerce-header" } }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-sm-12" }, [
-                _c("div", { staticClass: "ecommerce-header-items" }, [
-                  _c("div", { staticClass: "result-toggler" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "navbar-toggler shop-sidebar-toggler",
-                        attrs: { type: "button", "data-toggle": "collapse" }
-                      },
-                      [
-                        _c(
-                          "span",
-                          {
-                            staticClass: "navbar-toggler-icon d-block d-lg-none"
-                          },
-                          [_c("i", { attrs: { "data-feather": "menu" } })]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "search-results" }, [
-                      _vm._v("16285 results found")
-                    ])
-                  ]),
+  return _c("div", [
+    _c("div", { staticClass: "content-detached content-right" }, [
+      _c("div", { staticClass: "content-body" }, [
+        _c("section", { attrs: { id: "ecommerce-header" } }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-12" }, [
+              _c("div", { staticClass: "ecommerce-header-items" }, [
+                _c("div", { staticClass: "result-toggler" }, [
+                  _vm._m(0),
                   _vm._v(" "),
-                  _c("div", { staticClass: "view-options d-flex" }, [
-                    _c("div", { staticClass: "btn-group dropdown-sort" }, [
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-outline-primary dropdown-toggle mr-1",
-                          attrs: {
-                            type: "button",
-                            "data-toggle": "dropdown",
-                            "aria-haspopup": "true",
-                            "aria-expanded": "false"
-                          }
-                        },
-                        [
-                          _c("span", { staticClass: "active-sorting" }, [
-                            _vm._v("Featured")
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "dropdown-menu" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "dropdown-item",
-                            attrs: { href: "javascript:void(0);" }
-                          },
-                          [_vm._v("Featured")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "dropdown-item",
-                            attrs: { href: "javascript:void(0);" }
-                          },
-                          [_vm._v("Lowest")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "dropdown-item",
-                            attrs: { href: "javascript:void(0);" }
-                          },
-                          [_vm._v("Highest")]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "btn-group btn-group-toggle",
-                        attrs: { "data-toggle": "buttons" }
-                      },
-                      [
-                        _c(
-                          "label",
-                          {
-                            staticClass:
-                              "btn btn-icon btn-outline-primary view-btn grid-view-btn"
-                          },
-                          [
-                            _c("input", {
-                              attrs: {
-                                type: "radio",
-                                name: "radio_options",
-                                id: "radio_option1",
-                                checked: ""
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("i", {
-                              staticClass: "font-medium-3",
-                              attrs: { "data-feather": "grid" }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "label",
-                          {
-                            staticClass:
-                              "btn btn-icon btn-outline-primary view-btn list-view-btn"
-                          },
-                          [
-                            _c("input", {
-                              attrs: {
-                                type: "radio",
-                                name: "radio_options",
-                                id: "radio_option2"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("i", {
-                              staticClass: "font-medium-3",
-                              attrs: { "data-feather": "list" }
-                            })
-                          ]
-                        )
-                      ]
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "body-content-overlay" }),
-          _vm._v(" "),
-          _c(
-            "section",
-            {
-              staticClass: "ecommerce-searchbar",
-              attrs: { id: "ecommerce-searchbar" }
-            },
-            [
-              _c("div", { staticClass: "row mt-1" }, [
-                _c("div", { staticClass: "col-sm-12" }, [
-                  _c("div", { staticClass: "input-group input-group-merge" }, [
-                    _c("input", {
-                      staticClass: "form-control search-product",
-                      attrs: {
-                        type: "text",
-                        id: "shop-search",
-                        placeholder: "Search Product",
-                        "aria-label": "Search...",
-                        "aria-describedby": "shop-search"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "input-group-append" }, [
-                      _c("span", { staticClass: "input-group-text" }, [
-                        _c("i", {
-                          staticClass: "text-muted",
-                          attrs: { "data-feather": "search" }
-                        })
-                      ])
-                    ])
-                  ])
-                ])
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "section",
-            { staticClass: "grid-view", attrs: { id: "ecommerce-products" } },
-            [
-              _c("div", { staticClass: "card ecommerce-card" }, [
-                _c("div", { staticClass: "item-img text-center" }, [
-                  _c("a", { attrs: { href: "one-product.html" } }, [
-                    _c("img", {
-                      staticClass: "img-fluid card-img-top",
-                      attrs: {
-                        src: "/images/pages/eCommerce/1.png",
-                        alt: "img-placeholder"
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "item-wrapper" }, [
-                    _c("div", { staticClass: "item-rating" }, [
-                      _c("ul", { staticClass: "unstyled-list list-inline" }, [
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "unfilled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("h6", { staticClass: "item-price" }, [
-                        _vm._v("$339.99")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("h6", { staticClass: "item-name" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "text-body",
-                        attrs: { href: "one-product.html" }
-                      },
-                      [_vm._v("Apple Watch Series 5")]
-                    ),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "card-text item-company" }, [
-                      _vm._v("By "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "company-name",
-                          attrs: { href: "javascript:void(0)" }
-                        },
-                        [_vm._v("Apple")]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "card-text item-description" }, [
+                  _c("div", { staticClass: "search-results" }, [
                     _vm._v(
-                      "\n                            On Retina display that never sleeps, so it’s easy to see the time and other important information, without\n                            raising or tapping the display. New location features, from a built-in compass to current elevation, help users\n                            better navigate their day, while international emergency calling1 allows customers to call emergency services\n                            directly from Apple Watch in over 150 countries, even without iPhone nearby. Apple Watch Series 5 is available\n                            in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.\n                        "
+                      " " +
+                        _vm._s(_vm.row.trans.results_found) +
+                        " : " +
+                        _vm._s(_vm.resultsCount)
                     )
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "item-options text-center" }, [
-                  _c("div", { staticClass: "item-wrapper" }, [
-                    _c("div", { staticClass: "item-cost" }, [
-                      _c("h4", { staticClass: "item-price" }, [
-                        _vm._v("$339.99")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-light btn-wishlist",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [
-                      _c("i", { attrs: { "data-feather": "heart" } }),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Wishlist")])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-primary btn-cart",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [
-                      _c("i", { attrs: { "data-feather": "shopping-cart" } }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "add-to-cart" }, [
-                        _vm._v("Add to cart")
-                      ])
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card ecommerce-card" }, [
-                _c("div", { staticClass: "item-img text-center" }, [
-                  _c("a", { attrs: { href: "one-product.html" } }, [
-                    _c("img", {
-                      staticClass: "img-fluid card-img-top",
-                      attrs: {
-                        src: "/images/pages/eCommerce/2.png",
-                        alt: "img-placeholder"
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "item-wrapper" }, [
-                    _c("div", { staticClass: "item-rating" }, [
-                      _c("ul", { staticClass: "unstyled-list list-inline" }, [
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("h6", { staticClass: "item-price" }, [
-                        _vm._v("$669.99")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("h6", { staticClass: "item-name" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "text-body",
-                        attrs: { href: "one-product.html" }
-                      },
-                      [_vm._v("Apple iPhone 11 (64GB, Black)")]
-                    ),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "card-text item-company" }, [
-                      _vm._v("By "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "company-name",
-                          attrs: { href: "javascript:void(0)" }
-                        },
-                        [_vm._v("Apple")]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "card-text item-description" }, [
-                    _vm._v(
-                      "\n                            The Apple iPhone 11 is a great smartphone, which was loaded with a lot of quality features. It comes with a\n                            waterproof and dustproof body which is the key attraction of the device. The excellent set of cameras offer\n                            excellent images as well as capable of recording crisp videos. However, expandable storage and a fingerprint\n                            scanner would have made it a perfect option to go for around this price range.\n                        "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "item-options text-center" }, [
-                  _c("div", { staticClass: "item-wrapper" }, [
-                    _c("div", { staticClass: "item-cost" }, [
-                      _c("h4", { staticClass: "item-price" }, [
-                        _vm._v("$699.99")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-light btn-wishlist",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [
-                      _c("i", {
-                        staticClass: "text-danger",
-                        attrs: { "data-feather": "heart" }
-                      }),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Wishlist")])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-primary btn-cart",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [
-                      _c("i", { attrs: { "data-feather": "shopping-cart" } }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "add-to-cart" }, [
-                        _vm._v("Add to cart")
-                      ])
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card ecommerce-card" }, [
-                _c("div", { staticClass: "item-img text-center" }, [
-                  _c("a", { attrs: { href: "one-product.html" } }, [
-                    _c("img", {
-                      staticClass: "img-fluid card-img-top",
-                      attrs: {
-                        src: "/images/pages/eCommerce/3.png",
-                        alt: "img-placeholder"
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "item-wrapper" }, [
-                    _c("div", { staticClass: "item-rating" }, [
-                      _c("ul", { staticClass: "unstyled-list list-inline" }, [
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "unfilled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("div", { staticClass: "item-cost" }, [
-                        _c("h6", { staticClass: "item-price" }, [
-                          _vm._v("$999.99")
-                        ])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("h6", { staticClass: "item-name" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "text-body",
-                        attrs: { href: "one-product.html" }
-                      },
-                      [_vm._v("Apple iMac 27-inch")]
-                    ),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "card-text item-company" }, [
-                      _vm._v("By "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "company-name",
-                          attrs: { href: "javascript:void(0)" }
-                        },
-                        [_vm._v("Apple")]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "card-text item-description" }, [
-                    _vm._v(
-                      "\n                            The all-in-one for all. If you can dream it, you can do it on iMac. It’s beautifully & incredibly intuitive and\n                            packed with tools that let you take any idea to the next level. And the new 27-inch model elevates the\n                            experience in way, with faster processors and graphics, expanded memory and storage, enhanced audio and video\n                            capabilities, and an even more stunning Retina 5K display. It’s the desktop that does it all — better and faster\n                            than ever.\n                        "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "item-options text-center" }, [
-                  _c("div", { staticClass: "item-wrapper" }, [
-                    _c("div", { staticClass: "item-cost" }, [
-                      _c("h4", { staticClass: "item-price" }, [
-                        _vm._v("$999.99")
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "card-text shipping" }, [
-                        _c(
-                          "span",
-                          {
-                            staticClass: "badge badge-pill badge-light-success"
-                          },
-                          [_vm._v("Free Shipping")]
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-light btn-wishlist",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [
-                      _c("i", { attrs: { "data-feather": "heart" } }),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Wishlist")])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-primary btn-cart",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [
-                      _c("i", { attrs: { "data-feather": "shopping-cart" } }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "add-to-cart" }, [
-                        _vm._v("Add to cart")
-                      ])
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card ecommerce-card" }, [
-                _c("div", { staticClass: "item-img text-center" }, [
-                  _c("a", { attrs: { href: "one-product.html" } }, [
-                    _c("img", {
-                      staticClass: "img-fluid card-img-top",
-                      attrs: {
-                        src: "/images/pages/eCommerce/4.png",
-                        alt: "img-placeholder"
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "item-wrapper" }, [
-                    _c("div", { staticClass: "item-rating" }, [
-                      _c("ul", { staticClass: "unstyled-list list-inline" }, [
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "unfilled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "unfilled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "item-cost" }, [
-                      _c("h6", { staticClass: "item-price" }, [
-                        _vm._v("$49.99")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("h6", { staticClass: "item-name" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "text-body",
-                        attrs: { href: "one-product.html" }
-                      },
-                      [_vm._v("OneOdio A71 Wired Headphones")]
-                    ),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "card-text item-company" }, [
-                      _vm._v("By "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "company-name",
-                          attrs: { href: "javascript:void(0)" }
-                        },
-                        [_vm._v("OneOdio")]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "card-text item-description" }, [
-                    _vm._v(
-                      "\n                            Omnidirectional detachable boom mic upgrades the headphones into a professional headset for gaming, business,\n                            podcasting and taking calls on the go. Better pick up your voice. Control most electric devices through voice\n                            activation, or schedule a ride with Uber and order a pizza. OneOdio A71 Wired Headphones voice-controlled device\n                            turns any home into a smart device on a smartphone or tablet.\n                        "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "item-options text-center" }, [
-                  _c("div", { staticClass: "item-wrapper" }, [
-                    _c("div", { staticClass: "item-cost" }, [
-                      _c("h4", { staticClass: "item-price" }, [
-                        _vm._v("$49.99")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-light btn-wishlist",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [
-                      _c("i", { attrs: { "data-feather": "heart" } }),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Wishlist")])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-primary btn-cart",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [
-                      _c("i", { attrs: { "data-feather": "shopping-cart" } }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "add-to-cart" }, [
-                        _vm._v("Add to cart")
-                      ])
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card ecommerce-card" }, [
-                _c("div", { staticClass: "item-img text-center" }, [
-                  _c("a", { attrs: { href: "one-product.html" } }, [
-                    _c("img", {
-                      staticClass: "img-fluid card-img-top",
-                      attrs: {
-                        src: "/images/pages/eCommerce/5.png",
-                        alt: "img-placeholder"
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "item-wrapper" }, [
-                    _c("div", { staticClass: "item-rating" }, [
-                      _c("ul", { staticClass: "unstyled-list list-inline" }, [
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "unfilled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "item-cost" }, [
-                      _c("h6", { staticClass: "item-price" }, [
-                        _vm._v("$999.99")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("h6", { staticClass: "item-name" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "text-body",
-                        attrs: { href: "one-product.html" }
-                      },
-                      [
-                        _vm._v(
-                          '\n                                Apple - MacBook Air® (Latest Model) - 13.3" Display - Silver\n                            '
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "card-text item-company" }, [
-                      _vm._v("By "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "company-name",
-                          attrs: { href: "javascript:void(0)" }
-                        },
-                        [_vm._v("Apple")]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "card-text item-description" }, [
-                    _vm._v(
-                      "\n                            MacBook Air is a thin, lightweight laptop from Apple. MacBook Air features up to 8GB of memory, a\n                            fifth-generation Intel Core processor, Thunderbolt 2, great built-in apps, and all-day battery life.1 Its thin,\n                            light, and durable enough to take everywhere you go-and powerful enough to do everything once you get there,\n                            better.\n                        "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "item-options text-center" }, [
-                  _c("div", { staticClass: "item-wrapper" }, [
-                    _c("div", { staticClass: "item-cost" }, [
-                      _c("h4", { staticClass: "item-price" }, [
-                        _vm._v("$999.99")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-light btn-wishlist",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [
-                      _c("i", {
-                        staticClass: "text-danger",
-                        attrs: { "data-feather": "heart" }
-                      }),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Wishlist")])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-primary btn-cart",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [
-                      _c("i", { attrs: { "data-feather": "shopping-cart" } }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "add-to-cart" }, [
-                        _vm._v("Add to cart")
-                      ])
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card ecommerce-card" }, [
-                _c("div", { staticClass: "item-img text-center" }, [
-                  _c("a", { attrs: { href: "one-product.html" } }, [
-                    _c("img", {
-                      staticClass: "img-fluid card-img-top",
-                      attrs: {
-                        src: "/images/pages/eCommerce/6.png",
-                        alt: "img-placeholder"
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "item-wrapper" }, [
-                    _c("div", { staticClass: "item-rating" }, [
-                      _c("ul", { staticClass: "unstyled-list list-inline" }, [
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "unfilled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "unfilled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "unfilled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "item-cost" }, [
-                      _c("h6", { staticClass: "item-price" }, [
-                        _vm._v("$429.99")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("h6", { staticClass: "item-name" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "text-body",
-                        attrs: { href: "one-product.html" }
-                      },
-                      [_vm._v(" Switch Pro Controller ")]
-                    ),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "card-text item-company" }, [
-                      _vm._v("By "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "company-name",
-                          attrs: { href: "javascript:void(0)" }
-                        },
-                        [_vm._v("Sharp")]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "card-text item-description" }, [
-                    _vm._v(
-                      "\n                            The Nintendo Switch Pro Controller is one of the priciest \"baseline\" controllers in the current console\n                            generation, but it's also sturdy, feels good to play with, has an excellent direction pad, and features\n                            impressive motion sensors and vibration systems. On top of all of that, it uses Bluetooth, so you don't need an\n                            adapter to use it with your PC.\n                        "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "item-options text-center" }, [
-                  _c("div", { staticClass: "item-wrapper" }, [
-                    _c("div", { staticClass: "item-cost" }, [
-                      _c("h4", { staticClass: "item-price" }, [
-                        _vm._v("$429.99")
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "card-text shipping" }, [
-                        _c(
-                          "span",
-                          {
-                            staticClass: "badge badge-pill badge-light-success"
-                          },
-                          [_vm._v("Free Shipping")]
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-light btn-wishlist",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [
-                      _c("i", { attrs: { "data-feather": "heart" } }),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Wishlist")])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-primary btn-cart",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [
-                      _c("i", { attrs: { "data-feather": "shopping-cart" } }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "add-to-cart" }, [
-                        _vm._v("Add to cart")
-                      ])
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card ecommerce-card" }, [
-                _c("div", { staticClass: "item-img text-center" }, [
-                  _c("a", { attrs: { href: "one-product.html" } }, [
-                    _c("img", {
-                      staticClass: "img-fluid card-img-top",
-                      attrs: {
-                        src: "/images/pages/eCommerce/7.png",
-                        alt: "img-placeholder"
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "item-wrapper" }, [
-                    _c("div", { staticClass: "item-rating" }, [
-                      _c("ul", { staticClass: "unstyled-list list-inline" }, [
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "unfilled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "item-cost" }, [
-                      _c("h6", { staticClass: "item-price" }, [
-                        _vm._v("$129.29")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("h6", { staticClass: "item-name" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "text-body",
-                        attrs: { href: "one-product.html" }
-                      },
-                      [_vm._v(" Google - Google Home - White/Slate fabric ")]
-                    ),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "card-text item-company" }, [
-                      _vm._v("By "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "company-name",
-                          attrs: { href: "javascript:void(0)" }
-                        },
-                        [_vm._v("Google")]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "card-text item-description" }, [
-                    _vm._v(
-                      "\n                            Simplify your everyday life with the Google Home, a voice-activated speaker powered by the Google Assistant. Use\n                            voice commands to enjoy music, get answers from Google and manage everyday tasks. Google Home is compatible with\n                            Android and iOS operating systems, and can control compatible smart devices such as Chromecast or Nest.\n                        "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "item-options text-center" }, [
-                  _c("div", { staticClass: "item-wrapper" }, [
-                    _c("div", { staticClass: "item-cost" }, [
-                      _c("h4", { staticClass: "item-price" }, [
-                        _vm._v("$129.29")
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "card-text shipping" }, [
-                        _c(
-                          "span",
-                          {
-                            staticClass: "badge badge-pill badge-light-success"
-                          },
-                          [_vm._v("Free Shipping")]
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-light btn-wishlist",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [
-                      _c("i", { attrs: { "data-feather": "heart" } }),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Wishlist")])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-primary btn-cart",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [
-                      _c("i", { attrs: { "data-feather": "shopping-cart" } }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "add-to-cart" }, [
-                        _vm._v("Add to cart")
-                      ])
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card ecommerce-card" }, [
-                _c("div", { staticClass: "item-img text-center" }, [
-                  _c("a", { attrs: { href: "one-product.html" } }, [
-                    _c("img", {
-                      staticClass: "img-fluid card-img-top",
-                      attrs: {
-                        src: "/images/pages/eCommerce/8.png",
-                        alt: "img-placeholder"
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "item-wrapper" }, [
-                    _c("div", { staticClass: "item-rating" }, [
-                      _c("ul", { staticClass: "unstyled-list list-inline" }, [
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "item-cost" }, [
-                      _c("h6", { staticClass: "item-price" }, [
-                        _vm._v("$7999.99")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("h6", { staticClass: "item-name" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "text-body",
-                        attrs: { href: "one-product.html" }
-                      },
-                      [_vm._v(" Sony 4K Ultra HD LED TV ")]
-                    ),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "card-text item-company" }, [
-                      _vm._v("By "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "company-name",
-                          attrs: { href: "javascript:void(0)" }
-                        },
-                        [_vm._v("Apple")]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "card-text item-description" }, [
-                    _vm._v(
-                      "\n                            Sony 4K Ultra HD LED TV has 4K HDR Support. The TV provides clear visuals and provides distinct sound quality\n                            and an immersive experience. This TV has Yes HDMI ports & Yes USB ports. Connectivity options included are HDMI.\n                            You can connect various gadgets such as your laptop using the HDMI port. The TV comes with a 1 Year warranty.\n                        "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "item-options text-center" }, [
-                  _c("div", { staticClass: "item-wrapper" }, [
-                    _c("div", { staticClass: "item-cost" }, [
-                      _c("h4", { staticClass: "item-price" }, [
-                        _vm._v("$29.99")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-light btn-wishlist",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [
-                      _c("i", { attrs: { "data-feather": "heart" } }),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Wishlist")])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-primary btn-cart",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [
-                      _c("i", { attrs: { "data-feather": "shopping-cart" } }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "add-to-cart" }, [
-                        _vm._v("Add to cart")
-                      ])
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card ecommerce-card" }, [
-                _c("div", { staticClass: "item-img text-center" }, [
-                  _c("a", { attrs: { href: "one-product.html" } }, [
-                    _c("img", {
-                      staticClass: "img-fluid card-img-top",
-                      attrs: {
-                        src: "/images/pages/eCommerce/9.png",
-                        alt: "img-placeholder"
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "item-wrapper" }, [
-                    _c("div", { staticClass: "item-rating" }, [
-                      _c("ul", { staticClass: "unstyled-list list-inline" }, [
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "filled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "ratings-list-item" }, [
-                          _c("i", {
-                            staticClass: "unfilled-star",
-                            attrs: { "data-feather": "star" }
-                          })
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "item-cost" }, [
-                      _c("h6", { staticClass: "item-price" }, [
-                        _vm._v("$14.99")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("h6", { staticClass: "item-name" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "text-body",
-                        attrs: { href: "one-product.html" }
-                      },
-                      [_vm._v(" OnePlus 7 Pro ")]
-                    ),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "card-text item-company" }, [
-                      _vm._v("By "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "company-name",
-                          attrs: { href: "javascript:void(0)" }
-                        },
-                        [_vm._v("Philips")]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "card-text item-description" }, [
-                    _vm._v(
-                      "\n                            The OnePlus 7 Pro features a brand new design, with a glass back and front and curved sides. The phone feels\n                            very premium but’s it’s also very heavy. The Nebula Blue variant looks slick but it’s quite slippery, which\n                            makes single-handed use a real challenge. It has a massive 6.67-inch ‘Fluid AMOLED’ display with a QHD+\n                            resolution, 90Hz refresh rate and support for HDR 10+ content. The display produces vivid colours, deep blacks\n                            and has good viewing angles.\n                        "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "item-options text-center" }, [
-                  _c("div", { staticClass: "item-wrapper" }, [
-                    _c("div", { staticClass: "item-cost" }, [
-                      _c("h4", { staticClass: "item-price" }, [
-                        _vm._v("$14.99")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-light btn-wishlist",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [
-                      _c("i", { attrs: { "data-feather": "heart" } }),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Wishlist")])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-primary btn-cart",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [
-                      _c("i", { attrs: { "data-feather": "shopping-cart" } }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "add-to-cart" }, [
-                        _vm._v("Add to cart")
-                      ])
-                    ]
-                  )
-                ])
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("section", { attrs: { id: "ecommerce-pagination" } }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-sm-12" }, [
-                _c(
-                  "nav",
-                  { attrs: { "aria-label": "Page navigation example" } },
-                  [
-                    _c(
-                      "ul",
-                      { staticClass: "pagination justify-content-center mt-2" },
-                      [
-                        _c("li", { staticClass: "page-item prev-item" }, [
-                          _c("a", {
-                            staticClass: "page-link",
-                            attrs: { href: "javascript:void(0);" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "page-item active" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "page-link",
-                              attrs: { href: "javascript:void(0);" }
-                            },
-                            [_vm._v("1")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "page-item" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "page-link",
-                              attrs: { href: "javascript:void(0);" }
-                            },
-                            [_vm._v("2")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "page-item" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "page-link",
-                              attrs: { href: "javascript:void(0);" }
-                            },
-                            [_vm._v("3")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "li",
-                          {
-                            staticClass: "page-item",
-                            attrs: { "aria-current": "page" }
-                          },
-                          [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "page-link",
-                                attrs: { href: "javascript:void(0);" }
-                              },
-                              [_vm._v("4")]
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "page-item" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "page-link",
-                              attrs: { href: "javascript:void(0);" }
-                            },
-                            [_vm._v("5")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "page-item" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "page-link",
-                              attrs: { href: "javascript:void(0);" }
-                            },
-                            [_vm._v("6")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "page-item" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "page-link",
-                              attrs: { href: "javascript:void(0);" }
-                            },
-                            [_vm._v("7")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "page-item next-item" }, [
-                          _c("a", {
-                            staticClass: "page-link",
-                            attrs: { href: "javascript:void(0);" }
-                          })
-                        ])
-                      ]
-                    )
-                  ]
-                )
+                _vm._m(1)
               ])
             ])
           ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "sidebar-detached sidebar-left" }, [
-        _c("div", { staticClass: "sidebar" }, [
-          _c("div", { staticClass: "sidebar-shop" }, [
-            _c("div", { staticClass: "row" }, [
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "body-content-overlay" }),
+        _vm._v(" "),
+        _c(
+          "section",
+          {
+            staticClass: "ecommerce-searchbar",
+            attrs: { id: "ecommerce-searchbar" }
+          },
+          [
+            _c("div", { staticClass: "row mt-1" }, [
               _c("div", { staticClass: "col-sm-12" }, [
-                _c("h6", { staticClass: "filter-heading d-none d-lg-block" }, [
-                  _vm._v("Filters")
+                _c("div", { staticClass: "input-group input-group-merge" }, [
+                  _c("input", {
+                    staticClass: "form-control search-product",
+                    attrs: {
+                      type: "text",
+                      id: "shop-search",
+                      placeholder: _vm.row.trans.search_in_products,
+                      "aria-label": "Search...",
+                      "aria-describedby": "shop-search"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm._m(2)
                 ])
               ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "multi-range-price" }, [
-                  _c("h6", { staticClass: "filter-title mt-0" }, [
-                    _vm._v("Multi Range")
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "section",
+          { staticClass: "grid-view", attrs: { id: "ecommerce-products" } },
+          _vm._l(_vm.products, function(item, index) {
+            return _c(
+              "div",
+              { key: index, staticClass: "card ecommerce-card" },
+              [
+                _c("div", { staticClass: "item-img text-center" }, [
+                  _c("a", { attrs: { href: "one-product.html" } }, [
+                    _c("img", {
+                      staticClass: "img-fluid card-img-top",
+                      attrs: { src: item.image, alt: "img-placeholder" }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-rating" }, [
+                      _c("h6", { staticClass: "item-price" }, [
+                        _c("h6", { staticClass: "item-price" }, [
+                          _vm._v("@" + _vm._s(item.price))
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("h6", { staticClass: "item-price" }, [
+                        _vm._v("$" + _vm._s(item.price))
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("h6", { staticClass: "item-name" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "text-body",
+                        attrs: { href: "one-product.html" }
+                      },
+                      [_vm._v(_vm._s(item.title))]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text item-description" }, [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(item.description) +
+                        "\n                            "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item-options text-center" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-cost" }, [
+                      _c("h4", { staticClass: "item-price" }, [
+                        _vm._v("$" + _vm._s(item.price))
+                      ])
+                    ])
                   ]),
                   _vm._v(" "),
                   _c(
-                    "ul",
+                    "a",
                     {
-                      staticClass: "list-unstyled price-range",
-                      attrs: { id: "price-range" }
+                      staticClass: "btn btn-light btn-wishlist",
+                      attrs: { href: "javascript:void(0)" }
                     },
                     [
-                      _c("li", [
-                        _c(
-                          "div",
-                          { staticClass: "custom-control custom-radio" },
-                          [
-                            _c("input", {
-                              staticClass: "custom-control-input",
-                              attrs: {
-                                type: "radio",
-                                id: "priceAll",
-                                name: "price-range",
-                                checked: ""
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "label",
-                              {
-                                staticClass: "custom-control-label",
-                                attrs: { for: "priceAll" }
-                              },
-                              [_vm._v("All")]
-                            )
-                          ]
-                        )
-                      ]),
+                      _c("i", { attrs: { "data-feather": "heart" } }),
                       _vm._v(" "),
-                      _c("li", [
-                        _c(
-                          "div",
-                          { staticClass: "custom-control custom-radio" },
-                          [
-                            _c("input", {
-                              staticClass: "custom-control-input",
-                              attrs: {
-                                type: "radio",
-                                id: "priceRange1",
-                                name: "price-range"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "label",
-                              {
-                                staticClass: "custom-control-label",
-                                attrs: { for: "priceRange1" }
-                              },
-                              [_vm._v("<=$10")]
-                            )
-                          ]
-                        )
-                      ]),
+                      _c("span", [
+                        _vm._v(_vm._s(_vm.row.trans.add_to_wish_list))
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary btn-cart",
+                      attrs: { href: "javascript:void(0)" }
+                    },
+                    [
+                      _c("i", { attrs: { "data-feather": "shopping-cart" } }),
                       _vm._v(" "),
-                      _c("li", [
-                        _c(
-                          "div",
-                          { staticClass: "custom-control custom-radio" },
-                          [
-                            _c("input", {
-                              staticClass: "custom-control-input",
-                              attrs: {
-                                type: "radio",
-                                id: "priceRange2",
-                                name: "price-range"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "label",
-                              {
-                                staticClass: "custom-control-label",
-                                attrs: { for: "priceRange2" }
-                              },
-                              [_vm._v("$10 - $100")]
-                            )
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c(
-                          "div",
-                          { staticClass: "custom-control custom-radio" },
-                          [
-                            _c("input", {
-                              staticClass: "custom-control-input",
-                              attrs: {
-                                type: "radio",
-                                id: "priceARange3",
-                                name: "price-range"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "label",
-                              {
-                                staticClass: "custom-control-label",
-                                attrs: { for: "priceARange3" }
-                              },
-                              [_vm._v("$100 - $500")]
-                            )
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c(
-                          "div",
-                          { staticClass: "custom-control custom-radio" },
-                          [
-                            _c("input", {
-                              staticClass: "custom-control-input",
-                              attrs: {
-                                type: "radio",
-                                id: "priceRange4",
-                                name: "price-range"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "label",
-                              {
-                                staticClass: "custom-control-label",
-                                attrs: { for: "priceRange4" }
-                              },
-                              [_vm._v(">= $500")]
-                            )
-                          ]
-                        )
+                      _c("span", { staticClass: "add-to-cart" }, [
+                        _vm._v(_vm._s(_vm.row.trans.view_product))
                       ])
                     ]
                   )
+                ])
+              ]
+            )
+          }),
+          0
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "sidebar-detached sidebar-left" }, [
+      _c("div", { staticClass: "sidebar" }, [
+        _c("div", { staticClass: "sidebar-shop" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-body" }, [
+              _c("div", { staticClass: "multi-range-price" }, [
+                _c("h6", { staticClass: "filter-title mt-0" }, [
+                  _vm._v(_vm._s(_vm.row.trans.price_range))
                 ]),
                 _vm._v(" "),
-                _c("div", { attrs: { id: "product-categories" } }, [
-                  _c("h6", { staticClass: "filter-title" }, [
-                    _vm._v("Categories")
-                  ]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "list-unstyled categories-list" }, [
+                _c(
+                  "ul",
+                  {
+                    staticClass: "list-unstyled price-range",
+                    attrs: { id: "price-range" }
+                  },
+                  [
                     _c("li", [
                       _c(
                         "div",
@@ -6305,8 +5234,8 @@ var staticRenderFns = [
                             staticClass: "custom-control-input",
                             attrs: {
                               type: "radio",
-                              id: "category1",
-                              name: "category-filter",
+                              id: "priceAll",
+                              name: "price-range",
                               checked: ""
                             }
                           }),
@@ -6315,264 +5244,480 @@ var staticRenderFns = [
                             "label",
                             {
                               staticClass: "custom-control-label",
-                              attrs: { for: "category1" }
+                              attrs: { for: "priceAll" }
                             },
-                            [_vm._v("Appliances")]
+                            [_vm._v(_vm._s(_vm.row.trans.all))]
                           )
                         ]
                       )
                     ]),
                     _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "div",
-                        { staticClass: "custom-control custom-radio" },
-                        [
-                          _c("input", {
-                            staticClass: "custom-control-input",
-                            attrs: {
-                              type: "radio",
-                              id: "category2",
-                              name: "category-filter"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "label",
-                            {
-                              staticClass: "custom-control-label",
-                              attrs: { for: "category2" }
-                            },
-                            [_vm._v("Audio")]
-                          )
-                        ]
-                      )
-                    ]),
+                    _vm._m(3),
                     _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "div",
-                        { staticClass: "custom-control custom-radio" },
-                        [
-                          _c("input", {
-                            staticClass: "custom-control-input",
-                            attrs: {
-                              type: "radio",
-                              id: "category3",
-                              name: "category-filter"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "label",
-                            {
-                              staticClass: "custom-control-label",
-                              attrs: { for: "category3" }
-                            },
-                            [_vm._v("Cameras & Camcorders")]
-                          )
-                        ]
-                      )
-                    ]),
+                    _vm._m(4),
                     _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "div",
-                        { staticClass: "custom-control custom-radio" },
-                        [
-                          _c("input", {
-                            staticClass: "custom-control-input",
-                            attrs: {
-                              type: "radio",
-                              id: "category4",
-                              name: "category-filter"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "label",
-                            {
-                              staticClass: "custom-control-label",
-                              attrs: { for: "category4" }
-                            },
-                            [_vm._v("Car Electronics & GPS")]
-                          )
-                        ]
-                      )
-                    ]),
+                    _vm._m(5),
                     _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "div",
-                        { staticClass: "custom-control custom-radio" },
-                        [
-                          _c("input", {
-                            staticClass: "custom-control-input",
-                            attrs: {
-                              type: "radio",
-                              id: "category5",
-                              name: "category-filter"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "label",
-                            {
-                              staticClass: "custom-control-label",
-                              attrs: { for: "category5" }
-                            },
-                            [_vm._v("Cell Phones")]
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "div",
-                        { staticClass: "custom-control custom-radio" },
-                        [
-                          _c("input", {
-                            staticClass: "custom-control-input",
-                            attrs: {
-                              type: "radio",
-                              id: "category6",
-                              name: "category-filter"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "label",
-                            {
-                              staticClass: "custom-control-label",
-                              attrs: { for: "category6" }
-                            },
-                            [_vm._v("Computers & Tablets")]
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "div",
-                        { staticClass: "custom-control custom-radio" },
-                        [
-                          _c("input", {
-                            staticClass: "custom-control-input",
-                            attrs: {
-                              type: "radio",
-                              id: "category7",
-                              name: "category-filter"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "label",
-                            {
-                              staticClass: "custom-control-label",
-                              attrs: { for: "category7" }
-                            },
-                            [_vm._v("Health, Fitness & Beauty")]
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "div",
-                        { staticClass: "custom-control custom-radio" },
-                        [
-                          _c("input", {
-                            staticClass: "custom-control-input",
-                            attrs: {
-                              type: "radio",
-                              id: "category8",
-                              name: "category-filter"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "label",
-                            {
-                              staticClass: "custom-control-label",
-                              attrs: { for: "category8" }
-                            },
-                            [_vm._v("Office & School Supplies")]
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "div",
-                        { staticClass: "custom-control custom-radio" },
-                        [
-                          _c("input", {
-                            staticClass: "custom-control-input",
-                            attrs: {
-                              type: "radio",
-                              id: "category9",
-                              name: "category-filter"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "label",
-                            {
-                              staticClass: "custom-control-label",
-                              attrs: { for: "category9" }
-                            },
-                            [_vm._v("TV & Home Theater")]
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "div",
-                        { staticClass: "custom-control custom-radio" },
-                        [
-                          _c("input", {
-                            staticClass: "custom-control-input",
-                            attrs: {
-                              type: "radio",
-                              id: "category10",
-                              name: "category-filter"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "label",
-                            {
-                              staticClass: "custom-control-label",
-                              attrs: { for: "category10" }
-                            },
-                            [_vm._v("Video Games")]
-                          )
-                        ]
-                      )
-                    ])
-                  ])
+                    _vm._m(6)
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { attrs: { id: "product-categories" } }, [
+                _c("h6", { staticClass: "filter-title" }, [
+                  _vm._v(_vm._s(_vm.row.trans.categories))
                 ]),
                 _vm._v(" "),
-                _c("div", { attrs: { id: "clear-filters" } }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-block btn-primary",
-                      attrs: { type: "button" }
-                    },
-                    [_vm._v("Clear All Filters")]
-                  )
+                _c("ul", { staticClass: "list-unstyled categories-list" }, [
+                  _c("li", [
+                    _c("div", { staticClass: "custom-control custom-radio" }, [
+                      _c("input", {
+                        staticClass: "custom-control-input",
+                        attrs: {
+                          type: "radio",
+                          id: "categoryAll",
+                          name: "category-filter",
+                          checked: ""
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "label",
+                        {
+                          staticClass: "custom-control-label",
+                          attrs: { for: "priceAll" }
+                        },
+                        [_vm._v(_vm._s(_vm.row.trans.all))]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(7),
+                  _vm._v(" "),
+                  _vm._m(8),
+                  _vm._v(" "),
+                  _vm._m(9),
+                  _vm._v(" "),
+                  _vm._m(10),
+                  _vm._v(" "),
+                  _vm._m(11),
+                  _vm._v(" "),
+                  _vm._m(12),
+                  _vm._v(" "),
+                  _vm._m(13),
+                  _vm._v(" "),
+                  _vm._m(14),
+                  _vm._v(" "),
+                  _vm._m(15),
+                  _vm._v(" "),
+                  _vm._m(16)
                 ])
+              ]),
+              _vm._v(" "),
+              _c("div", { attrs: { id: "clear-filters" } }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-block btn-primary",
+                    attrs: { type: "button" }
+                  },
+                  [_vm._v(_vm._s(_vm.row.trans.cancel))]
+                )
               ])
             ])
           ])
         ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "btn btn-flat",
+        attrs: { id: "more_btn" },
+        on: { click: _vm.handleScrolledToBottom }
+      },
+      [_vm._v("\n        " + _vm._s(_vm.row.trans.more) + "\n    ")]
+    ),
+    _vm._v(" "),
+    _c("div", {
+      directives: [
+        {
+          name: "observe-visibility",
+          rawName: "v-observe-visibility",
+          value: _vm.handleScrolledToBottom,
+          expression: "handleScrolledToBottom"
+        }
+      ]
+    })
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "navbar-toggler shop-sidebar-toggler",
+        attrs: { type: "button", "data-toggle": "collapse" }
+      },
+      [
+        _c("span", { staticClass: "navbar-toggler-icon d-block d-lg-none" }, [
+          _c("i", { attrs: { "data-feather": "menu" } })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "view-options d-flex" }, [
+      _c(
+        "div",
+        {
+          staticClass: "btn-group btn-group-toggle",
+          attrs: { "data-toggle": "buttons" }
+        },
+        [
+          _c(
+            "label",
+            {
+              staticClass:
+                "btn btn-icon btn-outline-primary view-btn grid-view-btn"
+            },
+            [
+              _c("input", {
+                attrs: {
+                  type: "radio",
+                  name: "radio_options",
+                  id: "radio_option1",
+                  checked: ""
+                }
+              }),
+              _vm._v(" "),
+              _c("i", {
+                staticClass: "font-medium-3",
+                attrs: { "data-feather": "grid" }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass:
+                "btn btn-icon btn-outline-primary view-btn list-view-btn"
+            },
+            [
+              _c("input", {
+                attrs: {
+                  type: "radio",
+                  name: "radio_options",
+                  id: "radio_option2"
+                }
+              }),
+              _vm._v(" "),
+              _c("i", {
+                staticClass: "font-medium-3",
+                attrs: { "data-feather": "list" }
+              })
+            ]
+          )
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-append" }, [
+      _c("span", { staticClass: "input-group-text" }, [
+        _c("i", {
+          staticClass: "text-muted",
+          attrs: { "data-feather": "search" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("div", { staticClass: "custom-control custom-radio" }, [
+        _c("input", {
+          staticClass: "custom-control-input",
+          attrs: { type: "radio", id: "priceRange1", name: "price-range" }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          {
+            staticClass: "custom-control-label",
+            attrs: { for: "priceRange1" }
+          },
+          [_vm._v("<=$10")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("div", { staticClass: "custom-control custom-radio" }, [
+        _c("input", {
+          staticClass: "custom-control-input",
+          attrs: { type: "radio", id: "priceRange2", name: "price-range" }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          {
+            staticClass: "custom-control-label",
+            attrs: { for: "priceRange2" }
+          },
+          [_vm._v("$10 - $100")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("div", { staticClass: "custom-control custom-radio" }, [
+        _c("input", {
+          staticClass: "custom-control-input",
+          attrs: { type: "radio", id: "priceARange3", name: "price-range" }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          {
+            staticClass: "custom-control-label",
+            attrs: { for: "priceARange3" }
+          },
+          [_vm._v("$100 - $500")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("div", { staticClass: "custom-control custom-radio" }, [
+        _c("input", {
+          staticClass: "custom-control-input",
+          attrs: { type: "radio", id: "priceRange4", name: "price-range" }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          {
+            staticClass: "custom-control-label",
+            attrs: { for: "priceRange4" }
+          },
+          [_vm._v(">= $500")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("div", { staticClass: "custom-control custom-radio" }, [
+        _c("input", {
+          staticClass: "custom-control-input",
+          attrs: { type: "radio", id: "category1", name: "category-filter" }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          { staticClass: "custom-control-label", attrs: { for: "category1" } },
+          [_vm._v("Appliances")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("div", { staticClass: "custom-control custom-radio" }, [
+        _c("input", {
+          staticClass: "custom-control-input",
+          attrs: { type: "radio", id: "category2", name: "category-filter" }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          { staticClass: "custom-control-label", attrs: { for: "category2" } },
+          [_vm._v("Audio")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("div", { staticClass: "custom-control custom-radio" }, [
+        _c("input", {
+          staticClass: "custom-control-input",
+          attrs: { type: "radio", id: "category3", name: "category-filter" }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          { staticClass: "custom-control-label", attrs: { for: "category3" } },
+          [_vm._v("Cameras & Camcorders")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("div", { staticClass: "custom-control custom-radio" }, [
+        _c("input", {
+          staticClass: "custom-control-input",
+          attrs: { type: "radio", id: "category4", name: "category-filter" }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          { staticClass: "custom-control-label", attrs: { for: "category4" } },
+          [_vm._v("Car Electronics & GPS")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("div", { staticClass: "custom-control custom-radio" }, [
+        _c("input", {
+          staticClass: "custom-control-input",
+          attrs: { type: "radio", id: "category5", name: "category-filter" }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          { staticClass: "custom-control-label", attrs: { for: "category5" } },
+          [_vm._v("Cell Phones")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("div", { staticClass: "custom-control custom-radio" }, [
+        _c("input", {
+          staticClass: "custom-control-input",
+          attrs: { type: "radio", id: "category6", name: "category-filter" }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          { staticClass: "custom-control-label", attrs: { for: "category6" } },
+          [_vm._v("Computers & Tablets")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("div", { staticClass: "custom-control custom-radio" }, [
+        _c("input", {
+          staticClass: "custom-control-input",
+          attrs: { type: "radio", id: "category7", name: "category-filter" }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          { staticClass: "custom-control-label", attrs: { for: "category7" } },
+          [_vm._v("Health, Fitness & Beauty")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("div", { staticClass: "custom-control custom-radio" }, [
+        _c("input", {
+          staticClass: "custom-control-input",
+          attrs: { type: "radio", id: "category8", name: "category-filter" }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          { staticClass: "custom-control-label", attrs: { for: "category8" } },
+          [_vm._v("Office & School Supplies")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("div", { staticClass: "custom-control custom-radio" }, [
+        _c("input", {
+          staticClass: "custom-control-input",
+          attrs: { type: "radio", id: "category9", name: "category-filter" }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          { staticClass: "custom-control-label", attrs: { for: "category9" } },
+          [_vm._v("TV & Home Theater")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("div", { staticClass: "custom-control custom-radio" }, [
+        _c("input", {
+          staticClass: "custom-control-input",
+          attrs: { type: "radio", id: "category10", name: "category-filter" }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          { staticClass: "custom-control-label", attrs: { for: "category10" } },
+          [_vm._v("Video Games")]
+        )
       ])
     ])
   }
@@ -6790,6 +5935,325 @@ function normalizeComponent (
     options: options
   }
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-observe-visibility/dist/vue-observe-visibility.esm.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/vue-observe-visibility/dist/vue-observe-visibility.esm.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "ObserveVisibility": () => (/* binding */ ObserveVisibility),
+/* harmony export */   "install": () => (/* binding */ install)
+/* harmony export */ });
+function _typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function (obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function (obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+}
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+
+    return arr2;
+  }
+}
+
+function _iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+function processOptions(value) {
+  var options;
+
+  if (typeof value === 'function') {
+    // Simple options (callback-only)
+    options = {
+      callback: value
+    };
+  } else {
+    // Options object
+    options = value;
+  }
+
+  return options;
+}
+function throttle(callback, delay) {
+  var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+  var timeout;
+  var lastState;
+  var currentArgs;
+
+  var throttled = function throttled(state) {
+    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      args[_key - 1] = arguments[_key];
+    }
+
+    currentArgs = args;
+    if (timeout && state === lastState) return;
+    var leading = options.leading;
+
+    if (typeof leading === 'function') {
+      leading = leading(state, lastState);
+    }
+
+    if ((!timeout || state !== lastState) && leading) {
+      callback.apply(void 0, [state].concat(_toConsumableArray(currentArgs)));
+    }
+
+    lastState = state;
+    clearTimeout(timeout);
+    timeout = setTimeout(function () {
+      callback.apply(void 0, [state].concat(_toConsumableArray(currentArgs)));
+      timeout = 0;
+    }, delay);
+  };
+
+  throttled._clear = function () {
+    clearTimeout(timeout);
+    timeout = null;
+  };
+
+  return throttled;
+}
+function deepEqual(val1, val2) {
+  if (val1 === val2) return true;
+
+  if (_typeof(val1) === 'object') {
+    for (var key in val1) {
+      if (!deepEqual(val1[key], val2[key])) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  return false;
+}
+
+var VisibilityState =
+/*#__PURE__*/
+function () {
+  function VisibilityState(el, options, vnode) {
+    _classCallCheck(this, VisibilityState);
+
+    this.el = el;
+    this.observer = null;
+    this.frozen = false;
+    this.createObserver(options, vnode);
+  }
+
+  _createClass(VisibilityState, [{
+    key: "createObserver",
+    value: function createObserver(options, vnode) {
+      var _this = this;
+
+      if (this.observer) {
+        this.destroyObserver();
+      }
+
+      if (this.frozen) return;
+      this.options = processOptions(options);
+
+      this.callback = function (result, entry) {
+        _this.options.callback(result, entry);
+
+        if (result && _this.options.once) {
+          _this.frozen = true;
+
+          _this.destroyObserver();
+        }
+      }; // Throttle
+
+
+      if (this.callback && this.options.throttle) {
+        var _ref = this.options.throttleOptions || {},
+            _leading = _ref.leading;
+
+        this.callback = throttle(this.callback, this.options.throttle, {
+          leading: function leading(state) {
+            return _leading === 'both' || _leading === 'visible' && state || _leading === 'hidden' && !state;
+          }
+        });
+      }
+
+      this.oldResult = undefined;
+      this.observer = new IntersectionObserver(function (entries) {
+        var entry = entries[0];
+
+        if (entries.length > 1) {
+          var intersectingEntry = entries.find(function (e) {
+            return e.isIntersecting;
+          });
+
+          if (intersectingEntry) {
+            entry = intersectingEntry;
+          }
+        }
+
+        if (_this.callback) {
+          // Use isIntersecting if possible because browsers can report isIntersecting as true, but intersectionRatio as 0, when something very slowly enters the viewport.
+          var result = entry.isIntersecting && entry.intersectionRatio >= _this.threshold;
+          if (result === _this.oldResult) return;
+          _this.oldResult = result;
+
+          _this.callback(result, entry);
+        }
+      }, this.options.intersection); // Wait for the element to be in document
+
+      vnode.context.$nextTick(function () {
+        if (_this.observer) {
+          _this.observer.observe(_this.el);
+        }
+      });
+    }
+  }, {
+    key: "destroyObserver",
+    value: function destroyObserver() {
+      if (this.observer) {
+        this.observer.disconnect();
+        this.observer = null;
+      } // Cancel throttled call
+
+
+      if (this.callback && this.callback._clear) {
+        this.callback._clear();
+
+        this.callback = null;
+      }
+    }
+  }, {
+    key: "threshold",
+    get: function get() {
+      return this.options.intersection && typeof this.options.intersection.threshold === 'number' ? this.options.intersection.threshold : 0;
+    }
+  }]);
+
+  return VisibilityState;
+}();
+
+function bind(el, _ref2, vnode) {
+  var value = _ref2.value;
+  if (!value) return;
+
+  if (typeof IntersectionObserver === 'undefined') {
+    console.warn('[vue-observe-visibility] IntersectionObserver API is not available in your browser. Please install this polyfill: https://github.com/w3c/IntersectionObserver/tree/master/polyfill');
+  } else {
+    var state = new VisibilityState(el, value, vnode);
+    el._vue_visibilityState = state;
+  }
+}
+
+function update(el, _ref3, vnode) {
+  var value = _ref3.value,
+      oldValue = _ref3.oldValue;
+  if (deepEqual(value, oldValue)) return;
+  var state = el._vue_visibilityState;
+
+  if (!value) {
+    unbind(el);
+    return;
+  }
+
+  if (state) {
+    state.createObserver(value, vnode);
+  } else {
+    bind(el, {
+      value: value
+    }, vnode);
+  }
+}
+
+function unbind(el) {
+  var state = el._vue_visibilityState;
+
+  if (state) {
+    state.destroyObserver();
+    delete el._vue_visibilityState;
+  }
+}
+
+var ObserveVisibility = {
+  bind: bind,
+  update: update,
+  unbind: unbind
+};
+
+function install(Vue) {
+  Vue.directive('observe-visibility', ObserveVisibility);
+  /* -- Add more components here -- */
+}
+/* -- Plugin definition & Auto-install -- */
+
+/* You shouldn't have to modify the code below */
+// Plugin
+
+var plugin = {
+  // eslint-disable-next-line no-undef
+  version: "1.0.0",
+  install: install
+};
+
+var GlobalVue = null;
+
+if (typeof window !== 'undefined') {
+  GlobalVue = window.Vue;
+} else if (typeof __webpack_require__.g !== 'undefined') {
+  GlobalVue = __webpack_require__.g.Vue;
+}
+
+if (GlobalVue) {
+  GlobalVue.use(plugin);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (plugin);
+
 
 
 /***/ }),

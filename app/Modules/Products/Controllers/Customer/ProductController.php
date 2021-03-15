@@ -35,6 +35,19 @@ class ProductController extends Controller {
         $data['views'] = $this->views;
         $data['row']=$this->model;
         $data['row']->is_active = 1;
+        $data['row']->trans= [
+            'eg' =>trans('app.egyptian_pound'),
+            'loading' => trans('app.loading'),
+            'more' => trans('app.more'),
+            'results_found' => trans('app.results_found'),
+            'add_to_wish_list' => trans('app.add_to_wish_list'),
+            'price_range' => trans('app.price_range'),
+            'categories' => trans('app.categories'),
+            'view_product' => trans('products.view product'),
+            'search_in_products' => trans('app.search_in_products'),
+            'cancel' => trans('app.cancel'),
+            'all' => trans('app.all'),
+        ];
         $data['page_title'] = trans('app.list') . " " . $this->title;
         $data['page_description'] = trans('products.page description');
         $data['rows'] = $this->model->Filtered()->orderBy("id","DESC")->paginate(request('per_page'));

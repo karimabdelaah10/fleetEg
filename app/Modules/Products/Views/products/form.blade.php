@@ -24,6 +24,17 @@
      'required'=>1]
      ])
 @include('BaseApp::form.input',[
+    'name'=>'description',
+     'value'=> $row->description ?? null,
+     'type'=>'textarea',
+     'attributes'=>[
+         'id'=>'title',
+         'class'=>'form-control',
+     'label'=>trans('products.description'),
+     'placeholder'=>trans('products.description'),
+     'required'=>1]
+     ])
+@include('BaseApp::form.input',[
     'name'=>'price',
      'value'=> $row->price ?? null,
      'type'=>'text',

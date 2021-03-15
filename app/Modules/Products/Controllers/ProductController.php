@@ -22,8 +22,8 @@ class ProductController extends Controller {
     public $module,$module_url ,$title;
 
     public function __construct(Product $model) {
-        $this->module = 'products';
-        $this->module_url = '/products';
+        $this->module = 'product';
+        $this->module_url = '/product';
         $this->views = 'Products::products';
         $this->title = trans('app.products');
         $this->model = $model;
