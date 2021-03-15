@@ -112,13 +112,13 @@
                 </a>
             </li>
             <li class=" nav-item">
-                <a class="d-flex align-items-center" href="products.html">
+                <a class="d-flex align-items-center" href="/products/all">
                     <i data-feather="grid"></i>
                     <span class="menu-title text-truncate" data-i18n="Products">{{trans('navigation.products')}}</span>
                     <span class="badge badge-light-warning badge-pill ml-auto mr-1">3</span></a>
                 <ul class="menu-content">
                     <li>
-                        <a class="d-flex align-items-center" href="products.html">
+                        <a class="d-flex align-items-center" href="/products/all">
                             <i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="AllProducts">{{trans('navigation.all products')}}</span>
                         </a>
@@ -161,13 +161,14 @@
                     </li>
                 </ul>
             </li>
-            @endif
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="/profile/edit">
                     <i data-feather="settings"></i>
                     <span class="menu-item text-truncate" data-i18n="Account Settings">{{trans('navigation.account settings')}}</span>
                 </a>
             </li>
+            @endif
+
         </ul>
     </div>
 </div>

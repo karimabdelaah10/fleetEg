@@ -26,6 +26,17 @@ class Product extends Model
         return $this;
     }
 
+    public function scopeFiltered($query)
+    {
+        $query->Active();
+        return $query;
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('is_active' , 1);
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class , 'category_id');

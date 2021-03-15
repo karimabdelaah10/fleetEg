@@ -36,7 +36,6 @@
                     <i class="ficon" data-feather="dollar-sign"></i><span
                         class="badge badge-pill badge-primary badge-up cart-item-count">{{auth()->user()->available_balance}}</span></a>
             </li>
-            @endif
             <li class="nav-item dropdown dropdown-cart mr-25">
                 <a class="nav-link" data-toggle="dropdown"  href="javascript:void(0);">
                     <i class="ficon" data-feather="shopping-cart"></i>
@@ -145,10 +144,13 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" data-toggle="dropdown"
-                                                                         href="javascript:void(0);"><i class="ficon"
-                                                                                                       data-feather="bell"></i><span
-                        class="badge badge-pill badge-danger badge-up">5</span></a>
+            @endif
+            <li class="nav-item dropdown dropdown-notification mr-25">
+                <a class="nav-link" data-toggle="dropdown"
+                    href="javascript:void(0);">
+                    <i class="ficon" data-feather="bell"></i>
+                    <span class="badge badge-pill badge-danger badge-up">5</span>
+                </a>
                 <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
                     <li class="dropdown-menu-header">
                         <div class="dropdown-header d-flex">
@@ -264,8 +266,12 @@
                     <a class="dropdown-item" href="{{route('profile.index')}}">
                         <i class="mr-50" data-feather="user"></i> {{trans('app.profile')}}</a>
                     @endif
+                        <a class="dropdown-item" href="/profile/edit">
+                            <i class="mr-50" data-feather="settings"></i> {{trans('navigation.account settings')}}
+                        </a>
                         <a class="dropdown-item" href="{{route('logout')}}">
-                        <i class="mr-50" data-feather="power"></i> {{trans('app.logout')}}</a>
+                        <i class="mr-50" data-feather="power"></i> {{trans('app.logout')}}
+                        </a>
                 </div>
             </li>
         </ul>
