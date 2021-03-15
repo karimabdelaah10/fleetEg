@@ -30,6 +30,7 @@ window.Vue = require('vue').default;
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('footer-component', require('./components/FooterComponent.vue').default);
+Vue.component('products-component', require('./components/ProductsComponent.vue').default);
 Vue.component('product-discount', require('./components/ProductDiscountComponent.vue').default);
 Vue.component('product-specs', require('./components/ProductSpecsComponent.vue').default);
 Vue.component('new-product-specs', require('./components/NewProductSpecsComponent.vue').default);

@@ -1,35 +1,26 @@
 <template>
-
-    <div>
-        <div class="inline-block">
-            <i data-feather="arrow-up"></i>
+    <div class="col-12 d-block">
+         <div class="col-6 float-md-left d-block d-md-inline-block mt-25">COPYRIGHT  &copy; 2020
+                <span class="d-none d-sm-inline-block">, All rights Reserved</span>
         </div>
-        <p class="clearfix mb-0">
-        <span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT  &copy; 2020
-      <span class="d-none d-sm-inline-block">, All rights Reserved</span>
-        </span>
-            <span
-                class="float-md-right d-none d-md-block">
-                <a target="_blank" :href="facebook_url">
-                    <i class="text-primary" data-feather='facebook'></i>
-                </a>
-                <a target="_blank" :href="youtube_url">
-            <i class="text-danger" data-feather='youtube'></i>
-                </a>
-                <a target="_blank" :href="email">
-            <i class="text-muted" data-feather='mail'></i>
-                </a>
-                <a target="_blank" :href="mobile_number">
-            <i class="text-muted" data-feather="phone"></i>
-                </a>
-                <a target="_blank" :href="whatsapp_number">
-                    <img src="/images/whatsapp.png" class="whatsapp_image"/>
-<!--                    <i class="text-muted" data-feather="whatsapp"></i>-->
-                </a>
+        <div  class="col-6 float-md-right d-md-block">
 
-        </span>
-        </p>
-
+            <a target="_blank" :href="facebook_url" class="float-right btn-social-icon">
+                <i class="text-primary" data-feather='facebook' style="font-size: 10px"></i>
+            </a>
+            <a target="_blank" :href="youtube_url" class="float-right btn-social-icon">
+                 <i class="text-danger" data-feather='youtube'></i>
+            </a>
+            <a target="_blank" :href="email" class="float-right btn-social-icon">
+                <i class="text-muted" data-feather='mail'></i>
+            </a>
+            <a target="_blank" :href="mobile_number" class="float-right btn-social-icon">
+                <i class="text-muted" data-feather="phone"></i>
+            </a>
+            <a target="_blank" :href="whatsapp_number" class="float-right">
+                <img src="/images/whatsapp.png" class="whatsapp_image"/>
+            </a>
+        </div>
     </div>
 </template>
 
@@ -76,5 +67,14 @@
     height: 20px;
     width: 20px;
     margin-bottom: 1px;
+}
+.btn-social-icon>svg{
+    height: 1.4285rem;
+    width: 1.4285rem;
+    font-size: 1.45rem;
+    margin-left: 1.1rem;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
 }
 </style>

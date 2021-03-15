@@ -1,5 +1,5 @@
 <!-- BEGIN: Customizer-->
-<div class="customizer d-none d-md-block">
+<div class="customizer d-md-block">
     <a class="customizer-toggle d-flex align-items-center justify-content-center"
        href="javascript:void(0);">
         <i class="spinner" data-feather="settings"></i>
@@ -157,10 +157,12 @@
 <div class="sidenav-overlay"></div>
 <div class="drag-target"></div>
 
+<button class="btn btn-primary btn-icon scroll-top mb-1" type="button">
+    <i data-feather="arrow-up"></i>
+</button>
 <!-- BEGIN: Footer-->
-<footer class="footer footer-static footer-light" id="footer">
+<footer class="footer footer-light" id="footer">
     <footer-component></footer-component>
 </footer>
-<button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
 <!-- END: Footer-->
 

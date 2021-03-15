@@ -1906,15 +1906,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2144,6 +2135,747 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProductsComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProductsComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      'facebook_url': null
+    };
+  },
+  props: [],
+  created: function created() {},
+  mounted: function mounted() {
+    this.getFilteredProducts();
+  },
+  methods: {
+    getFilteredProducts: function getFilteredProducts() {
+      axios.get('/api/v1/configs/').then(function (response) {
+        console.log(response);
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SpecsValuesComponent.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SpecsValuesComponent.vue?vue&type=script&lang=js& ***!
@@ -2256,6 +2988,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
 Vue.component('footer-component', __webpack_require__(/*! ./components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue").default);
+Vue.component('products-component', __webpack_require__(/*! ./components/ProductsComponent.vue */ "./resources/js/components/ProductsComponent.vue").default);
 Vue.component('product-discount', __webpack_require__(/*! ./components/ProductDiscountComponent.vue */ "./resources/js/components/ProductDiscountComponent.vue").default);
 Vue.component('product-specs', __webpack_require__(/*! ./components/ProductSpecsComponent.vue */ "./resources/js/components/ProductSpecsComponent.vue").default);
 Vue.component('new-product-specs', __webpack_require__(/*! ./components/NewProductSpecsComponent.vue */ "./resources/js/components/NewProductSpecsComponent.vue").default);
@@ -2292,7 +3025,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.whatsapp_image[data-v-abfbddf2]{\n    height: 20px;\n    width: 20px;\n    margin-bottom: 1px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.whatsapp_image[data-v-abfbddf2]{\n    height: 20px;\n    width: 20px;\n    margin-bottom: 1px;\n}\n.btn-social-icon>svg[data-v-abfbddf2]{\n    height: 1.4285rem;\n    width: 1.4285rem;\n    font-size: 1.45rem;\n    margin-left: 1.1rem;\n    flex-shrink: 0;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3088,6 +3821,45 @@ component.options.__file = "resources/js/components/ProductSpecsComponent.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/ProductsComponent.vue":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/ProductsComponent.vue ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ProductsComponent_vue_vue_type_template_id_5ecce49e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProductsComponent.vue?vue&type=template&id=5ecce49e&scoped=true& */ "./resources/js/components/ProductsComponent.vue?vue&type=template&id=5ecce49e&scoped=true&");
+/* harmony import */ var _ProductsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProductsComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ProductsComponent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _ProductsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _ProductsComponent_vue_vue_type_template_id_5ecce49e_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
+  _ProductsComponent_vue_vue_type_template_id_5ecce49e_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  "5ecce49e",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ProductsComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/SpecsValuesComponent.vue":
 /*!**********************************************************!*\
   !*** ./resources/js/components/SpecsValuesComponent.vue ***!
@@ -3207,6 +3979,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/ProductsComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/ProductsComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ProductsComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProductsComponent.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/components/SpecsValuesComponent.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************!*\
   !*** ./resources/js/components/SpecsValuesComponent.vue?vue&type=script&lang=js& ***!
@@ -3321,6 +4109,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/ProductsComponent.vue?vue&type=template&id=5ecce49e&scoped=true&":
+/*!**************************************************************************************************!*\
+  !*** ./resources/js/components/ProductsComponent.vue?vue&type=template&id=5ecce49e&scoped=true& ***!
+  \**************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductsComponent_vue_vue_type_template_id_5ecce49e_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductsComponent_vue_vue_type_template_id_5ecce49e_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductsComponent_vue_vue_type_template_id_5ecce49e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ProductsComponent.vue?vue&type=template&id=5ecce49e&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProductsComponent.vue?vue&type=template&id=5ecce49e&scoped=true&");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/SpecsValuesComponent.vue?vue&type=template&id=540d222e&":
 /*!*****************************************************************************************!*\
   !*** ./resources/js/components/SpecsValuesComponent.vue?vue&type=template&id=540d222e& ***!
@@ -3402,48 +4207,80 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "col-12 d-block" }, [
     _vm._m(0),
     _vm._v(" "),
-    _c("p", { staticClass: "clearfix mb-0" }, [
-      _vm._m(1),
-      _vm._v(" "),
-      _c("span", { staticClass: "float-md-right d-none d-md-block" }, [
-        _c("a", { attrs: { target: "_blank", href: _vm.facebook_url } }, [
+    _c("div", { staticClass: "col-6 float-md-right d-md-block" }, [
+      _c(
+        "a",
+        {
+          staticClass: "float-right btn-social-icon",
+          attrs: { target: "_blank", href: _vm.facebook_url }
+        },
+        [
           _c("i", {
             staticClass: "text-primary",
+            staticStyle: { "font-size": "10px" },
             attrs: { "data-feather": "facebook" }
           })
-        ]),
-        _vm._v(" "),
-        _c("a", { attrs: { target: "_blank", href: _vm.youtube_url } }, [
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "float-right btn-social-icon",
+          attrs: { target: "_blank", href: _vm.youtube_url }
+        },
+        [
           _c("i", {
             staticClass: "text-danger",
             attrs: { "data-feather": "youtube" }
           })
-        ]),
-        _vm._v(" "),
-        _c("a", { attrs: { target: "_blank", href: _vm.email } }, [
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "float-right btn-social-icon",
+          attrs: { target: "_blank", href: _vm.email }
+        },
+        [
           _c("i", {
             staticClass: "text-muted",
             attrs: { "data-feather": "mail" }
           })
-        ]),
-        _vm._v(" "),
-        _c("a", { attrs: { target: "_blank", href: _vm.mobile_number } }, [
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "float-right btn-social-icon",
+          attrs: { target: "_blank", href: _vm.mobile_number }
+        },
+        [
           _c("i", {
             staticClass: "text-muted",
             attrs: { "data-feather": "phone" }
           })
-        ]),
-        _vm._v(" "),
-        _c("a", { attrs: { target: "_blank", href: _vm.whatsapp_number } }, [
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "float-right",
+          attrs: { target: "_blank", href: _vm.whatsapp_number }
+        },
+        [
           _c("img", {
             staticClass: "whatsapp_image",
             attrs: { src: "/images/whatsapp.png" }
           })
-        ])
-      ])
+        ]
+      )
     ])
   ])
 }
@@ -3452,19 +4289,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "inline-block" }, [
-      _c("i", { attrs: { "data-feather": "arrow-up" } })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c(
-      "span",
-      { staticClass: "float-md-left d-block d-md-inline-block mt-25" },
+      "div",
+      { staticClass: "col-6 float-md-left d-block d-md-inline-block mt-25" },
       [
-        _vm._v("COPYRIGHT  © 2020\n      "),
+        _vm._v("COPYRIGHT  © 2020\n            "),
         _c("span", { staticClass: "d-none d-sm-inline-block" }, [
           _vm._v(", All rights Reserved")
         ])
@@ -3758,6 +4587,1994 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("span", [_c("i", { attrs: { "data-feather": "plus" } })])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProductsComponent.vue?vue&type=template&id=5ecce49e&scoped=true&":
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProductsComponent.vue?vue&type=template&id=5ecce49e&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("div", { staticClass: "content-detached content-right" }, [
+        _c("div", { staticClass: "content-body" }, [
+          _c("section", { attrs: { id: "ecommerce-header" } }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-sm-12" }, [
+                _c("div", { staticClass: "ecommerce-header-items" }, [
+                  _c("div", { staticClass: "result-toggler" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "navbar-toggler shop-sidebar-toggler",
+                        attrs: { type: "button", "data-toggle": "collapse" }
+                      },
+                      [
+                        _c(
+                          "span",
+                          {
+                            staticClass: "navbar-toggler-icon d-block d-lg-none"
+                          },
+                          [_c("i", { attrs: { "data-feather": "menu" } })]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "search-results" }, [
+                      _vm._v("16285 results found")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "view-options d-flex" }, [
+                    _c("div", { staticClass: "btn-group dropdown-sort" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "btn btn-outline-primary dropdown-toggle mr-1",
+                          attrs: {
+                            type: "button",
+                            "data-toggle": "dropdown",
+                            "aria-haspopup": "true",
+                            "aria-expanded": "false"
+                          }
+                        },
+                        [
+                          _c("span", { staticClass: "active-sorting" }, [
+                            _vm._v("Featured")
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "dropdown-menu" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "dropdown-item",
+                            attrs: { href: "javascript:void(0);" }
+                          },
+                          [_vm._v("Featured")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "dropdown-item",
+                            attrs: { href: "javascript:void(0);" }
+                          },
+                          [_vm._v("Lowest")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "dropdown-item",
+                            attrs: { href: "javascript:void(0);" }
+                          },
+                          [_vm._v("Highest")]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "btn-group btn-group-toggle",
+                        attrs: { "data-toggle": "buttons" }
+                      },
+                      [
+                        _c(
+                          "label",
+                          {
+                            staticClass:
+                              "btn btn-icon btn-outline-primary view-btn grid-view-btn"
+                          },
+                          [
+                            _c("input", {
+                              attrs: {
+                                type: "radio",
+                                name: "radio_options",
+                                id: "radio_option1",
+                                checked: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("i", {
+                              staticClass: "font-medium-3",
+                              attrs: { "data-feather": "grid" }
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticClass:
+                              "btn btn-icon btn-outline-primary view-btn list-view-btn"
+                          },
+                          [
+                            _c("input", {
+                              attrs: {
+                                type: "radio",
+                                name: "radio_options",
+                                id: "radio_option2"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("i", {
+                              staticClass: "font-medium-3",
+                              attrs: { "data-feather": "list" }
+                            })
+                          ]
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "body-content-overlay" }),
+          _vm._v(" "),
+          _c(
+            "section",
+            {
+              staticClass: "ecommerce-searchbar",
+              attrs: { id: "ecommerce-searchbar" }
+            },
+            [
+              _c("div", { staticClass: "row mt-1" }, [
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c("div", { staticClass: "input-group input-group-merge" }, [
+                    _c("input", {
+                      staticClass: "form-control search-product",
+                      attrs: {
+                        type: "text",
+                        id: "shop-search",
+                        placeholder: "Search Product",
+                        "aria-label": "Search...",
+                        "aria-describedby": "shop-search"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "input-group-append" }, [
+                      _c("span", { staticClass: "input-group-text" }, [
+                        _c("i", {
+                          staticClass: "text-muted",
+                          attrs: { "data-feather": "search" }
+                        })
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "section",
+            { staticClass: "grid-view", attrs: { id: "ecommerce-products" } },
+            [
+              _c("div", { staticClass: "card ecommerce-card" }, [
+                _c("div", { staticClass: "item-img text-center" }, [
+                  _c("a", { attrs: { href: "one-product.html" } }, [
+                    _c("img", {
+                      staticClass: "img-fluid card-img-top",
+                      attrs: {
+                        src: "/images/pages/eCommerce/1.png",
+                        alt: "img-placeholder"
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-rating" }, [
+                      _c("ul", { staticClass: "unstyled-list list-inline" }, [
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "unfilled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("h6", { staticClass: "item-price" }, [
+                        _vm._v("$339.99")
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("h6", { staticClass: "item-name" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "text-body",
+                        attrs: { href: "one-product.html" }
+                      },
+                      [_vm._v("Apple Watch Series 5")]
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "card-text item-company" }, [
+                      _vm._v("By "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "company-name",
+                          attrs: { href: "javascript:void(0)" }
+                        },
+                        [_vm._v("Apple")]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text item-description" }, [
+                    _vm._v(
+                      "\n                            On Retina display that never sleeps, so it’s easy to see the time and other important information, without\n                            raising or tapping the display. New location features, from a built-in compass to current elevation, help users\n                            better navigate their day, while international emergency calling1 allows customers to call emergency services\n                            directly from Apple Watch in over 150 countries, even without iPhone nearby. Apple Watch Series 5 is available\n                            in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.\n                        "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item-options text-center" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-cost" }, [
+                      _c("h4", { staticClass: "item-price" }, [
+                        _vm._v("$339.99")
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-light btn-wishlist",
+                      attrs: { href: "javascript:void(0)" }
+                    },
+                    [
+                      _c("i", { attrs: { "data-feather": "heart" } }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("Wishlist")])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary btn-cart",
+                      attrs: { href: "javascript:void(0)" }
+                    },
+                    [
+                      _c("i", { attrs: { "data-feather": "shopping-cart" } }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "add-to-cart" }, [
+                        _vm._v("Add to cart")
+                      ])
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card ecommerce-card" }, [
+                _c("div", { staticClass: "item-img text-center" }, [
+                  _c("a", { attrs: { href: "one-product.html" } }, [
+                    _c("img", {
+                      staticClass: "img-fluid card-img-top",
+                      attrs: {
+                        src: "/images/pages/eCommerce/2.png",
+                        alt: "img-placeholder"
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-rating" }, [
+                      _c("ul", { staticClass: "unstyled-list list-inline" }, [
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("h6", { staticClass: "item-price" }, [
+                        _vm._v("$669.99")
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("h6", { staticClass: "item-name" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "text-body",
+                        attrs: { href: "one-product.html" }
+                      },
+                      [_vm._v("Apple iPhone 11 (64GB, Black)")]
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "card-text item-company" }, [
+                      _vm._v("By "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "company-name",
+                          attrs: { href: "javascript:void(0)" }
+                        },
+                        [_vm._v("Apple")]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text item-description" }, [
+                    _vm._v(
+                      "\n                            The Apple iPhone 11 is a great smartphone, which was loaded with a lot of quality features. It comes with a\n                            waterproof and dustproof body which is the key attraction of the device. The excellent set of cameras offer\n                            excellent images as well as capable of recording crisp videos. However, expandable storage and a fingerprint\n                            scanner would have made it a perfect option to go for around this price range.\n                        "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item-options text-center" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-cost" }, [
+                      _c("h4", { staticClass: "item-price" }, [
+                        _vm._v("$699.99")
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-light btn-wishlist",
+                      attrs: { href: "javascript:void(0)" }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "text-danger",
+                        attrs: { "data-feather": "heart" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("Wishlist")])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary btn-cart",
+                      attrs: { href: "javascript:void(0)" }
+                    },
+                    [
+                      _c("i", { attrs: { "data-feather": "shopping-cart" } }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "add-to-cart" }, [
+                        _vm._v("Add to cart")
+                      ])
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card ecommerce-card" }, [
+                _c("div", { staticClass: "item-img text-center" }, [
+                  _c("a", { attrs: { href: "one-product.html" } }, [
+                    _c("img", {
+                      staticClass: "img-fluid card-img-top",
+                      attrs: {
+                        src: "/images/pages/eCommerce/3.png",
+                        alt: "img-placeholder"
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-rating" }, [
+                      _c("ul", { staticClass: "unstyled-list list-inline" }, [
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "unfilled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("div", { staticClass: "item-cost" }, [
+                        _c("h6", { staticClass: "item-price" }, [
+                          _vm._v("$999.99")
+                        ])
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("h6", { staticClass: "item-name" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "text-body",
+                        attrs: { href: "one-product.html" }
+                      },
+                      [_vm._v("Apple iMac 27-inch")]
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "card-text item-company" }, [
+                      _vm._v("By "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "company-name",
+                          attrs: { href: "javascript:void(0)" }
+                        },
+                        [_vm._v("Apple")]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text item-description" }, [
+                    _vm._v(
+                      "\n                            The all-in-one for all. If you can dream it, you can do it on iMac. It’s beautifully & incredibly intuitive and\n                            packed with tools that let you take any idea to the next level. And the new 27-inch model elevates the\n                            experience in way, with faster processors and graphics, expanded memory and storage, enhanced audio and video\n                            capabilities, and an even more stunning Retina 5K display. It’s the desktop that does it all — better and faster\n                            than ever.\n                        "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item-options text-center" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-cost" }, [
+                      _c("h4", { staticClass: "item-price" }, [
+                        _vm._v("$999.99")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text shipping" }, [
+                        _c(
+                          "span",
+                          {
+                            staticClass: "badge badge-pill badge-light-success"
+                          },
+                          [_vm._v("Free Shipping")]
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-light btn-wishlist",
+                      attrs: { href: "javascript:void(0)" }
+                    },
+                    [
+                      _c("i", { attrs: { "data-feather": "heart" } }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("Wishlist")])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary btn-cart",
+                      attrs: { href: "javascript:void(0)" }
+                    },
+                    [
+                      _c("i", { attrs: { "data-feather": "shopping-cart" } }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "add-to-cart" }, [
+                        _vm._v("Add to cart")
+                      ])
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card ecommerce-card" }, [
+                _c("div", { staticClass: "item-img text-center" }, [
+                  _c("a", { attrs: { href: "one-product.html" } }, [
+                    _c("img", {
+                      staticClass: "img-fluid card-img-top",
+                      attrs: {
+                        src: "/images/pages/eCommerce/4.png",
+                        alt: "img-placeholder"
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-rating" }, [
+                      _c("ul", { staticClass: "unstyled-list list-inline" }, [
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "unfilled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "unfilled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "item-cost" }, [
+                      _c("h6", { staticClass: "item-price" }, [
+                        _vm._v("$49.99")
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("h6", { staticClass: "item-name" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "text-body",
+                        attrs: { href: "one-product.html" }
+                      },
+                      [_vm._v("OneOdio A71 Wired Headphones")]
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "card-text item-company" }, [
+                      _vm._v("By "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "company-name",
+                          attrs: { href: "javascript:void(0)" }
+                        },
+                        [_vm._v("OneOdio")]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text item-description" }, [
+                    _vm._v(
+                      "\n                            Omnidirectional detachable boom mic upgrades the headphones into a professional headset for gaming, business,\n                            podcasting and taking calls on the go. Better pick up your voice. Control most electric devices through voice\n                            activation, or schedule a ride with Uber and order a pizza. OneOdio A71 Wired Headphones voice-controlled device\n                            turns any home into a smart device on a smartphone or tablet.\n                        "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item-options text-center" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-cost" }, [
+                      _c("h4", { staticClass: "item-price" }, [
+                        _vm._v("$49.99")
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-light btn-wishlist",
+                      attrs: { href: "javascript:void(0)" }
+                    },
+                    [
+                      _c("i", { attrs: { "data-feather": "heart" } }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("Wishlist")])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary btn-cart",
+                      attrs: { href: "javascript:void(0)" }
+                    },
+                    [
+                      _c("i", { attrs: { "data-feather": "shopping-cart" } }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "add-to-cart" }, [
+                        _vm._v("Add to cart")
+                      ])
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card ecommerce-card" }, [
+                _c("div", { staticClass: "item-img text-center" }, [
+                  _c("a", { attrs: { href: "one-product.html" } }, [
+                    _c("img", {
+                      staticClass: "img-fluid card-img-top",
+                      attrs: {
+                        src: "/images/pages/eCommerce/5.png",
+                        alt: "img-placeholder"
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-rating" }, [
+                      _c("ul", { staticClass: "unstyled-list list-inline" }, [
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "unfilled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "item-cost" }, [
+                      _c("h6", { staticClass: "item-price" }, [
+                        _vm._v("$999.99")
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("h6", { staticClass: "item-name" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "text-body",
+                        attrs: { href: "one-product.html" }
+                      },
+                      [
+                        _vm._v(
+                          '\n                                Apple - MacBook Air® (Latest Model) - 13.3" Display - Silver\n                            '
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "card-text item-company" }, [
+                      _vm._v("By "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "company-name",
+                          attrs: { href: "javascript:void(0)" }
+                        },
+                        [_vm._v("Apple")]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text item-description" }, [
+                    _vm._v(
+                      "\n                            MacBook Air is a thin, lightweight laptop from Apple. MacBook Air features up to 8GB of memory, a\n                            fifth-generation Intel Core processor, Thunderbolt 2, great built-in apps, and all-day battery life.1 Its thin,\n                            light, and durable enough to take everywhere you go-and powerful enough to do everything once you get there,\n                            better.\n                        "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item-options text-center" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-cost" }, [
+                      _c("h4", { staticClass: "item-price" }, [
+                        _vm._v("$999.99")
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-light btn-wishlist",
+                      attrs: { href: "javascript:void(0)" }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "text-danger",
+                        attrs: { "data-feather": "heart" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("Wishlist")])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary btn-cart",
+                      attrs: { href: "javascript:void(0)" }
+                    },
+                    [
+                      _c("i", { attrs: { "data-feather": "shopping-cart" } }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "add-to-cart" }, [
+                        _vm._v("Add to cart")
+                      ])
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card ecommerce-card" }, [
+                _c("div", { staticClass: "item-img text-center" }, [
+                  _c("a", { attrs: { href: "one-product.html" } }, [
+                    _c("img", {
+                      staticClass: "img-fluid card-img-top",
+                      attrs: {
+                        src: "/images/pages/eCommerce/6.png",
+                        alt: "img-placeholder"
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-rating" }, [
+                      _c("ul", { staticClass: "unstyled-list list-inline" }, [
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "unfilled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "unfilled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "unfilled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "item-cost" }, [
+                      _c("h6", { staticClass: "item-price" }, [
+                        _vm._v("$429.99")
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("h6", { staticClass: "item-name" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "text-body",
+                        attrs: { href: "one-product.html" }
+                      },
+                      [_vm._v(" Switch Pro Controller ")]
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "card-text item-company" }, [
+                      _vm._v("By "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "company-name",
+                          attrs: { href: "javascript:void(0)" }
+                        },
+                        [_vm._v("Sharp")]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text item-description" }, [
+                    _vm._v(
+                      "\n                            The Nintendo Switch Pro Controller is one of the priciest \"baseline\" controllers in the current console\n                            generation, but it's also sturdy, feels good to play with, has an excellent direction pad, and features\n                            impressive motion sensors and vibration systems. On top of all of that, it uses Bluetooth, so you don't need an\n                            adapter to use it with your PC.\n                        "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item-options text-center" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-cost" }, [
+                      _c("h4", { staticClass: "item-price" }, [
+                        _vm._v("$429.99")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text shipping" }, [
+                        _c(
+                          "span",
+                          {
+                            staticClass: "badge badge-pill badge-light-success"
+                          },
+                          [_vm._v("Free Shipping")]
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-light btn-wishlist",
+                      attrs: { href: "javascript:void(0)" }
+                    },
+                    [
+                      _c("i", { attrs: { "data-feather": "heart" } }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("Wishlist")])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary btn-cart",
+                      attrs: { href: "javascript:void(0)" }
+                    },
+                    [
+                      _c("i", { attrs: { "data-feather": "shopping-cart" } }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "add-to-cart" }, [
+                        _vm._v("Add to cart")
+                      ])
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card ecommerce-card" }, [
+                _c("div", { staticClass: "item-img text-center" }, [
+                  _c("a", { attrs: { href: "one-product.html" } }, [
+                    _c("img", {
+                      staticClass: "img-fluid card-img-top",
+                      attrs: {
+                        src: "/images/pages/eCommerce/7.png",
+                        alt: "img-placeholder"
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-rating" }, [
+                      _c("ul", { staticClass: "unstyled-list list-inline" }, [
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "unfilled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "item-cost" }, [
+                      _c("h6", { staticClass: "item-price" }, [
+                        _vm._v("$129.29")
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("h6", { staticClass: "item-name" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "text-body",
+                        attrs: { href: "one-product.html" }
+                      },
+                      [_vm._v(" Google - Google Home - White/Slate fabric ")]
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "card-text item-company" }, [
+                      _vm._v("By "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "company-name",
+                          attrs: { href: "javascript:void(0)" }
+                        },
+                        [_vm._v("Google")]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text item-description" }, [
+                    _vm._v(
+                      "\n                            Simplify your everyday life with the Google Home, a voice-activated speaker powered by the Google Assistant. Use\n                            voice commands to enjoy music, get answers from Google and manage everyday tasks. Google Home is compatible with\n                            Android and iOS operating systems, and can control compatible smart devices such as Chromecast or Nest.\n                        "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item-options text-center" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-cost" }, [
+                      _c("h4", { staticClass: "item-price" }, [
+                        _vm._v("$129.29")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text shipping" }, [
+                        _c(
+                          "span",
+                          {
+                            staticClass: "badge badge-pill badge-light-success"
+                          },
+                          [_vm._v("Free Shipping")]
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-light btn-wishlist",
+                      attrs: { href: "javascript:void(0)" }
+                    },
+                    [
+                      _c("i", { attrs: { "data-feather": "heart" } }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("Wishlist")])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary btn-cart",
+                      attrs: { href: "javascript:void(0)" }
+                    },
+                    [
+                      _c("i", { attrs: { "data-feather": "shopping-cart" } }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "add-to-cart" }, [
+                        _vm._v("Add to cart")
+                      ])
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card ecommerce-card" }, [
+                _c("div", { staticClass: "item-img text-center" }, [
+                  _c("a", { attrs: { href: "one-product.html" } }, [
+                    _c("img", {
+                      staticClass: "img-fluid card-img-top",
+                      attrs: {
+                        src: "/images/pages/eCommerce/8.png",
+                        alt: "img-placeholder"
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-rating" }, [
+                      _c("ul", { staticClass: "unstyled-list list-inline" }, [
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "item-cost" }, [
+                      _c("h6", { staticClass: "item-price" }, [
+                        _vm._v("$7999.99")
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("h6", { staticClass: "item-name" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "text-body",
+                        attrs: { href: "one-product.html" }
+                      },
+                      [_vm._v(" Sony 4K Ultra HD LED TV ")]
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "card-text item-company" }, [
+                      _vm._v("By "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "company-name",
+                          attrs: { href: "javascript:void(0)" }
+                        },
+                        [_vm._v("Apple")]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text item-description" }, [
+                    _vm._v(
+                      "\n                            Sony 4K Ultra HD LED TV has 4K HDR Support. The TV provides clear visuals and provides distinct sound quality\n                            and an immersive experience. This TV has Yes HDMI ports & Yes USB ports. Connectivity options included are HDMI.\n                            You can connect various gadgets such as your laptop using the HDMI port. The TV comes with a 1 Year warranty.\n                        "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item-options text-center" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-cost" }, [
+                      _c("h4", { staticClass: "item-price" }, [
+                        _vm._v("$29.99")
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-light btn-wishlist",
+                      attrs: { href: "javascript:void(0)" }
+                    },
+                    [
+                      _c("i", { attrs: { "data-feather": "heart" } }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("Wishlist")])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary btn-cart",
+                      attrs: { href: "javascript:void(0)" }
+                    },
+                    [
+                      _c("i", { attrs: { "data-feather": "shopping-cart" } }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "add-to-cart" }, [
+                        _vm._v("Add to cart")
+                      ])
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card ecommerce-card" }, [
+                _c("div", { staticClass: "item-img text-center" }, [
+                  _c("a", { attrs: { href: "one-product.html" } }, [
+                    _c("img", {
+                      staticClass: "img-fluid card-img-top",
+                      attrs: {
+                        src: "/images/pages/eCommerce/9.png",
+                        alt: "img-placeholder"
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-rating" }, [
+                      _c("ul", { staticClass: "unstyled-list list-inline" }, [
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "filled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "ratings-list-item" }, [
+                          _c("i", {
+                            staticClass: "unfilled-star",
+                            attrs: { "data-feather": "star" }
+                          })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "item-cost" }, [
+                      _c("h6", { staticClass: "item-price" }, [
+                        _vm._v("$14.99")
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("h6", { staticClass: "item-name" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "text-body",
+                        attrs: { href: "one-product.html" }
+                      },
+                      [_vm._v(" OnePlus 7 Pro ")]
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "card-text item-company" }, [
+                      _vm._v("By "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "company-name",
+                          attrs: { href: "javascript:void(0)" }
+                        },
+                        [_vm._v("Philips")]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text item-description" }, [
+                    _vm._v(
+                      "\n                            The OnePlus 7 Pro features a brand new design, with a glass back and front and curved sides. The phone feels\n                            very premium but’s it’s also very heavy. The Nebula Blue variant looks slick but it’s quite slippery, which\n                            makes single-handed use a real challenge. It has a massive 6.67-inch ‘Fluid AMOLED’ display with a QHD+\n                            resolution, 90Hz refresh rate and support for HDR 10+ content. The display produces vivid colours, deep blacks\n                            and has good viewing angles.\n                        "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item-options text-center" }, [
+                  _c("div", { staticClass: "item-wrapper" }, [
+                    _c("div", { staticClass: "item-cost" }, [
+                      _c("h4", { staticClass: "item-price" }, [
+                        _vm._v("$14.99")
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-light btn-wishlist",
+                      attrs: { href: "javascript:void(0)" }
+                    },
+                    [
+                      _c("i", { attrs: { "data-feather": "heart" } }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("Wishlist")])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary btn-cart",
+                      attrs: { href: "javascript:void(0)" }
+                    },
+                    [
+                      _c("i", { attrs: { "data-feather": "shopping-cart" } }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "add-to-cart" }, [
+                        _vm._v("Add to cart")
+                      ])
+                    ]
+                  )
+                ])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c("section", { attrs: { id: "ecommerce-pagination" } }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-sm-12" }, [
+                _c(
+                  "nav",
+                  { attrs: { "aria-label": "Page navigation example" } },
+                  [
+                    _c(
+                      "ul",
+                      { staticClass: "pagination justify-content-center mt-2" },
+                      [
+                        _c("li", { staticClass: "page-item prev-item" }, [
+                          _c("a", {
+                            staticClass: "page-link",
+                            attrs: { href: "javascript:void(0);" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "page-item active" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "page-link",
+                              attrs: { href: "javascript:void(0);" }
+                            },
+                            [_vm._v("1")]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "page-item" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "page-link",
+                              attrs: { href: "javascript:void(0);" }
+                            },
+                            [_vm._v("2")]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "page-item" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "page-link",
+                              attrs: { href: "javascript:void(0);" }
+                            },
+                            [_vm._v("3")]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "li",
+                          {
+                            staticClass: "page-item",
+                            attrs: { "aria-current": "page" }
+                          },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "page-link",
+                                attrs: { href: "javascript:void(0);" }
+                              },
+                              [_vm._v("4")]
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "page-item" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "page-link",
+                              attrs: { href: "javascript:void(0);" }
+                            },
+                            [_vm._v("5")]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "page-item" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "page-link",
+                              attrs: { href: "javascript:void(0);" }
+                            },
+                            [_vm._v("6")]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "page-item" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "page-link",
+                              attrs: { href: "javascript:void(0);" }
+                            },
+                            [_vm._v("7")]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "page-item next-item" }, [
+                          _c("a", {
+                            staticClass: "page-link",
+                            attrs: { href: "javascript:void(0);" }
+                          })
+                        ])
+                      ]
+                    )
+                  ]
+                )
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "sidebar-detached sidebar-left" }, [
+        _c("div", { staticClass: "sidebar" }, [
+          _c("div", { staticClass: "sidebar-shop" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-sm-12" }, [
+                _c("h6", { staticClass: "filter-heading d-none d-lg-block" }, [
+                  _vm._v("Filters")
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "multi-range-price" }, [
+                  _c("h6", { staticClass: "filter-title mt-0" }, [
+                    _vm._v("Multi Range")
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "ul",
+                    {
+                      staticClass: "list-unstyled price-range",
+                      attrs: { id: "price-range" }
+                    },
+                    [
+                      _c("li", [
+                        _c(
+                          "div",
+                          { staticClass: "custom-control custom-radio" },
+                          [
+                            _c("input", {
+                              staticClass: "custom-control-input",
+                              attrs: {
+                                type: "radio",
+                                id: "priceAll",
+                                name: "price-range",
+                                checked: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "custom-control-label",
+                                attrs: { for: "priceAll" }
+                              },
+                              [_vm._v("All")]
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c(
+                          "div",
+                          { staticClass: "custom-control custom-radio" },
+                          [
+                            _c("input", {
+                              staticClass: "custom-control-input",
+                              attrs: {
+                                type: "radio",
+                                id: "priceRange1",
+                                name: "price-range"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "custom-control-label",
+                                attrs: { for: "priceRange1" }
+                              },
+                              [_vm._v("<=$10")]
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c(
+                          "div",
+                          { staticClass: "custom-control custom-radio" },
+                          [
+                            _c("input", {
+                              staticClass: "custom-control-input",
+                              attrs: {
+                                type: "radio",
+                                id: "priceRange2",
+                                name: "price-range"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "custom-control-label",
+                                attrs: { for: "priceRange2" }
+                              },
+                              [_vm._v("$10 - $100")]
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c(
+                          "div",
+                          { staticClass: "custom-control custom-radio" },
+                          [
+                            _c("input", {
+                              staticClass: "custom-control-input",
+                              attrs: {
+                                type: "radio",
+                                id: "priceARange3",
+                                name: "price-range"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "custom-control-label",
+                                attrs: { for: "priceARange3" }
+                              },
+                              [_vm._v("$100 - $500")]
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c(
+                          "div",
+                          { staticClass: "custom-control custom-radio" },
+                          [
+                            _c("input", {
+                              staticClass: "custom-control-input",
+                              attrs: {
+                                type: "radio",
+                                id: "priceRange4",
+                                name: "price-range"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "custom-control-label",
+                                attrs: { for: "priceRange4" }
+                              },
+                              [_vm._v(">= $500")]
+                            )
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { attrs: { id: "product-categories" } }, [
+                  _c("h6", { staticClass: "filter-title" }, [
+                    _vm._v("Categories")
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "list-unstyled categories-list" }, [
+                    _c("li", [
+                      _c(
+                        "div",
+                        { staticClass: "custom-control custom-radio" },
+                        [
+                          _c("input", {
+                            staticClass: "custom-control-input",
+                            attrs: {
+                              type: "radio",
+                              id: "category1",
+                              name: "category-filter",
+                              checked: ""
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "custom-control-label",
+                              attrs: { for: "category1" }
+                            },
+                            [_vm._v("Appliances")]
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "div",
+                        { staticClass: "custom-control custom-radio" },
+                        [
+                          _c("input", {
+                            staticClass: "custom-control-input",
+                            attrs: {
+                              type: "radio",
+                              id: "category2",
+                              name: "category-filter"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "custom-control-label",
+                              attrs: { for: "category2" }
+                            },
+                            [_vm._v("Audio")]
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "div",
+                        { staticClass: "custom-control custom-radio" },
+                        [
+                          _c("input", {
+                            staticClass: "custom-control-input",
+                            attrs: {
+                              type: "radio",
+                              id: "category3",
+                              name: "category-filter"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "custom-control-label",
+                              attrs: { for: "category3" }
+                            },
+                            [_vm._v("Cameras & Camcorders")]
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "div",
+                        { staticClass: "custom-control custom-radio" },
+                        [
+                          _c("input", {
+                            staticClass: "custom-control-input",
+                            attrs: {
+                              type: "radio",
+                              id: "category4",
+                              name: "category-filter"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "custom-control-label",
+                              attrs: { for: "category4" }
+                            },
+                            [_vm._v("Car Electronics & GPS")]
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "div",
+                        { staticClass: "custom-control custom-radio" },
+                        [
+                          _c("input", {
+                            staticClass: "custom-control-input",
+                            attrs: {
+                              type: "radio",
+                              id: "category5",
+                              name: "category-filter"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "custom-control-label",
+                              attrs: { for: "category5" }
+                            },
+                            [_vm._v("Cell Phones")]
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "div",
+                        { staticClass: "custom-control custom-radio" },
+                        [
+                          _c("input", {
+                            staticClass: "custom-control-input",
+                            attrs: {
+                              type: "radio",
+                              id: "category6",
+                              name: "category-filter"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "custom-control-label",
+                              attrs: { for: "category6" }
+                            },
+                            [_vm._v("Computers & Tablets")]
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "div",
+                        { staticClass: "custom-control custom-radio" },
+                        [
+                          _c("input", {
+                            staticClass: "custom-control-input",
+                            attrs: {
+                              type: "radio",
+                              id: "category7",
+                              name: "category-filter"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "custom-control-label",
+                              attrs: { for: "category7" }
+                            },
+                            [_vm._v("Health, Fitness & Beauty")]
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "div",
+                        { staticClass: "custom-control custom-radio" },
+                        [
+                          _c("input", {
+                            staticClass: "custom-control-input",
+                            attrs: {
+                              type: "radio",
+                              id: "category8",
+                              name: "category-filter"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "custom-control-label",
+                              attrs: { for: "category8" }
+                            },
+                            [_vm._v("Office & School Supplies")]
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "div",
+                        { staticClass: "custom-control custom-radio" },
+                        [
+                          _c("input", {
+                            staticClass: "custom-control-input",
+                            attrs: {
+                              type: "radio",
+                              id: "category9",
+                              name: "category-filter"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "custom-control-label",
+                              attrs: { for: "category9" }
+                            },
+                            [_vm._v("TV & Home Theater")]
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "div",
+                        { staticClass: "custom-control custom-radio" },
+                        [
+                          _c("input", {
+                            staticClass: "custom-control-input",
+                            attrs: {
+                              type: "radio",
+                              id: "category10",
+                              name: "category-filter"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "custom-control-label",
+                              attrs: { for: "category10" }
+                            },
+                            [_vm._v("Video Games")]
+                          )
+                        ]
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { attrs: { id: "clear-filters" } }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-block btn-primary",
+                      attrs: { type: "button" }
+                    },
+                    [_vm._v("Clear All Filters")]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
   }
 ]
 render._withStripped = true
