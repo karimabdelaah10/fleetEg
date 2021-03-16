@@ -21,7 +21,8 @@ class ProductsApiController extends Controller {
     }
 
     public function getFilteredProducts() {
-     $products =  $this->model->Filtered()->orderBy("id","DESC")->paginate(request('per_page'));
+//        return $this->model->where('title' ,'like','%'.request()->search_key.'%')->get();
+     $products =  $this->model->Filtered()->with('category')->orderBy("id","DESC")->paginate(request('per_page'));
      return new ProductsResourcePagination($products);
     }
 

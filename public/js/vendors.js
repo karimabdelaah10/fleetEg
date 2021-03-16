@@ -2372,65 +2372,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       products: [],
       resultsCount: 0,
       pagination: null,
-      per_page: 1,
+      per_page: 10,
       page: 1,
-      last_page: 1
+      last_page: 1,
+      selected_price: 'all',
+      selected_category: 'all',
+      search_key: ''
     };
   },
   props: ['row'],
@@ -2438,6 +2391,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   mounted: function mounted() {},
   beforeMount: function beforeMount() {
     this.fetch();
+  },
+  watch: {
+    selected_price: function selected_price(newVal, oldVal) {
+      this.products.length = 0;
+      this.fetch();
+    },
+    selected_category: function selected_category(newVal, oldVal) {
+      this.products.length = 0;
+      this.fetch();
+    },
+    search_key: function search_key(newVal, oldVal) {
+      this.products.length = 0;
+      this.fetch();
+    }
   },
   methods: {
     fetch: function fetch() {
@@ -2449,7 +2416,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios.get('/api/v1/products/?page=' + _this.page + '&per_page=' + _this.per_page).then(function (response) {
+                return axios.get('/api/v1/products/?page=' + _this.page + '&per_page=' + _this.per_page + '&selected_price=' + _this.selected_price + '&selected_category=' + _this.selected_category + '&search_key=' + _this.search_key).then(function (response) {
                   var _this$products;
 
                   (_this$products = _this.products).push.apply(_this$products, _toConsumableArray(response.data.data));
@@ -5090,6 +5057,14 @@ var render = function() {
               _c("div", { staticClass: "col-sm-12" }, [
                 _c("div", { staticClass: "input-group input-group-merge" }, [
                   _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.search_key,
+                        expression: "search_key"
+                      }
+                    ],
                     staticClass: "form-control search-product",
                     attrs: {
                       type: "text",
@@ -5097,6 +5072,15 @@ var render = function() {
                       placeholder: _vm.row.trans.search_in_products,
                       "aria-label": "Search...",
                       "aria-describedby": "shop-search"
+                    },
+                    domProps: { value: _vm.search_key },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.search_key = $event.target.value
+                      }
                     }
                   }),
                   _vm._v(" "),
@@ -5141,15 +5125,21 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("h6", { staticClass: "item-name" }, [
+                  _c("h4", { staticClass: "item-name" }, [
                     _c(
                       "a",
                       {
                         staticClass: "text-body",
                         attrs: { href: "one-product.html" }
                       },
-                      [_vm._v(_vm._s(item.title))]
+                      [_vm._v(_vm._s(item.title) + " " + _vm._s(item.id))]
                     )
+                  ]),
+                  _vm._v(" "),
+                  _c("h6", { staticClass: "item-name" }, [
+                    _c("a", { staticClass: "text-body" }, [
+                      _vm._v(_vm._s(item.category))
+                    ])
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "card-text item-description" }, [
@@ -5231,12 +5221,29 @@ var render = function() {
                         { staticClass: "custom-control custom-radio" },
                         [
                           _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.selected_price,
+                                expression: "selected_price"
+                              }
+                            ],
                             staticClass: "custom-control-input",
                             attrs: {
                               type: "radio",
                               id: "priceAll",
                               name: "price-range",
+                              value: "all",
                               checked: ""
+                            },
+                            domProps: {
+                              checked: _vm._q(_vm.selected_price, "all")
+                            },
+                            on: {
+                              change: function($event) {
+                                _vm.selected_price = "all"
+                              }
                             }
                           }),
                           _vm._v(" "),
@@ -5252,13 +5259,180 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _vm._m(3),
+                    _c("li", [
+                      _c(
+                        "div",
+                        { staticClass: "custom-control custom-radio" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.selected_price,
+                                expression: "selected_price"
+                              }
+                            ],
+                            staticClass: "custom-control-input",
+                            attrs: {
+                              type: "radio",
+                              id: "priceRange1",
+                              name: "price-range",
+                              value: "l-100"
+                            },
+                            domProps: {
+                              checked: _vm._q(_vm.selected_price, "l-100")
+                            },
+                            on: {
+                              change: function($event) {
+                                _vm.selected_price = "l-100"
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "custom-control-label",
+                              attrs: { for: "priceRange1" }
+                            },
+                            [_vm._v("<= 100")]
+                          )
+                        ]
+                      )
+                    ]),
                     _vm._v(" "),
-                    _vm._m(4),
+                    _c("li", [
+                      _c(
+                        "div",
+                        { staticClass: "custom-control custom-radio" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.selected_price,
+                                expression: "selected_price"
+                              }
+                            ],
+                            staticClass: "custom-control-input",
+                            attrs: {
+                              type: "radio",
+                              id: "priceRange2",
+                              name: "price-range",
+                              value: "f-100-t-500"
+                            },
+                            domProps: {
+                              checked: _vm._q(_vm.selected_price, "f-100-t-500")
+                            },
+                            on: {
+                              change: function($event) {
+                                _vm.selected_price = "f-100-t-500"
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "custom-control-label",
+                              attrs: { for: "priceRange2" }
+                            },
+                            [_vm._v("100 - 500")]
+                          )
+                        ]
+                      )
+                    ]),
                     _vm._v(" "),
-                    _vm._m(5),
+                    _c("li", [
+                      _c(
+                        "div",
+                        { staticClass: "custom-control custom-radio" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.selected_price,
+                                expression: "selected_price"
+                              }
+                            ],
+                            staticClass: "custom-control-input",
+                            attrs: {
+                              type: "radio",
+                              id: "priceARange3",
+                              name: "price-range",
+                              value: "f-500-t-1000"
+                            },
+                            domProps: {
+                              checked: _vm._q(
+                                _vm.selected_price,
+                                "f-500-t-1000"
+                              )
+                            },
+                            on: {
+                              change: function($event) {
+                                _vm.selected_price = "f-500-t-1000"
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "custom-control-label",
+                              attrs: { for: "priceARange3" }
+                            },
+                            [_vm._v("500 - 1000")]
+                          )
+                        ]
+                      )
+                    ]),
                     _vm._v(" "),
-                    _vm._m(6)
+                    _c("li", [
+                      _c(
+                        "div",
+                        { staticClass: "custom-control custom-radio" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.selected_price,
+                                expression: "selected_price"
+                              }
+                            ],
+                            staticClass: "custom-control-input",
+                            attrs: {
+                              type: "radio",
+                              id: "priceRange4",
+                              name: "price-range",
+                              value: "g-1000"
+                            },
+                            domProps: {
+                              checked: _vm._q(_vm.selected_price, "g-1000")
+                            },
+                            on: {
+                              change: function($event) {
+                                _vm.selected_price = "g-1000"
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "custom-control-label",
+                              attrs: { for: "priceRange4" }
+                            },
+                            [_vm._v(">= 1000")]
+                          )
+                        ]
+                      )
+                    ])
                   ]
                 )
               ]),
@@ -5268,50 +5442,104 @@ var render = function() {
                   _vm._v(_vm._s(_vm.row.trans.categories))
                 ]),
                 _vm._v(" "),
-                _c("ul", { staticClass: "list-unstyled categories-list" }, [
-                  _c("li", [
-                    _c("div", { staticClass: "custom-control custom-radio" }, [
-                      _c("input", {
-                        staticClass: "custom-control-input",
-                        attrs: {
-                          type: "radio",
-                          id: "categoryAll",
-                          name: "category-filter",
-                          checked: ""
-                        }
-                      }),
-                      _vm._v(" "),
+                _c(
+                  "ul",
+                  { staticClass: "list-unstyled categories-list" },
+                  [
+                    _c("li", [
                       _c(
-                        "label",
-                        {
-                          staticClass: "custom-control-label",
-                          attrs: { for: "priceAll" }
-                        },
-                        [_vm._v(_vm._s(_vm.row.trans.all))]
+                        "div",
+                        { staticClass: "custom-control custom-radio" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.selected_category,
+                                expression: "selected_category"
+                              }
+                            ],
+                            staticClass: "custom-control-input",
+                            attrs: {
+                              type: "radio",
+                              id: "categoryAll",
+                              name: "category-filter",
+                              value: "all",
+                              checked: ""
+                            },
+                            domProps: {
+                              checked: _vm._q(_vm.selected_category, "all")
+                            },
+                            on: {
+                              change: function($event) {
+                                _vm.selected_category = "all"
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "custom-control-label",
+                              attrs: { for: "categoryAll" }
+                            },
+                            [_vm._v(_vm._s(_vm.row.trans.all))]
+                          )
+                        ]
                       )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(7),
-                  _vm._v(" "),
-                  _vm._m(8),
-                  _vm._v(" "),
-                  _vm._m(9),
-                  _vm._v(" "),
-                  _vm._m(10),
-                  _vm._v(" "),
-                  _vm._m(11),
-                  _vm._v(" "),
-                  _vm._m(12),
-                  _vm._v(" "),
-                  _vm._m(13),
-                  _vm._v(" "),
-                  _vm._m(14),
-                  _vm._v(" "),
-                  _vm._m(15),
-                  _vm._v(" "),
-                  _vm._m(16)
-                ])
+                    ]),
+                    _vm._v(" "),
+                    _vm._l(_vm.row.categories, function(category, index) {
+                      return _c("li", { key: index }, [
+                        _c(
+                          "div",
+                          { staticClass: "custom-control custom-radio" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.selected_category,
+                                  expression: "selected_category"
+                                }
+                              ],
+                              staticClass: "custom-control-input",
+                              attrs: {
+                                type: "radio",
+                                id: category.id,
+                                name: "category-filter"
+                              },
+                              domProps: {
+                                value: category.id,
+                                checked: _vm._q(
+                                  _vm.selected_category,
+                                  category.id
+                                )
+                              },
+                              on: {
+                                change: function($event) {
+                                  _vm.selected_category = category.id
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "custom-control-label",
+                                attrs: { for: category.id }
+                              },
+                              [_vm._v(_vm._s(category.title))]
+                            )
+                          ]
+                        )
+                      ])
+                    })
+                  ],
+                  2
+                )
               ]),
               _vm._v(" "),
               _c("div", { attrs: { id: "clear-filters" } }, [
@@ -5319,7 +5547,13 @@ var render = function() {
                   "button",
                   {
                     staticClass: "btn btn-block btn-primary",
-                    attrs: { type: "button" }
+                    attrs: { type: "button" },
+                    on: {
+                      click: function($event) {
+                        _vm.selected_category = "all"
+                        _vm.selected_price = "all"
+                      }
+                    }
                   },
                   [_vm._v(_vm._s(_vm.row.trans.cancel))]
                 )
@@ -5440,284 +5674,6 @@ var staticRenderFns = [
           staticClass: "text-muted",
           attrs: { "data-feather": "search" }
         })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("div", { staticClass: "custom-control custom-radio" }, [
-        _c("input", {
-          staticClass: "custom-control-input",
-          attrs: { type: "radio", id: "priceRange1", name: "price-range" }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          {
-            staticClass: "custom-control-label",
-            attrs: { for: "priceRange1" }
-          },
-          [_vm._v("<=$10")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("div", { staticClass: "custom-control custom-radio" }, [
-        _c("input", {
-          staticClass: "custom-control-input",
-          attrs: { type: "radio", id: "priceRange2", name: "price-range" }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          {
-            staticClass: "custom-control-label",
-            attrs: { for: "priceRange2" }
-          },
-          [_vm._v("$10 - $100")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("div", { staticClass: "custom-control custom-radio" }, [
-        _c("input", {
-          staticClass: "custom-control-input",
-          attrs: { type: "radio", id: "priceARange3", name: "price-range" }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          {
-            staticClass: "custom-control-label",
-            attrs: { for: "priceARange3" }
-          },
-          [_vm._v("$100 - $500")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("div", { staticClass: "custom-control custom-radio" }, [
-        _c("input", {
-          staticClass: "custom-control-input",
-          attrs: { type: "radio", id: "priceRange4", name: "price-range" }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          {
-            staticClass: "custom-control-label",
-            attrs: { for: "priceRange4" }
-          },
-          [_vm._v(">= $500")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("div", { staticClass: "custom-control custom-radio" }, [
-        _c("input", {
-          staticClass: "custom-control-input",
-          attrs: { type: "radio", id: "category1", name: "category-filter" }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          { staticClass: "custom-control-label", attrs: { for: "category1" } },
-          [_vm._v("Appliances")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("div", { staticClass: "custom-control custom-radio" }, [
-        _c("input", {
-          staticClass: "custom-control-input",
-          attrs: { type: "radio", id: "category2", name: "category-filter" }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          { staticClass: "custom-control-label", attrs: { for: "category2" } },
-          [_vm._v("Audio")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("div", { staticClass: "custom-control custom-radio" }, [
-        _c("input", {
-          staticClass: "custom-control-input",
-          attrs: { type: "radio", id: "category3", name: "category-filter" }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          { staticClass: "custom-control-label", attrs: { for: "category3" } },
-          [_vm._v("Cameras & Camcorders")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("div", { staticClass: "custom-control custom-radio" }, [
-        _c("input", {
-          staticClass: "custom-control-input",
-          attrs: { type: "radio", id: "category4", name: "category-filter" }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          { staticClass: "custom-control-label", attrs: { for: "category4" } },
-          [_vm._v("Car Electronics & GPS")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("div", { staticClass: "custom-control custom-radio" }, [
-        _c("input", {
-          staticClass: "custom-control-input",
-          attrs: { type: "radio", id: "category5", name: "category-filter" }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          { staticClass: "custom-control-label", attrs: { for: "category5" } },
-          [_vm._v("Cell Phones")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("div", { staticClass: "custom-control custom-radio" }, [
-        _c("input", {
-          staticClass: "custom-control-input",
-          attrs: { type: "radio", id: "category6", name: "category-filter" }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          { staticClass: "custom-control-label", attrs: { for: "category6" } },
-          [_vm._v("Computers & Tablets")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("div", { staticClass: "custom-control custom-radio" }, [
-        _c("input", {
-          staticClass: "custom-control-input",
-          attrs: { type: "radio", id: "category7", name: "category-filter" }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          { staticClass: "custom-control-label", attrs: { for: "category7" } },
-          [_vm._v("Health, Fitness & Beauty")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("div", { staticClass: "custom-control custom-radio" }, [
-        _c("input", {
-          staticClass: "custom-control-input",
-          attrs: { type: "radio", id: "category8", name: "category-filter" }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          { staticClass: "custom-control-label", attrs: { for: "category8" } },
-          [_vm._v("Office & School Supplies")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("div", { staticClass: "custom-control custom-radio" }, [
-        _c("input", {
-          staticClass: "custom-control-input",
-          attrs: { type: "radio", id: "category9", name: "category-filter" }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          { staticClass: "custom-control-label", attrs: { for: "category9" } },
-          [_vm._v("TV & Home Theater")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("div", { staticClass: "custom-control custom-radio" }, [
-        _c("input", {
-          staticClass: "custom-control-input",
-          attrs: { type: "radio", id: "category10", name: "category-filter" }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          { staticClass: "custom-control-label", attrs: { for: "category10" } },
-          [_vm._v("Video Games")]
-        )
       ])
     ])
   }

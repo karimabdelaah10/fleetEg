@@ -29,6 +29,31 @@ class Product extends Model
     public function scopeFiltered($query)
     {
         $query->Active();
+        if (request()->search_key && !empty(request()->search_key)){
+            $query->where('title' ,'like',  '%'.request()->search_key.'%');
+//            ->orWhere('description' ,'like', '%"' . request()->search_key . '"%');
+        }
+        if (request()->selected_category && request()->selected_category != 'all'){
+            $query->where('category_id' , request()->selected_category);
+        }
+        if (request()->selected_price && request()->selected_price != 'all'){
+            switch (request()->selected_price){
+                case ('l-100'):
+                    $query->where('price' , '<=' ,100);
+                break;
+                case ('f-100-t-500'):
+                    $query->where('price' , '>' ,100);
+                    $query->where('price' , '<=' ,500);
+                break;
+                case ('f-500-t-1000'):
+                    $query->where('price' , '>' ,500);
+                    $query->where('price' , '<=' ,1000);
+                break;
+                default:
+                    $query->where('price' , '>' ,1000);
+                    break;
+            }
+        }
         return $query;
     }
 

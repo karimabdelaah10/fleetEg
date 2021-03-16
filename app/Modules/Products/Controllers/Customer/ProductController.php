@@ -30,6 +30,7 @@ class ProductController extends Controller {
     }
 
     public function getIndex() {
+        $catgeories_ids = $this->model->pluck('category_id')->unique();
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
@@ -48,6 +49,7 @@ class ProductController extends Controller {
             'cancel' => trans('app.cancel'),
             'all' => trans('app.all'),
         ];
+        $data['row']->categories = Category::whereIn('id' , $catgeories_ids)->get();
         $data['page_title'] = trans('app.list') . " " . $this->title;
         $data['page_description'] = trans('products.page description');
         $data['rows'] = $this->model->Filtered()->orderBy("id","DESC")->paginate(request('per_page'));

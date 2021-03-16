@@ -45,6 +45,7 @@
                                     id="shop-search"
                                     :placeholder="row.trans.search_in_products"
                                     aria-label="Search..."
+                                    v-model="search_key"
                                     aria-describedby="shop-search"
                                 />
                                 <div class="input-group-append">
@@ -78,8 +79,11 @@
                                     <h6 class="item-price">${{item.price}}</h6>
                                 </div>
                             </div>
+                            <h4 class="item-name">
+                                <a class="text-body" href="one-product.html">{{item.title}} {{item.id}}</a>
+                            </h4>
                             <h6 class="item-name">
-                                <a class="text-body" href="one-product.html">{{item.title}}</a>
+                                <a class="text-body">{{item.category}}</a>
                             </h6>
                             <p class="card-text item-description">
                                 {{item.description}}
@@ -115,32 +119,32 @@
                                 <ul class="list-unstyled price-range" id="price-range">
                                     <li>
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" id="priceAll" name="price-range" class="custom-control-input" checked />
+                                            <input type="radio" id="priceAll" name="price-range" v-model="selected_price" value="all" class="custom-control-input" checked />
                                             <label class="custom-control-label" for="priceAll">{{row.trans.all}}</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" id="priceRange1" name="price-range" class="custom-control-input" />
-                                            <label class="custom-control-label" for="priceRange1">&lt;=$10</label>
+                                            <input type="radio" id="priceRange1" name="price-range" v-model="selected_price" value="l-100" class="custom-control-input" />
+                                            <label class="custom-control-label" for="priceRange1">&lt;= 100</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" id="priceRange2" name="price-range" class="custom-control-input" />
-                                            <label class="custom-control-label" for="priceRange2">$10 - $100</label>
+                                            <input type="radio" id="priceRange2" name="price-range" v-model="selected_price" value="f-100-t-500" class="custom-control-input" />
+                                            <label class="custom-control-label" for="priceRange2">100 - 500</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" id="priceARange3" name="price-range" class="custom-control-input" />
-                                            <label class="custom-control-label" for="priceARange3">$100 - $500</label>
+                                            <input type="radio" id="priceARange3" name="price-range" v-model="selected_price" value="f-500-t-1000" class="custom-control-input" />
+                                            <label class="custom-control-label" for="priceARange3">500 - 1000</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" id="priceRange4" name="price-range" class="custom-control-input" />
-                                            <label class="custom-control-label" for="priceRange4">&gt;= $500</label>
+                                            <input type="radio" id="priceRange4" name="price-range" v-model="selected_price" value="g-1000" class="custom-control-input" />
+                                            <label class="custom-control-label" for="priceRange4">&gt;= 1000</label>
                                         </div>
                                     </li>
                                 </ul>
@@ -153,68 +157,14 @@
                                 <ul class="list-unstyled categories-list">
                                     <li>
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" id="categoryAll" name="category-filter" class="custom-control-input" checked />
-                                            <label class="custom-control-label" for="priceAll">{{row.trans.all}}</label>
+                                            <input type="radio" id="categoryAll" name="category-filter" v-model="selected_category" value="all" class="custom-control-input" checked />
+                                            <label class="custom-control-label" for="categoryAll">{{row.trans.all}}</label>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li v-for="(category , index) in row.categories" :key="index">
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" id="category1" name="category-filter" class="custom-control-input" />
-                                            <label class="custom-control-label" for="category1">Appliances</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="category2" name="category-filter" class="custom-control-input" />
-                                            <label class="custom-control-label" for="category2">Audio</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="category3" name="category-filter" class="custom-control-input" />
-                                            <label class="custom-control-label" for="category3">Cameras & Camcorders</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="category4" name="category-filter" class="custom-control-input" />
-                                            <label class="custom-control-label" for="category4">Car Electronics & GPS</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="category5" name="category-filter" class="custom-control-input" />
-                                            <label class="custom-control-label" for="category5">Cell Phones</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="category6" name="category-filter" class="custom-control-input" />
-                                            <label class="custom-control-label" for="category6">Computers & Tablets</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="category7" name="category-filter" class="custom-control-input" />
-                                            <label class="custom-control-label" for="category7">Health, Fitness & Beauty</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="category8" name="category-filter" class="custom-control-input" />
-                                            <label class="custom-control-label" for="category8">Office & School Supplies</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="category9" name="category-filter" class="custom-control-input" />
-                                            <label class="custom-control-label" for="category9">TV & Home Theater</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="category10" name="category-filter" class="custom-control-input" />
-                                            <label class="custom-control-label" for="category10">Video Games</label>
+                                            <input type="radio" :id="category.id" name="category-filter" v-model="selected_category" :value="category.id" class="custom-control-input" />
+                                            <label class="custom-control-label" :for="category.id">{{category.title}}</label>
                                         </div>
                                     </li>
                                 </ul>
@@ -223,7 +173,7 @@
 
                             <!-- Clear Filters Starts -->
                             <div id="clear-filters">
-                                <button type="button" class="btn btn-block btn-primary">{{ row.trans.cancel }}</button>
+                                <button type="button" class="btn btn-block btn-primary" v-on:click="selected_category='all'; selected_price='all'">{{ row.trans.cancel }}</button>
                             </div>
                             <!-- Clear Filters Ends -->
                         </div>
@@ -251,9 +201,13 @@
                 products:[],
                 resultsCount:0,
                 pagination:null,
-                per_page :1,
+                per_page :10,
                 page:1,
                 last_page:1,
+                selected_price:'all',
+                selected_category:'all',
+                search_key:'',
+
 
             };
         },
@@ -265,9 +219,26 @@
         beforeMount() {
             this.fetch();
         },
+        watch: {
+            selected_price: function(newVal, oldVal) {
+                this.products.length=0;
+                this.fetch();
+            },
+            selected_category: function(newVal, oldVal) {
+                this.products.length=0;
+                this.fetch();
+            },
+            search_key: function(newVal, oldVal) {
+                this.products.length=0;
+                this.fetch();
+            },
+        },
         methods:{
             async fetch () {
-               await axios.get('/api/v1/products/?page='+this.page+'&per_page='+this.per_page)
+               await axios.get('/api/v1/products/?page='+
+                   this.page+'&per_page='+this.per_page+
+                   '&selected_price='+this.selected_price+
+                   '&selected_category='+this.selected_category+'&search_key='+this.search_key)
                         .then(response => {
                             this.products.push(...response.data.data);
                             this.pagination =response.data.pagination
