@@ -106,7 +106,7 @@
             @elseif(is_user())
             <!-- ///////////////////////////////////////////////// -->
             <li class=" nav-item">
-                <a class="d-flex align-items-center" href="home-page.html">
+                <a class="d-flex align-items-center" href="/">
                     <i data-feather="home"></i>
                     <span class="menu-title text-truncate" data-i18n="HomePage">{{trans('navigation.home')}}</span>
                 </a>

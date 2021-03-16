@@ -24,8 +24,8 @@ return [
     'last 10 orders' => 'اخر 10 طالبات',
     'all orders' => ' كل الطالبات',
     'list one order' => 'عرض بيانات الطلب',
-    'available_balance'=>'الرصيد المتاح',
-
+    'available_balance'=>'الرصيد المتاح للتصفيه',
+    'your_numbers' =>'الارقام الاحصائيه الخاصه بك',
 
     ''=>''
 ];

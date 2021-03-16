@@ -12,7 +12,7 @@ class Slider extends BaseModel
 
     protected static $attachFields = [
         'image' => [
-            'sizes' => ['small' => 'crop,400x300', 'large' => 'resize,1520x650'],
+            'sizes' => ['small' => 'crop,400x300', 'large' => 'resize,800x600'],
             'path' => 'storage/uploads'
         ],
     ];

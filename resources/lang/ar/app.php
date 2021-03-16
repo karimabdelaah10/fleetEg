@@ -56,5 +56,6 @@ return [
     'price_range'=>'نطاق السعر',
     'search_in_products'=>'البحث فى المنتجات',
     'all'=>'الكل',
+    'ask_transfer_money'=>'تقدم بطلب للتصفيه',
     ''=>''
 ];

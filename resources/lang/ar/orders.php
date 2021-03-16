@@ -22,6 +22,8 @@ return [
     'shipping_price'=>'سعر الشحن',
     'total_price'=>'اجمالى السعر',
     'shipping_notes'=>'ملاحظات الشحن',
+    'delivered_orders_count'=>'عدد الطلبات التى تم تسليمها',
+    'pending_orders_count'=>'عدد الطلبات قيد الانتظار ',
 
     ''=>''
 ];
