@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\MoneyProcess\Controllers;
+namespace App\Modules\MoneyProcess\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
 use App\Modules\BaseApp\Enums\GeneralEnum;
@@ -17,8 +17,8 @@ class MoneyRequestsController extends Controller {
 
     public function __construct(Moneyrequest $model) {
         $this->module = 'Money Request';
-        $this->module_url = '/money-request';
-        $this->views = 'MoneyProcess::money_request';
+        $this->module_url = '/customer-money-request';
+        $this->views = 'MoneyProcess::customer.money_request';
         $this->title = trans('app.money requests');
         $this->model = $model;
     }
@@ -31,16 +31,45 @@ class MoneyRequestsController extends Controller {
         $data['row']=$this->model;
         $data['row']->is_active = 1;
         $data['page_title'] = trans('app.list') . ' ' . $this->title;
-        $data['page_description'] = trans('moneyrequest.page description');
-        $data['rows'] = $this->model->getData()->orderBy('id','desc')->paginate(request('per_page'));
+        $data['page_description'] = trans('moneyrequest.your money requests list');
+        $data['rows'] = $this->model->getData()->where('user_id',auth()->id())->orderBy('id','desc')->paginate(request('per_page'));
         return view($this->views . '.index' , $data);
     }
+
+    public function getCreate() {
+//        authorize('edit-' . $this->module);
+        $data['module'] = $this->module;
+        $data['views'] = $this->views;
+        $data['page_title'] = trans('app.add') . " " . $this->title;
+        $data['breadcrumb'] = [$this->title => $this->module_url];
+        $data['row'] = $this->model;
+
+        return view($this->views . '.create', $data);
+    }
+
+    public function postCreate(Request $request) {
+//        authorize('edit-' . $this->module);
+        if ($request->requested_amount > auth()->user()->available_balance){
+            flash(trans('app.insufficient balance'))->error();
+            return back();
+        }
+        $record =[
+            'requested_amount'=>$request->requested_amount,
+            'user_id' => auth()->id(),
+            'available_balance' => auth()->user()->available_balance
+        ];
+        if ($this->model->create($record)) {
+            flash(trans('app.update successfully'))->success();
+            return redirect($this->module_url);
+            //Todo to add this to notification (to alert admin that he has new request)
+        }
+    }
+
 
     public function getEdit($id) {
 //        authorize('edit-' . $this->module);
         $data['module'] = $this->module;
         $data['views'] = $this->views;
-        $data['statuses'] = MoneyProcessEnum::moneyRequestStatusesForSelector();
         $data['page_title'] = trans('app.edit') . " " . $this->title;
         $data['breadcrumb'] = [$this->title => $this->module];
         $data['row'] = $this->model->findOrFail($id);
@@ -54,23 +83,22 @@ class MoneyRequestsController extends Controller {
     public function postEdit(Request $request , $id) {
 //        authorize('edit-' . $this->module);
         $row = $this->model->findOrFail($id);
-        $user = User::findOrFail($row->usr_id);
-        if ($row->requested_amount > $user->available_balance){
+        if ($request->requested_amount > auth()->user()->available_balance){
             flash(trans('app.insufficient balance'))->error();
-            return redirect($this->module_url);
+            return back();
         }
         if ($row->update($request->all())) {
-            if ($row->status == GeneralEnum::TRANSFORMED){
-                $new_available_balance = $row->user->available_balance - $row->requested_amount;
-                // Todo To add this process to transactions db
-                createTransaction($row->user_id , $row->user->available_balance , $new_available_balance ,$row->requested_amount ,MoneyProcessEnum::MONEY_REQUEST);
-                $row->user->update([
-                    'available_balance' =>$new_available_balance
-                ]);
-                //Todo to save new notification with that change
-
-            }
             flash(trans('app.update successfully'))->success();
+            return redirect($this->module_url);
+        }
+    }
+
+
+    public function getDelete ($id) {
+//        authorize('edit-' . $this->module);
+        $row = $this->model->findOrFail($id);
+        if ($row->delete()) {
+            flash(trans('app.deleted successfully'))->success();
             return redirect($this->module_url);
         }
     }

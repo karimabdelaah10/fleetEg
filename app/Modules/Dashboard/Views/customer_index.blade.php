@@ -21,7 +21,7 @@
                                     </a>
                                 </h3>
                                 <button class="btn btn-primary" type="button" style="color: #fff">
-                                    <a href="money-requests.html" style="color: #fff">{{trans('app.ask_transfer_money')}}</a>
+                                    <a href="/customer-money-request/create-request" style="color: #fff">{{trans('app.ask_transfer_money')}}</a>
                                 </button>
                             </div>
                         </div>
@@ -122,7 +122,7 @@
                                         $i=0;
                                         ?>
                                             @forelse($bannars as $bannar)
-                                            <div class="carousel-item @if($i == 0) active @endif" style="height: 400px;width: 100%">
+                                            <div class="carousel-item @if($i == 0) active @endif" style="height: 500px;width: 100%">
                                                 <a href="{{$bannar->link}}">
                                                     <img class="img-fluid" style="width: 100%;height: 100%" src="{{$bannar->image}}" alt="First slide" />
                                                     <div class="carousel-caption">

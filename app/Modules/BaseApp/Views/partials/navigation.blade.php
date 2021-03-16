@@ -143,7 +143,7 @@
                     <span class="badge badge-light-warning badge-pill ml-auto mr-1">3</span></a>
                 <ul class="menu-content">
                     <li>
-                        <a class="d-flex align-items-center" href="money-requests.html">
+                        <a class="d-flex align-items-center" href="/customer-money-request/">
                             <i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="AllProducts">{{trans('navigation.money requests')}}</span>
                         </a>

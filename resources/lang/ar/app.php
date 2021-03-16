@@ -21,6 +21,8 @@ return [
     'logout'=>'تسجيل الخروج',
     'go home page'=>'الذهاب الى الصفحه الرئيسيه',
 
+    'created_at'=>'تاريخ الانشاء',
+    'updated_at'=>'تاريخ التعديل',
     'status'=>'الحاله',
     'active'=>'نشط',
     'inactive'=>'غير نشط',
@@ -57,5 +59,6 @@ return [
     'search_in_products'=>'البحث فى المنتجات',
     'all'=>'الكل',
     'ask_transfer_money'=>'تقدم بطلب للتصفيه',
+    'insufficient balance'=>'رصيدك الحالى غير كاف',
     ''=>''
 ];
