@@ -5,7 +5,9 @@ namespace App\Modules\Users;
 use App\Modules\BaseApp\Traits\CreatedBy;
 use App\Modules\BaseApp\Traits\HasAttach;
 use App\Modules\MoneyProcess\Models\Moneyrequest;
+use App\Modules\Products\Models\Favouriteproduct;
 use App\Modules\Products\Models\Order;
+use App\Modules\Products\Models\Product;
 use App\Modules\Users\Enums\UserEnum;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -95,6 +97,10 @@ class User extends Authenticatable
             });
     }
 
+    public function favourite_products(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Product::class , 'favouriteproducts');
+    }
     public function moneyRequests(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Moneyrequest::class , 'user_id')->orderByDesc('id');

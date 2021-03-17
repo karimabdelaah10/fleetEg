@@ -35,7 +35,7 @@
                 </a>
             </li>
             <li class=" nav-item">
-                <a class="d-flex align-items-center" href="/products">
+                <a class="d-flex align-items-center" href="/product">
                     <i data-feather="grid"></i>
                     <span class="menu-title text-truncate" data-i18n="Products">{{trans('navigation.products')}}</span>
                 </a>
@@ -124,7 +124,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="d-flex align-items-center" href="products.html">
+                        <a class="d-flex align-items-center" href="/product/favourite-list">
                             <i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="FavouriteProducts">{{trans('navigation.favourite products')}}</span></a>
                     </li>

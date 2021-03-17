@@ -7,5 +7,7 @@ Route::group(['prefix' => 'specs' , 'as' => 'specs.'], function () {
 Route::group([
 //    'middleware'=>'auth',
     'prefix' => 'products' , 'as' => 'products.'], function () {
-    Route::get('/', 'Api\ProductsApiController@getFilteredProducts');
+    Route::get('/{user_id}', 'Api\ProductsApiController@getFilteredProducts');
+    Route::get('/get-favourite-products/{user_id}', 'Api\ProductsApiController@getFavouriteProducts');
+    Route::post('/fav', 'Api\ProductsApiController@favProduct');
 });

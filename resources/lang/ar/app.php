@@ -54,11 +54,13 @@ return [
     'more'=>'المزيد',
     'results_found'=>'عدد النتائج',
     'add_to_wish_list'=>'اضافه الى المفضله',
+    'remove_from_wish_list'=>'حذف من المفضله',
     'delete_from_wish_list'=>'مسح من المفضله',
     'price_range'=>'نطاق السعر',
     'search_in_products'=>'البحث فى المنتجات',
     'all'=>'الكل',
     'ask_transfer_money'=>'تقدم بطلب للتصفيه',
     'insufficient balance'=>'رصيدك الحالى غير كاف',
+    'favourite products count'=>'عدد المنتجات المفضله لك',
     ''=>''
 ];

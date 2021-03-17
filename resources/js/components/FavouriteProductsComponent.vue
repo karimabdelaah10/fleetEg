@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="content-detached content-right">
+        <div class="content-detached">
             <div class="content-body"><!-- E-commerce Content Section Starts -->
                 <section id="ecommerce-header">
                     <div class="row">
@@ -117,82 +117,6 @@
                 <!-- E-commerce Products Ends -->
             </div>
         </div>
-        <div class="sidebar-detached sidebar-left">
-            <div class="sidebar"><!-- Ecommerce Sidebar Starts -->
-                <div class="sidebar-shop">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="multi-range-price">
-                                <h6 class="filter-title mt-0">{{row.trans.price_range}}</h6>
-                                <ul class="list-unstyled price-range" id="price-range">
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="priceAll" name="price-range" v-model="selected_price" value="all" class="custom-control-input" checked />
-                                            <label class="custom-control-label" for="priceAll">{{row.trans.all}}</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="priceRange1" name="price-range" v-model="selected_price" value="l-100" class="custom-control-input" />
-                                            <label class="custom-control-label" for="priceRange1">&lt;= 100</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="priceRange2" name="price-range" v-model="selected_price" value="f-100-t-500" class="custom-control-input" />
-                                            <label class="custom-control-label" for="priceRange2">100 - 500</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="priceARange3" name="price-range" v-model="selected_price" value="f-500-t-1000" class="custom-control-input" />
-                                            <label class="custom-control-label" for="priceARange3">500 - 1000</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="priceRange4" name="price-range" v-model="selected_price" value="g-1000" class="custom-control-input" />
-                                            <label class="custom-control-label" for="priceRange4">&gt;= 1000</label>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- Price Filter ends -->
-
-                            <!-- Categories Starts -->
-                            <div id="product-categories">
-                                <h6 class="filter-title">{{ row.trans.categories }}</h6>
-                                <ul class="list-unstyled categories-list">
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="categoryAll" name="category-filter" v-model="selected_category" value="all" class="custom-control-input" checked />
-                                            <label class="custom-control-label" for="categoryAll">{{row.trans.all}}</label>
-                                        </div>
-                                    </li>
-                                    <li v-for="(category , index) in row.categories" :key="index">
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" :id="category.id" name="category-filter" v-model="selected_category" :value="category.id" class="custom-control-input" />
-                                            <label class="custom-control-label" :for="category.id">{{category.title}}</label>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- Categories Ends -->
-
-                            <!-- Clear Filters Starts -->
-                            <div id="clear-filters">
-                                <button type="button" class="btn btn-block btn-primary" v-on:click="selected_category='all'; selected_price='all'">{{ row.trans.cancel }}</button>
-                            </div>
-                            <!-- Clear Filters Ends -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Ecommerce Sidebar Ends -->
-
-            </div>
-        </div>
-
-
         <div  id="more_btn" class="btn btn-flat"
               v-on:click="handleScrolledToBottom">
             {{row.trans.more}}
@@ -214,8 +138,6 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
                 per_page :10,
                 page:1,
                 last_page:1,
-                selected_price:'all',
-                selected_category:'all',
                 search_key:'',
             };
         },
@@ -235,14 +157,6 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
 
         },
         watch: {
-            selected_price: function(newVal, oldVal) {
-                this.products.length=0;
-                this.fetch();
-            },
-            selected_category: function(newVal, oldVal) {
-                this.products.length=0;
-                this.fetch();
-            },
             search_key: function(newVal, oldVal) {
                 this.products.length=0;
                 this.fetch();
@@ -250,9 +164,8 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
         },
         methods:{
             async fetch () {
-                let url = '/api/v1/products/'+ this.row.user.id+'?page='+ this.page+'&per_page='+this.per_page+
-                    '&selected_price='+this.selected_price+
-                    '&selected_category='+this.selected_category+'&search_key='+this.search_key;
+                let url = '/api/v1/products/get-favourite-products/'+ this.row.user.id+'?page='+ this.page+'&per_page='+this.per_page+
+                   '&search_key='+this.search_key;
                await axios.get(url).then(response => {
                             this.products.push(...response.data.data);
                             this.pagination =response.data.pagination
@@ -274,7 +187,8 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
                 await axios.post('/api/v1/products/fav' ,data)
                     .then(response => {
                         if (response.data.status === 200){
-                            item.is_favourite = !item.is_favourite;
+                            this.products.length =0;
+                            this.fetch();
                         }
                     });
             }

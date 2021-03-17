@@ -7,6 +7,7 @@ return [
     'add product' => 'اضافه منتج',
     'edit product' => 'تعديل منتج',
     'view product' => 'عرض تفاصيل  المنتج',
+    'list favourite products' => 'عرض المنتجات المفضله',
 
     'category'=>'فئه المنتج',
     'specs'=>'الصفات',

@@ -73,8 +73,8 @@
                                                 </div>
                                             </div>
                                             <div class="media-body my-auto">
-                                                <h4 class="font-weight-bolder mb-0">1.423k</h4>
-                                                <p class="card-text font-small-3 mb-0">عدد المنتجات المفضله لك</p>
+                                                <h4 class="font-weight-bolder mb-0">{{$numbers->favourite_products}}</h4>
+                                                <p class="card-text font-small-3 mb-0">{{trans('app.favourite products count')}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -127,7 +127,7 @@
                                                     <img class="img-fluid" style="width: 100%;height: 100%" src="{{$bannar->image}}" alt="First slide" />
                                                     <div class="carousel-caption">
 {{--                                                        <h3 class="text-white">First Slide Label</h3>--}}
-                                                        <p class="text-white">{{$bannar->description}}
+{{--                                                        <p class="text-white">{{$bannar->description}}--}}
                                                         </p>
                                                     </div>
 

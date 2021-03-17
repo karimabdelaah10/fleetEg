@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Modules\BaseApp\Enums\GeneralEnum;
 use App\Modules\Products\Models\Order;
 use App\Modules\Slider\Models\Slider;
+use App\Modules\Users\User;
 
 class DashboardController extends Controller {
 
@@ -22,12 +23,13 @@ class DashboardController extends Controller {
 
     public function getIndex() {
         if (is_user()){
+            $user = User::findOrFail(auth()->id());
             $data['bannars']=Slider::Active()->get();
             $user_orders =Order::where('user_id' , auth()->id());
             $data['numbers'] =$this;
             $data['numbers']->delivered_orders = $user_orders->where('status' ,GeneralEnum::DELIVERED)->count();
             $data['numbers']->pending_orders = $user_orders->where('status' ,GeneralEnum::PENDING)->count();
-
+            $data['numbers']->favourite_products = $user->favourite_products->count();
             return view($this->views . '::customer_index' , $data);
         }elseif (is_admin()){
 

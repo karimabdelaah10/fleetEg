@@ -2,6 +2,7 @@
 
 namespace App\Modules\Products\Resources;
 
+use App\Modules\Products\Models\Favouriteproduct;
 use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -15,11 +16,13 @@ class ProductsResource extends JsonResource
      */
     public function toArray($request)
     {
+//        dd(auth()->user());
         return [
             'id' => (int)$this->id,
             'title' => $this->title,
             'description' => $this->description,
             'is_active' => $this->is_active,
+            'is_favourite' => $this->is_favourite($this->id),
             'price' => (int)$this->price,
             'commission' => (int)$this->commission,
             'discount' => $this->discount,
@@ -33,5 +36,17 @@ class ProductsResource extends JsonResource
             'updated_at' => Carbon::parse($this->updated_at)->format('Y-m-d'),
         ];
 
+    }
+
+    public function is_favourite($product_id)
+    {
+        if (auth()->id()){
+            $row = Favouriteproduct::where([['product_id' , $product_id],
+                ['user_id', auth()->id()]])->first();
+            if ($row){
+                return true;
+            }
+        }
+    return  false;
     }
 }

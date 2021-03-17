@@ -31,6 +31,7 @@
     },
     "dependencies": {
         "toastr": "^2.1.4",
+        "vue-feather-icons": "^5.1.0",
         "vue-observe-visibility": "^1.0.0"
     }
 }
