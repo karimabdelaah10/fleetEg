@@ -7,6 +7,7 @@ use App\Modules\BaseApp\Enums\GeneralEnum;
 use App\Modules\MoneyProcess\Enums\MoneyProcessEnum;
 use App\Modules\MoneyProcess\Models\Moneyrequest;
 use App\Modules\MoneyProcess\Models\Transaction;
+use App\Modules\Users\Enums\UserEnum;
 use App\Modules\Users\User;
 use Illuminate\Http\Request;
 
@@ -58,7 +59,12 @@ class MoneyRequestsController extends Controller {
             'user_id' => auth()->id(),
             'available_balance' => auth()->user()->available_balance
         ];
-        if ($this->model->create($record)) {
+        if ($row = $this->model->create($record)) {
+            $description=' بطلب سحب مالى '.auth()->user()->name.' قام المستخدم : ';
+            $to= UserEnum::ADMIN;
+            $related_element_id = $row->id;
+            $related_element_type = Moneyrequest::class;
+            create_new_notification($description , $to , null ,$related_element_id ,$related_element_type);
             flash(trans('app.update successfully'))->success();
             return redirect($this->module_url);
             //Todo to add this to notification (to alert admin that he has new request)
@@ -88,6 +94,12 @@ class MoneyRequestsController extends Controller {
             return back();
         }
         if ($row->update($request->all())) {
+            $description=' بتعديل طلب السحب مالى '.auth()->user()->name.' قام المستخدم : ';
+            $to= UserEnum::ADMIN;
+            $related_element_id = $row->id;
+            $related_element_type = Moneyrequest::class;
+            create_new_notification($description , $to , null ,$related_element_id ,$related_element_type);
+
             flash(trans('app.update successfully'))->success();
             return redirect($this->module_url);
         }
