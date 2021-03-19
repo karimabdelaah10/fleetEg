@@ -125,134 +125,7 @@
         </div>
     </div>
     <!-- Item features ends -->
-
-    <!-- Related Products starts -->
-    <div class="card-body">
-        <div
-            class="mt-4 mb-2 text-center">
-            <h4>Related Products</h4>
-            <p class="card-text">
-                People also search for this items
-            </p>
-        </div>
-        <div class="swiper-responsive-breakpoints swiper-container px-4 py-2">
-            <div class="swiper-wrapper">
-                <div v-for="(item , index) in related_products"
-                     :class="sliderClass(index)"
-                >
-
-                    <a href="javascript:void(0)">
-                        <div class="item-heading">
-                            <h5 class="text-truncate mb-0">{{ sliderClass(index) }}</h5>
-                            <small class="text-body">by Apple</small>
-                        </div>
-                        <div class="img-container w-50 mx-auto py-75">
-                            <img :src="item.image" class="img-fluid" alt="image" />
-                        </div>
-                        <div class="item-meta">
-                            <ul class="unstyled-list list-inline mb-25">
-                                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                                <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
-                            </ul>
-                            <p class="card-text text-primary mb-0">$399.98</p>
-                        </div>
-                    </a>
-                </div>
-<!--                <div class="swiper-slide">-->
-<!--                    <a href="javascript:void(0)">-->
-<!--                        <div class="item-heading">-->
-<!--                            <h5 class="text-truncate mb-0">Apple MacBook Pro - Silver</h5>-->
-<!--                            <small class="text-body">by Apple</small>-->
-<!--                        </div>-->
-<!--                        <div class="img-container w-50 mx-auto py-50">-->
-<!--                            <img src="/images/elements/macbook-pro.png" class="img-fluid" alt="image" />-->
-<!--                        </div>-->
-<!--                        <div class="item-meta">-->
-<!--                            <ul class="unstyled-list list-inline mb-25">-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>-->
-<!--                            </ul>-->
-<!--                            <p class="card-text text-primary mb-0">$2449.49</p>-->
-<!--                        </div>-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--                <div class="swiper-slide">-->
-<!--                    <a href="javascript:void(0)">-->
-<!--                        <div class="item-heading">-->
-<!--                            <h5 class="text-truncate mb-0">Apple HomePod (Space Grey)</h5>-->
-<!--                            <small class="text-body">by Apple</small>-->
-<!--                        </div>-->
-<!--                        <div class="img-container w-50 mx-auto py-75">-->
-<!--                            <img src="/images/elements/homepod.png" class="img-fluid" alt="image" />-->
-<!--                        </div>-->
-<!--                        <div class="item-meta">-->
-<!--                            <ul class="unstyled-list list-inline mb-25">-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>-->
-<!--                            </ul>-->
-<!--                            <p class="card-text text-primary mb-0">$229.29</p>-->
-<!--                        </div>-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--                <div class="swiper-slide">-->
-<!--                    <a href="javascript:void(0)">-->
-<!--                        <div class="item-heading">-->
-<!--                            <h5 class="text-truncate mb-0">Magic Mouse 2 - Black</h5>-->
-<!--                            <small class="text-body">by Apple</small>-->
-<!--                        </div>-->
-<!--                        <div class="img-container w-50 mx-auto py-75">-->
-<!--                            <img src="/images/elements/magic-mouse.png" class="img-fluid" alt="image" />-->
-<!--                        </div>-->
-<!--                        <div class="item-meta">-->
-<!--                            <ul class="unstyled-list list-inline mb-25">-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>-->
-<!--                            </ul>-->
-<!--                            <p class="card-text text-primary mb-0">$90.98</p>-->
-<!--                        </div>-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--                <div class="swiper-slide">-->
-<!--                    <a href="javascript:void(0)">-->
-<!--                        <div class="item-heading">-->
-<!--                            <h5 class="text-truncate mb-0">iPhone 12 Pro</h5>-->
-<!--                            <small class="text-body">by Apple</small>-->
-<!--                        </div>-->
-<!--                        <div class="img-container w-50 mx-auto py-75">-->
-<!--                            <img src="/images/elements/iphone-x.png" class="img-fluid" alt="image" />-->
-<!--                        </div>-->
-<!--                        <div class="item-meta">-->
-<!--                            <ul class="unstyled-list list-inline mb-25">-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>-->
-<!--                                <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>-->
-<!--                            </ul>-->
-<!--                            <p class="card-text text-primary mb-0">$1559.99</p>-->
-<!--                        </div>-->
-<!--                    </a>-->
-<!--                </div>-->
-            </div>
-            <!-- Add Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
-    </div>
-    <!-- Related Products ends -->
-  </div>
+ </div>
 </section>
 <!-- app e-commerce details end -->
 </div>
@@ -294,8 +167,6 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
                await axios.get(url).then(response => {
                    this.product = response.data.data;
                    this.image = this.product.image;
-                   this.related_products = response.data.related_products;
-                   console.log(this.related_products)
                 });
             },
            async toggleFavProduct(item){

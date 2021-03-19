@@ -64,10 +64,8 @@ class ProductsApiController extends Controller {
         $user= User::findOrFail(\request()->user_id);
         Auth::login($user);
         $product =  $this->model->findOrFail($product_id);
-        $related_products = Product::where('id' , '!=',$product_id)->where('category_id' , $product->category_id)->Active()->inRandomOrder()->limit(5)->get();;
         return[
             'data' =>new ProductsResource($product),
-            'related_products'=>new ProductsListResource($related_products)
         ];
     }
 

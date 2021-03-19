@@ -80,7 +80,7 @@
                                 </div>
                             </div>
                             <h4 class="item-name">
-                                <a class="text-body" href="one-product.html">{{item.title}} {{item.id}}</a>
+                                <a class="text-body" :href="'/product/view/'+item.id">{{item.title}}</a>
                             </h4>
                             <h6 class="item-name">
                                 <a class="text-body">{{item.category}}</a>
