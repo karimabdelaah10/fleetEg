@@ -32,6 +32,7 @@ return [
     'view spec values'=>'عرض قيم الصفه',
     'add_product_spec'=>'اضافه صفه للمنتج',
     'add spec value'=>'اضافه قيمه اخرى للصفه',
+    'in_stock'=>'المتاح فى المخزن',
 
 
     ''=>''

@@ -24,7 +24,7 @@ class ProductController extends Controller {
 
     public function __construct(Product $model) {
         $this->module = 'products';
-        $this->module_url = '/products';
+        $this->module_url = '/product';
         $this->views = 'Products::customer.products';
         $this->title = trans('app.products');
         $this->model = $model;
@@ -62,10 +62,32 @@ class ProductController extends Controller {
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
-        $data['row'] = $this->model->findOrFail($id);
+        $data['breadcrumb'] = [
+            $this->title => $this->module_url.'/all'
+        ];
+        $data['row']=$this->model;
+        $data['row']->user = auth()->user();
+        $data['row']->product = $this->model->findOrFail($id);
+        $data['row']->trans= [
+            'price' =>trans('products.price'),
+            'commission' =>trans('products.commission'),
+            'in_stock' =>trans('products.in_stock'),
+            'eg' =>trans('app.egyptian_pound'),
+            'loading' => trans('app.loading'),
+            'more' => trans('app.more'),
+            'results_found' => trans('app.results_found'),
+            'add_to_wish_list' => trans('app.add_to_wish_list'),
+            'add_to_cart' => trans('app.add_to_cart'),
+            'remove_from_wish_list' => trans('app.remove_from_wish_list'),
+            'price_range' => trans('app.price_range'),
+            'categories' => trans('app.categories'),
+            'view_product' => trans('products.view product'),
+            'search_in_products' => trans('app.search_in_products'),
+            'cancel' => trans('app.cancel'),
+            'all' => trans('app.all'),
+        ];
         $data['page_title'] = trans('app.view') . " " . $this->title;
         $data['page_description'] =  trans('app.list') . " " . $this->title;
-        $data['breadcrumb'] = [$this->title => $this->module_url];
 
         return view($this->views . '.view', $data);
     }

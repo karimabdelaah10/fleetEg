@@ -61,7 +61,7 @@
                 <section id="ecommerce-products" class="grid-view">
                     <div class="card ecommerce-card" v-for="(item , index) in products" :key="index">
                         <div class="item-img text-center">
-                            <a href="one-product.html">
+                            <a :href="'/product/view/'+item.id">
                                 <img
                                     class="img-fluid card-img-top"
                                     :src="item.image"
@@ -80,7 +80,7 @@
                                 </div>
                             </div>
                             <h4 class="item-name">
-                                <a class="text-body" href="one-product.html">{{item.title}} {{item.id}}</a>
+                                <a class="text-body" :href="'/product/view/'+item.id">{{item.title}}</a>
                             </h4>
                             <h6 class="item-name">
                                 <a class="text-body">{{item.category}}</a>
@@ -107,7 +107,7 @@
                                 <heart-icon size="1.5x" fill="true" class="custom-class"></heart-icon>
                                 <span>{{ row.trans.remove_from_wish_list }}</span>
                             </a>
-                            <a href="javascript:void(0)" class="btn btn-primary btn-cart">
+                            <a :href="'/product/view/'+item.id" class="btn btn-primary btn-cart">
                                 <arrow-right-icon size="1.5x" class="custom-class"></arrow-right-icon>
                                 <span class="add-to-cart">{{row.trans.view_product}}</span>
                             </a>

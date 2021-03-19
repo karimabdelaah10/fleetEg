@@ -62,14 +62,19 @@ class Product extends Model
         return $query->where('is_active' , 1);
     }
 
-    public function category()
+    public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Category::class , 'category_id');
     }
 
-    public function specs()
+    public function specs(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Spec::class,
             'productspecs')->withPivot('id');
+    }
+    public function specsvalues(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Specvalue::class,
+            'productspecvalues' ,'product_id' , 'spec_value_id')->withPivot('id' ,'image' ,'stock' ,'parent_spec_value_id' ,'spec_id');
     }
 }

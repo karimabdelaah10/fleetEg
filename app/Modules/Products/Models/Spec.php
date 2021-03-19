@@ -20,6 +20,11 @@ class Spec extends Model
     {
         return $this->hasMany(Specvalue::class , 'spec_id');
     }
+
+    public function productspecsvalues()
+    {
+        return $this->hasMany(Productspecvalue::class , 'spec_id');
+    }
     public function getData()
     {
         return $this;

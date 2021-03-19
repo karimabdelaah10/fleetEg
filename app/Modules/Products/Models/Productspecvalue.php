@@ -21,8 +21,14 @@ class Productspecvalue extends Model
         ],
     ];
 
-    public function value()
+    public function value(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Specvalue::class ,'spec_value_id');
     }
+
+    public function spec(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Spec::class ,'spec_id');
+    }
+
 }

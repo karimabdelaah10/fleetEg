@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="/css/products/{{lang()}}/app-ecommerce.min.css">
     <link rel="stylesheet" type="text/css" href="/css/products/{{lang()}}/ext-component-toastr.min.css">
     <!-- END: Page CSS-->
+        @stack('css')
 
     <!-- BEGIN: Custom CSS-->
         @if(lang() == 'ar')

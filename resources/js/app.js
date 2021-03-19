@@ -32,6 +32,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('footer-component', require('./components/FooterComponent.vue').default);
 Vue.component('products-component', require('./components/ProductsComponent.vue').default);
 Vue.component('fav-products-component', require('./components/FavouriteProductsComponent.vue').default);
+Vue.component('one-products-component', require('./components/OneProductComponent').default);
 Vue.component('product-discount', require('./components/ProductDiscountComponent.vue').default);
 Vue.component('product-specs', require('./components/ProductSpecsComponent.vue').default);
 Vue.component('new-product-specs', require('./components/NewProductSpecsComponent.vue').default);

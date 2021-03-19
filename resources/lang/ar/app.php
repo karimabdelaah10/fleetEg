@@ -53,6 +53,7 @@ return [
     'loading'=>'جارى التحميل ....',
     'more'=>'المزيد',
     'results_found'=>'عدد النتائج',
+    'add_to_cart'=>'اضافه الى عربه التسوق',
     'add_to_wish_list'=>'اضافه الى المفضله',
     'remove_from_wish_list'=>'حذف من المفضله',
     'delete_from_wish_list'=>'مسح من المفضله',

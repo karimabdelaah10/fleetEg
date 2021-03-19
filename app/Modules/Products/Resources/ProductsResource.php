@@ -3,6 +3,7 @@
 namespace App\Modules\Products\Resources;
 
 use App\Modules\Products\Models\Favouriteproduct;
+use App\Modules\Products\Models\Productspecvalue;
 use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -17,7 +18,7 @@ class ProductsResource extends JsonResource
     public function toArray($request)
     {
 //        dd(auth()->user());
-        return [
+        $array= [
             'id' => (int)$this->id,
             'title' => $this->title,
             'description' => $this->description,
@@ -35,9 +36,43 @@ class ProductsResource extends JsonResource
             'created_at' => Carbon::parse($this->created_at)->format('Y-m-d'),
             'updated_at' => Carbon::parse($this->updated_at)->format('Y-m-d'),
         ];
+        $array['specs'] =$this->getSpecs();
+        return  $array;
 
     }
 
+    public function getSpecs()
+    {
+        $specs=[];
+        $specs_values=[];
+        if (!empty($this->specs)){
+            foreach ($this->specs as $spec){
+                $this->specsvalues= $this->specsvalues->where('spec_id' ,$spec->id);
+                    if (!empty($this->specsvalues)){
+                        foreach ($this->specsvalues as $specsvalue){
+                            $spec_value_record =[
+                                'id'            => $specsvalue->id,
+                                'title'         => $specsvalue->title,
+                                'stock'         => @$specsvalue->pivot->stock,
+                                'image'         =>  image($specsvalue->pivot->image , 'large') ,
+                                'is_active'     =>$specsvalue->is_active,
+                                'pivot_id'         => @$specsvalue->pivot->id,
+                            ];
+                            array_push($specs_values , $spec_value_record);
+                        }
+                    }
+                $spec_record =[
+                    'id'            => $spec->id,
+                    'title'         => $spec->title,
+                    'is_active'     =>$spec->is_active,
+                    'specs_values'  =>$specs_values
+                ];
+                array_push($specs , $spec_record);
+                $specs_values=[];
+            }
+        }
+        return $specs;
+    }
     public function is_favourite($product_id)
     {
         if (auth()->id()){
