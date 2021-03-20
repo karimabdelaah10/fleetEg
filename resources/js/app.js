@@ -37,6 +37,8 @@ Vue.component('product-discount', require('./components/ProductDiscountComponent
 Vue.component('product-specs', require('./components/ProductSpecsComponent.vue').default);
 Vue.component('new-product-specs', require('./components/NewProductSpecsComponent.vue').default);
 Vue.component('specs-values', require('./components/SpecsValuesComponent.vue').default);
+Vue.component('new-payment-method', require('./components/NewPaymentMethodComponent.vue').default);
+Vue.component('default-payment-method', require('./components/defaultPaymentMethodComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

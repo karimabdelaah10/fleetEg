@@ -2,8 +2,33 @@
 
 use App\Modules\BaseApp\Enums\GeneralEnum;
 use App\Modules\MoneyProcess\Enums\MoneyProcessEnum;
+use App\Modules\MoneyProcess\Enums\PaymentMethodEnum;
 use App\Modules\MoneyProcess\Models\Transaction;
 
+if (! function_exists('getMethodInfo')) {
+    function getMethodInfo($element)
+    {
+        $value='';
+        switch ($element->type) {
+            case PaymentMethodEnum::BANK_ACCOUNT :
+                $value = '<span class="badge badge-pill badge-warning mr-1">'
+                    .trans('paymentmethods.'.PaymentMethodEnum::BANK_ACCOUNT_NUMBER).'</span> : '.@$element->bank_account_number ;
+                break;
+            case PaymentMethodEnum::POST :
+                $value = '<span class="badge badge-pill badge-warning mr-1">'
+                    .trans('paymentmethods.'.PaymentMethodEnum::NATIONAL_ID).'</span> : '.@$element->national_id ;
+                break;
+                case PaymentMethodEnum::E_WALLET :
+                    $value = '<span class="badge badge-pill badge-warning mr-1">'
+                        .trans('paymentmethods.'.PaymentMethodEnum::E_WALLET_NUMBER).'</span> : '.@$element->e_wallet_number ;
+                    break;
+            default:
+                $value = '' ;
+        }
+        return $value;
+
+    }
+}
 if (! function_exists('getRequestStatus')) {
     function getRequestStatus($status)
     {

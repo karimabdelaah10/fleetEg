@@ -149,9 +149,9 @@
                         </a>
                     </li>
                     <li>
-                        <a class="d-flex align-items-center" href="payment-methods.html">
+                        <a class="d-flex align-items-center" href="/customer-payment-methods/">
                             <i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="FavouriteProducts">{{trans('navigations.payment methods')}}</span></a>
+                            <span class="menu-item text-truncate" data-i18n="FavouriteProducts">{{trans('navigation.payment methods')}}</span></a>
                     </li>
 
                     <li>

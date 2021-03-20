@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Modules\BaseApp\Enums\GeneralEnum;
 use App\Modules\MoneyProcess\Enums\MoneyProcessEnum;
 use App\Modules\MoneyProcess\Models\Moneyrequest;
+use App\Modules\MoneyProcess\Models\Paymentmethod;
 use App\Modules\MoneyProcess\Models\Transaction;
 use App\Modules\Users\Enums\UserEnum;
 use App\Modules\Users\User;
@@ -45,10 +46,20 @@ class MoneyRequestsController extends Controller {
         $data['breadcrumb'] = [$this->title => $this->module_url];
         $data['row'] = $this->model;
 
+        $payments_count = Paymentmethod::where('user_id' , auth()->id())->where('default', 1)->count();
+        if (!$payments_count){
+            flash(trans('paymentmethods.select default payment method first'));
+            return back();
+        }
         return view($this->views . '.create', $data);
     }
 
     public function postCreate(Request $request) {
+        $payments_count = Paymentmethod::where('user_id' , auth()->id())->where('default', 1)->count();
+        if (!$payments_count){
+            flash(trans('paymentmethods.select default payment method first'));
+            return back();
+        }
 //        authorize('edit-' . $this->module);
         if ($request->requested_amount > auth()->user()->available_balance){
             flash(trans('app.insufficient balance'))->error();
