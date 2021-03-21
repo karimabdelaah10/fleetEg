@@ -14,21 +14,27 @@ use App\Modules\Users\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class ProductsApiController extends Controller {
+class CartsApiController extends Controller {
 
     public $model;
     public $views;
     public $module,$module_url ,$title;
 
-    public function __construct(Product $model) {
+    public function __construct(Cart $model) {
         $this->model = $model;
     }
 
-    public function getFilteredProducts($user_id) {
-       $user= User::findOrFail($user_id);
-       Auth::login($user);
-     $products =  $this->model->Filtered()->with('category')->orderBy("id","DESC")->paginate(request('per_page'));
-     return new ProductsResourcePagination($products);
+    public function index($user_id) {
+        $response = [];
+        $trans=[
+            'my_cart' => trans('carts.my_carts'),
+            'total' => trans('carts.total'),
+            'checkout' => trans('carts.checkout'),
+        ];
+      $carts = Cart::where('user_id' ,$user_id)->with('product')->get();
+      $response['data'] = $carts;
+      $response['trans'] = $trans;
+            return  $response;
     }
 
     public function favProduct(Request $request)

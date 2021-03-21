@@ -846,6 +846,13 @@
   dependencies:
     "purgecss" "^3.1.3"
 
+"@morioh/v-msg@^1.0.4":
+  "integrity" "sha512-ZA5tdNjOVQkktzMXqjmeiX6xxHkmGcAglxvTE/kzMyBi2XhlqPCmCdyseH7O5yOBGKJAxLaxaUEUU3QLuYu7aw=="
+  "resolved" "https://registry.npmjs.org/@morioh/v-msg/-/v-msg-1.0.4.tgz"
+  "version" "1.0.4"
+  dependencies:
+    "vue" "^2.6.11"
+
 "@nodelib/fs.scandir@2.1.4":
   "integrity" "sha512-33g3pMJk3bg5nXbL/+CY6I2eJDzZAni49PfJnL5fghPTggPvBd/pFNSgJsdAgWptuFu7qq/ERvOYFlhvsLTCKA=="
   "resolved" "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.4.tgz"
@@ -3493,6 +3500,11 @@
   "integrity" "sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ=="
   "resolved" "https://registry.npmjs.org/hex-color-regex/-/hex-color-regex-1.1.0.tgz"
   "version" "1.1.0"
+
+"highlight.js@*":
+  "integrity" "sha512-S6G97tHGqJ/U8DsXcEdnACbirtbx58Bx9CzIVeYli8OuswCfYI/LsXH2EiGcoGio1KAC3x4mmUwulOllJ2ZyRA=="
+  "resolved" "https://registry.npmjs.org/highlight.js/-/highlight.js-10.7.1.tgz"
+  "version" "10.7.1"
 
 "hmac-drbg@^1.0.1":
   "integrity" "sha1-0nRXAQJabHdabFRXk+1QL8DGSaE="
@@ -6866,6 +6878,13 @@
   dependencies:
     "babel-helper-vue-jsx-merge-props" "^2.0.2"
 
+"vue-highlightjs@^1.3.3":
+  "integrity" "sha1-KaDVcTL8HOFc+mHolpGPW3GMXVI="
+  "resolved" "https://registry.npmjs.org/vue-highlightjs/-/vue-highlightjs-1.3.3.tgz"
+  "version" "1.3.3"
+  dependencies:
+    "highlight.js" "*"
+
 "vue-hot-reload-api@^2.3.0":
   "integrity" "sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog=="
   "resolved" "https://registry.npmjs.org/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz"
@@ -6881,6 +6900,18 @@
     "loader-utils" "^1.1.0"
     "vue-hot-reload-api" "^2.3.0"
     "vue-style-loader" "^4.1.0"
+
+"vue-notification@^1.3.20":
+  "integrity" "sha512-vPj67Ah72p8xvtyVE8emfadqVWguOScAjt6OJDEUdcW5hW189NsqvfkOrctxHUUO9UYl9cTbIkzAEcPnHu+zBQ=="
+  "resolved" "https://registry.npmjs.org/vue-notification/-/vue-notification-1.3.20.tgz"
+  "version" "1.3.20"
+
+"vue-number-input-spinner@^2.2.0":
+  "integrity" "sha512-q1zzpNdGMdqEefoqPCSkNE3iZFEwb9EVq+TtnRKY1gf6EGhbJC6QVV6HGD+R8rjbTWekfWVAzeexrdizHMb5Ow=="
+  "resolved" "https://registry.npmjs.org/vue-number-input-spinner/-/vue-number-input-spinner-2.2.0.tgz"
+  "version" "2.2.0"
+  dependencies:
+    "vue-highlightjs" "^1.3.3"
 
 "vue-observe-visibility@^1.0.0":
   "integrity" "sha512-s5TFh3s3h3Mhd3jaz3zGzkVHKHnc/0C/gNr30olO99+yw2hl3WBhK3ng3/f9OF+qkW4+l7GkmwfAzDAcY3lCFg=="
@@ -6908,7 +6939,7 @@
   "resolved" "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   "version" "1.9.1"
 
-"vue@^2.5.17":
+"vue@^2.0.0", "vue@^2.5.17", "vue@^2.6.11":
   "integrity" "sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-2.6.12.tgz"
   "version" "2.6.12"

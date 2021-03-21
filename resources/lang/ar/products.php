@@ -33,6 +33,13 @@ return [
     'add_product_spec'=>'اضافه صفه للمنتج',
     'add spec value'=>'اضافه قيمه اخرى للصفه',
     'in_stock'=>'المتاح فى المخزن',
+    'ordered_amount'=>'الكميه المطلوبه',
+    'price_change'=>'التغير فى السعر',
+    'discount_option'=>'تخفيض',
+    'over_price_option'=>'زياده فى السعر',
+    'none_option'=>'لا تغير',
+    'product_added_to_cart_title'=>'أضافه منتج لعربه التسوق',
+    'product_added_to_cart_message'=>'تم أضافه منتج جديد لعربه التسوق , يمكنك الان تكمله الطلب ',
 
 
     ''=>''

@@ -3,7 +3,10 @@
 <!-- app e-commerce details start -->
 <section class="app-ecommerce-details">
   <div class="card">
-    <!-- Product Details starts -->
+      <toast-component
+          :data ="toastData"
+      ></toast-component>
+      <!-- Product Details starts -->
     <div class="card-body">
         <div class="row my-2">
             <div
@@ -29,7 +32,7 @@
                     </h4>
                     <h4 class="item-price mr-1 border-left">
                         {{row.trans.commission}} :
-                        {{product.price}}
+                        {{product.commission}}
                         {{row.trans.eg}}
                     </h4>
                 </div>
@@ -42,13 +45,6 @@
                 <p class="card-text">
                     {{product.description}}
                 </p>
-                <ul class="product-features list-unstyled">
-<!--                    <li><i data-feather="shopping-cart"></i> <span>Free Shipping</span></li>-->
-<!--                    <li>-->
-<!--                        <i data-feather="dollar-sign"></i>-->
-<!--                        <span>EMI options available</span>-->
-<!--                    </li>-->
-                </ul>
                 <hr />
 
                 <div class="product-color-options"
@@ -87,15 +83,58 @@
                     <hr />
                 </div>
 
+                <div class="product-color-options" v-if="!isDisabled">
+                    <h6>{{row.trans.ordered_amount}}</h6>
+                    <NumberInputSpinner
+                        :min="1"
+                        :max="stock"
+                        :step="1"
+                        :integerOnly="true"
+                        :inputClass="'ordered_amount_input'"
+                        :buttonClass="'ordered_amount_btn'"
+                        v-model="selectdData.amount"
+                    />
+                    <br>
+                    <hr />
+                </div>
 
+                <div class="product-color-options" v-if="!isDisabled">
+                    <h6>{{ row.trans.price_change}}</h6>
+                    <div class="row mg-t-20 mb-1">
+                        <div class="col-sm-8 mg-t-2 mg-sm-t-0">
+                            <select class="form-control"  name="type"
+                                    v-model="selectdData.commission_diffrence_type" v-on:change="getCommissionMax">
+                                <option value="none">{{row.trans.none_option}}</option>
+                                <option value="overprice">{{row.trans.over_price_option}}</option>
+                                <option value="discount">{{row.trans.discount_option}}</option>                            </select>
+                        </div>
+                        <div class="col-sm-4 mg-t-2 mg-sm-t-0">
+                            <NumberInputSpinner
+                                v-if="selectdData.commission_diffrence_type != 'none'"
+                                :min="0"
+                                :max="commisionMax"
+                                :step="1"
+                                :integerOnly="true"
+                                :inputClass="'ordered_amount_input'"
+                                :buttonClass="'ordered_amount_btn'"
+                                v-model="selectdData.commission_diffrence_amount"
+                            />
+                        </div>
+                    </div>
+                    <br>
+                    <hr />
+                </div>
 
                 <div class="d-flex flex-column flex-sm-row pt-1">
-                    <a href="javascript:void(0)" class="btn btn-primary btn-cart mr-0 mr-sm-1 mb-1 mb-sm-0">
+                    <button href=""
+                            class="btn btn-primary mr-0 mr-sm-1 mb-1 mb-sm-0 "
+                            :disabled='isDisabled'
+                            v-on:click="addProductToCart"
+                    >
                         <i data-feather="shopping-cart" class="mr-50"></i>
-                        <span class="add-to-cart">{{ row.trans.add_to_cart }}</span>
-                    </a>
-
-
+                        <span class="add-to-cart">
+                            {{ row.trans.add_to_cart }}</span>
+                    </button>
 
                     <a v-on:click="toggleFavProduct(product)"
                        v-if="!product.is_favourite"
@@ -112,10 +151,16 @@
                         <span>{{ row.trans.remove_from_wish_list }}</span>
                     </a>
 
-
+                    <a :href="product.media_url"
+                       class="btn btn-outline-success
+                      mr-0 mr-sm-1 mb-1 mb-sm-0">
+                        <image-icon size="1.5x" class="custom-class"></image-icon>
+                        <span>{{ row.trans.media_url }}</span>
+                    </a>
                 </div>
             </div>
         </div>
+
     </div>
     <!-- Product Details ends -->
 
@@ -132,7 +177,8 @@
 </template>
 
 <script>
-import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
+import {HeartIcon ,ArrowRightIcon ,ImageIcon  } from 'vue-feather-icons'
+import NumberInputSpinner from 'vue-number-input-spinner'
 
     export default {
 
@@ -141,17 +187,38 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
                 product:[],
                 inner_specs_values:[],
                 related_products:[],
-                stock: null,
+                toastData:{
+                    title:null,
+                    message:null,
+                    time:null
+                },
+                commisionMax:100000000,
+                stock: 0,
                 image: null,
+                selectdData:{
+                    product_id: null ,
+                    price: null ,
+                    commission: null ,
+                    user_id: null ,
+                    spec_value_id: null ,
+                    inner_spec_value_id: null ,
+                    amount: 1 ,
+                    commission_diffrence_type:'none',
+                    commission_diffrence_amount: 1,
+
+                },
+                min :1,
+                addToCaryBtn:false
             };
         },
         components: {
             HeartIcon,
-            ArrowRightIcon
+            ArrowRightIcon,
+            ImageIcon,
+            NumberInputSpinner
         },
         props: ['row'],
 
-        computed:{},
         created() {},
         mounted() {
             feather.replace();
@@ -160,6 +227,11 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
             this.fetch();
 
         },
+        computed: {
+                isDisabled: function(){
+                return !this.addToCaryBtn;
+            }
+        },
         watch: {},
         methods:{
             async fetch () {
@@ -167,7 +239,7 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
                await axios.get(url).then(response => {
                    this.product = response.data.data;
                    this.image = this.product.image;
-                });
+               });
             },
            async toggleFavProduct(item){
                 let data = {
@@ -187,10 +259,15 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
                 let url = '/api/v1/products/inner-spec-values/'+specValue.pivot_id+'?product_id='+this.product.id;
                 await axios.get(url).then(response => {
                     this.inner_specs_values = response.data;
+                    this.selectdData.spec_value_id =specValue.id;
+                    this.selectdData.inner_spec_value_id =null;
                         if (this.inner_specs_values.length === 0){
+                            this.addToCaryBtn = true;
                              newImage = specValue.image;
                              newStock = specValue.stock;
                         }else{
+                            this.addToCaryBtn = false;
+
                             newImage = specValue.image;
                             newStock = '#';
                         }
@@ -200,6 +277,8 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
 
             },
             selectInnerSpecValue(innerSpecValue){
+                this.selectdData.inner_spec_value_id =innerSpecValue.value_id;
+                this.addToCaryBtn = true;
                 this.toggleImageAndStock(innerSpecValue.image , innerSpecValue.stock)
             },
             toggleImageAndStock(image , stock){
@@ -207,26 +286,74 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
                 this.stock = stock
 
             },
-            sliderClass(slideIndex) {
-                if (slideIndex === 0 ){
-                    return  'swiper-slide active'
-                }else if(slideIndex === 1){
-                    return 'swiper-slide next'
-                }else{
-                    return  'swiper-slide';
-                }
-            }
+             async addProductToCart() {
+                 this.displayToast(this.row.trans.product_added_to_cart_title ,
+                     this.row.trans.product_added_to_cart_message,
+                     this.row.trans.just_now)
+                 if (this.selectdData.commission_diffrence_type == 'overprice'){
+                    this.selectdData.commission = this.selectdData.commission + this.selectdData.commission_diffrence_amount
+                }else if(this.selectdData.commission_diffrence_type == 'discount'){
+                     this.selectdData.commission = this.selectdData.commission - this.selectdData.commission_diffrence_amount
+                 }
+                 this.selectdData.product_id = this.product.id
+                 this.selectdData.commission = this.product.commission
+                 this.selectdData.price = this.product.price
+                 this.selectdData.image = this.image
+                 this.selectdData.user_id = this.row.user.id
+
+                 let old_cart_length =parseInt($('#cart_length').html(), 10)
+                 let new_cart_length =old_cart_length + 1
+                 console.log(new_cart_length)
+                 $('#cart_length').text(new_cart_length)
+                 let url = '/api/v1/products/add-to-cart/';
+                 await axios.post(url , this.selectdData).then(response => {
+                    console.log(response)
+                 });
+            },
+            getCommissionMax(){
+                this.selectdData.commission_diffrence_amount = 0;
+              if (this.selectdData.commission_diffrence_type !='discount'){
+                  this.commisionMax = 10000000
+              }else{
+                  this.commisionMax =this.product.commission;
+              }
+            },
+            displayToast(title ,  message ,time){
+                this.toastData.title = title
+                this.toastData.time = time
+                this.toastData.message = message
+
+                $(".toast-placement .toast").toast("show");
+
+            },
         }
     }
 
 
 </script>
-<style scoped>
-#more_btn{
-    width: 100%;
-    background-color: #fff;
+<style>
+.ordered_amount_btn {
+    -webkit-appearance: none;
+    transition: background 0.5s ease;
+    background: #7367f0;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    float: left;
+    font-size: 20px;
+    height: 40px;
+    margin: 0;
+    width: 40px;
 }
-.favourite_product{
-
+.ordered_amount_input {
+    -webkit-appearance: none;
+    border: 1px solid #ebebeb;
+    float: left;
+    font-size: 16px;
+    height: 40px;
+    margin: 0;
+    outline: none;
+    text-align: center;
+    width: calc(100% - 80px);
 }
 </style>

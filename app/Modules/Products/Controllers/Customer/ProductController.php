@@ -72,12 +72,20 @@ class ProductController extends Controller {
             'price' =>trans('products.price'),
             'commission' =>trans('products.commission'),
             'in_stock' =>trans('products.in_stock'),
+            'price_change' =>trans('products.price_change'),
+            'none_option' =>trans('products.none_option'),
+            'discount_option' =>trans('products.discount_option'),
+            'over_price_option' =>trans('products.over_price_option'),
+            'ordered_amount' =>trans('products.ordered_amount'),
+            'media_url' =>trans('products.media_url'),
             'eg' =>trans('app.egyptian_pound'),
             'loading' => trans('app.loading'),
             'more' => trans('app.more'),
             'results_found' => trans('app.results_found'),
             'add_to_wish_list' => trans('app.add_to_wish_list'),
             'add_to_cart' => trans('app.add_to_cart'),
+            'product_added_to_cart_title' => trans('products.product_added_to_cart_title'),
+            'product_added_to_cart_message' => trans('products.product_added_to_cart_message'),
             'remove_from_wish_list' => trans('app.remove_from_wish_list'),
             'price_range' => trans('app.price_range'),
             'categories' => trans('app.categories'),
@@ -85,6 +93,7 @@ class ProductController extends Controller {
             'search_in_products' => trans('app.search_in_products'),
             'cancel' => trans('app.cancel'),
             'all' => trans('app.all'),
+            'just_now' => trans('app.just_now'),
         ];
         $data['page_title'] = trans('app.view') . " " . $this->title;
         $data['page_description'] =  trans('app.list') . " " . $this->title;

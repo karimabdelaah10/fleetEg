@@ -65,5 +65,6 @@ return [
     'ask_transfer_money'=>'تقدم بطلب للتصفيه',
     'insufficient balance'=>'رصيدك الحالى غير كاف',
     'favourite products count'=>'عدد المنتجات المفضله لك',
+    'just_now'=>'حالا',
     ''=>''
 ];

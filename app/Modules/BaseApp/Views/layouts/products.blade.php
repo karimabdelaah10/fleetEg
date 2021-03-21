@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/css/products/{{lang()}}/vendors.min.css">
     <link rel="stylesheet" type="text/css" href="/css/products/{{lang()}}/nouislider.min.css">
     <link rel="stylesheet" type="text/css" href="/css/products/{{lang()}}/toastr.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/products/{{lang()}}/jquery.bootstrap-touchspin.css">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -77,6 +78,7 @@
 <script src="/js/products/customizer.min.js"></script>
 <!-- END: Theme JS-->
 <!-- BEGIN: Page JS-->
+<script src="/js/products/form-number-input.min.js"></script>
 <script src="/js/products/app-ecommerce.min.js"></script>
 <!-- END: Page JS-->
 <script src="/js/vendors.js"></script>

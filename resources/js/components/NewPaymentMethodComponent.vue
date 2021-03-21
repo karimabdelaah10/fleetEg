@@ -4,7 +4,8 @@
             <label class="col-sm-! form-control-label">
                 {{ row.trans.method}}
                 <span class="tx-danger">*
-                </span></label>
+                </span>
+            </label>
             <div class="col-sm-11 mg-t-10 mg-sm-t-0">
                 <select class="form-control" name="type" v-model="MethodId">
                     <option selected disabled>
