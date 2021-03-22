@@ -52,7 +52,7 @@
                         <h6 class="text-primary font-weight-bolder mb-0">
                             {{total}}</h6>
                     </div>
-                    <a class="btn btn-primary btn-block" href="app-ecommerce-checkout.html">{{trans.checkout}}</a>
+                    <a class="btn btn-primary btn-block" href="/customer-orders/checkout">{{trans.checkout}}</a>
                 </li>
             </ul>
         </li>

@@ -24,4 +24,12 @@ class Cart extends Model
     {
         return $this->belongsTo(Product::class , 'product_id');
     }
+    public function specValue()
+    {
+        return $this->belongsTo(Specvalue::class , 'spec_value_id');
+    }
+    public function innerSpecValue()
+    {
+        return $this->belongsTo(Specvalue::class , 'inner_spec_value_id');
+    }
 }

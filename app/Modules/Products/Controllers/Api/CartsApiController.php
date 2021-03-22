@@ -31,7 +31,7 @@ class CartsApiController extends Controller {
             'total' => trans('carts.total'),
             'checkout' => trans('carts.checkout'),
         ];
-      $carts = Cart::where('user_id' ,$user_id)->with('product')->get();
+      $carts = Cart::where('user_id' ,$user_id)->with(['innerSpecValue','specValue','product'])->get();
       $response['data'] = $carts;
       $response['trans'] = $trans;
             return  $response;

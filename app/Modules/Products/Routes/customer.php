@@ -9,4 +9,9 @@ Route::group([
         Route::get('/view/{id}', 'Customer\ProductController@getView');
         Route::get('/favourite-list', 'Customer\ProductController@getFavouriteProducts');
     });
+
+    Route::group(['prefix' => 'customer-orders' , 'as' => 'customer-orders.'], function () {
+        Route::get('/checkout', 'Customer\OrderController@getCheckout');
+    });
+
 });
