@@ -31,6 +31,7 @@ window.Vue = require('vue').default;
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('toast-component', require('./components/ToastComponent.vue').default);
 Vue.component('cart-component', require('./components/CartComponent').default);
+Vue.component('notification-component', require('./components/NotificationComponent').default);
 Vue.component('check-out-component', require('./components/CheckOutComponent').default);
 Vue.component('footer-component', require('./components/FooterComponent.vue').default);
 Vue.component('products-component', require('./components/ProductsComponent.vue').default);
