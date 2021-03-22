@@ -2037,7 +2037,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return axios.get(url).then(function (response) {
                   _this.carts = response.data.data;
                   _this.trans = response.data.trans;
-                  console.log(_this.carts);
                 });
 
               case 5:
@@ -2049,8 +2048,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }))();
     },
     reload: function reload() {
+      this.carts.length = 0;
       this.getThisUserCarts();
-      console.log('reloaded');
+    },
+    deleteProductFromCarts: function deleteProductFromCarts(product_id) {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        var url;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                url = '/api/v1/carts/delete/' + product_id;
+                _context2.next = 3;
+                return axios.get(url).then(function (response) {
+                  _this2.reload();
+                });
+
+              case 3:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
     }
   }
 });
@@ -21398,6 +21420,13 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "h6",
+                        {
+                          on: {
+                            click: function($event) {
+                              return _vm.deleteProductFromCarts(item.id)
+                            }
+                          }
+                        },
                         [
                           _c("x-icon", {
                             staticClass: "ficon cart-item-remove",

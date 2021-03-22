@@ -5,6 +5,7 @@ Route::group(['prefix' => 'specs' , 'as' => 'specs.'], function () {
 });
 Route::group(['prefix' => 'carts' , 'as' => 'carts.'], function () {
     Route::get('/{user_id}', 'Api\CartsApiController@index');
+    Route::get('/delete/{user_id}', 'Api\CartsApiController@delete');
 });
 
 Route::group([

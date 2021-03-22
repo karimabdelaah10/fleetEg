@@ -40,7 +40,7 @@
                             </div>
 
                             <h5 class="cart-item-price">{{ item.price }}</h5>
-                            <h6>
+                            <h6 v-on:click="deleteProductFromCarts(item.id)">
                                 <x-icon size="1.5x" class="ficon cart-item-remove"></x-icon>
                             </h6>
                         </div>
@@ -103,14 +103,20 @@ import {XIcon} from "vue-feather-icons";
                 await axios.get(url).then(response => {
                     this.carts = response.data.data
                     this.trans = response.data.trans
-                    console.log(this.carts)
                 });
 
 
                 },
             reload(){
+               this.carts.length =0;
                this.getThisUserCarts()
-                console.log('reloaded')
+            },
+            async deleteProductFromCarts(product_id){
+                let url = '/api/v1/carts/delete/'+product_id;
+                await axios.get(url).then(response => {
+                    this.reload()
+                });
+
             }
         }
     }

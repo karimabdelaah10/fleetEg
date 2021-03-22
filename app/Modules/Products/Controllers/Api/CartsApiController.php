@@ -36,6 +36,10 @@ class CartsApiController extends Controller {
       $response['trans'] = $trans;
             return  $response;
     }
+    public function delete($product_id) {
+      Cart::findOrFail($product_id)->delete();
+      return  'Done';
+    }
 
     public function favProduct(Request $request)
     {
