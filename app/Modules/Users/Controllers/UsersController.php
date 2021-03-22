@@ -4,6 +4,7 @@ namespace App\Modules\Users\Controllers;
 
 use App\Modules\Cars\Car;
 use App\Modules\MoneyProcess\Models\Moneyrequest;
+use App\Modules\MoneyProcess\Models\Paymentmethod;
 use App\Modules\Products\Models\Order;
 use App\Modules\Users\Enums\UserEnum;
 use App\Modules\Users\Models\Customer;
@@ -100,6 +101,7 @@ class UsersController extends Controller
         $data['page_title'] = trans('app.view') . " " . $this->title;
         $data['breadcrumb'] = [$this->title => $this->module_url];
         $data['row'] = $this->model->findOrFail($id);
+        $data['payment_methods'] = Paymentmethod::where('user_id' , $id)->get();
         return view($this->views . '.view', $data);
     }
 

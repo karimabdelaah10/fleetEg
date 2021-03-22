@@ -5,6 +5,7 @@ namespace App\Modules\Users\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Modules\MoneyProcess\Models\Moneyrequest;
+use App\Modules\MoneyProcess\Models\Paymentmethod;
 use App\Modules\Products\Models\Order;
 use App\Modules\Users\Requests\ChangeProfilePasswordRequest;
 use App\Modules\Users\Requests\UpdateProfileRequest;
@@ -33,6 +34,7 @@ class ProfileController extends Controller {
         $data['views'] = $this->views.'::profile';
         $data['page_title'] = $this->title;
         $data['row'] = $this->model->find(Auth::user()->id);
+        $data['payment_method'] = Paymentmethod::where('user_id' , \auth()->id())->where('default' , 1)->first();
 //        return  $data['row']->moneyRequests;
         return view($this->views . '.index', $data);
     }
