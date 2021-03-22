@@ -1,7 +1,8 @@
 <template>
     <div >
         <!-- Fixed Center Placement Toast Starts -->
-        <li class="nav-item dropdown dropdown-cart mr-25" v-on:click="reload">
+        <li class="nav-item dropdown dropdown-cart mr-25"
+            v-on:click="reload">
             <a class="nav-link" data-toggle="dropdown"  href="javascript:void(0);">
                 <i class="ficon" data-feather="shopping-cart"></i>
                 <span class="badge badge-pill badge-primary badge-up cart-item-count" id="cart_length">
@@ -79,12 +80,20 @@ import {XIcon} from "vue-feather-icons";
         },
         computed: {
             total: function () {
-                console.log(this.carts);
                 return this.carts.reduce(function (total, item) {
-
                     return total + item.price;
                 }, 0);
-            }
+            },
+            newOrder:function (){
+                return this.$store.state.newOrder;
+            },
+        },
+        watch: {
+            newOrder: function(newVal, oldVal) {
+                console.log('in cart comp'+newVal)
+                this.carts.length =0
+                this.getThisUserCarts()
+            },
         },
         methods:{
            async getThisUserCarts() {
@@ -94,7 +103,6 @@ import {XIcon} from "vue-feather-icons";
                 await axios.get(url).then(response => {
                     this.carts = response.data.data
                     this.trans = response.data.trans
-                    console.log('sssssssssssssssssssss')
                     console.log(this.carts)
                 });
 

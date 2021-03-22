@@ -204,7 +204,7 @@ import NumberInputSpinner from 'vue-number-input-spinner'
                     inner_spec_value_id: null ,
                     amount: 1 ,
                     commission_diffrence_type:'none',
-                    commission_diffrence_amount: 1,
+                    commission_diffrence_amount: 0,
 
                 },
                 min :1,
@@ -230,7 +230,11 @@ import NumberInputSpinner from 'vue-number-input-spinner'
         computed: {
                 isDisabled: function(){
                 return !this.addToCaryBtn;
+            },
+            getAllCategory(){ //final output from here
+                return this.$store.getters.getCategoryFormGetters
             }
+
         },
         watch: {},
         methods:{
@@ -303,11 +307,11 @@ import NumberInputSpinner from 'vue-number-input-spinner'
 
                  let old_cart_length =parseInt($('#cart_length').html(), 10)
                  let new_cart_length =old_cart_length + 1
-                 console.log(new_cart_length)
                  $('#cart_length').text(new_cart_length)
                  let url = '/api/v1/products/add-to-cart/';
                  await axios.post(url , this.selectdData).then(response => {
-                    console.log(response)
+                     this.$store.commit('incementNewOrder')
+                     this.resetSelectedData();
                  });
             },
             getCommissionMax(){
@@ -325,6 +329,19 @@ import NumberInputSpinner from 'vue-number-input-spinner'
 
                 $(".toast-placement .toast").toast("show");
 
+            },
+            resetSelectedData(){
+                this.selectdData ={
+                    product_id: null ,
+                    price: null ,
+                    commission: null ,
+                    user_id: null ,
+                    spec_value_id: null ,
+                    inner_spec_value_id: null ,
+                    amount: 1 ,
+                    commission_diffrence_type:'none',
+                    commission_diffrence_amount: 0,
+                }
             },
         }
     }

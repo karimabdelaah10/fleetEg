@@ -49,17 +49,29 @@ Vue.component('default-payment-method', require('./components/defaultPaymentMeth
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 import VueObserveVisibility from 'vue-observe-visibility'
+import Vuex from 'vuex'
+import storeData from "./store/index"
 
 Vue.use(VueObserveVisibility)
+Vue.use(Vuex)
+
+
+
+const store = new Vuex.Store(
+    storeData
+)
 
 const app = new Vue({
     el: '#app',
+    store,
 });
 
 const footer = new Vue({
     el: '#footer',
+    store,
 });
 
 const header = new Vue({
     el: '#header',
+    store,
 });
