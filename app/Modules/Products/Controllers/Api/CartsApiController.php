@@ -3,6 +3,8 @@
 namespace App\Modules\Products\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Modules\BaseApp\Enums\GeneralEnum;
+use App\Modules\Products\Enums\OrdersEnum;
 use App\Modules\Products\Models\Cart;
 use App\Modules\Products\Models\Favouriteproduct;
 use App\Modules\Products\Models\Order;
@@ -117,7 +119,25 @@ class CartsApiController extends Controller {
         $newOrder->orderProducts()->attach($products);
 
         Cart::where('user_id' ,$request->user_id)->delete();
+        //Todo to send notification to admin about new order
         return'done';
 
+    }
+
+    public function getOrdersNumbers($user_id)
+    {
+        $trans=OrdersEnum::ordersStatusesForSelector();
+         $data =[
+             GeneralEnum::IN_STOCK => Order::where('user_id' , $user_id)->where('status' , GeneralEnum::IN_STOCK)->count(),
+             GeneralEnum::UNDER_REVIEW => Order::where('user_id' , $user_id)->where('status' , GeneralEnum::UNDER_REVIEW)->count(),
+             GeneralEnum::PENDING => Order::where('user_id' , $user_id)->where('status' , GeneralEnum::PENDING)->count(),
+             GeneralEnum::DELIVERED => Order::where('user_id' , $user_id)->where('status' , GeneralEnum::DELIVERED)->count(),
+             GeneralEnum::WITH_SHIPPING_COMPANY => Order::where('user_id' , $user_id)->where('status' , GeneralEnum::WITH_SHIPPING_COMPANY)->count(),
+         ];
+
+         return [
+             'data' =>$data,
+             'trans' =>$trans
+         ];
     }
 }

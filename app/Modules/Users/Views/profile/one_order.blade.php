@@ -69,33 +69,28 @@
                                     <th class="py-1">{{trans('orders.product')}}</th>
                                     <th class="py-1">{{trans('orders.details')}}</th>
                                     <th class="py-1">{{trans('orders.amount')}}</th>
-{{--                                    <th class="py-1">{{trans('orders.product_price')}}</th>--}}
+                                    {{--                                    <th class="py-1">{{trans('orders.product_price')}}</th>--}}
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @forelse($row->orderProducts as $oneOrderProduct)
                                     <tr class="border-bottom">
                                         <td class="py-1">
-                                            <p class="card-text font-weight-bold mb-25">{{@$oneOrderProduct->product->title}}</p>
+                                            <p class="card-text font-weight-bold mb-25">{{@$oneOrderProduct->title}}</p>
                                         </td>
                                         <td class="py-1">
-                                            @forelse($oneOrderProduct->details as $oneDetail)
-                                                @if(!empty($oneDetail->detail))
-                                                    <p class="card-text text-nowrap">{{$oneDetail->detail}}</p>
-                                                @endif
-                                            @empty
-                                            @endforelse
+                                            <p class="card-text text-nowrap">{{$oneOrderProduct->pivot->detail}}</p>
+
                                         </td>
                                         <td class="py-1">
-                                            <span class="font-weight-bold">{{@$oneOrderProduct->amount}}</span>
+                                            <span class="font-weight-bold">{{@$oneOrderProduct->pivot->amount}}</span>
                                         </td>
                                     </tr>
                                 @empty
                                 @endforelse
                                 </tbody>
                             </table>
-                        </div>
-                        <!-- Invoice Description ends -->
+                        </div>                        <!-- Invoice Description ends -->
                         <hr class="invoice-spacing" />
                         <!-- Invoice Note starts -->
                         <div class="card-body invoice-padding pt-0">

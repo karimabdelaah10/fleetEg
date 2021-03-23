@@ -1,6 +1,7 @@
 
 <!-- BEGIN: Main Menu-->
-<div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+<div  id="navigation" class="main-menu menu-fixed menu-light menu-accordion menu-shadow"
+     data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item mr-auto">
@@ -126,16 +127,17 @@
                 </ul>
             </li>
             <li class=" nav-item">
-                <a class="d-flex align-items-center" href="orders.html">
+                <a class="d-flex align-items-center" href="/customer-orders">
                     <i data-feather="shopping-cart"></i>
                     <span class="menu-title text-truncate" data-i18n="Orders">{{trans('navigation.orders')}}</span>
                 </a>
             </li>
             <li class=" nav-item">
-                <a class="d-flex align-items-center" href="products.html">
+                <a class="d-flex align-items-center" href="/customer-money-request/">
                     <i data-feather="dollar-sign"></i>
                     <span class="menu-title text-truncate" data-i18n="Products">{{trans('navigation.financial processes')}}</span>
-                    <span class="badge badge-light-warning badge-pill ml-auto mr-1">3</span></a>
+                    <span class="badge badge-light-warning badge-pill ml-auto mr-1">3</span>
+                </a>
                 <ul class="menu-content">
                     <li>
                         <a class="d-flex align-items-center" href="/customer-money-request/">
@@ -162,6 +164,7 @@
                     <span class="menu-item text-truncate" data-i18n="Account Settings">{{trans('navigation.account settings')}}</span>
                 </a>
             </li>
+            <order-numbers-component :user="{{  auth()->user() }}"></order-numbers-component>
             @endif
 
         </ul>

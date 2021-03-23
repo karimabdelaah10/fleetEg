@@ -12,6 +12,7 @@ Route::group([
 
     Route::group(['prefix' => 'customer-orders' , 'as' => 'customer-orders.'], function () {
         Route::get('/', 'Customer\OrderController@getIndex');
+        Route::get('/view/{id}', 'Customer\OrderController@getView');
         Route::get('/checkout', 'Customer\OrderController@getCheckout');
     });
 

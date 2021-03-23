@@ -33,6 +33,7 @@ Vue.component('toast-component', require('./components/ToastComponent.vue').defa
 Vue.component('cart-component', require('./components/CartComponent').default);
 Vue.component('notification-component', require('./components/NotificationComponent').default);
 Vue.component('check-out-component', require('./components/CheckOutComponent').default);
+Vue.component('order-numbers-component', require('./components/OrdersNumbersComponent.vue').default);
 Vue.component('footer-component', require('./components/FooterComponent.vue').default);
 Vue.component('products-component', require('./components/ProductsComponent.vue').default);
 Vue.component('fav-products-component', require('./components/FavouriteProductsComponent.vue').default);
@@ -74,5 +75,10 @@ const footer = new Vue({
 
 const header = new Vue({
     el: '#header',
+    store,
+});
+
+const navigation = new Vue({
+    el: '#navigation',
     store,
 });

@@ -19,39 +19,13 @@
                             <h4 class="card-title">
                                 {{ @$page_description }}
                             </h4>
-                            <a href="/orders/edit/{{$row->id}}" class="add-new btn btn-primary mt-50">{{trans('orders.edit order status')}}</a>
                         </div>
-                        <div class="card-body invoice-padding pb-0">
-                            <!-- Header starts -->
-                            <div class="d-flex justify-content-between flex-md-row flex-column invoice-spacing mt-0">
-                                <div>
-                                    <h6 class="mb-2">{{trans('orders.user_details')}} :</h6>
-                                    <h4 class="mb-25">{{@$row->user->name}}</h4>
-                                    <p class="card-text mb-25">{{@$row->user->address}}</p>
-                                    <p class="card-text mb-25">{{@$row->user->email}}</p>
-                                    <p class="card-text mb-25">{{@$row->user->mobile_number}}</p>
-                                    <p class="card-text mb-25">{{@$row->store_name}}</p>
-                                </div>
-                                <div class="mt-md-0 mt-2">
-                                    <h4 class="invoice-title">
-                                        {{trans('orders.serial')}}
-                                        <span class="invoice-number">#{{$row->id}}</span>
-                                    </h4>
-                                    <div class="invoice-date-wrapper">
-                                        <p class="invoice-date-title">{{trans('orders.date')}} : {{$row->created_at ? \Carbon\Carbon::parse($row->created_at)->format('Y-m-d') : ''}}</p>
-                                        <p class="invoice-date"> {{trans('orders.status')}} : {!! get_status_for_blade($row->status) !!}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Header ends -->
-                        </div>
-
                         <hr class="invoice-spacing" />
 
                         <!-- Address and Contact starts -->
                         <div class="card-body invoice-padding pt-0">
                             <div class="row invoice-spacing">
-                                <div class="col-xl-8 p-0">
+                                <div class="col-xl-6 p-0">
                                     <h6 class="mb-2">{{trans('orders.customer_details')}} :</h6>
                                     <h4 class="mb-25">{{@$row->customer_name}}</h4>
                                     <p class="card-text mb-25">{{@$row->customer_mobile_number}}</p>
@@ -73,6 +47,16 @@
                                         </tr>
                                         </tbody>
                                     </table>
+                                </div>
+                                <div class="mt-md-0 mt-2">
+                                    <h4 class="invoice-title">
+                                        {{trans('orders.serial')}}
+                                        <span class="invoice-number">#{{$row->id}}</span>
+                                    </h4>
+                                    <div class="invoice-date-wrapper">
+                                        <p class="invoice-date-title">{{trans('orders.date')}} : {{$row->created_at ? \Carbon\Carbon::parse($row->created_at)->format('Y-m-d') : ''}}</p>
+                                        <p class="invoice-date"> {{trans('orders.status')}} : {!! get_status_for_blade($row->status) !!}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +90,8 @@
                                 @endforelse
                                 </tbody>
                             </table>
-                        </div>                        <!-- Invoice Description ends -->
+                        </div>
+                        <!-- Invoice Description ends -->
                         <hr class="invoice-spacing" />
                         <!-- Invoice Note starts -->
                         <div class="card-body invoice-padding pt-0">
@@ -128,4 +113,3 @@
         </section>
     </div>
 @endsection
-
