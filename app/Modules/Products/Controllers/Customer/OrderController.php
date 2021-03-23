@@ -54,7 +54,7 @@ class OrderController extends Controller {
             'customer_address' =>trans('orders.customer_address'),
             'shipping_notes' =>trans('orders.shipping_notes'),
             'checkout' =>trans('carts.checkout'),
-            'customer_name' =>trans('orders.customer_name'),
+            'shipping_coast' =>trans('governorate.shipping_coast'),
             'customer_name' =>trans('orders.customer_name'),
         ];
 

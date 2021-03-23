@@ -5,13 +5,13 @@
             <a class="nav-link" data-toggle="dropdown"
                href="javascript:void(0);">
                 <i class="ficon" data-feather="bell"></i>
-                <span class="badge badge-pill badge-danger badge-up">{{unseen}}</span>
+                <span class="badge badge-pill badge-danger badge-up" v-if="unseen > 0 ">{{unseen}}</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
                 <li class="dropdown-menu-header">
                     <div class="dropdown-header d-flex">
                         <h4 class="notification-title mb-0 mr-auto">{{trans.notifications}}</h4>
-                        <div class="badge badge-pill badge-light-primary">{{unseen}} {{trans.new_notifications}}</div>
+                        <div class="badge badge-pill badge-light-primary" v-if="unseen > 0 ">{{unseen}} {{trans.new_notifications}}</div>
                     </div>
                 </li>
                 <li class="scrollable-container media-list">

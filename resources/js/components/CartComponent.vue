@@ -90,7 +90,6 @@ import {XIcon} from "vue-feather-icons";
         },
         watch: {
             newOrder: function(newVal, oldVal) {
-                console.log('in cart comp'+newVal)
                 this.carts.length =0
                 this.getThisUserCarts()
             },
