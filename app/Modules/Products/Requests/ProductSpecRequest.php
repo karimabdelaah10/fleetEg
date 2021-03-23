@@ -24,7 +24,7 @@ class ProductSpecRequest extends FormRequest
     public function rules()
     {
         return  [
-            'product_id' =>'required|exists:products,id',
+//            'product_id' =>'required|exists:products,id',
             'spec_id' =>'required|exists:specs,id',
         ];
 

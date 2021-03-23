@@ -55,7 +55,7 @@
                      v-for="(item , index) in carts"
                      :key="index">
                     <div class="item-img">
-                        <a :href="'/product/view/'+item.product_id">
+                        <a :href="'/customer-product/view/'+item.product_id">
                             <img :src="item.image"
                                  alt="img-placeholder"/>
                         </a>
@@ -63,7 +63,7 @@
                     <div class="card-body">
                         <div class="item-name">
                             <h6 class="mb-0">
-                                <a :href="'/product/view/'+item.product_id"
+                                <a :href="'/customer-product/view/'+item.product_id"
                                    class="text-body">
                                     {{item.product.title}}</a>
                             </h6>

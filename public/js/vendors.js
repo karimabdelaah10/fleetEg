@@ -22055,7 +22055,9 @@ var render = function() {
                                 {
                                   staticClass: "text-body",
                                   attrs: {
-                                    href: "/product/view/" + item.product_id
+                                    href:
+                                      "/customer-product/view/" +
+                                      item.product_id
                                   }
                                 },
                                 [
@@ -22253,7 +22255,11 @@ var render = function() {
                     _c("div", { staticClass: "item-img" }, [
                       _c(
                         "a",
-                        { attrs: { href: "/product/view/" + item.product_id } },
+                        {
+                          attrs: {
+                            href: "/customer-product/view/" + item.product_id
+                          }
+                        },
                         [
                           _c("img", {
                             attrs: { src: item.image, alt: "img-placeholder" }
@@ -22270,7 +22276,8 @@ var render = function() {
                             {
                               staticClass: "text-body",
                               attrs: {
-                                href: "/product/view/" + item.product_id
+                                href:
+                                  "/customer-product/view/" + item.product_id
                               }
                             },
                             [
@@ -23215,7 +23222,7 @@ var render = function() {
                       "a",
                       {
                         staticClass: "text-body",
-                        attrs: { href: "/product/view/" + item.id }
+                        attrs: { href: "/customer-product/view/" + item.id }
                       },
                       [_vm._v(_vm._s(item.title))]
                     )
@@ -24789,12 +24796,16 @@ var render = function() {
               { key: index, staticClass: "card ecommerce-card" },
               [
                 _c("div", { staticClass: "item-img text-center" }, [
-                  _c("a", { attrs: { href: "/product/view/" + item.id } }, [
-                    _c("img", {
-                      staticClass: "img-fluid card-img-top",
-                      attrs: { src: item.image, alt: "img-placeholder" }
-                    })
-                  ])
+                  _c(
+                    "a",
+                    { attrs: { href: "/customer-product/view/" + item.id } },
+                    [
+                      _c("img", {
+                        staticClass: "img-fluid card-img-top",
+                        attrs: { src: item.image, alt: "img-placeholder" }
+                      })
+                    ]
+                  )
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "card-body" }, [
@@ -24819,7 +24830,7 @@ var render = function() {
                       "a",
                       {
                         staticClass: "text-body",
-                        attrs: { href: "/product/view/" + item.id }
+                        attrs: { href: "/customer-product/view/" + item.id }
                       },
                       [_vm._v(_vm._s(item.title))]
                     )
@@ -24903,7 +24914,7 @@ var render = function() {
                     "a",
                     {
                       staticClass: "btn btn-primary btn-cart",
-                      attrs: { href: "/product/view/" + item.id }
+                      attrs: { href: "/customer-product/view/" + item.id }
                     },
                     [
                       _c("arrow-right-icon", {

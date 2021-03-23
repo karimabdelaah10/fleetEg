@@ -9,7 +9,7 @@
                         <div class="media-body">
                             <div class="media-heading">
                                 <h6 class="cart-item-title">
-                                    <a class="text-body" :href="'/product/view/'+item.product_id">
+                                    <a class="text-body" :href="'/customer-product/view/'+item.product_id">
                                     {{item.product.title}}</a>
                                 </h6>
                             </div>

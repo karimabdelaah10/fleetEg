@@ -24,7 +24,7 @@ class ProductController extends Controller {
 
     public function __construct(Product $model) {
         $this->module = 'products';
-        $this->module_url = '/product';
+        $this->module_url = '/customer-product';
         $this->views = 'Products::customer.products';
         $this->title = trans('app.products');
         $this->model = $model;
@@ -63,7 +63,7 @@ class ProductController extends Controller {
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
         $data['breadcrumb'] = [
-            $this->title => $this->module_url.'/all'
+            $this->title => $this->module_url
         ];
         $data['row']=$this->model;
         $data['row']->user = auth()->user();

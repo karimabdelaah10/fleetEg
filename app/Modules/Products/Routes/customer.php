@@ -4,8 +4,8 @@ Route::group([
     'middleware' => [ 'localeSessionRedirect', 'localizationRedirect',
         'localeViewPath' ,'auth','IsCustomer']
 ], function () {
-    Route::group(['prefix' => 'product' , 'as' => 'product.'], function () {
-        Route::get('/all', 'Customer\ProductController@getIndex');
+    Route::group(['prefix' => 'customer-product' , 'as' => 'product.'], function () {
+        Route::get('/', 'Customer\ProductController@getIndex');
         Route::get('/view/{id}', 'Customer\ProductController@getView');
         Route::get('/favourite-list', 'Customer\ProductController@getFavouriteProducts');
     });
