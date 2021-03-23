@@ -2,9 +2,10 @@
     <div >
         <!-- Fixed Center Placement Toast Starts -->
         <li class="nav-item dropdown dropdown-cart mr-25"
+            v-if="carts.length > 0"
             v-on:click="reload">
             <a class="nav-link" data-toggle="dropdown"  href="javascript:void(0);">
-                <i class="ficon" data-feather="shopping-cart"></i>
+                <shopping-cart-icon size="2x" class="custom-class"></shopping-cart-icon>
                 <span class="badge badge-pill badge-primary badge-up cart-item-count" id="cart_length">
                     {{carts.length}}
                 </span>
@@ -61,7 +62,7 @@
 </template>
 
 <script>
-import {XIcon} from "vue-feather-icons";
+import {XIcon ,ShoppingCartIcon } from "vue-feather-icons";
 
     export default {
         data () {
@@ -72,7 +73,8 @@ import {XIcon} from "vue-feather-icons";
             }
         },
         components: {
-            XIcon
+            XIcon,
+            ShoppingCartIcon
         },
         props:['user'],
         mounted() {

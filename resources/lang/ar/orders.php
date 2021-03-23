@@ -38,5 +38,9 @@ return [
     'cart_products'=>'المنتجات فى السله',
     'remove_product_from_cart'=>'حذف المنتج من السله',
     'complete_order'=>'تكمله الطلب',
+    'store_name'=>'اسم المحل',
+    'empty_cart_error_message'=>'ليس لديك منتجات فى السله , الرجاء اضافه منتجات للسه اولا',
+    'order_saved_title'=>'تم حفظ طلبك',
+    'order_saved_message'=>'تم حفظ طلبك بنجاح , يمكنك متابعه طلباتك من خلاص صفحه الطلبات',
     ''=>''
 ];

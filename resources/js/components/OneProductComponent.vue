@@ -291,25 +291,21 @@ import NumberInputSpinner from 'vue-number-input-spinner'
 
             },
              async addProductToCart() {
-                 this.displayToast(this.row.trans.product_added_to_cart_title ,
-                     this.row.trans.product_added_to_cart_message,
-                     this.row.trans.just_now)
                  if (this.selectdData.commission_diffrence_type == 'overprice'){
-                    this.selectdData.commission = this.selectdData.commission + this.selectdData.commission_diffrence_amount
+                    this.selectdData.commission = this.product.commission + this.selectdData.commission_diffrence_amount
                 }else if(this.selectdData.commission_diffrence_type == 'discount'){
-                     this.selectdData.commission = this.selectdData.commission - this.selectdData.commission_diffrence_amount
+                     this.selectdData.commission = this.product.commission - this.selectdData.commission_diffrence_amount
                  }
                  this.selectdData.product_id = this.product.id
-                 this.selectdData.commission = this.product.commission
                  this.selectdData.price = this.product.price
                  this.selectdData.image = this.image
                  this.selectdData.user_id = this.row.user.id
 
-                 let old_cart_length =parseInt($('#cart_length').html(), 10)
-                 let new_cart_length =old_cart_length + 1
-                 $('#cart_length').text(new_cart_length)
                  let url = '/api/v1/products/add-to-cart/';
                  await axios.post(url , this.selectdData).then(response => {
+                     this.displayToast(this.row.trans.product_added_to_cart_title ,
+                         this.row.trans.product_added_to_cart_message,
+                         this.row.trans.just_now)
                      this.$store.commit('incementNewOrder')
                      this.resetSelectedData();
                  });

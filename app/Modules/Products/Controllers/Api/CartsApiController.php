@@ -5,6 +5,7 @@ namespace App\Modules\Products\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Modules\Products\Models\Cart;
 use App\Modules\Products\Models\Favouriteproduct;
+use App\Modules\Products\Models\Order;
 use App\Modules\Products\Models\Product;
 use App\Modules\Products\Models\Productspecvalue;
 use App\Modules\Products\Models\Spec;
@@ -86,82 +87,37 @@ class CartsApiController extends Controller {
       return  'Done';
     }
 
-    public function favProduct(Request $request)
+    public function checkout(Request $request)
     {
-     $row=  Favouriteproduct::where([['product_id', $request->product_id],['user_id',$request->user_id]])->first();
-        if ($row){
-            $row->delete();
-        }else{
-            Favouriteproduct::create($request->all());
-        }
+//        return $request->all();
+        $carts = Cart::where('user_id' ,$request->user_id)
+            ->with(['innerSpecValue','specValue','product'])
+            ->get();
 
-        return [
-            'status' => 200,
-            'message'=>'Done'
-        ];
-    }
-
-    public function getFavouriteProducts($user_id)
-    {
-        $user= User::findOrFail($user_id);
-        Auth::login($user);
-        $product_ids= Favouriteproduct::where('user_id', $user_id)->pluck('product_id');
-        $products =  $this->model->Filtered()->whereIn('id' ,$product_ids)->with('category')->orderBy("id","DESC")->paginate(request('per_page'));
-        return new ProductsResourcePagination($products);
-
-    }
-
-    public function getView($product_id)
-    {
-        $user= User::findOrFail(\request()->user_id);
-        Auth::login($user);
-        $product =  $this->model->findOrFail($product_id);
-        return[
-            'data' =>new ProductsResource($product),
-        ];
-    }
-
-    public function getInnerSpecValues($parent_spec_value_id)
-    {
-        $data=[];
-        $specs_values_list=[];
-        $specsIds =Productspecvalue::where('parent_spec_value_id' ,$parent_spec_value_id)->where('product_id', \request()->product_id)
-            ->pluck('spec_id');
-        $specs =  Spec::whereIn('id' , $specsIds)->with('productspecsvalues')->get();
-
-        if (!empty($specs)){
-            foreach ($specs as $spec){
-                $inner_spec_values = $spec->productspecsvalues->where('parent_spec_value_id' ,$parent_spec_value_id)->where('product_id', \request()->product_id);
-                if (!empty($inner_spec_values)){
-                    foreach ($inner_spec_values as $inner_spec_value){
-                        $spec_value_record =[
-                            'id'            => $inner_spec_value->id,
-                            'value_id'         => $inner_spec_value->value->id,
-                            'title'         => $inner_spec_value->value->title,
-                            'stock'         => @$inner_spec_value->stock,
-                            'image'         =>  image($inner_spec_value->image , 'large') ,
-                        ];
-                        array_push($specs_values_list , $spec_value_record);
-                    }
+        if (count($carts)){
+            $newOrder =  Order::create($request->all());
+            $products=[];
+            foreach ($carts as $cart){
+                $detail='';
+                if (isset($cart->specValue)){
+                    $detail =$cart->specValue->title;
                 }
-                $spec_record =[
-                    'id'            => $spec->id,
-                    'title'         => $spec->title,
-                    'is_active'     =>$spec->is_active,
-                    'specs_values'  =>$specs_values_list
+                if (isset($cart->innerSpecValue)){
+                    $detail = $detail.' , '.$cart->innerSpecValue->title;
+                }
+                $record =[
+                    'product_id' =>$cart->product_id,
+                    'amount' =>$cart->amount,
+                    'detail' => $detail
                 ];
-
-
-                array_push($data , $spec_record);
-                $specs_values_list=[];
+                array_push($products , $record);
             }
         }
-        return  $data;
-    }
 
-    public function addProductToCart(Request  $request)
-    {
-        $row = Cart::create($request->all());
-        return $row;
+        $newOrder->orderProducts()->attach($products);
+
+        Cart::where('user_id' ,$request->user_id)->delete();
+        return'done';
+
     }
 }

@@ -1,10 +1,10 @@
 <template>
     <div>
         <!-- Fixed Center Placement Toast Starts -->
-        <li class="nav-item dropdown dropdown-notification mr-25">
+        <li class="nav-item dropdown dropdown-notification mr-25"  v-if="unseen > 0 ">
             <a class="nav-link" data-toggle="dropdown"
                href="javascript:void(0);">
-                <i class="ficon" data-feather="bell"></i>
+                <bell-icon size="2x" class="custom-class"></bell-icon>
                 <span class="badge badge-pill badge-danger badge-up" v-if="unseen > 0 ">{{unseen}}</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import {XIcon} from "vue-feather-icons";
+import {XIcon ,BellIcon} from "vue-feather-icons";
 
 export default {
     data() {
@@ -61,7 +61,8 @@ export default {
         }
     },
     components: {
-        XIcon
+        XIcon,
+        BellIcon
     },
     props: ['user'],
     mounted() {

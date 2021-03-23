@@ -26,6 +26,16 @@ class OrderController extends Controller {
         $this->model = $model;
     }
 
+    public function getIndex(){
+        $data['module'] = $this->module;
+        $data['module_url'] = $this->module_url;
+        $data['views'] = $this->views;
+        $data['row'] = $this->model;
+        $data['page_title'] = trans('app.view') . " " . $this->title;
+        $data['page_description'] =  trans('app.list') . " " . $this->title;
+        $data['breadcrumb'] = [$this->title => $this->module_url];
+        return view($this->views . '.index', $data);
+    }
     public function getCheckout()
     {
         $data['breadcrumb'] = [
@@ -55,9 +65,14 @@ class OrderController extends Controller {
             'shipping_notes' =>trans('orders.shipping_notes'),
             'checkout' =>trans('carts.checkout'),
             'shipping_coast' =>trans('governorate.shipping_coast'),
-            'customer_name' =>trans('orders.customer_name'),
+            'order_saved_title' =>trans('orders.order_saved_title'),
+            'order_saved_message' =>trans('orders.order_saved_message'),
+            'just_now' => trans('app.just_now'),
         ];
-
+        if(!Cart::where('user_id' , auth()->id())->count()){
+            flash(trans('orders.empty_cart_error_message'))->error();
+            return redirect('/customer-orders/');
+        }
         $data['page_title'] = trans('orders.check_out_page_title');
         return view($this->views . '.checkout' , $data);
     }

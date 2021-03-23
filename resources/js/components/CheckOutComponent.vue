@@ -138,7 +138,11 @@
                                 </li>
                             </ul>
                             <div  data-target="#step-address">
-                                <button type="button" class="btn btn-primary btn-block btn-next place-order">{{row.trans.complete_order}}</button>
+                                <button type="button"
+                                        class="btn btn-primary btn-block btn-next place-order"
+                                >
+                                    {{row.trans.complete_order}}
+                                </button>
                             </div>
 
                         </div>
@@ -167,6 +171,7 @@
                                 <input type="text"
                                        id="checkout-name"
                                        class="form-control"
+                                       required="required"
                                        v-model="selectedData.customer_name"
                                        :placeholder="row.trans.customer_name"/>
                             </div>
@@ -178,6 +183,7 @@
                                     type="number"
                                     id="checkout-number"
                                     class="form-control"
+                                    required="required"
                                     v-model="selectedData.customer_mobile_number"
                                     :placeholder="row.trans.customer_mobile_number"
                                 />
@@ -189,6 +195,7 @@
                                 <input
                                     type="text"
                                     id="checkout-apt-number"
+                                    required="required"
                                     class="form-control"
                                     v-model="selectedData.customer_area"
                                     :placeholder="row.trans.customer_area"
@@ -207,10 +214,22 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-12">
+                            <div class="form-group mb-2">
+                                <label for="store_name">{{row.trans.store_name}}:</label>
+                                <input
+                                    type="text"
+                                    id="store_name"
+                                    class="form-control"
+                                    v-model="selectedData.store_name"
+                                    :placeholder="row.trans.store_name"
+                                />
+                            </div>
+                        </div>
                         <div class="col-md-12 col-sm-12">
                             <div class="form-group mb-2">
                                <textarea
-                                   name=""
+                                   required="required"
                                    cols="80"
                                    rows="3"
                                    :placeholder="row.trans.customer_address"
@@ -222,7 +241,6 @@
                         <div class="col-md-12 col-sm-12">
                             <div class="form-group mb-2">
                                <textarea
-                                   name=""
                                    cols="80"
                                    rows="3"
                                    :placeholder="row.trans.shipping_notes"
@@ -233,7 +251,12 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <button :disabled="checkOutBtnDisables" type="button" class="btn btn-primary btn-next delivery-address">
+                            <button
+                                :disabled="checkOutBtnDisables"
+                                type="button"
+                                class="btn btn-primary btn-next delivery-address"
+                                v-on:click="checkout"
+                            >
                                 {{row.trans.checkout}}
                             </button>
                         </div>
@@ -395,7 +418,37 @@
                 });
             },
 
+            async checkout(){
+                let url = '/api/v1/carts/checkout/';
+                let data = {
+                    customer_name:this.selectedData.customer_name,
+                    customer_mobile_number:this.selectedData.customer_mobile_number,
+                    customer_area:this.selectedData.customer_area,
+                    customer_address:this.selectedData.customer_address,
+                    shipping_note:this.selectedData.shipping_note,
+                    store_name:this.selectedData.store_name,
+                    governorate_id:this.selectedData.governorate_id,
+                    user_id:this.row.user.id,
+                    total_price :this.totalPrice,
+                };
+                await axios.post(url , data).then(response => {
+                    this.displayToast(this.row.trans.order_saved_title ,
+                        this.row.trans.order_saved_message,
+                        this.row.trans.just_now)
+                    this.getThisUserCarts()
+                    this.$store.commit('incementNewOrder')
+                    location.replace("/")
 
+                });
+            } ,
+            displayToast(title ,  message ,time){
+                this.toastData.title = title
+                this.toastData.time = time
+                this.toastData.message = message
+
+                $(".toast-placement .toast").toast("show");
+
+            },
 
 
         }
