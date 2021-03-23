@@ -31,7 +31,7 @@ class ProductController extends Controller {
     }
 
     public function getIndex() {
-        $catgeories_ids = $this->model->pluck('category_id')->unique();
+        $catgeories_ids = $this->model->whereHas('specsvalues')->pluck('category_id')->unique();
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;

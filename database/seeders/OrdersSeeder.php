@@ -25,13 +25,13 @@ class OrdersSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('orderproductdetails')->delete();
         DB::table('orderproducts')->delete();
         DB::table('orders')->delete();
 
         $faker =Faker::create('ar_JO');
-        $orders =[
-            [
+        $orders =[];
+        for ($i =0; $i< 10 ;$i++){
+            array_push($orders ,             [
                 'customer_name'=>$faker->name,
                 'customer_mobile_number'=>$faker->phoneNumber,
                 'customer_area'=>$faker->city,
@@ -46,503 +46,44 @@ class OrdersSeeder extends Seeder
                     [
                         'id' => Product::all()->random()->id ,
                         'amount' =>$faker->numberBetween(1,10),
-                        'details'=>[
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                        ],
-                    ]
-                ],
-            ],
-
-            [
-                'customer_name'=>$faker->name,
-                'customer_mobile_number'=>$faker->phoneNumber,
-                'customer_area'=>$faker->city,
-                'customer_address'=>$faker->address,
-                'shipping_note'=>$faker->paragraph,
-                'store_name'=>$faker->company,
-                'status' =>OrdersEnum::ordersStatuses()[array_rand(OrdersEnum::ordersStatuses())],
-                'total_price'=>$faker->numberBetween(100,1000),
-                'governorate_id'=>Governorate::all()->random()->id,
-                'user_id'=>User::all()->random()->id,
-                'products'=>[
+                        'detail'=> Specvalue::all()->random()->title. ' , '. Specvalue::all()->random()->title
+                    ],
                     [
                         'id' => Product::all()->random()->id ,
                         'amount' =>$faker->numberBetween(1,10),
-                        'details'=>[
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                        ],
-                    ]
-                ],
-            ],
-
-            [
-                'customer_name'=>$faker->name,
-                'customer_mobile_number'=>$faker->phoneNumber,
-                'customer_area'=>$faker->city,
-                'customer_address'=>$faker->address,
-                'shipping_note'=>$faker->paragraph,
-                'store_name'=>$faker->company,
-                'status' =>OrdersEnum::ordersStatuses()[array_rand(OrdersEnum::ordersStatuses())],
-                'total_price'=>$faker->numberBetween(100,1000),
-                'governorate_id'=>Governorate::all()->random()->id,
-                'user_id'=>User::all()->random()->id,
-                'products'=>[
+                        'detail'=> Specvalue::all()->random()->title. ' , '. Specvalue::all()->random()->title
+                    ],
                     [
                         'id' => Product::all()->random()->id ,
                         'amount' =>$faker->numberBetween(1,10),
-                        'details'=>[
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                        ],
-                    ]
-                ],
-            ],
-
-            [
-                'customer_name'=>$faker->name,
-                'customer_mobile_number'=>$faker->phoneNumber,
-                'customer_area'=>$faker->city,
-                'customer_address'=>$faker->address,
-                'shipping_note'=>$faker->paragraph,
-                'store_name'=>$faker->company,
-                'status' =>OrdersEnum::ordersStatuses()[array_rand(OrdersEnum::ordersStatuses())],
-                'total_price'=>$faker->numberBetween(100,1000),
-                'governorate_id'=>Governorate::all()->random()->id,
-                'user_id'=>User::all()->random()->id,
-                'products'=>[
+                        'detail'=> Specvalue::all()->random()->title. ' , '. Specvalue::all()->random()->title
+                    ],
                     [
                         'id' => Product::all()->random()->id ,
                         'amount' =>$faker->numberBetween(1,10),
-                        'details'=>[
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                        ],
-                    ]
-                ],
-            ],
-
-            [
-                'customer_name'=>$faker->name,
-                'customer_mobile_number'=>$faker->phoneNumber,
-                'customer_area'=>$faker->city,
-                'customer_address'=>$faker->address,
-                'shipping_note'=>$faker->paragraph,
-                'store_name'=>$faker->company,
-                'status' =>OrdersEnum::ordersStatuses()[array_rand(OrdersEnum::ordersStatuses())],
-                'total_price'=>$faker->numberBetween(100,1000),
-                'governorate_id'=>Governorate::all()->random()->id,
-                'user_id'=>User::all()->random()->id,
-                'products'=>[
+                        'detail'=> Specvalue::all()->random()->title. ' , '. Specvalue::all()->random()->title
+                    ],
                     [
                         'id' => Product::all()->random()->id ,
                         'amount' =>$faker->numberBetween(1,10),
-                        'details'=>[
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                        ],
-                    ]
+                        'detail'=> Specvalue::all()->random()->title. ' , '. Specvalue::all()->random()->title
+                    ],
                 ],
-            ],
-
-            [
-                'customer_name'=>$faker->name,
-                'customer_mobile_number'=>$faker->phoneNumber,
-                'customer_area'=>$faker->city,
-                'customer_address'=>$faker->address,
-                'shipping_note'=>$faker->paragraph,
-                'store_name'=>$faker->company,
-                'status' =>OrdersEnum::ordersStatuses()[array_rand(OrdersEnum::ordersStatuses())],
-                'total_price'=>$faker->numberBetween(100,1000),
-                'governorate_id'=>Governorate::all()->random()->id,
-                'user_id'=>User::all()->random()->id,
-                'products'=>[
-                    [
-                        'id' => Product::all()->random()->id ,
-                        'amount' =>$faker->numberBetween(1,10),
-                        'details'=>[
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                        ],
-                    ]
-                ],
-            ],
-
-            [
-                'customer_name'=>$faker->name,
-                'customer_mobile_number'=>$faker->phoneNumber,
-                'customer_area'=>$faker->city,
-                'customer_address'=>$faker->address,
-                'shipping_note'=>$faker->paragraph,
-                'store_name'=>$faker->company,
-                'status' =>OrdersEnum::ordersStatuses()[array_rand(OrdersEnum::ordersStatuses())],
-                'total_price'=>$faker->numberBetween(100,1000),
-                'governorate_id'=>Governorate::all()->random()->id,
-                'user_id'=>User::all()->random()->id,
-                'products'=>[
-                    [
-                        'id' => Product::all()->random()->id ,
-                        'amount' =>$faker->numberBetween(1,10),
-                        'details'=>[
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                        ],
-                    ]
-                ],
-            ],
-
-            [
-                'customer_name'=>$faker->name,
-                'customer_mobile_number'=>$faker->phoneNumber,
-                'customer_area'=>$faker->city,
-                'customer_address'=>$faker->address,
-                'shipping_note'=>$faker->paragraph,
-                'store_name'=>$faker->company,
-                'status' =>OrdersEnum::ordersStatuses()[array_rand(OrdersEnum::ordersStatuses())],
-                'total_price'=>$faker->numberBetween(100,1000),
-                'governorate_id'=>Governorate::all()->random()->id,
-                'user_id'=>User::all()->random()->id,
-                'products'=>[
-                    [
-                        'id' => Product::all()->random()->id ,
-                        'amount' =>$faker->numberBetween(1,10),
-                        'details'=>[
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                        ],
-                    ]
-                ],
-            ],
-
-            [
-                'customer_name'=>$faker->name,
-                'customer_mobile_number'=>$faker->phoneNumber,
-                'customer_area'=>$faker->city,
-                'customer_address'=>$faker->address,
-                'shipping_note'=>$faker->paragraph,
-                'store_name'=>$faker->company,
-                'status' =>OrdersEnum::ordersStatuses()[array_rand(OrdersEnum::ordersStatuses())],
-                'total_price'=>$faker->numberBetween(100,1000),
-                'governorate_id'=>Governorate::all()->random()->id,
-                'user_id'=>User::all()->random()->id,
-                'products'=>[
-                    [
-                        'id' => Product::all()->random()->id ,
-                        'amount' =>$faker->numberBetween(1,10),
-                        'details'=>[
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                        ],
-                    ]
-                ],
-            ],
-
-            [
-                'customer_name'=>$faker->name,
-                'customer_mobile_number'=>$faker->phoneNumber,
-                'customer_area'=>$faker->city,
-                'customer_address'=>$faker->address,
-                'shipping_note'=>$faker->paragraph,
-                'store_name'=>$faker->company,
-                'status' =>OrdersEnum::ordersStatuses()[array_rand(OrdersEnum::ordersStatuses())],
-                'total_price'=>$faker->numberBetween(100,1000),
-                'governorate_id'=>Governorate::all()->random()->id,
-                'user_id'=>User::all()->random()->id,
-                'products'=>[
-                    [
-                        'id' => Product::all()->random()->id ,
-                        'amount' =>$faker->numberBetween(1,10),
-                        'details'=>[
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                        ],
-                    ]
-                ],
-            ],
-
-            [
-                'customer_name'=>$faker->name,
-                'customer_mobile_number'=>$faker->phoneNumber,
-                'customer_area'=>$faker->city,
-                'customer_address'=>$faker->address,
-                'shipping_note'=>$faker->paragraph,
-                'store_name'=>$faker->company,
-                'status' =>OrdersEnum::ordersStatuses()[array_rand(OrdersEnum::ordersStatuses())],
-                'total_price'=>$faker->numberBetween(100,1000),
-                'governorate_id'=>Governorate::all()->random()->id,
-                'user_id'=>User::all()->random()->id,
-                'products'=>[
-                    [
-                        'id' => Product::all()->random()->id ,
-                        'amount' =>$faker->numberBetween(1,10),
-                        'details'=>[
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                        ],
-                    ]
-                ],
-            ],
-
-            [
-                'customer_name'=>$faker->name,
-                'customer_mobile_number'=>$faker->phoneNumber,
-                'customer_area'=>$faker->city,
-                'customer_address'=>$faker->address,
-                'shipping_note'=>$faker->paragraph,
-                'store_name'=>$faker->company,
-                'status' =>OrdersEnum::ordersStatuses()[array_rand(OrdersEnum::ordersStatuses())],
-                'total_price'=>$faker->numberBetween(100,1000),
-                'governorate_id'=>Governorate::all()->random()->id,
-                'user_id'=>User::all()->random()->id,
-                'products'=>[
-                    [
-                        'id' => Product::all()->random()->id ,
-                        'amount' =>$faker->numberBetween(1,10),
-                        'details'=>[
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                        ],
-                    ]
-                ],
-            ],
-
-            [
-                'customer_name'=>$faker->name,
-                'customer_mobile_number'=>$faker->phoneNumber,
-                'customer_area'=>$faker->city,
-                'customer_address'=>$faker->address,
-                'shipping_note'=>$faker->paragraph,
-                'store_name'=>$faker->company,
-                'status' =>OrdersEnum::ordersStatuses()[array_rand(OrdersEnum::ordersStatuses())],
-                'total_price'=>$faker->numberBetween(100,1000),
-                'governorate_id'=>Governorate::all()->random()->id,
-                'user_id'=>User::all()->random()->id,
-                'products'=>[
-                    [
-                        'id' => Product::all()->random()->id ,
-                        'amount' =>$faker->numberBetween(1,10),
-                        'details'=>[
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                        ],
-                    ]
-                ],
-            ],
-
-            [
-                'customer_name'=>$faker->name,
-                'customer_mobile_number'=>$faker->phoneNumber,
-                'customer_area'=>$faker->city,
-                'customer_address'=>$faker->address,
-                'shipping_note'=>$faker->paragraph,
-                'store_name'=>$faker->company,
-                'status' =>OrdersEnum::ordersStatuses()[array_rand(OrdersEnum::ordersStatuses())],
-                'total_price'=>$faker->numberBetween(100,1000),
-                'governorate_id'=>Governorate::all()->random()->id,
-                'user_id'=>User::all()->random()->id,
-                'products'=>[
-                    [
-                        'id' => Product::all()->random()->id ,
-                        'amount' =>$faker->numberBetween(1,10),
-                        'details'=>[
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                        ],
-                    ]
-                ],
-            ],
-
-            [
-                'customer_name'=>$faker->name,
-                'customer_mobile_number'=>$faker->phoneNumber,
-                'customer_area'=>$faker->city,
-                'customer_address'=>$faker->address,
-                'shipping_note'=>$faker->paragraph,
-                'store_name'=>$faker->company,
-                'status' =>OrdersEnum::ordersStatuses()[array_rand(OrdersEnum::ordersStatuses())],
-                'total_price'=>$faker->numberBetween(100,1000),
-                'governorate_id'=>Governorate::all()->random()->id,
-                'user_id'=>User::all()->random()->id,
-                'products'=>[
-                    [
-                        'id' => Product::all()->random()->id ,
-                        'amount' =>$faker->numberBetween(1,10),
-                        'details'=>[
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                        ],
-                    ]
-                ],
-            ],
-
-            [
-                'customer_name'=>$faker->name,
-                'customer_mobile_number'=>$faker->phoneNumber,
-                'customer_area'=>$faker->city,
-                'customer_address'=>$faker->address,
-                'shipping_note'=>$faker->paragraph,
-                'store_name'=>$faker->company,
-                'status' =>OrdersEnum::ordersStatuses()[array_rand(OrdersEnum::ordersStatuses())],
-                'total_price'=>$faker->numberBetween(100,1000),
-                'governorate_id'=>Governorate::all()->random()->id,
-                'user_id'=>User::all()->random()->id,
-                'products'=>[
-                    [
-                        'id' => Product::all()->random()->id ,
-                        'amount' =>$faker->numberBetween(1,10),
-                        'details'=>[
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                        ],
-                    ]
-                ],
-            ],
-
-            [
-                'customer_name'=>$faker->name,
-                'customer_mobile_number'=>$faker->phoneNumber,
-                'customer_area'=>$faker->city,
-                'customer_address'=>$faker->address,
-                'shipping_note'=>$faker->paragraph,
-                'store_name'=>$faker->company,
-                'status' =>OrdersEnum::ordersStatuses()[array_rand(OrdersEnum::ordersStatuses())],
-                'total_price'=>$faker->numberBetween(100,1000),
-                'governorate_id'=>Governorate::all()->random()->id,
-                'user_id'=>User::all()->random()->id,
-                'products'=>[
-                    [
-                        'id' => Product::all()->random()->id ,
-                        'amount' =>$faker->numberBetween(1,10),
-                        'details'=>[
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                        ],
-                    ]
-                ],
-            ],
-
-            [
-                'customer_name'=>$faker->name,
-                'customer_mobile_number'=>$faker->phoneNumber,
-                'customer_area'=>$faker->city,
-                'customer_address'=>$faker->address,
-                'shipping_note'=>$faker->paragraph,
-                'store_name'=>$faker->company,
-                'status' =>OrdersEnum::ordersStatuses()[array_rand(OrdersEnum::ordersStatuses())],
-                'total_price'=>$faker->numberBetween(100,1000),
-                'governorate_id'=>Governorate::all()->random()->id,
-                'user_id'=>User::all()->random()->id,
-                'products'=>[
-                    [
-                        'id' => Product::all()->random()->id ,
-                        'amount' =>$faker->numberBetween(1,10),
-                        'details'=>[
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                        ],
-                    ]
-                ],
-            ],
-
-            [
-                'customer_name'=>$faker->name,
-                'customer_mobile_number'=>$faker->phoneNumber,
-                'customer_area'=>$faker->city,
-                'customer_address'=>$faker->address,
-                'shipping_note'=>$faker->paragraph,
-                'store_name'=>$faker->company,
-                'status' =>OrdersEnum::ordersStatuses()[array_rand(OrdersEnum::ordersStatuses())],
-                'total_price'=>$faker->numberBetween(100,1000),
-                'governorate_id'=>Governorate::all()->random()->id,
-                'user_id'=>User::all()->random()->id,
-                'products'=>[
-                    [
-                        'id' => Product::all()->random()->id ,
-                        'amount' =>$faker->numberBetween(1,10),
-                        'details'=>[
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                            Specvalue::all()->random()->id,
-                        ],
-                    ]
-                ],
-            ],
-
-        ];
+            ]
+        );
+        }
 
         foreach ($orders as $order){
             $products = $order['products'];
             $order =Arr::except($order, ['products']);
             $newOrder = Order::create($order);
             foreach ($products as $product){
-               $orderProduct= Orderproduct::create([
+                Orderproduct::create([
                     'order_id' =>$newOrder->id,
                     'product_id'=> $product['id'],
-                    'amount' =>$product['amount']
+                    'amount' =>$product['amount'],
+                    'detail' =>$product['detail']
                 ]);
-               foreach ($product['details'] as $spec_value_id){
-                   Orderproductdetail::create([
-                       'orderproduct_id'=> $orderProduct->id,
-                       'spec_value_id' =>$spec_value_id
-                   ]);
-               }
             }
         }
     }

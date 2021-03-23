@@ -27,7 +27,11 @@ class ProductsApiController extends Controller {
     public function getFilteredProducts($user_id) {
        $user= User::findOrFail($user_id);
        Auth::login($user);
-     $products =  $this->model->Filtered()->with('category')->orderBy("id","DESC")->paginate(request('per_page'));
+     $products =  $this->model->Filtered()
+         ->whereHas('specsvalues')
+         ->with('category')
+         ->orderBy("id","DESC")
+         ->paginate(request('per_page'));
      return new ProductsResourcePagination($products);
     }
 
