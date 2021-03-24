@@ -93,7 +93,7 @@
                             <div class="item-wrapper">
                                 <div class="item-rating">
                                     <h6 class="item-price">
-                                        <h6 class="item-price">@{{item.price}}</h6>
+                                        <h6 class="item-price">@{{item.commission}}</h6>
                                     </h6>
                                 </div>
                                 <div>

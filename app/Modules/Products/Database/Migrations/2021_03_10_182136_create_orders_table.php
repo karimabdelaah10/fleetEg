@@ -23,6 +23,7 @@ class CreateOrdersTable extends Migration
             $table->string('shipping_note')->nullable();
             $table->string('store_name')->nullable();
             $table->float('total_price')->default(0);
+            $table->float('total_commission')->default(0);
             $table->enum('status', OrdersEnum::ordersStatuses() );
             $table->unsignedBigInteger('governorate_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();

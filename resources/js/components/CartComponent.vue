@@ -40,7 +40,7 @@
                                    {{item.amount}}
                             </div>
 
-                            <h5 class="cart-item-price">{{ item.price }}</h5>
+                            <h5 class="cart-item-price">{{ item.price + item.commission}}</h5>
                             <h6 v-on:click="deleteProductFromCarts(item.id)">
                                 <x-icon size="1.5x" class="ficon cart-item-remove"></x-icon>
                             </h6>
@@ -83,7 +83,7 @@ import {XIcon ,ShoppingCartIcon } from "vue-feather-icons";
         computed: {
             total: function () {
                 return this.carts.reduce(function (total, item) {
-                    return total + item.price;
+                    return total + item.price+ item.commission;
                 }, 0);
             },
             newOrder:function (){

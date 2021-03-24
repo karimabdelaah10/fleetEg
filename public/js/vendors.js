@@ -2008,7 +2008,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   computed: {
     total: function total() {
       return this.carts.reduce(function (total, item) {
-        return total + item.price;
+        return total + item.price + item.commission;
       }, 0);
     },
     newOrder: function newOrder() {
@@ -2434,12 +2434,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       carts: [],
       governorates: [],
       shippingGovernorate: {},
+      toastData: {
+        title: null,
+        message: null,
+        time: null
+      },
       selectedData: {
         customer_name: null,
         customer_mobile_number: null,
@@ -2464,6 +2473,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     total: function total() {
       return this.carts.reduce(function (total, item) {
         return total + item.price + item.commission;
+      }, 0);
+    },
+    totalCommission: function totalCommission() {
+      return this.carts.reduce(function (totalCommission, item) {
+        return totalCommission + item.commission;
       }, 0);
     },
     totalPrice: function totalPrice() {
@@ -2581,7 +2595,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   store_name: _this4.selectedData.store_name,
                   governorate_id: _this4.selectedData.governorate_id,
                   user_id: _this4.row.user.id,
-                  total_price: _this4.totalPrice
+                  total_price: _this4.totalPrice,
+                  total_commission: _this4.totalCommission
                 };
                 _context4.next = 4;
                 return axios.post(url, data).then(function (response) {
@@ -3703,7 +3718,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 }
 
                 _this4.selectdData.product_id = _this4.product.id;
-                _this4.selectdData.price = _this4.product.price;
+                _this4.selectdData.price = _this4.product.price * _this4.selectdData.amount;
                 _this4.selectdData.image = _this4.image;
                 _this4.selectdData.user_id = _this4.row.user.id;
                 url = '/api/v1/products/add-to-cart/';
@@ -22350,7 +22365,7 @@ var render = function() {
                           ]),
                           _vm._v(" "),
                           _c("h5", { staticClass: "cart-item-price" }, [
-                            _vm._v(_vm._s(item.price))
+                            _vm._v(_vm._s(item.price + item.commission))
                           ]),
                           _vm._v(" "),
                           _c(
@@ -22438,73 +22453,80 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "bs-stepper-header" }, [
-      _c(
-        "div",
-        { staticClass: "step", attrs: { "data-target": "#step-cart" } },
-        [
-          _c(
-            "button",
-            { staticClass: "step-trigger", attrs: { type: "button" } },
-            [
-              _vm._m(0),
-              _vm._v(" "),
-              _c("span", { staticClass: "bs-stepper-label" }, [
-                _c("span", { staticClass: "bs-stepper-title" }, [
-                  _vm._v(
-                    "\n                  " +
-                      _vm._s(_vm.row.trans.orders_cart) +
-                      "\n              "
-                  )
-                ]),
+    _c(
+      "div",
+      { staticClass: "bs-stepper-header" },
+      [
+        _c("toast-component", { attrs: { data: _vm.toastData } }),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "step", attrs: { "data-target": "#step-cart" } },
+          [
+            _c(
+              "button",
+              { staticClass: "step-trigger", attrs: { type: "button" } },
+              [
+                _vm._m(0),
                 _vm._v(" "),
-                _c("span", { staticClass: "bs-stepper-subtitle" }, [
-                  _vm._v(
-                    "\n                  " +
-                      _vm._s(_vm.row.trans.orders_cart_products) +
-                      "\n              "
-                  )
+                _c("span", { staticClass: "bs-stepper-label" }, [
+                  _c("span", { staticClass: "bs-stepper-title" }, [
+                    _vm._v(
+                      "\n                  " +
+                        _vm._s(_vm.row.trans.orders_cart) +
+                        "\n              "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "bs-stepper-subtitle" }, [
+                    _vm._v(
+                      "\n                  " +
+                        _vm._s(_vm.row.trans.orders_cart_products) +
+                        "\n              "
+                    )
+                  ])
                 ])
-              ])
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _vm._m(1),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "step", attrs: { "data-target": "#step-address" } },
-        [
-          _c(
-            "button",
-            { staticClass: "step-trigger", attrs: { type: "button" } },
-            [
-              _vm._m(2),
-              _vm._v(" "),
-              _c("span", { staticClass: "bs-stepper-label" }, [
-                _c("span", { staticClass: "bs-stepper-title" }, [
-                  _vm._v(
-                    "\n                " +
-                      _vm._s(_vm.row.trans.orders_customer_details) +
-                      "\n            "
-                  )
-                ]),
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "step", attrs: { "data-target": "#step-address" } },
+          [
+            _c(
+              "button",
+              { staticClass: "step-trigger", attrs: { type: "button" } },
+              [
+                _vm._m(2),
                 _vm._v(" "),
-                _c("span", { staticClass: "bs-stepper-subtitle" }, [
-                  _vm._v(
-                    "\n                  " +
-                      _vm._s(_vm.row.trans.orders_customer_details) +
-                      "\n              "
-                  )
+                _c("span", { staticClass: "bs-stepper-label" }, [
+                  _c("span", { staticClass: "bs-stepper-title" }, [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.row.trans.orders_customer_details) +
+                        "\n            "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "bs-stepper-subtitle" }, [
+                    _vm._v(
+                      "\n                  " +
+                        _vm._s(_vm.row.trans.orders_customer_details) +
+                        "\n              "
+                    )
+                  ])
                 ])
-              ])
-            ]
-          )
-        ]
-      )
-    ]),
+              ]
+            )
+          ]
+        )
+      ],
+      1
+    ),
     _vm._v(" "),
     _c("div", { staticClass: "bs-stepper-content" }, [
       _c("div", { staticClass: "content", attrs: { id: "step-cart" } }, [
@@ -25257,7 +25279,7 @@ var render = function() {
                     _c("div", { staticClass: "item-rating" }, [
                       _c("h6", { staticClass: "item-price" }, [
                         _c("h6", { staticClass: "item-price" }, [
-                          _vm._v("@" + _vm._s(item.price))
+                          _vm._v("@" + _vm._s(item.commission))
                         ])
                       ])
                     ]),

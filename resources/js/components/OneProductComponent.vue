@@ -300,7 +300,7 @@ import NumberInputSpinner from 'vue-number-input-spinner'
                      this.selectdData.commission = this.product.commission
                  }
                  this.selectdData.product_id = this.product.id
-                 this.selectdData.price = this.product.price
+                 this.selectdData.price = this.product.price * this.selectdData.amount
                  this.selectdData.image = this.image
                  this.selectdData.user_id = this.row.user.id
 

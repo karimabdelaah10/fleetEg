@@ -2,6 +2,10 @@
 <div>
  <!-- Wizard starts -->
  <div class="bs-stepper-header">
+     <toast-component
+         :data ="toastData"
+     ></toast-component>
+     <!-- Product Details starts -->
     <div class="step" data-target="#step-cart">
         <button type="button" class="step-trigger">
             <span class="bs-stepper-box">
@@ -341,6 +345,11 @@
             carts:[],
             governorates:[],
             shippingGovernorate:{},
+            toastData:{
+                title:null,
+                message:null,
+                time:null
+            },
             selectedData:{
                 customer_name:null,
                 customer_mobile_number:null,
@@ -367,6 +376,11 @@
             total: function () {
                 return this.carts.reduce(function (total, item) {
                     return total + item.price + item.commission;
+                }, 0);
+            },
+            totalCommission: function () {
+                return this.carts.reduce(function (totalCommission, item) {
+                    return totalCommission + item.commission;
                 }, 0);
             },
             totalPrice:function (){
@@ -430,6 +444,7 @@
                     governorate_id:this.selectedData.governorate_id,
                     user_id:this.row.user.id,
                     total_price :this.totalPrice,
+                    total_commission :this.totalCommission,
                 };
                 await axios.post(url , data).then(response => {
                     this.displayToast(this.row.trans.order_saved_title ,

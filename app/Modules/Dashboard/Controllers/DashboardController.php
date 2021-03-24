@@ -25,10 +25,10 @@ class DashboardController extends Controller {
         if (is_user()){
             $user = User::findOrFail(auth()->id());
             $data['bannars']=Slider::Active()->get();
-            $user_orders =Order::where('user_id' , auth()->id());
             $data['numbers'] =$this;
-            $data['numbers']->delivered_orders = $user_orders->where('status' ,GeneralEnum::DELIVERED)->count();
-            $data['numbers']->pending_orders = $user_orders->where('status' ,GeneralEnum::PENDING)->count();
+            $data['numbers']->delivered_orders = Order::where('user_id' , auth()->id())->where('status' ,GeneralEnum::DELIVERED)->count();
+            $data['numbers']->pending_orders = Order::where('user_id' , auth()->id())->where('status' ,GeneralEnum::PENDING)->count();
+            $data['numbers']->total_commission = Order::where('user_id' , auth()->id())->where('status' ,GeneralEnum::DELIVERED)->sum('total_commission');
             $data['numbers']->favourite_products = $user->favourite_products->count();
             return view($this->views . '::customer_index' , $data);
         }elseif (is_admin()){

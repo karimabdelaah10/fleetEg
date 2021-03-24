@@ -21,6 +21,7 @@ class Order extends Model
         'shipping_note',
         'store_name',
         'total_price',
+        'total_commission',
         'governorate_id',
         'user_id'
     ];
