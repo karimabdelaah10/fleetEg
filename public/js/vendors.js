@@ -2926,6 +2926,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var vue_feather_icons__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-feather-icons */ "./node_modules/vue-feather-icons/dist/vue-feather-icons.es.js");
 //
 //
 //
@@ -2952,6 +2953,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2959,8 +2964,12 @@ __webpack_require__.r(__webpack_exports__);
       'youtube_url': null,
       'email': null,
       'mobile_number': null,
-      'whatsapp_number': null
+      'whatsapp_number': null,
+      'messenger_url': null
     };
+  },
+  components: {
+    MessageCircleIcon: vue_feather_icons__WEBPACK_IMPORTED_MODULE_0__.MessageCircleIcon
   },
   props: [],
   created: function created() {},
@@ -2977,6 +2986,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.email = 'mailto:' + response.data.email;
         _this.mobile_number = 'tel:' + response.data.mobile_number;
         _this.whatsapp_number = 'https://wa.me/' + response.data.whatsapp_number;
+        _this.messenger_url = 'https://m.me/' + response.data.messenger_url;
       });
     }
   }
@@ -23777,6 +23787,21 @@ var render = function() {
             attrs: { src: "/images/whatsapp.png" }
           })
         ]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "float-right btn-social-icon",
+          attrs: { target: "_blank", href: _vm.messenger_url }
+        },
+        [
+          _c("message-circle-icon", {
+            staticClass: "custom-class",
+            attrs: { size: "1.5x" }
+          })
+        ],
+        1
       )
     ])
   ])

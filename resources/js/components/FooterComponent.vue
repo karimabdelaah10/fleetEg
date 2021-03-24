@@ -20,11 +20,16 @@
             <a target="_blank" :href="whatsapp_number" class="float-right">
                 <img src="/images/whatsapp.png" class="whatsapp_image"/>
             </a>
+            <a target="_blank" :href="messenger_url" class="float-right btn-social-icon">
+                <message-circle-icon size="1.5x" class="custom-class"></message-circle-icon>
+            </a>
         </div>
     </div>
 </template>
 
 <script>
+import { MessageCircleIcon } from 'vue-feather-icons'
+
     export default {
 
         data () {
@@ -34,7 +39,11 @@
                 'email':null,
                 'mobile_number':null,
                 'whatsapp_number':null,
+                'messenger_url':null,
             };
+        },
+        components: {
+            MessageCircleIcon
         },
         props: [],
 
@@ -53,6 +62,7 @@
                              this.email = 'mailto:'+response.data.email;
                              this.mobile_number = 'tel:'+response.data.mobile_number;
                              this.whatsapp_number = 'https://wa.me/'+response.data.whatsapp_number;
+                             this.messenger_url = 'https://m.me/'+response.data.messenger_url;
 
                     });
             }

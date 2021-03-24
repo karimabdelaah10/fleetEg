@@ -36,6 +36,10 @@ class ConfigSeeder extends Seeder
             'title'=>ConfigsEnum::WHATSAPP_NUMBER,
             'value'=>'010000'.rand(11111, 99999)
         ],
+        [
+            'title'=>ConfigsEnum::MESSENGER_URL,
+            'value'=>'karimabdelaah.dev'
+        ],
         ];
         foreach ($configs as $config){
             Config::create($config);

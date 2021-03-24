@@ -11,7 +11,8 @@ abstract class ConfigsEnum
           YOUTUBE_URL='youtube_url',
           EMAIL='email',
           MOBILE_NUMBER='mobile_number',
-          WHATSAPP_NUMBER='whatsapp_number'
+          WHATSAPP_NUMBER='whatsapp_number',
+          MESSENGER_URL='messenger_url'
     ;
     public static function conigsTitls()
     {
