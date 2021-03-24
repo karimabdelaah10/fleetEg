@@ -1,25 +1,38 @@
 <template>
     <div>
         <div class="content-detached content-right">
-            <div class="content-body"><!-- E-commerce Content Section Starts -->
+            <div class="content-body">
                 <section id="ecommerce-header">
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="ecommerce-header-items">
                                 <div class="result-toggler">
-                                    <button class="navbar-toggler shop-sidebar-toggler" type="button" data-toggle="collapse">
-                                        <span class="navbar-toggler-icon d-block d-lg-none"><i data-feather="menu"></i></span>
+                                    <button class="navbar-toggler shop-sidebar-toggler"
+                                            type="button" data-toggle="collapse">
+                                        <span class="navbar-toggler-icon d-block d-lg-none">
+                                            <i data-feather="menu"></i>
+                                        </span>
                                     </button>
-                                    <div class="search-results"> {{row.trans.results_found}} : {{resultsCount}}</div>
+                                    <div class="search-results">
+                                        {{row.trans.results_found}} : {{resultsCount}}
+                                    </div>
                                 </div>
                                 <div class="view-options d-flex">
-                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <div class="btn-group btn-group-toggle"
+                                         data-toggle="buttons">
                                         <label class="btn btn-icon btn-outline-primary view-btn grid-view-btn">
-                                            <input type="radio" name="radio_options" id="radio_option1" checked />
-                                            <i data-feather="grid" class="font-medium-3"></i>
+                                            <input type="radio"
+                                                   name="radio_options"
+                                                   id="radio_option1"
+                                                   checked />
+                                            <i data-feather="grid"
+                                               class="font-medium-3"></i>
                                         </label>
-                                        <label class="btn btn-icon btn-outline-primary view-btn list-view-btn">
-                                            <input type="radio" name="radio_options" id="radio_option2" />
+                                        <label class="btn btn-icon btn-outline-primary
+                                        view-btn list-view-btn">
+                                            <input type="radio"
+                                                   name="radio_options"
+                                                   id="radio_option2" />
                                             <i data-feather="list" class="font-medium-3"></i>
                                         </label>
                                     </div>
@@ -35,7 +48,8 @@
                 <!-- background Overlay when sidebar is shown  ends-->
 
                 <!-- E-commerce Search Bar Starts -->
-                <section id="ecommerce-searchbar" class="ecommerce-searchbar">
+                <section id="ecommerce-searchbar"
+                         class="ecommerce-searchbar">
                     <div class="row mt-1">
                         <div class="col-sm-12">
                             <div class="input-group input-group-merge">
@@ -49,7 +63,12 @@
                                     aria-describedby="shop-search"
                                 />
                                 <div class="input-group-append">
-                                    <span class="input-group-text"><i data-feather="search" class="text-muted"></i></span>
+                                    <span class="input-group-text">
+                                        <i data-feather="search"
+                                           class="text-muted">
+
+                                        </i>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -59,7 +78,9 @@
 
                 <!-- E-commerce Products Starts -->
                 <section id="ecommerce-products" class="grid-view">
-                    <div class="card ecommerce-card" v-for="(item , index) in products" :key="index">
+                    <div class="card ecommerce-card"
+                         v-for="(item , index) in products"
+                         :key="index">
                         <div class="item-img text-center">
                             <a :href="'/customer-product/view/'+item.id">
                                 <img
@@ -191,8 +212,6 @@
 
             </div>
         </div>
-
-
         <div  id="more_btn" class="btn btn-flat"
               v-on:click="handleScrolledToBottom">
             {{row.trans.more}}
@@ -250,10 +269,12 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
         },
         methods:{
             async fetch () {
-                let url = '/api/v1/products/'+ this.row.user.id+'?page='+ this.page+'&per_page='+this.per_page+
+                let url = '/api/v1/products/'+ this.row.user.id+
+                    '?page='+ this.page+'&per_page='+this.per_page+
                     '&selected_price='+this.selected_price+
-                    '&selected_category='+this.selected_category+'&search_key='+this.search_key;
-               await axios.get(url).then(response => {
+                    '&selected_category='+this.selected_category+
+                    '&search_key='+this.search_key;
+                await axios.get(url).then(response => {
                             this.products.push(...response.data.data);
                             this.pagination =response.data.pagination
                             this.resultsCount = this.pagination.total
@@ -266,7 +287,7 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
                 this.page++
                 this.fetch()
             },
-           async toggleFavProduct(id ,item){
+            async toggleFavProduct(id ,item){
                 let data = {
                     'product_id':id,
                     'user_id': this.row.user.id
