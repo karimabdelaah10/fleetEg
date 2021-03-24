@@ -53,7 +53,9 @@
                         {{trans('products.amount')}}
                         <span class="text-danger">* </span>
                     </label>
-                    <input id="title"  placeholder="{{trans('products.amount')}}"  name="stock" type="text" class="form-control">
+                    <input id="title"
+                           placeholder="{{trans('products.amount')}}"
+                           required name="stock" type="number" class="form-control">
                 </div>
                 @include('BaseApp::form.file',[
     'name'=>'image',
@@ -62,10 +64,11 @@
             'class'=>'form-control custom-file-input',
             'image_class'=>'avatar-group pull-up my-0 mb-2 mt-1',
             'image_type'=>'small',
-            'height'=>empty($row->getRawOriginal('image')) ? 50 :300,    // create new bannar id row->image empty
+            'height'=>empty($row->getRawOriginal('image')) ? 50 :300,
             'width'=>empty($row->getRawOriginal('image')) ? 50 :300,
             'label'=>trans('products.image'),
-            'value'=>$row->getRawOriginal('image')
+            'value'=>$row->getRawOriginal('image'),
+            'required'=>1
             ]
             ])
                 <input type="hidden" name="product_id" value="{{$row->product_id}}">

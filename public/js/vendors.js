@@ -3528,6 +3528,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -4695,7 +4696,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.ordered_amount_btn {\n    -webkit-appearance: none;\n    transition: background 0.5s ease;\n    background: #7367f0;\n    border: 0;\n    color: #fff;\n    cursor: pointer;\n    float: left;\n    font-size: 20px;\n    height: 40px;\n    margin: 0;\n    width: 40px;\n}\n.ordered_amount_input {\n    -webkit-appearance: none;\n    border: 1px solid #ebebeb;\n    float: left;\n    font-size: 16px;\n    height: 40px;\n    margin: 0;\n    outline: none;\n    text-align: center;\n    width: calc(100% - 80px);\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.one-product-img{\n    height: 600px;\n    width: 600px;\n}\n.ordered_amount_btn {\n    -webkit-appearance: none;\n    transition: background 0.5s ease;\n    background: #7367f0;\n    border: 0;\n    color: #fff;\n    cursor: pointer;\n    float: left;\n    font-size: 20px;\n    height: 40px;\n    margin: 0;\n    width: 40px;\n}\n.ordered_amount_input {\n    -webkit-appearance: none;\n    border: 1px solid #ebebeb;\n    float: left;\n    font-size: 16px;\n    height: 40px;\n    margin: 0;\n    outline: none;\n    text-align: center;\n    width: calc(100% - 80px);\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -4743,7 +4744,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#more_btn[data-v-5ecce49e]{\n    width: 100%;\n    background-color: #fff;\n}\n.favourite_product[data-v-5ecce49e]{\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#more_btn[data-v-5ecce49e]{\n    width: 100%;\n    background-color: #fff;\n}\n.list-products-img[data-v-5ecce49e]{\nheight: 300px;\n    width: 300px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -24313,7 +24314,7 @@ var render = function() {
                     },
                     [
                       _c("img", {
-                        staticClass: "img-fluid product-img",
+                        staticClass: "img-fluid product-img one-product-img",
                         attrs: { src: _vm.image, alt: "product image" }
                       })
                     ]
@@ -25222,7 +25223,7 @@ var render = function() {
                     { attrs: { href: "/customer-product/view/" + item.id } },
                     [
                       _c("img", {
-                        staticClass: "img-fluid card-img-top",
+                        staticClass: "img-fluid card-img-top list-products-img",
                         attrs: { src: item.image, alt: "img-placeholder" }
                       })
                     ]

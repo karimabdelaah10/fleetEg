@@ -110,55 +110,39 @@
             </div>
             <div class="row match-height">
                 <div class="col-12">
-                    <div class="card card-company-table">
-                        <div class="card-header">
-                            <h4 class="card-title">{{trans('user.last 10 orders')}}</h4>
-                            <div class="dropdown chart-dropdown">
-                                <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-toggle="dropdown"></i>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="/users/orders/{{$row->id}}">{{trans('user.all orders')}}</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card-body p-0">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
+                    <div class="card">
+                        <div class="table-responsive">
+                            <table class="table mb-4">
+                                <thead>
+                                <tr>
+                                    <th >#</th>
+                                    <th >{{trans('paymentmethods.method')}}</th>
+                                    <th >{{trans('paymentmethods.method info')}}</th>
+                                    <th >{{trans('paymentmethods.default method')}}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @forelse($payment_methods as $element)
                                     <tr>
-                                        <th>{{trans('orders.serial')}}</th>
-                                        <th>{{trans('orders.price')}}</th>
-                                        <th>{{trans('orders.date')}}</th>
-                                        <th>{{trans('orders.status')}}</th>
-                                        <th>{{trans('app.actions')}}</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    @forelse($row->orders->take(10) as $element)
-                                        <tr>
-                                            <td>{{@$element->id}}</td>
-                                            <td>{{@$element->total_price}}</td>
-                                            <td>{{@$element->created_at ? \Carbon\Carbon::parse($element->created_at)->format('Y-m-d') : '' }}</td>
-                                            <td>
-                                                {!! get_status_for_blade($element->status) !!}
+                                        <td>#</td>
+                                        <td> {{@trans('paymentmethods.'.$element->type)}}</td>
+                                        <td>
+                                            @if(!empty($element->type))
+                                                {!! getMethodInfo($element) !!}
+                                            @endif
 
-                                            </td>
-                                            <td>
-                                                <div class="dropdown chart-dropdown">
-                                                    <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-toggle="dropdown"></i>
-                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                        <a class="dropdown-item" href="/users/order/{{@$element->id}}">{{trans('user.list one order')}}</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    @empty
-                                    @endforelse
-                                    </tbody>
-                                </table>
-                            </div>
+                                        </td>
+                                        <td>
+                                            <i @if($element->default) fill="true" @endif data-feather="star"></i>
+                                        </td>
+                                    </tr>
+                                @empty
+                                @endforelse
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+
                 </div>
             </div>
             <div class="row match-height">
@@ -297,41 +281,58 @@
             </div>
             <div class="row match-height">
                 <div class="col-12">
-                    <div class="card">
-                        <div class="table-responsive">
-                            <table class="table mb-4">
-                                <thead>
-                                <tr>
-                                    <th >#</th>
-                                    <th >{{trans('paymentmethods.method')}}</th>
-                                    <th >{{trans('paymentmethods.method info')}}</th>
-                                    <th >{{trans('paymentmethods.default method')}}</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                    @forelse($payment_methods as $element)
+                    <div class="card card-company-table">
+                        <div class="card-header">
+                            <h4 class="card-title">{{trans('user.last 10 orders')}}</h4>
+                            <div class="dropdown chart-dropdown">
+                                <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-toggle="dropdown"></i>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="/users/orders/{{$row->id}}">{{trans('user.all orders')}}</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>{{trans('orders.serial')}}</th>
+                                        <th>{{trans('orders.price')}}</th>
+                                        <th>{{trans('orders.date')}}</th>
+                                        <th>{{trans('orders.status')}}</th>
+                                        <th>{{trans('app.actions')}}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @forelse($row->orders->take(10) as $element)
                                         <tr>
-                                            <td>#</td>
-                                            <td> {{@trans('paymentmethods.'.$element->type)}}</td>
+                                            <td>{{@$element->id}}</td>
+                                            <td>{{@$element->total_price}}</td>
+                                            <td>{{@$element->created_at ? \Carbon\Carbon::parse($element->created_at)->format('Y-m-d') : '' }}</td>
                                             <td>
-                                                @if(!empty($element->type))
-                                                    {!! getMethodInfo($element) !!}
-                                                @endif
+                                                {!! get_status_for_blade($element->status) !!}
 
                                             </td>
                                             <td>
-                                                <i @if($element->default) fill="true" @endif data-feather="star"></i>
+                                                <div class="dropdown chart-dropdown">
+                                                    <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-toggle="dropdown"></i>
+                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                        <a class="dropdown-item" href="/users/order/{{@$element->id}}">{{trans('user.list one order')}}</a>
+                                                    </div>
+                                                </div>
                                             </td>
-                                            </tr>
-                                        @empty
+                                        </tr>
+                                    @empty
                                     @endforelse
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-
                 </div>
             </div>
+
         </section>
         <!-- Dashboard Ecommerce ends -->
 

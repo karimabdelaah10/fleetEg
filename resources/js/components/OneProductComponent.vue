@@ -11,10 +11,11 @@
         <div class="row my-2">
             <div
                 class="col-12 col-md-5 d-flex align-items-center justify-content-center mb-2 mb-md-0">
-                <div class="d-flex align-items-center justify-content-center">
+                <div
+                    class="d-flex align-items-center justify-content-center">
                     <img
                         :src="image"
-                        class="img-fluid product-img"
+                        class="img-fluid product-img one-product-img"
                         alt="product image"
                     />
                 </div>
@@ -345,6 +346,10 @@ import NumberInputSpinner from 'vue-number-input-spinner'
 
 </script>
 <style>
+.one-product-img{
+    height: 600px;
+    width: 600px;
+}
 .ordered_amount_btn {
     -webkit-appearance: none;
     transition: background 0.5s ease;

@@ -32,7 +32,10 @@ class MoneyRequestsController extends Controller {
         $data['row']->is_active = 1;
         $data['page_title'] = trans('app.list') . ' ' . $this->title;
         $data['page_description'] = trans('moneyrequest.page description');
-        $data['rows'] = $this->model->getData()->orderBy('id','desc')->paginate(request('per_page'));
+        $data['rows'] = $this->model->getData()
+            ->Filtered()
+            ->orderBy('id','desc')
+            ->paginate(request('per_page'));
         return view($this->views . '.index' , $data);
     }
 

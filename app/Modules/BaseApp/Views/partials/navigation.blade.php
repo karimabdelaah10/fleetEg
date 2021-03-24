@@ -75,12 +75,45 @@
                     <span class="menu-title text-truncate" data-i18n="admins">{{trans('navigation.sliders')}}</span>
                 </a>
             </li>
-            <li class=" nav-item">
-                <a class="d-flex align-items-center" href="/money-request">
-                    <i data-feather="dollar-sign"></i>
-                    <span class="menu-title text-truncate" data-i18n="Orders">{{trans('navigation.money requests')}}</span>
-                </a>
-            </li>
+{{--                status--}}
+                <li class=" nav-item">
+                    <a class="d-flex align-items-center" href="/money-request">
+                        <i data-feather="grid"></i>
+                        <span class="menu-title text-truncate" data-i18n="Products">{{trans('navigation.money requests')}}</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li>
+                            <a class="d-flex align-items-center" href="/money-request/?status={{\App\Modules\BaseApp\Enums\GeneralEnum::PENDING}}">
+                                <i data-feather="circle"></i>
+                                <span class="menu-item text-truncate" data-i18n="product-categories">{{trans('app.'.\App\Modules\BaseApp\Enums\GeneralEnum::PENDING)}}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="d-flex align-items-center" href="/money-request/?status={{\App\Modules\BaseApp\Enums\GeneralEnum::UNDER_REVIEW}}">
+                                <i data-feather="circle"></i>
+                                <span class="menu-item text-truncate" data-i18n="product-categories">{{trans('app.'.\App\Modules\BaseApp\Enums\GeneralEnum::UNDER_REVIEW)}}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="d-flex align-items-center" href="/money-request/?status={{\App\Modules\BaseApp\Enums\GeneralEnum::TRANSFORMED}}">
+                                <i data-feather="circle"></i>
+                                <span class="menu-item text-truncate" data-i18n="product-categories">{{trans('app.'.\App\Modules\BaseApp\Enums\GeneralEnum::TRANSFORMED)}}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="d-flex align-items-center" href="/money-request">
+                                <i data-feather="circle"></i>
+                                <span class="menu-item text-truncate" data-i18n="product-categories">{{trans('app.all')}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+{{--                <li class=" nav-item">--}}
+{{--                <a class="d-flex align-items-center" href="/money-request">--}}
+{{--                    <i data-feather="dollar-sign"></i>--}}
+{{--                    <span class="menu-title text-truncate" data-i18n="MoneyRequests">{{trans('navigation.money requests')}}</span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="/governorates">
                     <i data-feather="map"></i>

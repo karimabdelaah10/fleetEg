@@ -63,7 +63,7 @@
                         <div class="item-img text-center">
                             <a :href="'/customer-product/view/'+item.id">
                                 <img
-                                    class="img-fluid card-img-top"
+                                    class="img-fluid card-img-top list-products-img"
                                     :src="item.image"
                                     alt="img-placeholder"
                                 /></a>
@@ -288,7 +288,8 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
     width: 100%;
     background-color: #fff;
 }
-.favourite_product{
-
+.list-products-img{
+height: 300px;
+    width: 300px;
 }
 </style>

@@ -27,4 +27,13 @@ class Moneyrequest extends Model
         return $this->belongsTo(User::class , 'user_id');
     }
 
+    public function scopeFiltered($query)
+    {
+        if (request()->status && request()->status !='all'){
+            $query->where('status' , request()->status);
+        }
+        return $query;
+    }
+
+
 }
