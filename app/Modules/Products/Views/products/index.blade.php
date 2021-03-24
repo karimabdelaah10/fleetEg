@@ -22,6 +22,28 @@
                     </div>
 
                     <div class="table-responsive">
+                        <div class="col-12 mb-4">
+                            <form method="get">
+                                <div class="input-group input-group-merge">
+                                    <input
+                                        type="text"
+                                        name="search_key"
+                                        class="form-control search-product"
+                                        id="shop-search"
+                                        value="{{request()->search_key}}"
+                                        placeholder="{{trans('app.search_in_products')}}"
+                                        aria-describedby="shop-search"
+                                    />
+                                    <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i data-feather="search"
+                                       class="text-muted">
+                                    </i>
+                                </span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                         <table class="table mb-4">
                             <thead>
                             <tr>

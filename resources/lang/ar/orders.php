@@ -4,6 +4,7 @@ return [
 
     'page description' => 'قائمه بصفات المنتجات',
     'edit order status' => 'تعديل حاله الطلب',
+    'export orders' => 'استخراج ملف excl',
 
 
     'serial'=>'رقم الشحنه',

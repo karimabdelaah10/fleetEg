@@ -18,9 +18,70 @@
                         <h4 class="card-title">
                             {{ @$page_description }}
                         </h4>
+{{--                        <a href="{{$module_url}}/export?@forelse(request()->query() as $key=>$val){{$key}}={{$val}}&@empty @endforelse" class="add-new btn btn-primary mt-50">{{trans('orders.export orders')}}</a>--}}
                     </div>
 
                     <div class="table-responsive">
+                        <div class="col-12">
+                            <form method="get">
+                                <div class="input-group input-group-merge">
+                                    <input
+                                        type="text"
+                                        name="search_key"
+                                        class="form-control search-product"
+                                        id="shop-search"
+                                        value="{{request()->search_key}}"
+                                        placeholder="{{trans('app.search_in_orders')}}"
+                                        aria-describedby="shop-search"
+                                    />
+                                    <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i data-feather="search"
+                                       class="text-muted">
+                                    </i>
+                                </span>
+                                    </div>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="mb-2 col-3">
+                                        <select class="form-control" name="status" id="add-type">
+                                            <option @if(!request()->status) selected @endif disabled>{{trans('orders.status')}}</option>
+                                            @forelse(\App\Modules\Products\Enums\OrdersEnum::ordersStatusesForSelector() as $key =>$val)
+                                                <option @if(request()->status &&  request()->status == $key) selected @endif value="{{$key}}">{{$val}} </option>
+                                            @empty
+                                            @endforelse
+                                        </select>
+                                    </div>
+                                    <label>{{trans('app.from')}}</label>
+                                    <div class="mb-2 col-3">
+                                        <input
+                                            type="date"
+                                            name="from"
+                                            class="form-control search-product"
+                                            id="shop-search"
+                                            value="{{request()->from}}"
+                                        />
+
+                                    </div>
+                                    <label>{{trans('app.to')}}</label>
+                                    <div class="mb-2 col-3">
+                                        <input
+                                            type="date"
+                                            name="to"
+                                            class="form-control search-product"
+                                            id="shop-search"
+                                            value="{{request()->to}}"
+                                        />
+                                    </div>
+                                    <div class="mb-2 col-2">
+                                        <button type="submit" class="btn btn-primary data-submit mr-1">{{trans('app.filter')}}</button>
+                                        <a href="{{$module_url}}" type="reset" class="btn btn-outline-secondary">{{trans('app.cancel')}}</a>
+                                    </div>
+
+                                    </div>
+                            </form>
+                        </div>
+
                         <table class="table mb-4">
                             <thead>
                             <tr>

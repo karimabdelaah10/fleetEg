@@ -296,6 +296,8 @@ import NumberInputSpinner from 'vue-number-input-spinner'
                     this.selectdData.commission = this.product.commission + this.selectdData.commission_diffrence_amount
                 }else if(this.selectdData.commission_diffrence_type == 'discount'){
                      this.selectdData.commission = this.product.commission - this.selectdData.commission_diffrence_amount
+                 }else{
+                     this.selectdData.commission = this.product.commission
                  }
                  this.selectdData.product_id = this.product.id
                  this.selectdData.price = this.product.price

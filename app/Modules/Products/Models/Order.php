@@ -4,6 +4,7 @@ namespace App\Modules\Products\Models;
 
 use App\Modules\Governorate\Models\Governorate;
 use App\Modules\Users\User;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -46,5 +47,34 @@ class Order extends Model
             'detail',
         );
     }
+
+    public function scopeFiltered($query)
+    {
+        if (request()->search_key && !empty(request()->search_key)){
+            $query->where('id' , request()->search_key)
+                 ->orWhereHas('governorate', function($q) {
+                     $q->where('title' ,'like', '%'.request()->search_key.'%');
+                 })
+                ->orWhereHas('orderProducts', function($q) {
+                     $q->where('title' ,'like', '%'.request()->search_key.'%');
+                     $q->where('description' ,'like', '%'.request()->search_key.'%');
+                 })
+                ->orWhereHas('user', function($q) {
+                    $q->where('name' ,'like', '%'.request()->search_key.'%');
+                })
+            ;
+        }
+        if (request()->status && request()->status != 'all'){
+            $query->where('status' , request()->status);
+        }
+        if (request()->query('from')){
+            $query->where('created_at' ,'>=', Carbon::parse(request()->query('from'))->format('Y-m-d')." 00:00:00");
+        }
+        if (request()->query('to')){
+            $query->where('created_at' ,'<=', Carbon::parse(request()->query('to'))->format('Y-m-d')." 23:59:59");
+        }
+        return $query;
+    }
+
 
 }

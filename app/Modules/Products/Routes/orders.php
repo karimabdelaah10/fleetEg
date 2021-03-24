@@ -11,5 +11,7 @@ Route::group([
         Route::put('/edit/{id}', 'OrderController@postEdit');
 
         Route::get('/view/{id}', 'OrderController@getView');
+
+        Route::get('/export', 'OrderController@export');
     });
 });

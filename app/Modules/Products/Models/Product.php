@@ -30,8 +30,9 @@ class Product extends Model
     {
         $query->Active();
         if (request()->search_key && !empty(request()->search_key)){
-            $query->where('title' ,'like',  '%'.request()->search_key.'%');
-//            ->orWhere('description' ,'like', '%"' . request()->search_key . '"%');
+            $query->where('title' ,'like',  '%'.request()->search_key.'%')
+            ->orWhere('id' , request()->search_key)
+            ->orWhere('description' ,'like','%'.request()->search_key.'%');
         }
         if (request()->selected_category && request()->selected_category != 'all'){
             $query->where('category_id' , request()->selected_category);

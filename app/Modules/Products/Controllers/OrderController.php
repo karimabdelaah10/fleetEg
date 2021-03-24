@@ -6,9 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Modules\BaseApp\Enums\GeneralEnum;
 use App\Modules\MoneyProcess\Enums\MoneyProcessEnum;
 use App\Modules\Products\Enums\OrdersEnum;
+use App\Modules\Products\Exports\OrdersExports;
 use App\Modules\Products\Models\Order;
 use App\Modules\Products\Requests\OrderRequest;
 use App\Modules\Users\User;
+use Maatwebsite\Excel\Excel;
 
 class OrderController extends Controller {
 
@@ -32,7 +34,9 @@ class OrderController extends Controller {
         $data['row']->is_active = 1;
         $data['page_title'] = trans('app.list') . " " . $this->title;
         $data['page_description'] = trans('orders.page description');
-        $data['rows'] = $this->model->getData()->orderBy("id","DESC")->paginate(request('per_page'));
+        $data['rows'] = $this->model->Filtered()
+            ->orderBy("id","DESC")
+            ->paginate(request('per_page'));
         return view($this->views . '.index', $data);
     }
 
@@ -77,4 +81,13 @@ class OrderController extends Controller {
         }
     }
 
+    public function export()
+    {
+//        $data = $this->model->Filtered()
+//            ->orderBy("id","DESC")->get();
+//        return \Excel::download(new OrdersExports(), 'orders.xlsx');
+        return \Excel::download(new OrdersExports, 'users.xlsx');
+
+//        return Excel::download(new OrdersExports($data) , 'orders.xls');
+    }
 }

@@ -4,7 +4,10 @@ return [
 
     'home' => 'الصفحه الرئيسيه',
     'save' => 'حفظ',
+    'filter' => 'فلتر',
     'cancel' => 'الغاء',
+    'from' => 'من',
+    'to' => 'الى',
     'wrong action' => 'حدث خطأ ما',
     'success message' => 'تم',
     'list' => 'عرض بيانات',
@@ -61,6 +64,7 @@ return [
     'delete_from_wish_list'=>'مسح من المفضله',
     'price_range'=>'نطاق السعر',
     'search_in_products'=>'البحث فى المنتجات',
+    'search_in_orders'=>'البحث فى الطلبات',
     'all'=>'الكل',
     'ask_transfer_money'=>'تقدم بطلب للتصفيه',
     'insufficient balance'=>'رصيدك الحالى غير كاف',

@@ -3698,6 +3698,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   _this4.selectdData.commission = _this4.product.commission + _this4.selectdData.commission_diffrence_amount;
                 } else if (_this4.selectdData.commission_diffrence_type == 'discount') {
                   _this4.selectdData.commission = _this4.product.commission - _this4.selectdData.commission_diffrence_amount;
+                } else {
+                  _this4.selectdData.commission = _this4.product.commission;
                 }
 
                 _this4.selectdData.product_id = _this4.product.id;
