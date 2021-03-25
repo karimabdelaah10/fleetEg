@@ -112,6 +112,7 @@
                         <div class="col-sm-4 mg-t-2 mg-sm-t-0">
                             <NumberInputSpinner
                                 v-if="selectdData.commission_diffrence_type != 'none'"
+                                :key="selectdData.commission_diffrence_amount"
                                 :min="0"
                                 :max="commisionMax"
                                 :step="1"
@@ -219,7 +220,6 @@ import NumberInputSpinner from 'vue-number-input-spinner'
             NumberInputSpinner
         },
         props: ['row'],
-
         created() {},
         mounted() {
             feather.replace();
@@ -229,13 +229,38 @@ import NumberInputSpinner from 'vue-number-input-spinner'
 
         },
         computed: {
-                isDisabled: function(){
+            isDisabled: function(){
                 return !this.addToCaryBtn;
             },
-            getAllCategory(){ //final output from here
-                return this.$store.getters.getCategoryFormGetters
-            }
+            totalPrice:function (){
+                let finalPrice =0,
+                    originalOneProductPrice  =0,
+                    originalAllProductsPrice =0;
+                originalOneProductPrice =this.product.price - this.product.commission;
+                // console.log('oneproprice == '+ originalOneProductPrice)
+                originalAllProductsPrice = originalOneProductPrice * this.selectdData.amount;
+                // console.log('allproprice == '+ originalAllProductsPrice)
+                // console.log('allcommiions == '+ this.totalCommission)
+                finalPrice = originalAllProductsPrice + this.totalCommission;
+                // console.log('final == '+ finalPrice)
+                return finalPrice;
+            },
+            totalCommission:function (){
+               let oneProductCommission =0,
+                   allProductsCommission=0 ;
+               if (this.selectdData.commission_diffrence_type == 'overprice'){
+                    oneProductCommission = this.product.commission + this.selectdData.commission_diffrence_amount
+                }else if(this.selectdData.commission_diffrence_type == 'discount'){
+                    oneProductCommission = this.product.commission - this.selectdData.commission_diffrence_amount
+                }else{
+                    oneProductCommission = this.product.commission
+                }
+                // console.log('selctedAmount == '+ this.selectdData.commission_diffrence_amount)
+                // console.log('oneprodcomm == '+ oneProductCommission)
+                allProductsCommission= oneProductCommission * this.selectdData.amount;
 
+               return allProductsCommission;
+            }
         },
         watch: {},
         methods:{
@@ -258,7 +283,7 @@ import NumberInputSpinner from 'vue-number-input-spinner'
                         }
                     });
             },
-            async selectSpecValue(specValue){
+           async selectSpecValue(specValue){
                 let newImage ='#';
                 let newStock = '#';
                 let url = '/api/v1/products/inner-spec-values/'+specValue.pivot_id+'?product_id='+this.product.id;
@@ -292,18 +317,12 @@ import NumberInputSpinner from 'vue-number-input-spinner'
 
             },
              async addProductToCart() {
-                 if (this.selectdData.commission_diffrence_type == 'overprice'){
-                    this.selectdData.commission = this.product.commission + this.selectdData.commission_diffrence_amount
-                }else if(this.selectdData.commission_diffrence_type == 'discount'){
-                     this.selectdData.commission = this.product.commission - this.selectdData.commission_diffrence_amount
-                 }else{
-                     this.selectdData.commission = this.product.commission
-                 }
                  this.selectdData.product_id = this.product.id
-                 this.selectdData.price = this.product.price * this.selectdData.amount
+                 this.selectdData.commission = this.totalCommission   // calculated in computed
+                 this.selectdData.price = this.totalPrice             // calculated in computed
                  this.selectdData.image = this.image
                  this.selectdData.user_id = this.row.user.id
-
+                 // console.log(this.selectdData)
                  let url = '/api/v1/products/add-to-cart/';
                  await axios.post(url , this.selectdData).then(response => {
                      this.displayToast(this.row.trans.product_added_to_cart_title ,

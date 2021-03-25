@@ -61,8 +61,11 @@
                                                             <i data-feather="eye" class="mr-50"></i>
                                                             <span>{{trans('products.view inner spec value')}}</span>
                                                         </a>
+                                                    <a class="dropdown-item" href="{{$module_url}}/edit_products_spec_value/{{@$element->id}}">
+                                                        <i data-feather="trash" class="mr-50"></i>
+                                                        <span>{{trans('app.edit')}}</span>
+                                                    </a>
                                                         <a class="dropdown-item" href="{{$module_url}}/delete_products_spec_value/{{@$element->id}}">
-                                                            {{--            data-confirm="ssss"--}}
                                                             <i data-feather="trash" class="mr-50"></i>
                                                             <span>{{trans('app.delete')}}</span>
                                                         </a>

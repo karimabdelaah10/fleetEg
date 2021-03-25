@@ -3544,6 +3544,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3593,9 +3594,35 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     isDisabled: function isDisabled() {
       return !this.addToCaryBtn;
     },
-    getAllCategory: function getAllCategory() {
-      //final output from here
-      return this.$store.getters.getCategoryFormGetters;
+    totalPrice: function totalPrice() {
+      var finalPrice = 0,
+          originalOneProductPrice = 0,
+          originalAllProductsPrice = 0;
+      originalOneProductPrice = this.product.price - this.product.commission; // console.log('oneproprice == '+ originalOneProductPrice)
+
+      originalAllProductsPrice = originalOneProductPrice * this.selectdData.amount; // console.log('allproprice == '+ originalAllProductsPrice)
+      // console.log('allcommiions == '+ this.totalCommission)
+
+      finalPrice = originalAllProductsPrice + this.totalCommission; // console.log('final == '+ finalPrice)
+
+      return finalPrice;
+    },
+    totalCommission: function totalCommission() {
+      var oneProductCommission = 0,
+          allProductsCommission = 0;
+
+      if (this.selectdData.commission_diffrence_type == 'overprice') {
+        oneProductCommission = this.product.commission + this.selectdData.commission_diffrence_amount;
+      } else if (this.selectdData.commission_diffrence_type == 'discount') {
+        oneProductCommission = this.product.commission - this.selectdData.commission_diffrence_amount;
+      } else {
+        oneProductCommission = this.product.commission;
+      } // console.log('selctedAmount == '+ this.selectdData.commission_diffrence_amount)
+      // console.log('oneprodcomm == '+ oneProductCommission)
+
+
+      allProductsCommission = oneProductCommission * this.selectdData.amount;
+      return allProductsCommission;
     }
   },
   watch: {},
@@ -3709,18 +3736,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
-                if (_this4.selectdData.commission_diffrence_type == 'overprice') {
-                  _this4.selectdData.commission = _this4.product.commission + _this4.selectdData.commission_diffrence_amount;
-                } else if (_this4.selectdData.commission_diffrence_type == 'discount') {
-                  _this4.selectdData.commission = _this4.product.commission - _this4.selectdData.commission_diffrence_amount;
-                } else {
-                  _this4.selectdData.commission = _this4.product.commission;
-                }
-
                 _this4.selectdData.product_id = _this4.product.id;
-                _this4.selectdData.price = _this4.product.price * _this4.selectdData.amount;
+                _this4.selectdData.commission = _this4.totalCommission; // calculated in computed
+
+                _this4.selectdData.price = _this4.totalPrice; // calculated in computed
+
                 _this4.selectdData.image = _this4.image;
-                _this4.selectdData.user_id = _this4.row.user.id;
+                _this4.selectdData.user_id = _this4.row.user.id; // console.log(this.selectdData)
+
                 url = '/api/v1/products/add-to-cart/';
                 _context4.next = 8;
                 return axios.post(url, _this4.selectdData).then(function (response) {
@@ -24644,6 +24667,9 @@ var render = function() {
                               _vm.selectdData.commission_diffrence_type !=
                               "none"
                                 ? _c("NumberInputSpinner", {
+                                    key:
+                                      _vm.selectdData
+                                        .commission_diffrence_amount,
                                     attrs: {
                                       min: 0,
                                       max: _vm.commisionMax,

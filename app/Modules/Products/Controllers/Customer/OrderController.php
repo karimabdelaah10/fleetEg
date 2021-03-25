@@ -82,6 +82,7 @@ class OrderController extends Controller {
             'shipping_coast' =>trans('governorate.shipping_coast'),
             'order_saved_title' =>trans('orders.order_saved_title'),
             'order_saved_message' =>trans('orders.order_saved_message'),
+            'store_name' =>trans('orders.store_name'),
             'just_now' => trans('app.just_now'),
         ];
         if(!Cart::where('user_id' , auth()->id())->count()){

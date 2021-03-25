@@ -16,38 +16,6 @@
         </div>
         <div class="modal-body flex-grow-1">
             <div  class="form-group">
-                <div class="row mg-t-20 mb-1">
-                    <label class="col-sm-! form-control-label">
-                        {{trans('products.parent specs values')}}
-                        <span class="tx-danger">*</span>
-                    </label>
-                    <div class="col-sm-11 mg-t-10 mg-sm-t-0">
-                        <select class="form-control" name="parent_spec_value_id">
-                            <option selected disabled>{{trans('products.parent specs values')}}</option>
-                                @if(!empty($specs_values))
-                                    @foreach($specs_values as $element)
-                                    <option value="{{@$element->id}}">{{@$element->value->title}}</option>
-                                    @endforeach
-                                @endif
-                        </select>
-                    </div>
-                </div>
-                <div class="row mg-t-20 mb-1">
-                    <label class="col-sm-! form-control-label">
-                        {{trans('products.specs values')}}
-                        <span class="tx-danger">*</span>
-                    </label>
-                    <div class="col-sm-11 mg-t-10 mg-sm-t-0">
-                        <select class="form-control" name="spec_value_id" required>
-                            <option selected disabled>{{trans('products.specs values')}}</option>
-                            @if(!empty($rows))
-                                @foreach($rows as $element)
-                                    <option value="{{@$element->id}}">{{@$element->title}}</option>
-                                    @endforeach
-                                    @endif
-                        </select>
-                    </div>
-                </div>
                 <div class="form-group">
                     <label for="title" class="form-label">
                         {{trans('products.amount')}}
@@ -55,7 +23,12 @@
                     </label>
                     <input id="title"
                            placeholder="{{trans('products.amount')}}"
-                           required name="stock" type="number" class="form-control">
+                           required
+                           value="{{$row->stock}}"
+                           name="stock"
+                           type="number"
+                           class="form-control"
+                    >
                 </div>
                 @include('BaseApp::form.file',[
                     'name'=>'image',

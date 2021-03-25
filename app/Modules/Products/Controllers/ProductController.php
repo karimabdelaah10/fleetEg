@@ -29,6 +29,7 @@ class ProductController extends Controller {
         $this->model = $model;
     }
 
+    //products Functions
     public function getIndex() {
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
@@ -165,7 +166,6 @@ class ProductController extends Controller {
         flash()->success(trans('app.deleted successfully'));
         return back();
     }
-
     public function getDeleteProductSpec($product_spec_id)
     {
         $row = Productspec::findOrFail($product_spec_id);
@@ -173,6 +173,7 @@ class ProductController extends Controller {
         flash()->success(trans('app.deleted successfully'));
         return back();
     }
+
     public function getViewProductSpecValues($product_spec_id)
     {
         $row =Productspec::findOrFail($product_spec_id);
@@ -216,6 +217,30 @@ class ProductController extends Controller {
         flash()->success(trans('app.created successfully'));
         return back();
     }
+    public function getEditProductSpecValue($product_spec_value_id)
+    {
+        $data['row']=Productspecvalue::findOrFail($product_spec_value_id);
+        $product_spec=Productspec::where('product_id' , $data['row']->product_id)
+            ->where('spec_id', $data['row']->spec_id )->first();
+        $data['module'] = $this->module;
+        $data['module_url'] = $this->module_url;
+        $data['views'] = $this->views;
+        $data['page_title'] = trans('products.edit product spec value');
+        $data['breadcrumb'] = [
+            $this->title => $this->module_url ,
+            trans('app.view') .' '.$this->title =>$this->module_url.'/view/'.$data['row']->product_id,
+            trans('products.view spec values')=>$this->module_url.'/view_product_spec_values/'.$product_spec->id
+        ];
+        return view($this->views . '.edit_product_spec_value', $data);
+    }
+    public function postEditProductSpecValue(Request $request ,$product_spec_value_id )
+    {
+     $row = Productspecvalue::findOrFail($product_spec_value_id);
+     if ($row->update($request->all())){
+         flash(trans('app.update successfully'))->success();
+         return back();
+     }
+    }
     public function getDeleteProductSpecValue($product_spec_value_id)
     {
         $row = Productspecvalue::findOrFail($product_spec_value_id);
@@ -223,34 +248,6 @@ class ProductController extends Controller {
         flash()->success(trans('app.deleted successfully'));
         return back();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     public function getAddProductSpecValueInner($product_spec_value_id)
@@ -281,8 +278,6 @@ class ProductController extends Controller {
         flash()->success(trans('app.created successfully'));
         return back();
     }
-
-
     public function getViewProductSpecValuesInner($product_spec_value_id)
     {
 

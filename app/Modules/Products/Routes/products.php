@@ -25,6 +25,8 @@ Route::group([
         Route::get('/add_products_spec_value/{product_spec_id}', 'ProductController@getAddProductSpecValue');
 
         Route::post('/add_products_spec_value/{product_spec_id}', 'ProductController@postAddProductSpecValue');
+        Route::get('/edit_products_spec_value/{product_spec_value_id}', 'ProductController@getEditProductSpecValue');
+        Route::post('/edit_products_spec_value/{product_spec_value_id}', 'ProductController@postEditProductSpecValue');
         Route::get('/delete_products_spec_value/{product_spec_value_id}', 'ProductController@getDeleteProductSpecValue');
 
 
