@@ -7,6 +7,8 @@ use App\Modules\BaseApp\Enums\GeneralEnum;
 use App\Modules\MoneyProcess\Enums\MoneyProcessEnum;
 use App\Modules\MoneyProcess\Models\Moneyrequest;
 use App\Modules\MoneyProcess\Models\Transaction;
+use App\Modules\Products\Models\Order;
+use App\Modules\Users\Enums\UserEnum;
 use App\Modules\Users\User;
 use Illuminate\Http\Request;
 
@@ -71,6 +73,11 @@ class MoneyRequestsController extends Controller {
                     'available_balance' =>$new_available_balance
                 ]);
                 //Todo to save new notification with that change
+                $description=trans('notifications.notification_money_request_transformed_txt');
+                $to= UserEnum::CUSTOMER;
+                $related_element_id = $id;
+                $related_element_type = Moneyrequest::class;
+                create_new_notification($description , $to , null ,$related_element_id ,$related_element_type);
 
             }
             flash(trans('app.update successfully'))->success();

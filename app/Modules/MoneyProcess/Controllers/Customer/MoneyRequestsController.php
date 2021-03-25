@@ -71,14 +71,14 @@ class MoneyRequestsController extends Controller {
             'available_balance' => auth()->user()->available_balance
         ];
         if ($row = $this->model->create($record)) {
-            $description=' بطلب سحب مالى '.auth()->user()->name.' قام المستخدم : ';
+            //Todo to add this to notification (to alert admin that he has new request)
+            $description=trans('notifications.notification_new_money_request_txt');
             $to= UserEnum::ADMIN;
             $related_element_id = $row->id;
             $related_element_type = Moneyrequest::class;
             create_new_notification($description , $to , null ,$related_element_id ,$related_element_type);
             flash(trans('app.update successfully'))->success();
             return redirect($this->module_url);
-            //Todo to add this to notification (to alert admin that he has new request)
         }
     }
 
@@ -105,7 +105,8 @@ class MoneyRequestsController extends Controller {
             return back();
         }
         if ($row->update($request->all())) {
-            $description=' بتعديل طلب السحب مالى '.auth()->user()->name.' قام المستخدم : ';
+            //Todo to add this to notification (to alert admin that he has new request)
+            $description=trans('notifications.notification_edit_money_request_txt');
             $to= UserEnum::ADMIN;
             $related_element_id = $row->id;
             $related_element_type = Moneyrequest::class;

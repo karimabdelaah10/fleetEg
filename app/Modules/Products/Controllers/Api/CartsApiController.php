@@ -4,6 +4,7 @@ namespace App\Modules\Products\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Modules\BaseApp\Enums\GeneralEnum;
+use App\Modules\MoneyProcess\Models\Moneyrequest;
 use App\Modules\Products\Enums\OrdersEnum;
 use App\Modules\Products\Models\Cart;
 use App\Modules\Products\Models\Favouriteproduct;
@@ -13,6 +14,7 @@ use App\Modules\Products\Models\Productspecvalue;
 use App\Modules\Products\Models\Spec;
 use App\Modules\Products\Resources\ProductsResource;
 use App\Modules\Products\Resources\ProductsResourcePagination;
+use App\Modules\Users\Enums\UserEnum;
 use App\Modules\Users\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -120,6 +122,11 @@ class CartsApiController extends Controller {
 
         Cart::where('user_id' ,$request->user_id)->delete();
         //Todo to send notification to admin about new order
+        $description=trans('notifications.notification_new_order_txt');
+        $to= UserEnum::ADMIN;
+        $related_element_id = $newOrder->id;
+        $related_element_type = Order::class;
+        create_new_notification($description , $to , null ,$related_element_id ,$related_element_type);
         return'done';
 
     }

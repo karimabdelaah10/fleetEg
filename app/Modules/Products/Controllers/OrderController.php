@@ -9,6 +9,7 @@ use App\Modules\Products\Enums\OrdersEnum;
 use App\Modules\Products\Exports\OrdersExports;
 use App\Modules\Products\Models\Order;
 use App\Modules\Products\Requests\OrderRequest;
+use App\Modules\Users\Enums\UserEnum;
 use App\Modules\Users\User;
 use Maatwebsite\Excel\Excel;
 
@@ -74,6 +75,12 @@ class OrderController extends Controller {
                     $user->available_balance + $row->total_price ,
                     $row->total_price , MoneyProcessEnum::New_ORDER_PRICE);
 
+                //Todo to send notification to admin about order delivered
+                $description=trans('notifications.notification_order_delivered_txt');
+                $to= UserEnum::CUSTOMER;
+                $related_element_id = $id;
+                $related_element_type = Order::class;
+                create_new_notification($description , $to , null ,$related_element_id ,$related_element_type);
                 $user->increment('available_balance',$row->total_price);
             }
             flash(trans('app.update successfully'))->success();
