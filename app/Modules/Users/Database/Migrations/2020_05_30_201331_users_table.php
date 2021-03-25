@@ -22,12 +22,11 @@ class UsersTable extends Migration
             $table->string('name')->nullable();
             $table->mediumText('address')->nullable(); //address
             $table->string('email')->nullable()->index();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('mobile_number')->index(); //required
             $table->string('password')->nullable(); //required
-            $table->rememberToken();
             $table->timestamp('last_logged_in_at')->nullable();
             $table->boolean('is_active')->nullable()->default(1)->index();
+            $table->boolean('is_verified')->nullable()->default(0)->index();
             $table->string('profile_picture', 190)->nullable();
             $table->float('available_balance')->default(0);
 

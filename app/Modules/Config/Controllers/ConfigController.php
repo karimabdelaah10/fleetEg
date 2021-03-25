@@ -36,11 +36,16 @@ class ConfigController extends Controller {
 
     public function postEdit(Request $request) {
 //        authorize('edit-' . $this->module);
+        Config::where('type' , 'switch')->update(['value' =>0]);
         if (!empty($request)){
             foreach ($request->all() as $key =>$value){
                 $row = $this->model->find($key);
                 if ($row){
-                    $row->update(['value' => $value]);
+                    if ($row->type == 'switch'){
+                        $row->update(['value' => 1]);
+                    }else{
+                        $row->update(['value' => $value]);
+                    }
                 }
             }
         }

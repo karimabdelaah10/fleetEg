@@ -34,6 +34,7 @@ class User extends Authenticatable
         'email_verified_at',
         'last_logged_in_at',
         'is_active',
+        'is_verified',
         'password',
         'profile_picture',
         'available_balance',
@@ -78,6 +79,13 @@ class User extends Authenticatable
     public function scopeCustomer($query)
     {
         return $query->where('type', '=', UserEnum::CUSTOMER);
+    }
+   public function scopeFiltered($query)
+    {
+        if (request()->query('not-verified')){
+             $query->where('is_verified', '=', 0);
+        }
+        return $query;
     }
 
     public function scopeWithoutLoggedUser($query)

@@ -38,9 +38,17 @@ class UsersController extends Controller
         $data['row']->is_active = 1;
         $data['page_title'] = trans('app.list') . ' ' . $this->title;
         $data['page_description'] = trans('user.page description');
-        $data['rows'] = $this->model->getData()->Customer()->latest()->paginate(request('per_page'));
+        $data['rows'] = $this->model->getData()->Customer()->Filtered()->latest()->paginate(request('per_page'));
 
         return view($this->views . '.index', $data);
+    }
+
+    public function verifyAll()
+    {
+        User::where('is_verified', 0)->update(['is_verified'=>1]);
+        flash()->success(trans('app.update successfully'));
+        return redirect($this->module_url);
+
     }
     public function getCreate(){
         $data['module'] = $this->module;
@@ -84,6 +92,7 @@ class UsersController extends Controller
 //        authorize('edit-' . $this->module);
         $row = $this->model->findOrFail($id);
         !empty($request->is_active) ? $request['is_active'] =1 : $request['is_active'] =0;
+        !empty($request->is_verified) ? $request['is_verified'] =1 : $request['is_verified'] =0;
         if ($row->update($request->all())) {
             flash(trans('app.update successfully'))->success();
             return redirect($this->module_url);

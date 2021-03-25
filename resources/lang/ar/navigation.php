@@ -4,6 +4,7 @@ return [
 
     'home' => 'الصفحه الرئيسيه',
     'users' => 'المستخدمين',
+    'not_verified_users' => ' الغير مفعلين',
     'products' => 'المنتجات',
     'products categories' => 'فئات المنتجات',
     'products specs' => 'صفات المنتجات',

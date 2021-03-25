@@ -12,7 +12,8 @@ abstract class ConfigsEnum
           EMAIL='email',
           MOBILE_NUMBER='mobile_number',
           WHATSAPP_NUMBER='whatsapp_number',
-          MESSENGER_URL='messenger_url'
+          MESSENGER_URL='messenger_url',
+          AUTO_REGISTER='auto_register'
     ;
     public static function conigsTitls()
     {

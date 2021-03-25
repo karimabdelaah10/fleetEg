@@ -18,8 +18,14 @@
                         <h4 class="card-title">
                             {{ @$page_description }}
                         </h4>
-                        <a href="{{$module_url}}/create" class="add-new btn btn-primary mt-50">
-                            {{trans('user.add user')}}</a>
+                        @if(request()->query('not-verified'))
+                        <a href="{{$module_url}}/verify_all" class="add-new btn btn-primary mt-50">
+                            {{trans('user.verify_all_users')}}</a>
+                        @else
+                            <a href="{{$module_url}}/create" class="add-new btn btn-primary mt-50">
+                                {{trans('user.add user')}}</a>
+
+                        @endif
                     </div>
 
                     <div class="table-responsive">

@@ -9,5 +9,5 @@ class Config extends Model
 {
     use HasFactory;
     protected $table='configs';
-    protected $fillable=['title','value'];
+    protected $fillable=['title','value' ,'type'];
 }

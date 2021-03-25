@@ -10,6 +10,8 @@ Route::group([
     Route::group(['prefix' => 'users'], function () {
         Route::get('/', '\App\Modules\Users\Controllers\UsersController@getIndex')->name('users');
 
+        Route::get('/verify_all', '\App\Modules\Users\Controllers\UsersController@verifyAll');
+
         Route::get('/create', '\App\Modules\Users\Controllers\UsersController@getCreate');
         Route::post('/create', '\App\Modules\Users\Controllers\UsersController@postCreate')->name('users.create');
 

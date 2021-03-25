@@ -6,7 +6,7 @@
         </label>
         <input type="checkbox"
                name="{{$name}}"
-               @if($row->$name)
+               @if($value)
                checked=""
                @endif
                class="custom-control-input"

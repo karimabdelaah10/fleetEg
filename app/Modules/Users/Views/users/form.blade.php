@@ -36,6 +36,12 @@
      'label'=>trans('app.status')]
      ])
 
+@include('BaseApp::form.switch',['name'=>'is_verified',
+'value'=> $row->is_verified ?? null,
+     'attributes'=>['id'=>'is_verified','class'=>'form-control',
+     'label'=>trans('app.verified')]
+     ])
+
 @include('BaseApp::form.file',['name'=>'profile_picture',
         'attributes'=>[
             'id'=>'profile_picture',

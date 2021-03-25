@@ -7,6 +7,7 @@ return [
     'super_admin' => 'مدير عام',
     'page description' =>'قائمه بالمستخدمين',
     'add user' =>'اضف مستخدم',
+    'verify_all_users' =>'تفعيل كل المستخدمين ',
     'edit user' =>'تعديل بيانات المستخدم',
 
     'role' => 'الوظيفه',

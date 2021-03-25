@@ -2,6 +2,11 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Modules\BaseApp\Enums\GeneralEnum;
+use App\Modules\Config\Enums\ConfigsEnum;
+use App\Modules\Config\Models\Config;
+use App\Modules\Users\Enums\UserEnum;
+use App\Modules\Users\User;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
@@ -62,6 +67,20 @@ class LoginRequest extends FormRequest
 
             ]);
         }
+        $config = Config::where('title' , ConfigsEnum::AUTO_REGISTER)->first();
+        if (!$config->value){
+            if (Auth::user()->type ==UserEnum::CUSTOMER &&
+                !Auth::user()->is_verified){
+                Auth::logout();
+                throw ValidationException::withMessages([
+                    'user_inactive' => __('auth.user_is_verified'),
+                ]);
+            }
+        }else{
+            $user = User::find(Auth::user()->id);
+            $user->update(['is_verified' => 1]);
+        }
+
         RateLimiter::clear($this->throttleKey());
     }
 

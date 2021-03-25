@@ -24,13 +24,34 @@
                     <span class="menu-title text-truncate" data-i18n="HomePage">{{trans('navigation.home')}}</span>
                 </a>
             </li>
-            <li class=" nav-item">
-                <a class="d-flex align-items-center" href="/users">
-                    <i data-feather="users"></i>
-                    <span class="menu-title text-truncate" data-i18n="User">{{trans('navigation.users')}}</span>
-                </a>
-            </li>
-            <li class=" nav-item">
+{{--            <li class=" nav-item">--}}
+{{--                <a class="d-flex align-items-center" href="/users">--}}
+{{--                    <i data-feather="users"></i>--}}
+{{--                    <span class="menu-title text-truncate" data-i18n="User">{{trans('navigation.users')}}</span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
+                <li class=" nav-item">
+                    <a class="d-flex align-items-center" href="/users">
+                        <i data-feather="users"></i>
+                        <span class="menu-title text-truncate" data-i18n="Products">{{trans('navigation.users')}}</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li>
+                            <a class="d-flex align-items-center" href="/users?not-verified=not-verified">
+                                <i data-feather="circle"></i>
+                                <span class="menu-item text-truncate" data-i18n="user_not_verified">{{trans('navigation.not_verified_users')}}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="d-flex align-items-center" href="/users">
+                                <i data-feather="circle"></i>
+                                <span class="menu-item text-truncate" data-i18n="product-categories">{{trans('app.all')}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=" nav-item">
                 <a class="d-flex align-items-center" href="/product">
                     <i data-feather="grid"></i>
                     <span class="menu-title text-truncate" data-i18n="Products">{{trans('navigation.products')}}</span>
@@ -75,8 +96,7 @@
                     <span class="menu-title text-truncate" data-i18n="admins">{{trans('navigation.sliders')}}</span>
                 </a>
             </li>
-{{--                status--}}
-                <li class=" nav-item">
+            <li class=" nav-item">
                     <a class="d-flex align-items-center" href="/money-request">
                         <i data-feather="grid"></i>
                         <span class="menu-title text-truncate" data-i18n="Products">{{trans('navigation.money requests')}}</span>
@@ -108,12 +128,6 @@
                         </li>
                     </ul>
                 </li>
-{{--                <li class=" nav-item">--}}
-{{--                <a class="d-flex align-items-center" href="/money-request">--}}
-{{--                    <i data-feather="dollar-sign"></i>--}}
-{{--                    <span class="menu-title text-truncate" data-i18n="MoneyRequests">{{trans('navigation.money requests')}}</span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="/governorates">
                     <i data-feather="map"></i>

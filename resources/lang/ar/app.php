@@ -27,6 +27,8 @@ return [
     'created_at'=>'تاريخ الانشاء',
     'updated_at'=>'تاريخ التعديل',
     'status'=>'الحاله',
+    'verified'=>'مفعل',
+    'auto_register'=>'تسجيل حساب جديد تلقاثيا',
     'active'=>'نشط',
     'inactive'=>'غير نشط',
 
