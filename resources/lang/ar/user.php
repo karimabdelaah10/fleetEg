@@ -23,6 +23,7 @@ return [
     'last 10 money requests' => 'اخر 10 طالبات للسحب المالى',
     'all money requests' => ' كل طالبات السحب المالى',
     'last 10 orders' => 'اخر 10 طالبات',
+    'transactions' => 'اخر 10 تحويلات ماليه',
     'all orders' => ' كل الطالبات',
     'list one order' => 'عرض بيانات الطلب',
     'available_balance'=>'الرصيد المتاح للتصفيه',

@@ -199,7 +199,7 @@
                     </li>
 
                     <li>
-                        <a class="d-flex align-items-center" href="wallet-history.html">
+                        <a class="d-flex align-items-center" href="/customer-wallet-history">
                             <i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="FavouriteProducts">{{trans('navigation.wallet history')}}</span></a>
                     </li>

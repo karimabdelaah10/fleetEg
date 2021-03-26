@@ -15,17 +15,7 @@
                         <i class="ficon" data-feather="moon"></i>
                     </a>
                 </li>
-                <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon"
-                                                                                       data-feather="search"></i></a>
-                    <div class="search-input">
-                        <div class="search-input-icon"><i data-feather="search"></i></div>
-                        <input class="form-control input" data-search="search" placeholder="Explore Vuexy..."
-                               tabindex="-1"
-                               type="text">
-                        <div class="search-input-close"><i data-feather="x"></i></div>
-                        <ul class="search-list search-list-main"></ul>
-                    </div>
-                </li>
+                <search-component :user="{{ auth()->user() }}"></search-component>
             </ul>
         </div>
         <ul class="nav navbar-nav align-items-center ml-auto">

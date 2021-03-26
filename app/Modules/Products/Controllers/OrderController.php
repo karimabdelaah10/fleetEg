@@ -74,8 +74,8 @@ class OrderController extends Controller {
                $user= User::findOrFail($row->user_id);
                 // Todo To add this process to transactions db
                 createTransaction($row->user_id , $user->available_balance ,
-                    $user->available_balance + $row->total_price ,
-                    $row->total_price , MoneyProcessEnum::New_ORDER_PRICE);
+                    $user->available_balance + $row->total_commission ,
+                    $row->total_commission , MoneyProcessEnum::New_ORDER_PRICE);
 
                 //Todo to send notification to admin about order delivered
                 $description=trans('notifications.notification_order_delivered_txt');

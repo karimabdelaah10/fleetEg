@@ -29,4 +29,8 @@ Route::group([
         Route::get('/delete/{id}', 'Customer\PaymentMethodsController@getDelete')->name('delete');
 
     });
+
+    Route::group(['prefix' => 'customer-wallet-history' , 'as' => 'customer-wallet-history.'], function () {
+        Route::get('/', 'Customer\WalletHistoryController@getIndex');
+    });
 });

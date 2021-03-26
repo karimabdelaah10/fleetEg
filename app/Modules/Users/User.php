@@ -5,6 +5,7 @@ namespace App\Modules\Users;
 use App\Modules\BaseApp\Traits\CreatedBy;
 use App\Modules\BaseApp\Traits\HasAttach;
 use App\Modules\MoneyProcess\Models\Moneyrequest;
+use App\Modules\MoneyProcess\Models\Transaction;
 use App\Modules\Products\Models\Favouriteproduct;
 use App\Modules\Products\Models\Order;
 use App\Modules\Products\Models\Product;
@@ -116,5 +117,9 @@ class User extends Authenticatable
     public function orders(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Order::class , 'user_id')->orderByDesc('id');
+    }
+    public function transactions(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Transaction::class , 'user_id')->orderByDesc('id');
     }
 }
