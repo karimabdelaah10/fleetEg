@@ -7,11 +7,13 @@ use App\Modules\BaseApp\Enums\GeneralEnum;
 use App\Modules\MoneyProcess\Enums\MoneyProcessEnum;
 use App\Modules\Products\Enums\OrdersEnum;
 use App\Modules\Products\Exports\OrdersExports;
+use App\Modules\Products\Imports\OrdersImport;
 use App\Modules\Products\Models\Order;
 use App\Modules\Products\Requests\OrderRequest;
 use App\Modules\Users\Enums\UserEnum;
 use App\Modules\Users\User;
-use Maatwebsite\Excel\Excel;
+use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class OrderController extends Controller {
 
@@ -90,11 +92,28 @@ class OrderController extends Controller {
 
     public function export()
     {
-//        $data = $this->model->Filtered()
-//            ->orderBy("id","DESC")->get();
-//        return \Excel::download(new OrdersExports(), 'orders.xlsx');
-        return \Excel::download(new OrdersExports, 'users.xlsx');
+        $data = $this->model->Filtered()
+            ->orderBy("id","DESC")->get();
+        ob_end_clean(); // this
+        ob_start(); // and this
+        return Excel::download(new OrdersExports($data),
+            now().'orders.xlsx');
+   }
 
-//        return Excel::download(new OrdersExports($data) , 'orders.xls');
+    public function getImportPage()
+    {
+        $data['module'] = $this->module;
+        $data['module_url'] = $this->module_url;
+        $data['views'] = $this->views;
+        $data['row'] = $this->model;
+        $data['page_title'] = trans('app.view') . " " . $this->title;
+        $data['page_description'] =  trans('app.list') . " " . $this->title;
+        $data['breadcrumb'] = [$this->title => $this->module_url];
+        return view($this->views . '.import', $data);
+    }
+    public function postImportPage(Request $request)
+    {
+        Excel::import(new OrdersImport(), $request->file);
+        return ('view');
     }
 }

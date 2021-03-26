@@ -5,6 +5,7 @@ return [
     'page description' => 'قائمه بصفات المنتجات',
     'edit order status' => 'تعديل حاله الطلب',
     'export orders' => 'استخراج ملف excl',
+    'import orders' => 'ادخال ملف excl',
 
 
     'serial'=>'رقم الشحنه',
@@ -26,6 +27,7 @@ return [
     'governorate'=>'المحافظه',
     'price_details'=>'تفاصيل السعر',
     'shipping_price'=>'سعر الشحن',
+    'file'=>'الملف',
 
     'total_price'=>'اجمالى السعر',
     'total_product_price'=>'اجمالى سعر المنتجات',

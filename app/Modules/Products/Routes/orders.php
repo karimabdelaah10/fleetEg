@@ -13,5 +13,7 @@ Route::group([
         Route::get('/view/{id}', 'OrderController@getView');
 
         Route::get('/export', 'OrderController@export');
+        Route::get('/import', 'OrderController@getImportPage');
+        Route::post('/import', 'OrderController@postImportPage');
     });
 });
