@@ -13,13 +13,14 @@
 @include('BaseApp::form.input',[
     'name'=>'shipping_coast',
      'value'=> $row->shipping_coast ?? null,
-     'type'=>'text',
+     'type'=>'number',
      'attributes'=>[
          'id'=>'title',
          'class'=>'form-control',
+     'min'=>0,
      'label'=>trans('governorate.shipping_coast'),
      'placeholder'=>trans('governorate.shipping_coast'),
-     'required'=>0]
+     'required'=>1]
      ])
 @include('BaseApp::form.switch',[
     'name'=>'is_active',

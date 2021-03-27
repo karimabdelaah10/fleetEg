@@ -61,7 +61,7 @@ class ProductsListResource extends ResourceCollection
             $user =User::find(auth()->id());
             if ($user->getRawOriginal('type') == UserEnum::CUSTOMER) {
                 return url('/customer-product/view', $product_id);
-            } elseif ($user->getRawOriginal('type') == UserEnum::CUSTOMER) {
+            } elseif ($user->getRawOriginal('type') == UserEnum::SUPER_ADMIN) {
                 return url('/product/view', $product_id);
             }
         }

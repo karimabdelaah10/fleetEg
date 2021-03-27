@@ -9,7 +9,7 @@ class Governorate extends Model
 {
     use HasFactory;
     protected $table ='governorates';
-    protected $fillable =['title' ,'is_active'];
+    protected $fillable =['title' ,'is_active','shipping_coast'];
 
     public function getData()
     {

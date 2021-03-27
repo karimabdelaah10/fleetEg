@@ -26,7 +26,6 @@ class MoneyRequestsController extends Controller {
     }
 
     public function getIndex() {
-//        authorize('view-' . $this->module);
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
@@ -42,7 +41,6 @@ class MoneyRequestsController extends Controller {
     }
 
     public function getEdit($id) {
-//        authorize('edit-' . $this->module);
         $data['module'] = $this->module;
         $data['views'] = $this->views;
         $data['statuses'] = MoneyProcessEnum::moneyRequestStatusesForSelector();
@@ -57,9 +55,8 @@ class MoneyRequestsController extends Controller {
     }
 
     public function postEdit(Request $request , $id) {
-//        authorize('edit-' . $this->module);
         $row = $this->model->findOrFail($id);
-        $user = User::findOrFail($row->usr_id);
+        $user = User::findOrFail($row->user_id);
         if ($row->requested_amount > $user->available_balance){
             flash(trans('app.insufficient balance'))->error();
             return redirect($this->module_url);
@@ -77,7 +74,7 @@ class MoneyRequestsController extends Controller {
                 $to= UserEnum::CUSTOMER;
                 $related_element_id = $id;
                 $related_element_type = Moneyrequest::class;
-                create_new_notification($description , $to , null ,$related_element_id ,$related_element_type);
+                create_new_notification($description , $to , $row->user_id ,$related_element_id ,$related_element_type);
 
             }
             flash(trans('app.update successfully'))->success();

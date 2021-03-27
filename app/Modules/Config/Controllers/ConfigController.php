@@ -23,7 +23,6 @@ class ConfigController extends Controller {
     }
 
     public function getEdit() {
-//        authorize('edit-' . $this->module);
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
@@ -35,7 +34,6 @@ class ConfigController extends Controller {
     }
 
     public function postEdit(Request $request) {
-//        authorize('edit-' . $this->module);
         Config::where('type' , 'switch')->update(['value' =>0]);
         if (!empty($request)){
             foreach ($request->all() as $key =>$value){
@@ -49,8 +47,8 @@ class ConfigController extends Controller {
                 }
             }
         }
-            flash(trans('app.update successfully'))->success();
-            return back();
+        flash(trans('app.update successfully'))->success();
+        return back();
     }
 
 

@@ -25,6 +25,7 @@ class GovernorateRequest extends FormRequest
     {
         $rules =  [
             'title'=>'required',
+            'shipping_coast'=>'required',
         ];
 
 

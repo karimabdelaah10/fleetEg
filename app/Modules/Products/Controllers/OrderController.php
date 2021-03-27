@@ -82,7 +82,7 @@ class OrderController extends Controller {
                 $to= UserEnum::CUSTOMER;
                 $related_element_id = $id;
                 $related_element_type = Order::class;
-                create_new_notification($description , $to , null ,$related_element_id ,$related_element_type);
+                create_new_notification($description , $to , $row->user_id ,$related_element_id ,$related_element_type);
                 $user->increment('available_balance',$row->total_price);
             }
             flash(trans('app.update successfully'))->success();
