@@ -54,20 +54,17 @@ class OrderController extends Controller {
         return view($this->views . '.view', $data);
     }
     public function getEdit($id) {
-//        authorize('edit-' . $this->module);
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
         $data['page_title'] = trans('app.edit') . " " . $this->title;
         $data['breadcrumb'] = [$this->title => $this->module_url];
         $data['statuses'] = OrdersEnum::ordersStatusesForSelector();
-//        return $data['statuses'];
         $data['row'] = $this->model->findOrFail($id);
         return view($this->views . '.edit', $data);
     }
 
     public function postEdit(OrderRequest $request , $id) {
-//        authorize('edit-' . $this->module);
         $row = $this->model->findOrFail($id);
         if ($row->update($request->all())) {
             if ($row->status == GeneralEnum::DELIVERED){
@@ -94,8 +91,7 @@ class OrderController extends Controller {
     {
         $data = $this->model->Filtered()
             ->orderBy("id","DESC")->get();
-        ob_end_clean(); // this
-        ob_start(); // and this
+        ob_end_clean(); ob_start();                            // Fix In Export File
         return Excel::download(new OrdersExports($data),
             now().'orders.xlsx');
    }
@@ -114,6 +110,7 @@ class OrderController extends Controller {
     public function postImportPage(Request $request)
     {
         Excel::import(new OrdersImport(), $request->file);
-        return ('view');
+        flash(trans('app.update successfully'))->success();
+        return back();
     }
 }

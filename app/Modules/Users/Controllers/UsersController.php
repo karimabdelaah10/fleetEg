@@ -48,7 +48,6 @@ class UsersController extends Controller
         User::where('is_verified', 0)->update(['is_verified'=>1]);
         flash()->success(trans('app.update successfully'));
         return redirect($this->module_url);
-
     }
     public function getCreate(){
         $data['module'] = $this->module;
@@ -62,7 +61,6 @@ class UsersController extends Controller
     }
     public function postCreate(CreateUserRequest $request)
     {
-//        authorize('create-' . $this->module);
         $request['type'] = UserEnum::CUSTOMER;
         !empty($request->is_active) ? $request['is_active'] =1 : $request['is_active'] =0;
         if ($row = $this->model->create($request->all()))
@@ -76,7 +74,6 @@ class UsersController extends Controller
 
     public function getEdit($id)
     {
-//        authorize('edit-' . $this->module);
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
@@ -89,7 +86,6 @@ class UsersController extends Controller
     public function postEdit(UpdateUserRequest $request, $id)
     {
 
-//        authorize('edit-' . $this->module);
         $row = $this->model->findOrFail($id);
         !empty($request->is_active) ? $request['is_active'] =1 : $request['is_active'] =0;
         !empty($request->is_verified) ? $request['is_verified'] =1 : $request['is_verified'] =0;
@@ -103,7 +99,6 @@ class UsersController extends Controller
 
     public function getView($id)
     {
-//        authorize('view-' . $this->module);
         $data['views'] = $this->views;
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
@@ -116,7 +111,6 @@ class UsersController extends Controller
 
     public function getDelete($id)
     {
-//        authorize('delete-' . $this->module);
         $row = $this->model->findOrFail($id);
         $row->delete();
         flash()->success(trans('app.deleted successfully'));
