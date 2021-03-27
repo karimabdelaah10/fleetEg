@@ -520,7 +520,8 @@ window.colors = {
     }), t(".content-overlay").on("click", function () {
       t(".search-list").removeClass("show");
       var a = t(".search-input-close").closest(".search-input");
-      a.hasClass("open") && (a.removeClass("open"), w.val(""), w.blur(), y.removeClass("show")), t(".app-content").removeClass("show-overlay"), t(".bookmark-wrapper .bookmark-input").removeClass("show");
+      a.hasClass("open") && (a.removeClass("open"), w.val(""), w.blur(), y.removeClass("show")),
+          t(".app-content").removeClass("show-overlay"), t(".bookmark-wrapper .bookmark-input").removeClass("show");
     });
     var f = e.getElementsByClassName("main-menu-content");
     f.length > 0 && f[0].addEventListener("ps-scroll-y", function () {
@@ -602,14 +603,14 @@ window.colors = {
     });
   });
 
-  var p = t(".search-input input").data("search"),
+  var p = t(".search-input-testinput").data("search"),
       v = t(".bookmark-wrapper"),
       g = t(".bookmark-wrapper .bookmark-star"),
       b = t(".bookmark-wrapper .bookmark-input"),
       C = t(".nav-link-search"),
       k = t(".search-input"),
-      w = t(".search-input input"),
-      y = t(".search-input .search-list"),
+      w = t(".search-input-testinput"),
+      y = t(".search-input-test.search-list"),
       x = t(".app-content"),
       S = t(".bookmark-input .search-list");
   if (g.on("click", function (a) {
@@ -12050,7 +12051,7 @@ return jQuery;
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -12063,14 +12064,14 @@ return jQuery;
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/amd define */
 /******/ 	(() => {
@@ -12078,9 +12079,9 @@ return jQuery;
 /******/ 			throw new Error('define cannot be used indirect');
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /************************************************************************/
-/******/ 	
+/******/
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	__webpack_require__("./resources/js/libs/toastr.min.js");
@@ -12088,6 +12089,6 @@ return jQuery;
 /******/ 	__webpack_require__("./resources/js/libs/app-menu.min.js");
 /******/ 	__webpack_require__("./resources/js/libs/front.min.js");
 /******/ 	var __webpack_exports__ = __webpack_require__("./resources/js/libs/customizer.min.js");
-/******/ 	
+/******/
 /******/ })()
 ;

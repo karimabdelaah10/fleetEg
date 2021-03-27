@@ -3,6 +3,8 @@
 namespace App\Modules\Products\Resources;
 
 use App\Modules\Products\Models\Favouriteproduct;
+use App\Modules\Users\Enums\UserEnum;
+use App\Modules\Users\User;
 use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
@@ -33,6 +35,7 @@ class ProductsListResource extends ResourceCollection
             'media_url' => $item->media_url,
             'category_id' => $item->category_id,
             'category' => @$item->category->title ?? ' ',
+            'one_product_url' => $this->one_product_url($item->id),
             'created_at' => Carbon::parse($item->created_at)->format('Y-m-d'),
             'updated_at' => Carbon::parse($item->updated_at)->format('Y-m-d'),
             ];
@@ -50,5 +53,18 @@ class ProductsListResource extends ResourceCollection
             }
         }
         return  false;
+    }
+
+    public function one_product_url($product_id)
+    {
+        if (auth()->user()) {
+            $user =User::find(auth()->id());
+            if ($user->getRawOriginal('type') == UserEnum::CUSTOMER) {
+                return url('/customer-product/view', $product_id);
+            } elseif ($user->getRawOriginal('type') == UserEnum::CUSTOMER) {
+                return url('/product/view', $product_id);
+            }
+        }
+        return '';
     }
 }

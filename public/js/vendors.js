@@ -4389,6 +4389,69 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4419,8 +4482,84 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      searchInputFlag: '',
+      searchKey: '',
+      products: [],
+      members: [],
+      trans: []
+    };
+  },
+  watch: {
+    searchKey: function searchKey(newVal, oldVal) {
+      if (newVal != '') {
+        this.fetch();
+      }
+    }
+  },
   props: ['user'],
-  mounted: function mounted() {// console.log('Component mounted.')
+  mounted: function mounted() {
+    this.init();
+  },
+  methods: {
+    openSearchInput: function openSearchInput() {
+      $(".app-content").addClass("show-overlay"), this.searchInputFlag = 'open';
+    },
+    closeSearchInput: function closeSearchInput() {
+      $(".app-content").removeClass("show-overlay"), this.searchInputFlag = '';
+      this.products.length = 0;
+      this.members.length = 0;
+      this.searchKey = '';
+    },
+    fetch: function fetch() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        var url;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                url = '/api/v1/Basic/search/' + _this.searchKey + '?user_id=' + _this.user.id;
+                _context.next = 3;
+                return axios.get(url).then(function (response) {
+                  _this.products = response.data.products;
+                  _this.members = response.data.users;
+                });
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    init: function init() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        var url;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                url = '/api/v1/Basic/init/'; // this.carts.length = 0
+
+                _context2.next = 3;
+                return axios.get(url).then(function (response) {
+                  _this2.trans = response.data.trans;
+                });
+
+              case 3:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    }
   }
 });
 
@@ -26052,49 +26191,216 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("li", { staticClass: "nav-item nav-search" }, [
+      _c(
+        "a",
+        {
+          staticClass: "nav-link nav-link-search",
+          on: { click: _vm.openSearchInput }
+        },
+        [_c("i", { staticClass: "ficon", attrs: { "data-feather": "search" } })]
+      ),
+      _vm._v(" "),
+      _c("div", { class: "search-input " + _vm.searchInputFlag }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.searchKey,
+              expression: "searchKey"
+            }
+          ],
+          staticClass: "form-control input",
+          attrs: {
+            placeholder: _vm.trans.search,
+            tabindex: "-1",
+            type: "text"
+          },
+          domProps: { value: _vm.searchKey },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.searchKey = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "search-input-close",
+            on: { click: _vm.closeSearchInput }
+          },
+          [_c("i", { attrs: { "data-feather": "x" } })]
+        ),
+        _vm._v(" "),
+        _c(
+          "ul",
+          {
+            staticClass:
+              "search-list search-list-main ps ps__rtl show ps--active-y"
+          },
+          [
+            _vm.members.length
+              ? _c(
+                  "div",
+                  [
+                    _c("li", { staticClass: "d-flex align-items-center" }, [
+                      _c("a", { attrs: { href: "javascript:void(0);" } }, [
+                        _c("h6", { staticClass: "section-label mt-75 mb-0" }, [
+                          _vm._v(_vm._s(_vm.trans.users))
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _vm._l(_vm.members, function(user, index) {
+                      return _c(
+                        "li",
+                        { key: index, staticClass: "auto-suggestion" },
+                        [
+                          _c(
+                            "a",
+                            {
+                              staticClass:
+                                "d-flex align-items-center\n                    justify-content-between py-50 w-100",
+                              attrs: { href: user.url }
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "d-flex align-items-center" },
+                                [
+                                  _c("div", { staticClass: "avatar mr-75" }, [
+                                    _c("img", {
+                                      attrs: {
+                                        src: user.image,
+                                        alt: "png",
+                                        height: "32"
+                                      }
+                                    })
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "search-data" }, [
+                                    _c(
+                                      "p",
+                                      { staticClass: "search-data-title mb-0" },
+                                      [
+                                        _vm._v(
+                                          "\n                                        " +
+                                            _vm._s(user.name) +
+                                            "\n                                    "
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("small", { staticClass: "text-muted" }, [
+                                      _vm._v(_vm._s(user.email))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("br"),
+                                    _vm._v(" "),
+                                    _c("small", { staticClass: "text-muted" }, [
+                                      _vm._v(_vm._s(user.mobile_number))
+                                    ])
+                                  ])
+                                ]
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    })
+                  ],
+                  2
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.products.length
+              ? _c(
+                  "div",
+                  [
+                    _c("li", { staticClass: "d-flex align-items-center" }, [
+                      _c("a", { attrs: { href: "javascript:void(0);" } }, [
+                        _c("h6", { staticClass: "section-label mt-75 mb-0" }, [
+                          _vm._v(_vm._s(_vm.trans.products))
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _vm._l(_vm.products, function(product, index) {
+                      return _c(
+                        "li",
+                        { key: index, staticClass: "auto-suggestion" },
+                        [
+                          _c(
+                            "a",
+                            {
+                              staticClass:
+                                "d-flex align-items-center\n                    justify-content-between py-50 w-100",
+                              attrs: { href: product.one_product_url }
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "d-flex align-items-center" },
+                                [
+                                  _c("div", { staticClass: "avatar mr-75" }, [
+                                    _c("img", {
+                                      attrs: {
+                                        src: product.image,
+                                        alt: "png",
+                                        height: "32"
+                                      }
+                                    })
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "search-data" }, [
+                                    _c(
+                                      "p",
+                                      { staticClass: "search-data-title mb-0" },
+                                      [
+                                        _vm._v(
+                                          "\n                                        " +
+                                            _vm._s(product.title) +
+                                            "\n                                    "
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("small", { staticClass: "text-muted" }, [
+                                      _vm._v(_vm._s(product.category))
+                                    ])
+                                  ])
+                                ]
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    })
+                  ],
+                  2
+                )
+              : _vm._e()
+          ]
+        )
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("li", { staticClass: "nav-item nav-search" }, [
-        _c("a", { staticClass: "nav-link nav-link-search" }, [
-          _c("i", { staticClass: "ficon", attrs: { "data-feather": "search" } })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "search-input" }, [
-          _c("div", { staticClass: "search-input-icon" }, [
-            _c("i", { attrs: { "data-feather": "search" } })
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control input",
-            attrs: {
-              "data-search": "search",
-              placeholder: "",
-              tabindex: "-1",
-              type: "text"
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "search-input-close" }, [
-            _c("i", { attrs: { "data-feather": "x" } })
-          ]),
-          _vm._v(" "),
-          _c("ul", { staticClass: "search-list search-list-main" }, [
-            _c("li", { staticClass: "d-flex align-items-center" }, [
-              _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                _c("h6", { staticClass: "section-label mt-75 mb-0" }, [
-                  _vm._v("Pages")
-                ])
-              ])
-            ])
-          ])
-        ])
-      ])
+    return _c("div", { staticClass: "search-input-icon" }, [
+      _c("i", { attrs: { "data-feather": "search" } })
     ])
   }
 ]
