@@ -122,4 +122,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Transaction::class , 'user_id')->orderByDesc('id');
     }
+     public function products(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Product::class , 'adminproducts')
+            ->withPivot('id');
+    }
+
 }

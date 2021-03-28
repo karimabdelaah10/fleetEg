@@ -37,7 +37,8 @@ class OrderController extends Controller {
         $data['row']->is_active = 1;
         $data['page_title'] = trans('app.list') . " " . $this->title;
         $data['page_description'] = trans('orders.page description');
-        $data['rows'] = $this->model->Filtered()
+        $data['rows'] = $this->model->whereIn('id',get_product_admin_orders())
+            ->Filtered()
             ->orderBy("id","DESC")
             ->paginate(request('per_page'));
         return view($this->views . '.index', $data);
@@ -89,7 +90,8 @@ class OrderController extends Controller {
 
     public function export()
     {
-        $data = $this->model->Filtered()
+        $data = $this->model->whereIn('id',get_product_admin_orders())
+            ->Filtered()
             ->orderBy("id","DESC")->get();
         ob_end_clean(); ob_start();                            // Fix In Export File
         return Excel::download(new OrdersExports($data),

@@ -2,7 +2,7 @@
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
     'middleware' => [ 'localeSessionRedirect', 'localizationRedirect',
-        'localeViewPath' ,'auth','IsAdmin']
+        'localeViewPath' ,'auth','IsAdmin','IsSuperAdmin']
 ], function () {
     Route::group(['prefix' => 'slider', 'as' => 'slider.'], function () {
         Route::get('/', 'SliderController@getIndex');

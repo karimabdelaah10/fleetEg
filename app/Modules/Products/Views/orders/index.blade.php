@@ -25,24 +25,24 @@
                     <div class="table-responsive">
                         <div class="col-12">
                             <form method="get">
-                                <div class="input-group input-group-merge">
-                                    <input
-                                        type="text"
-                                        name="search_key"
-                                        class="form-control search-product"
-                                        id="shop-search"
-                                        value="{{request()->search_key}}"
-                                        placeholder="{{trans('app.search_in_orders')}}"
-                                        aria-describedby="shop-search"
-                                    />
-                                    <div class="input-group-append">
-                                <span class="input-group-text">
-                                    <i data-feather="search"
-                                       class="text-muted">
-                                    </i>
-                                </span>
-                                    </div>
-                                </div>
+{{--                                <div class="input-group input-group-merge">--}}
+{{--                                    <input--}}
+{{--                                        type="text"--}}
+{{--                                        name="search_key"--}}
+{{--                                        class="form-control search-product"--}}
+{{--                                        id="shop-search"--}}
+{{--                                        value="{{request()->search_key}}"--}}
+{{--                                        placeholder="{{trans('app.search_in_orders')}}"--}}
+{{--                                        aria-describedby="shop-search"--}}
+{{--                                    />--}}
+{{--                                    <div class="input-group-append">--}}
+{{--                                <span class="input-group-text">--}}
+{{--                                    <i data-feather="search"--}}
+{{--                                       class="text-muted">--}}
+{{--                                    </i>--}}
+{{--                                </span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                                 <div class="row mt-1">
                                     <div class="mb-2 col-3">
                                         <select class="form-control" name="status" id="add-type">

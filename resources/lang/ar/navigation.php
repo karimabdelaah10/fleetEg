@@ -11,7 +11,7 @@ return [
     'products specs values' => 'قيم صفات المنتجات',
     'orders' => 'الطلبات',
     'sliders' => 'البانر الاعلامى',
-    'money requests' => 'طلبت السحب المالى',
+    'money requests' => 'طلبات السحب المالى',
     'governorates' => 'المحافظات',
     'admins' => 'المديرين',
     'all products' => 'كل المنتجات',

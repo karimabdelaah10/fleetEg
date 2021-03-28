@@ -16,7 +16,7 @@ return [
     'new_password' => 'الرقم السرى الجديد',
     're_new_password' => 'اعاده الرقم السرى',
     'profile_picture' => 'الصوره الشخصيه',
-
+    'admin products'=>'المنتجات الخاصه بالمدير',
 
     'product_admin'=>'مدير خاص بمتابعه المنتجاب',
     'financial_admin'=>'مدير مالى',

@@ -12,6 +12,9 @@ use App\Modules\Products\Models\Specvalue;
 use App\Modules\Products\Requests\ProductRequest;
 use App\Modules\Products\Requests\ProductSpecRequest;
 use App\Modules\Products\Requests\ProductSpecValueRequest;
+use App\Modules\Users\Enums\AdminEnum;
+use App\Modules\Users\Enums\UserEnum;
+use App\Modules\Users\User;
 use Illuminate\Http\Request;
 
 
@@ -31,6 +34,20 @@ class ProductController extends Controller {
 
     //products Functions
     public function getIndex() {
+        $user = User::findOrFail(auth()->id());
+        if ($user->getRawOriginal('type') == UserEnum::ADMIN &&
+            $user->getRawOriginal('admin_type') == AdminEnum::PRODUCT_ADMIN){
+            $ids = $user->products->pluck('id');
+            $data['rows'] = $this->model->whereIn('id' , $ids)
+                ->Filtered()
+                ->orderBy("id","DESC")
+                ->paginate(request('per_page'));
+        }else{
+            $data['rows'] = $this->model
+                ->Filtered()
+                ->orderBy("id","DESC")
+                ->paginate(request('per_page'));
+        }
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
@@ -38,10 +55,7 @@ class ProductController extends Controller {
         $data['row']->is_active = 1;
         $data['page_title'] = trans('app.list') . " " . $this->title;
         $data['page_description'] = trans('products.page description');
-        $data['rows'] = $this->model
-            ->Filtered()
-            ->orderBy("id","DESC")
-            ->paginate(request('per_page'));
+
         return view($this->views . '.index', $data);
     }
     public function getView($id) {
@@ -134,7 +148,6 @@ class ProductController extends Controller {
         }
     }
     public function getDelete($id) {
-//        authorize('delete-' . $this->module);
         $row = $this->model->findOrFail($id);
         $row->delete();
         flash()->success(trans('app.deleted successfully'));

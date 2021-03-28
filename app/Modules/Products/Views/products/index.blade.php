@@ -18,7 +18,9 @@
                         <h4 class="card-title">
                             {{ @$page_description }}
                         </h4>
+                        @if(auth()->user()->getRawOriginal('type') == \App\Modules\Users\Enums\UserEnum::SUPER_ADMIN)
                         <a href="{{$module_url}}/create" class="add-new btn btn-primary mt-50">{{trans('products.add product')}}</a>
+                        @endif
                     </div>
 
                     <div class="table-responsive">

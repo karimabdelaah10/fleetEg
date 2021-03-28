@@ -3,7 +3,7 @@
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
     'middleware' => [ 'localeSessionRedirect', 'localizationRedirect',
-        'localeViewPath' ,'auth','IsAdmin']
+        'localeViewPath' ,'auth','IsAdmin','IsSuperAdmin',]
 ], function () {
     Route::group(['prefix' => 'admins'], function () {
         Route::get('/', '\App\Modules\Users\Controllers\AdminsController@getIndex');
@@ -17,6 +17,10 @@ Route::group([
 
         Route::get('/view/{id}', '\App\Modules\Users\Controllers\AdminsController@getView')
             ->name('users.view');
+
+        Route::get('/add-product/{id}', '\App\Modules\Users\Controllers\AdminsController@getAddProduct');
+        Route::post('/add-product/{id}', '\App\Modules\Users\Controllers\AdminsController@postAddProduct');
+        Route::get('/delete-product/{id}', '\App\Modules\Users\Controllers\AdminsController@deleteProduct');
 
         Route::get('/delete/{id}', '\App\Modules\Users\Controllers\AdminsController@getDelete')
             ->name('users.delete');

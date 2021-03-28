@@ -3,6 +3,8 @@
 namespace App\Modules\Users\Controllers;
 
 use App\Modules\Cars\Car;
+use App\Modules\Products\Models\Product;
+use App\Modules\Users\Adminproduct;
 use App\Modules\Users\Enums\UserEnum;
 use App\Modules\Users\Models\Customer;
 use App\Modules\Users\Requests\CreateUserRequest;
@@ -10,6 +12,7 @@ use App\Modules\Users\Requests\UpdateUserRequest;
 use App\Modules\Users\User;
 use App\Modules\Users\UserEnums;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class AdminsController extends Controller
 {
@@ -40,7 +43,6 @@ class AdminsController extends Controller
     }
     public function getCreate()
     {
-//        authorize('edit-' . $this->module);
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
@@ -52,7 +54,6 @@ class AdminsController extends Controller
     }
     public function postCreate(CreateUserRequest $request)
     {
-//        authorize('create-' . $this->module);
         $request['type'] = UserEnum::ADMIN;
         !empty($request->is_active) ? $request['is_active'] =1 : $request['is_active'] =0;
         if ($row = $this->model->create($request->all()))
@@ -63,10 +64,8 @@ class AdminsController extends Controller
         flash()->error(trans('app.failed to save'));
         return redirect($this->module_url);
     }
-
     public function getEdit($id)
     {
-//        authorize('edit-' . $this->module);
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
@@ -75,11 +74,8 @@ class AdminsController extends Controller
         $data['row'] = $this->model->findOrFail($id);
         return view($this->views . '.edit', $data);
     }
-
     public function postEdit(UpdateUserRequest $request, $id)
     {
-
-//        authorize('edit-' . $this->module);
         $row = $this->model->findOrFail($id);
         !empty($request->is_active) ? $request['is_active'] =1 : $request['is_active'] =0;
         if ($row->update($request->all())) {
@@ -89,10 +85,8 @@ class AdminsController extends Controller
         flash()->error(trans('app.failed to save'));
         return redirect($this->module_url);
     }
-
     public function getView($id)
     {
-//        authorize('view-' . $this->module);
         $data['views'] = $this->views;
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
@@ -101,11 +95,46 @@ class AdminsController extends Controller
         $data['row'] = $this->model->findOrFail($id);
         return view($this->views . '.view', $data);
     }
-
     public function getDelete($id)
     {
-//        authorize('delete-' . $this->module);
         $row = $this->model->findOrFail($id);
+        $row->delete();
+        flash()->success(trans('app.deleted successfully'));
+        return back();
+    }
+
+
+    public function getAddProduct($id)
+    {
+        $ids = Adminproduct::where('user_id' , $id)->pluck('product_id');
+        $data['module'] = $this->module;
+        $data['module_url'] = $this->module_url;
+        $data['views'] = $this->views;
+        $data['page_title'] = trans('app.add') . " ". trans('app.products')." " . $this->title;
+        $data['breadcrumb'] = [
+            $this->title => $this->module_url,
+            trans('app.view') . " " . $this->title => $this->module_url .'/view/'.$id
+            ];
+        $data['row'] = $this->model;
+        $data['row']->admin = User::findOrFail($id);
+        $data['row']->products = Product::whereNotIn('id' , $ids)
+            ->orderBy('id' ,'desc')->pluck('title' ,'id');
+
+        return view($this->views . '.add-product', $data);
+    }
+    public function postAddProduct(Request $request , $id)
+    {
+        if(Adminproduct::create($request->all())){
+            flash()->success(trans('app.created successfully'));
+            return back();
+        }
+        flash()->error(trans('app.failed to save'));
+        return back();
+    }
+
+    public function deleteProduct($id)
+    {
+        $row =Adminproduct::findOrFail($id);
         $row->delete();
         flash()->success(trans('app.deleted successfully'));
         return back();

@@ -51,20 +51,20 @@ class Order extends Model
 
     public function scopeFiltered($query)
     {
-        if (request()->search_key && !empty(request()->search_key)){
-            $query->where('id' , request()->search_key)
-                 ->orWhereHas('governorate', function($q) {
-                     $q->where('title' ,'like', '%'.request()->search_key.'%');
-                 })
-                ->orWhereHas('orderProducts', function($q) {
-                     $q->where('title' ,'like', '%'.request()->search_key.'%');
-                     $q->where('description' ,'like', '%'.request()->search_key.'%');
-                 })
-                ->orWhereHas('user', function($q) {
-                    $q->where('name' ,'like', '%'.request()->search_key.'%');
-                })
-            ;
-        }
+//        if (request()->search_key && !empty(request()->search_key)){
+//            $query->where('id' , request()->search_key)
+//                 ->orWhereHas('governorate', function($q) {
+//                     $q->where('title' ,'like', '%'.request()->search_key.'%');
+//                 })
+//                ->orWhereHas('orderProducts', function($q) {
+//                     $q->where('title' ,'like', '%'.request()->search_key.'%');
+//                     $q->where('description' ,'like', '%'.request()->search_key.'%');
+//                 })
+//                ->orWhereHas('user', function($q) {
+//                    $q->where('name' ,'like', '%'.request()->search_key.'%');
+//                })
+//            ;
+//        }
         if (request()->status && request()->status != 'all'){
             $query->where('status' , request()->status);
         }

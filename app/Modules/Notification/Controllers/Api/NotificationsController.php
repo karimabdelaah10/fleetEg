@@ -10,6 +10,7 @@ use App\Modules\MoneyProcess\Models\Moneyrequest;
 use App\Modules\MoneyProcess\Models\Paymentmethod;
 use App\Modules\MoneyProcess\Models\Transaction;
 use App\Modules\Notification\Notification;
+use App\Modules\Users\Enums\AdminEnum;
 use App\Modules\Users\Enums\UserEnum;
 use App\Modules\Users\User;
 use Illuminate\Http\Request;
@@ -34,11 +35,22 @@ class NotificationsController extends Controller {
            ->get();
        $unseen = $notifications->where('seen' , 0)->count();
 
-    }else{
-        $notifications = Notification::where([['to' , UserEnum::ADMIN]])
-            ->orderBy('id' ,'desc')
-            ->with('user')
-            ->get();
+    }
+    else{
+        if ($user->getRawOriginal('type') == UserEnum::SUPER_ADMIN){
+            $query = Notification::where([['to' , UserEnum::ADMIN]]);
+        }elseif($user->admin_type == AdminEnum::FINANCIAL_ADMIN){
+            $query = Notification::where([['to' , UserEnum::ADMIN] ,['related_element_type' ,Moneyrequest::class]]);
+        }
+        elseif($user->admin_type == AdminEnum::PRODUCT_ADMIN){
+//            $productIds = $user->adminProducts->pluck('id');
+//            $query = Notification::where([['to' , UserEnum::ADMIN]
+//                ,['related_element_type' ,Moneyrequest::class]]);
+        }
+
+
+
+        $notifications =$query->orderBy('id' ,'desc')->with('user')->get();
         $unseen = $notifications->where('seen' , 0)->count();
     }
     $trans =[

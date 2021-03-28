@@ -2,7 +2,7 @@
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
     'middleware' => [ 'localeSessionRedirect', 'localizationRedirect',
-        'localeViewPath' ,'auth','IsAdmin']
+        'localeViewPath' ,'auth','IsAdmin','IsProductAdmin']
 ], function () {
     Route::group(['prefix' => 'product' , 'as' => 'product.'], function () {
         Route::get('/', 'ProductController@getIndex');
@@ -13,8 +13,9 @@ Route::group([
         Route::get('/edit/{id}', 'ProductController@getEdit');
         Route::put('/edit/{id}', 'ProductController@postEdit');
 
-        Route::get('/view/{id}', 'ProductController@getView');
-        Route::get('/delete/{id}', 'ProductController@getDelete')->name('delete');
+        Route::get('/view/{id}', 'ProductController@getView')->middleware('ProductAdminIds');
+        Route::get('/delete/{id}', 'ProductController@getDelete')
+            ->name('delete')->middleware('IsSuperAdmin');
 
 
         Route::get('/add_products_spec/{product_id}', 'ProductController@getAddProductSpec');

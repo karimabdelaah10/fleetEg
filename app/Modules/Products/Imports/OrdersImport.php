@@ -17,9 +17,11 @@ class OrdersImport implements ToModel,WithHeadingRow
     {
 
         if (!empty($row['id'])){
-            $order = Order::find($row['id']);
-            if ($order){
-                $order->update(['status' => $row['status']]);
+            if (in_array($row['row'] ,get_product_admin_orders)){
+                $order = Order::find($row['id']);
+                if ($order){
+                    $order->update(['status' => $row['status']]);
+                }
             }
         }
         }
