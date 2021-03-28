@@ -10,7 +10,7 @@
         </div>
     @endif
     <div class="content-body">
-        {!! Form::model($row,['method' => 'put','files' => true , 'class'=>"add-new-record modal-content pt-0" ] ) !!} {{ csrf_field() }}
+        {!! Form::model($row,['method' => 'post','files' => true , 'class'=>"add-new-record modal-content pt-0" ] ) !!} {{ csrf_field() }}
         <div class="modal-header mb-1">
             <h5 class="modal-title" id="exampleModalLabel">{{trans('specs.edit spec')}}</h5>
         </div>

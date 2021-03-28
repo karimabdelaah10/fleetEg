@@ -12,7 +12,7 @@ Route::group([
         Route::put('/create-request/', 'Customer\MoneyRequestsController@postCreate');
 
         Route::get('/edit/{id}', 'Customer\MoneyRequestsController@getEdit');
-        Route::put('/edit/{id}', 'Customer\MoneyRequestsController@postEdit');
+        Route::post('/edit/{id}', 'Customer\MoneyRequestsController@postEdit');
 
         Route::get('/delete/{id}', 'Customer\MoneyRequestsController@getDelete')->name('delete');
 
@@ -24,7 +24,7 @@ Route::group([
         Route::put('/create/', 'Customer\PaymentMethodsController@postCreate');
 
         Route::get('/edit/{id}', 'Customer\PaymentMethodsController@getEdit');
-        Route::put('/edit/{id}', 'Customer\PaymentMethodsController@postEdit');
+        Route::post('/edit/{id}', 'Customer\PaymentMethodsController@postEdit');
 
         Route::get('/delete/{id}', 'Customer\PaymentMethodsController@getDelete')->name('delete');
 

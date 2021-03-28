@@ -38,7 +38,7 @@
                                     <tr>
                                         <td>{{$element->id}}</td>
                                         <td>{{$element->title}}</td>
-                                        <td>{{count($element->specsvalues) ?? 0}}</td>
+                                        <td>{{count($element->specsvalues)}}</td>
                                         <td>
                                             <span class="badge badge-pill {{$element->is_active ? 'badge-light-success':'badge-light-danger'}} mr-1"> {{$element->is_active ? trans('app.active'):trans('app.inactive')}} </span>
                                         </td>

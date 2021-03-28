@@ -48,7 +48,6 @@ class SpecsController extends Controller {
 
 
     public function getCreate() {
-//        authorize('edit-' . $this->module);
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
@@ -69,7 +68,6 @@ class SpecsController extends Controller {
     }
 
     public function getEdit($id) {
-//        authorize('edit-' . $this->module);
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
@@ -80,7 +78,6 @@ class SpecsController extends Controller {
     }
 
     public function postEdit(SpecRequest $request , $id) {
-//        authorize('edit-' . $this->module);
         !empty($request->is_active) ? $request['is_active'] =1 : $request['is_active'] =0;
         $row = $this->model->findOrFail($id);
         if ($row->update($request->all())) {
@@ -91,7 +88,6 @@ class SpecsController extends Controller {
 
 
     public function getDelete($id) {
-//        authorize('delete-' . $this->module);
         $row = $this->model->findOrFail($id);
         $row->delete();
         flash()->success(trans('app.deleted successfully'));

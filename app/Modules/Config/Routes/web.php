@@ -8,6 +8,6 @@ Route::group([
 ], function () {
     Route::group(['prefix' => 'configs' , 'as' => 'configs.'], function () {
         Route::get('/edit', 'ConfigController@getEdit');
-        Route::put('/edit', 'ConfigController@postEdit');
+        Route::post('/edit', 'ConfigController@postEdit');
   });
 });

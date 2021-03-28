@@ -7,7 +7,7 @@
          'class'=>'form-control',
      'label'=>trans('specvalues.title'),
      'placeholder'=>trans('specvalues.title'),
-     'required'=>0]
+     'required'=>1]
      ])
 
 @include('BaseApp::form.select',

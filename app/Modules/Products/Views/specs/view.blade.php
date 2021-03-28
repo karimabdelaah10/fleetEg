@@ -60,8 +60,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @if(!empty($row->specsvalues))
-                                @foreach($row->specsvalues as $element)
+                                @forelse($row->specsvalues as $element)
                                     <tr>
                                         <td>{{$element->id}}</td>
                                         <td>{{$element->title}}</td>
@@ -69,8 +68,8 @@
                                             <span class="badge badge-pill {{$element->is_active ? 'badge-light-success':'badge-light-danger'}} mr-1"> {{$element->is_active ? trans('app.active'):trans('app.inactive')}} </span>
                                         </td>
                                     </tr>
-                                @endforeach
-                            @endif
+                                    @empty
+                                @endforelse
                             </tbody>
                         </table>
 

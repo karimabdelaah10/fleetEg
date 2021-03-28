@@ -11,7 +11,7 @@ Route::group([
         Route::post('/create', 'CategoryController@postCreate');
 
         Route::get('/edit/{id}', 'CategoryController@getEdit');
-        Route::put('/edit/{id}', 'CategoryController@postEdit');
+        Route::post('/edit/{id}', 'CategoryController@postEdit');
 
         Route::get('/view/{id}', 'CategoryController@getView');
         Route::get('/delete/{id}', 'CategoryController@getDelete')->name('delete');

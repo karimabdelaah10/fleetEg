@@ -7,15 +7,17 @@ Route::group([
     Route::group(['prefix' => 'product' , 'as' => 'product.'], function () {
         Route::get('/', 'ProductController@getIndex');
 
-        Route::get('/create', 'ProductController@getCreate');
-        Route::post('/create', 'ProductController@postCreate');
+        Route::get('/create', 'ProductController@getCreate')->middleware('IsSuperAdmin');
+        Route::post('/create', 'ProductController@postCreate')->middleware('IsSuperAdmin');
 
-        Route::get('/edit/{id}', 'ProductController@getEdit');
-        Route::put('/edit/{id}', 'ProductController@postEdit');
+        Route::get('/edit/{id}', 'ProductController@getEdit')->middleware('ProductAdminIds');
+        Route::post('/edit/{id}', 'ProductController@postEdit')->middleware('ProductAdminIds');
 
         Route::get('/view/{id}', 'ProductController@getView')->middleware('ProductAdminIds');
         Route::get('/delete/{id}', 'ProductController@getDelete')
             ->name('delete')->middleware('IsSuperAdmin');
+
+
 
 
         Route::get('/add_products_spec/{product_id}', 'ProductController@getAddProductSpec');

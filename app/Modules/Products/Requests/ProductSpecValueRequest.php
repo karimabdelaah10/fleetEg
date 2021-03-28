@@ -26,7 +26,8 @@ class ProductSpecValueRequest extends FormRequest
         return  [
             'product_id' =>'required|exists:products,id',
             'spec_value_id' =>'required|exists:specvalues,id',
-        ];
+            'stock'=>'required',
+            ];
 
     }
 }

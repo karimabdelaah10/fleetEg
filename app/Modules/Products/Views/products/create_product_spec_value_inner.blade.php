@@ -39,18 +39,18 @@
                     <input id="title"  placeholder="{{trans('products.amount')}}"  name="stock" type="text" class="form-control">
                 </div>
                 @include('BaseApp::form.file',[
-    'name'=>'image',
-    'attributes'=>[
-            'id'=>'image',
-            'class'=>'form-control custom-file-input',
-            'image_class'=>'avatar-group pull-up my-0 mb-2 mt-1',
-            'image_type'=>'small',
-            'height'=>empty($row->getRawOriginal('image')) ? 50 :300,    // create new bannar id row->image empty
-            'width'=>empty($row->getRawOriginal('image')) ? 50 :300,
-            'label'=>trans('products.image'),
-            'value'=>$row->getRawOriginal('image')
-            ]
-            ])
+                         'name'=>'image',
+                         'attributes'=>[
+                                'id'=>'image',
+                                'class'=>'form-control custom-file-input',
+                                'image_class'=>'avatar-group pull-up my-0 mb-2 mt-1',
+                                'image_type'=>'small',
+                                'height'=>empty($row->getRawOriginal('image')) ? 50 :300,    // create new bannar id row->image empty
+                                'width'=>empty($row->getRawOriginal('image')) ? 50 :300,
+                                'label'=>trans('products.image'),
+                                'value'=>$row->getRawOriginal('image')
+                                ]
+                         ])
                 <input type="hidden" name="product_id" value="{{$row->product_id}}">
                 <input type="hidden" name="parent_spec_value_id" value="{{$row->product_spec_value_id}}">
 

@@ -3,7 +3,7 @@
      'type'=>'text','attributes'=>['id'=>'name','class'=>'form-control',
      'label'=>trans('user.name'),
      'placeholder'=>trans('user.name'),
-     'required'=>0]
+     'required'=>1]
      ])
 
 @include('BaseApp::form.input',['name'=>'mobile_number',
@@ -27,7 +27,7 @@
      'type'=>'text','attributes'=>['id'=>'address','class'=>'form-control',
      'label'=>trans('user.address'),
      'placeholder'=>trans('user.address'),
-     'required'=>0]
+     'required'=>1]
      ])
 
 

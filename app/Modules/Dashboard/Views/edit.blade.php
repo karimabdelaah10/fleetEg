@@ -7,7 +7,7 @@
 @section('content')
 <div class="section-wrapper">
     <div class="form-layout form-layout-4">
-        {!! Form::model($row,['method' => 'put','files' => true] ) !!} {{ csrf_field() }}
+        {!! Form::model($row,['method' => 'post','files' => true] ) !!} {{ csrf_field() }}
         @include($views.'::form',$row)
         <!-- custom-file -->
         <div class="form-layout-footer mg-t-30">

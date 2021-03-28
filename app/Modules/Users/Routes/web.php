@@ -16,7 +16,7 @@ Route::group([
         Route::post('/create', '\App\Modules\Users\Controllers\UsersController@postCreate')->name('users.create');
 
         Route::get('/edit/{id}', '\App\Modules\Users\Controllers\UsersController@getEdit');
-        Route::put('/edit/{id}', '\App\Modules\Users\Controllers\UsersController@postEdit')
+        Route::post('/edit/{id}', '\App\Modules\Users\Controllers\UsersController@postEdit')
             ->name('users.putUser');
 
         Route::get('/view/{id}', '\App\Modules\Users\Controllers\UsersController@getView')

@@ -9,7 +9,7 @@
             'class'=>'form-control',
      'label'=>trans('slider.description'),
      'placeholder'=>trans('slider.description'),
-     'required'=>0]
+     'required'=>1]
      ])
 
 @include('BaseApp::form.input',[
@@ -21,7 +21,7 @@
          'class'=>'form-control',
      'label'=>trans('slider.link'),
      'placeholder'=>trans('slider.link'),
-     'required'=>0]
+     'required'=>1]
      ])
 @include('BaseApp::form.switch',[
     'name'=>'is_active',

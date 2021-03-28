@@ -153,5 +153,7 @@ return [
         'name'          => 'الاسم',
         'image'         =>'الصوره',
         'shipping_coast'=>'تكلفه الشحن',
+        'spec_id'       =>'الصفات',
+        'spec_value_id' =>'قيمه للصفات ',
     ],
 ];

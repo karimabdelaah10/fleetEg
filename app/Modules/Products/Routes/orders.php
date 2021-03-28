@@ -8,7 +8,7 @@ Route::group([
         Route::get('/', 'OrderController@getIndex');
 
         Route::get('/edit/{id}', 'OrderController@getEdit')->middleware('ProductAdminOrdersIds');
-        Route::put('/edit/{id}', 'OrderController@postEdit')->middleware('ProductAdminOrdersIds');
+        Route::post('/edit/{id}', 'OrderController@postEdit')->middleware('ProductAdminOrdersIds');
 
         Route::get('/view/{id}', 'OrderController@getView')->middleware('ProductAdminOrdersIds');
 

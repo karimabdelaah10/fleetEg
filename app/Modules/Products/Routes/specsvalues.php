@@ -11,7 +11,7 @@ Route::group([
         Route::post('/create', 'SpecsValuesController@postCreate');
 
         Route::get('/edit/{id}', 'SpecsValuesController@getEdit');
-        Route::put('/edit/{id}', 'SpecsValuesController@postEdit');
+        Route::post('/edit/{id}', 'SpecsValuesController@postEdit');
 
         Route::get('/view/{id}', 'SpecsValuesController@getView');
         Route::get('/delete/{id}', 'SpecsValuesController@getDelete')->name('delete');

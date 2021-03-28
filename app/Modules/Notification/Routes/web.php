@@ -6,7 +6,7 @@
 //        Route::post('/create', 'SliderController@postCreate');
 //
 //        Route::get('/edit/{id}', 'SliderController@getEdit');
-//        Route::put('/edit/{id}', 'SliderController@postEdit');
+//        Route::post('/edit/{id}', 'SliderController@postEdit');
 //
 //        Route::get('/view/{id}', 'SliderController@getView');
 //        Route::get('/delete/{id}', 'SliderController@getDelete')->name('delete');
@@ -25,7 +25,7 @@
 //        Route::post('/create', 'SliderController@postCreate');
 //
 //        Route::get('/edit/{id}', 'SliderController@getEdit');
-//        Route::put('/edit/{id}', 'SliderController@postEdit');
+//        Route::post('/edit/{id}', 'SliderController@postEdit');
 //
 //        Route::get('/view/{id}', 'SliderController@getView');
 //        Route::get('/delete/{id}', 'SliderController@getDelete')->name('delete');

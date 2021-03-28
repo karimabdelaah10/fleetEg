@@ -8,7 +8,7 @@
          'class'=>'form-control',
      'label'=>trans('governorate.title'),
      'placeholder'=>trans('governorate.title'),
-     'required'=>0]
+     'required'=>1]
      ])
 @include('BaseApp::form.input',[
     'name'=>'shipping_coast',

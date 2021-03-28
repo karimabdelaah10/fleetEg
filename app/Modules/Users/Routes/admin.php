@@ -12,7 +12,7 @@ Route::group([
         Route::post('/create', '\App\Modules\Users\Controllers\AdminsController@postCreate')->name('admins.create');
 
         Route::get('/edit/{id}', '\App\Modules\Users\Controllers\AdminsController@getEdit');
-        Route::put('/edit/{id}', '\App\Modules\Users\Controllers\AdminsController@postEdit')
+        Route::post('/edit/{id}', '\App\Modules\Users\Controllers\AdminsController@postEdit')
             ->name('users.putUser');
 
         Route::get('/view/{id}', '\App\Modules\Users\Controllers\AdminsController@getView')

@@ -70,7 +70,6 @@ class ProductController extends Controller {
         return view($this->views . '.view', $data);
     }
     public function getCreate() {
-//        authorize('edit-' . $this->module);
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
@@ -93,7 +92,6 @@ class ProductController extends Controller {
         return view($this->views . '.create', $data);
     }
     public function postCreate(ProductRequest $request) {
-//        return $request->all();
         !empty($request->is_active) ? $request['is_active'] =1 : $request['is_active'] =0;
         !empty($request->discount) ? $request['discount'] =1 : $request['discount '] =0;
         if ($row = $this->model->create($request->all())) {
@@ -109,7 +107,6 @@ class ProductController extends Controller {
         return back();
     }
     public function getEdit($id) {
-//        authorize('edit-' . $this->module);
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
@@ -128,11 +125,9 @@ class ProductController extends Controller {
             "specs_values"=>trans('products.specs values'),
             "amount"=>trans('products.amount'),
         ];
-//        return  $data['row'];
         return view($this->views . '.edit', $data);
     }
     public function postEdit(ProductRequest $request , $id) {
-//        authorize('edit-' . $this->module);
         !empty($request->is_active) ? $request['is_active'] =1 : $request['is_active'] =0;
         if (!empty($request->discount)){
             $request['discount'] =1;
@@ -154,13 +149,14 @@ class ProductController extends Controller {
         return redirect( '/' . $this->module);
     }
 
+
+
     public function getAddProductSpec($product_id)
     {
         $productSpecs =Productspec::where('product_id',$product_id)->pluck('spec_id');
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
-        $data['categories'] = Category::Active()->pluck('title','id');
         $data['page_title'] = trans('products.add_product_spec');
         $data['breadcrumb'] = [
             $this->title => $this->module_url ,
@@ -186,6 +182,8 @@ class ProductController extends Controller {
         flash()->success(trans('app.deleted successfully'));
         return back();
     }
+
+
 
     public function getViewProductSpecValues($product_spec_id)
     {
@@ -216,7 +214,7 @@ class ProductController extends Controller {
             ];
         $data['specs_values'] = Productspecvalue::where([['product_id',$productSpecs->product_id],
             ['spec_id' ,$productSpecs->spec_id]])->get();
-        $data['rows'] = Specvalue::Active()->get();
+        $data['rows'] = Specvalue::where('spec_id',$productSpecs->spec_id)->Active()->get();
         $data['row']=$this->model;
         $data['row']->product_id=$productSpecs->product_id;
         $data['row']->spec_id=$productSpecs->spec_id;

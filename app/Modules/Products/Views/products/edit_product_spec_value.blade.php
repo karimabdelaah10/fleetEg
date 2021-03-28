@@ -41,7 +41,6 @@
             'width'=>empty($row->getRawOriginal('image')) ? 50 :300,
             'label'=>trans('products.image'),
             'value'=>$row->getRawOriginal('image'),
-            'required'=>1
             ]
                  ])
                 <input type="hidden" name="product_id" value="{{$row->product_id}}">

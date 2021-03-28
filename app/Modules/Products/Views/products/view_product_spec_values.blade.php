@@ -33,8 +33,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @if(!empty($rows))
-                                @foreach($rows as $element)
+                                @forelse($rows as $element)
                                     <tr>
                                         <td>{{@$element->id}}</td>
                                         <td>{{@$element->value->title}}</td>
@@ -74,8 +73,8 @@
 
                                         </td>
                                     </tr>
-                                @endforeach
-                            @endif
+                                    @empty
+                                @endforelse
                             </tbody>
                         </table>
 

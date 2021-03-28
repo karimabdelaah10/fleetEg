@@ -7,7 +7,7 @@
          'class'=>'form-control',
      'label'=>trans('specs.title'),
      'placeholder'=>trans('specs.title'),
-     'required'=>0]
+     'required'=>1]
      ])
 @include('BaseApp::form.switch',[
     'name'=>'is_active',
