@@ -83,7 +83,8 @@ class OrderController extends Controller {
                 $related_element_type = Order::class;
                 create_new_notification($description , $to , $row->user_id ,$related_element_id ,$related_element_type);
                 $user->increment('available_balance',$row->total_price);
-            }elseif ($row->status == GeneralEnum::NOT_SERIOUS || $row->status == GeneralEnum::RETURNED_TO_STOCK){
+            }
+            elseif ($row->status == GeneralEnum::NOT_SERIOUS || $row->status == GeneralEnum::RETURNED_TO_STOCK){
                 //Todo to increase amount again
                 if (count($row->orderProducts)){
                     foreach ($row->orderProducts as $product){

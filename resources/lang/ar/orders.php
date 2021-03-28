@@ -33,6 +33,7 @@ return [
     'total_product_price'=>'اجمالى سعر المنتجات',
     'product_discount'=>'خصم على ',
     'shipping_notes'=>'ملاحظات الشحن',
+    'shipping_number'=>'رقم بوليسه الشحن',
     'delivered_orders_count'=>'عدد الطلبات التى تم تسليمها',
     'pending_orders_count'=>'عدد الطلبات قيد الانتظار ',
 

@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
             $table->string('customer_area')->nullable();
             $table->string('customer_address')->nullable();
             $table->string('shipping_note')->nullable();
+            $table->string('shipping_number')->nullable();
             $table->string('store_name')->nullable();
             $table->float('total_price')->default(0);
             $table->float('total_commission')->default(0);

@@ -79,14 +79,14 @@ class UsersController extends Controller
         $data['views'] = $this->views;
         $data['page_title'] = trans('app.edit') . " " . $this->title;
         $data['breadcrumb'] = [$this->title => $this->module_url];
-        $data['row'] = $this->model->findOrFail($id);
+        $data['row'] = $this->model->Customer()->findOrFail($id);
         return view($this->views . '.edit', $data);
     }
 
     public function postEdit(UpdateUserRequest $request, $id)
     {
 
-        $row = $this->model->findOrFail($id);
+        $row = $this->model->Customer()->findOrFail($id);
         !empty($request->is_active) ? $request['is_active'] =1 : $request['is_active'] =0;
         !empty($request->is_verified) ? $request['is_verified'] =1 : $request['is_verified'] =0;
         if ($row->update($request->all())) {
@@ -104,7 +104,7 @@ class UsersController extends Controller
         $data['module_url'] = $this->module_url;
         $data['page_title'] = trans('app.view') . " " . $this->title;
         $data['breadcrumb'] = [$this->title => $this->module_url];
-        $data['row'] = $this->model->findOrFail($id);
+        $data['row'] = $this->model->Customer()->findOrFail($id);
         $data['payment_methods'] = Paymentmethod::where('user_id' , $id)->get();
         return view($this->views . '.view', $data);
     }

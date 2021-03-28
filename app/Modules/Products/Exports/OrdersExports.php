@@ -38,6 +38,7 @@ class OrdersExports implements FromCollection,WithHeadings
                    @$row->governorate->title,
                     $row->store_name,
                     $row->shipping_note,
+                    $row->shipping_number,
                 ];
                 array_push($data , $record);
             }
@@ -65,6 +66,7 @@ class OrdersExports implements FromCollection,WithHeadings
             'Governorate',
             'Store Name',
             'Shipping Note',
+            'Shipping Number',
         ];
     }
 }

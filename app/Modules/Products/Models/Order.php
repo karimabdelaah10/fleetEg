@@ -19,6 +19,7 @@ class Order extends Model
         'customer_address',
         'status',
         'shipping_note',
+        'shipping_number',
         'store_name',
         'total_price',
         'total_commission',

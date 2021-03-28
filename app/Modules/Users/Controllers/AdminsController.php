@@ -71,12 +71,12 @@ class AdminsController extends Controller
         $data['views'] = $this->views;
         $data['page_title'] = trans('app.edit') . " " . $this->title;
         $data['breadcrumb'] = [$this->title => $this->module_url];
-        $data['row'] = $this->model->findOrFail($id);
+        $data['row'] = $this->model->Admin()->findOrFail($id);
         return view($this->views . '.edit', $data);
     }
     public function postEdit(UpdateUserRequest $request, $id)
     {
-        $row = $this->model->findOrFail($id);
+        $row = $this->model->Admin()->findOrFail($id);
         !empty($request->is_active) ? $request['is_active'] =1 : $request['is_active'] =0;
         if ($row->update($request->all())) {
             flash(trans('app.update successfully'))->success();
@@ -92,12 +92,12 @@ class AdminsController extends Controller
         $data['module_url'] = $this->module_url;
         $data['page_title'] = trans('app.view') . " " . $this->title;
         $data['breadcrumb'] = [$this->title => $this->module_url];
-        $data['row'] = $this->model->findOrFail($id);
+        $data['row'] = $this->model->Admin()->findOrFail($id);
         return view($this->views . '.view', $data);
     }
     public function getDelete($id)
     {
-        $row = $this->model->findOrFail($id);
+        $row = $this->model->Admin()->findOrFail($id);
         $row->delete();
         flash()->success(trans('app.deleted successfully'));
         return back();
