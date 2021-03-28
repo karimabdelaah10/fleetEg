@@ -46,7 +46,8 @@
                 <!-- Statistics Card -->
                 <!--/ Statistics Card -->
             </div>
-            <div class="row match-height">
+            @if($row->getRawOriginal('admin_type') == \App\Modules\Users\Enums\AdminEnum::PRODUCT_ADMIN)
+                <div class="row match-height">
                     <!-- Company Table Card -->
                     <div class="col-12">
                         <div class="card card-company-table">
@@ -112,7 +113,8 @@
                         </div>
                     </div>
                     <!--/ Company Table Card -->
-            </div>
+                </div>
+            @endif
         </section>
         <!-- Dashboard Ecommerce ends -->
     </div>

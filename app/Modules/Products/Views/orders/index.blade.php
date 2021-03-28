@@ -18,8 +18,22 @@
                         <h4 class="card-title">
                             {{ @$page_description }}
                         </h4>
-                        <a href="{{$module_url}}/import" class="add-new btn btn-secondary mt-50">{{trans('orders.import orders')}}</a>
-                        <a href="{{$module_url}}/export?@forelse(request()->query() as $key=>$val){{$key}}={{$val}}&@empty @endforelse" class="add-new btn btn-primary mt-50">{{trans('orders.export orders')}}</a>
+
+                        <div class="dropdown chart-dropdown">
+                            <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-toggle="dropdown"></i>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="{{$module_url}}/export?@forelse(request()->query() as $key=>$val){{$key}}={{$val}}&@empty @endforelse">
+                                    {{trans('orders.export orders')}}
+                                </a>
+                                <a class="dropdown-item" href="{{$module_url}}/import">
+                                    {{trans('orders.import orders')}}
+                                </a>
+
+                            </div>
+                        </div>
+
+{{--                        <a href="{{$module_url}}/import" class="add-new btn btn-secondary mt-50">{{trans('orders.import orders')}}</a>--}}
+{{--                        <a href="{{$module_url}}/export?@forelse(request()->query() as $key=>$val){{$key}}={{$val}}&@empty @endforelse" class="add-new btn btn-primary mt-50">{{trans('orders.export orders')}}</a>--}}
                     </div>
 
                     <div class="table-responsive">

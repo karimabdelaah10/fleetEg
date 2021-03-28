@@ -20,7 +20,30 @@ class OrdersExports implements FromCollection,WithHeadings
 
     public function collection()
     {
-        return collect($this->data);
+        $data=[];
+//        return collect($this->data);
+        foreach ($this->data as $row){
+            foreach ($row->orderProducts as $product){
+                $record =[
+                    $row->id,
+                    $row->customer_name,
+                    $row->customer_mobile_number,
+                    $row->customer_area,
+                    $row->customer_address,
+                    $product->title,
+                    $product->pivot->detail,
+                    $product->pivot->amount,
+                    $row->total_price,
+                    $row->status,
+                   @$row->governorate->title,
+                    $row->store_name,
+                    $row->shipping_note,
+                ];
+                array_push($data , $record);
+            }
+        }
+
+        return collect($data);
     }
 
     /**
@@ -34,15 +57,14 @@ class OrdersExports implements FromCollection,WithHeadings
             'Customer Mobile Number',
             'Customer Area',
             'Customer Address',
-            'Shipping Company',
-            'Store Name',
+            'Product Title',
+            'Product Details',
+            'Amount',
             'Total Price',
-            'Total Commission',
             'Status',
-            'Governorate Id',
-            'User Id',
-            'Created At',
-            'Updated At',
+            'Governorate',
+            'Store Name',
+            'Shipping Note',
         ];
     }
 }
