@@ -93,7 +93,6 @@ class CartsApiController extends Controller {
 
     public function checkout(Request $request)
     {
-//        return $request->all();
         $carts = Cart::where('user_id' ,$request->user_id)
             ->with(['innerSpecValue','specValue','product'])
             ->get();

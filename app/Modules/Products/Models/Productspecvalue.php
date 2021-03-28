@@ -6,7 +6,7 @@ use App\Modules\BaseApp\Traits\HasAttach;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Productspecvalue extends Model
+class  Productspecvalue extends Model
 {
     use HasFactory,HasAttach;
     protected $table='productspecvalues';
@@ -29,6 +29,11 @@ class Productspecvalue extends Model
     public function spec(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Spec::class ,'spec_id');
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(Productspecvalue::class ,'parent_spec_value_id');
     }
 
 }

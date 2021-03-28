@@ -35,9 +35,13 @@ return [
     'pending'=>'قيدالانتظار',
     'under_review'=>'قيدالمراجعه',
     'transformed'=>'تم تحويل المبلغ',
-    'with_shipping_company'=>'مع شركه الشحن',
+    'refused'=>'رفض العميل استلام الطلب',
+    'no_answer'=>'لا يوجد اجابه من العميل',
     'delivered'=>'تم التوصيل',
     'in_stock'=>'فى المخزن',
+    'with_shipping_company'=>'تم الشحن',
+    'not_serious'=>'العميل غير جاد',
+    'returned_to_stock'=>'رجوع الطلب الى المخزن',
 
     'actions'=>'الأجرائات',
 

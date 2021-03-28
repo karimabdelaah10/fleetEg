@@ -9,7 +9,11 @@ abstract class GeneralEnum
           TRANSFORMED='transformed',
           WITH_SHIPPING_COMPANY='with_shipping_company',
           DELIVERED ='delivered',
-          IN_STOCK='in_stock'
+          IN_STOCK='in_stock',
+          REFUSED='refused',
+          NOT_SERIOUS='not_serious',
+          RETURNED_TO_STOCK='returned_to_stock',
+          NO_ANSWER='no_answer'
     ;
 
 }

@@ -31,11 +31,7 @@
 
                             </div>
                         </div>
-
-{{--                        <a href="{{$module_url}}/import" class="add-new btn btn-secondary mt-50">{{trans('orders.import orders')}}</a>--}}
-{{--                        <a href="{{$module_url}}/export?@forelse(request()->query() as $key=>$val){{$key}}={{$val}}&@empty @endforelse" class="add-new btn btn-primary mt-50">{{trans('orders.export orders')}}</a>--}}
-                    </div>
-
+                 </div>
                     <div class="table-responsive">
                         <div class="col-12">
                             <form method="get">
@@ -118,10 +114,13 @@
                                         <td>{{@$element->created_at ? \Carbon\Carbon::parse($element->created_at)->format('Y-m-d') : '' }}</td>
                                         <td>
                                             {!! get_status_for_blade($element->status) !!}
-
                                         </td>
                                         <td>
-                                            @include('BaseApp::partials.actions' ,['actions'=>['view','edit'] , $element])
+                                            @if(in_array($element->status , \App\Modules\Products\Enums\OrdersEnum::ordersFinalsStatuses()))
+                                                {!! get_status_for_blade($element->status) !!}
+                                            @else
+                                                @include('BaseApp::partials.actions' ,['actions'=>['view','edit'] , $element])
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

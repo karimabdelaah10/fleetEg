@@ -11,24 +11,29 @@ if (! function_exists('get_status_for_blade')) {
     function get_status_for_blade($status)
     {
      switch ($status){
-         case GeneralEnum::PENDING :
-             return '<span class="badge badge-pill badge-danger mr-1">'.trans('app.'.GeneralEnum::PENDING).'</span>';
-             break;
-
          case GeneralEnum::UNDER_REVIEW :
              return '<span class="badge badge-pill badge-warning mr-1">'.trans('app.'.GeneralEnum::UNDER_REVIEW).'</span>';
              break;
-
-         case GeneralEnum::IN_STOCK :
-             return '<span class="badge badge-pill badge-dark mr-1">'.trans('app.'.GeneralEnum::IN_STOCK).'</span>';
-             break;
-
          case GeneralEnum::WITH_SHIPPING_COMPANY :
              return '<span class="badge badge-pill badge-light-danger mr-1">'.trans('app.'.GeneralEnum::WITH_SHIPPING_COMPANY).'</span>';
              break;
-
-         default:
+         case GeneralEnum::NO_ANSWER :
+             return '<span class="badge badge-pill badge-danger mr-1">'.trans('app.'.GeneralEnum::NO_ANSWER).'</span>';
+             break;
+         case GeneralEnum::NOT_SERIOUS :
+             return '<span class="badge badge-pill badge-dark mr-1">'.trans('app.'.GeneralEnum::NOT_SERIOUS).'</span>';
+             break;
+         case GeneralEnum::REFUSED :
+             return '<span class="badge badge-pill badge-light-info mr-1">'.trans('app.'.GeneralEnum::REFUSED).'</span>';
+             break;
+         case GeneralEnum::RETURNED_TO_STOCK :
+             return '<span class="badge badge-pill badge-light-warning mr-1">'.trans('app.'.GeneralEnum::RETURNED_TO_STOCK).'</span>';
+             break;
+         case GeneralEnum::DELIVERED :
              return '<span class="badge badge-pill badge-success mr-1">'.trans('app.'.GeneralEnum::DELIVERED).'</span>';
+             break;
+         default:
+             return '';
         }
     }
 }

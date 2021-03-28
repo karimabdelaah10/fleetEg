@@ -9,6 +9,7 @@ use App\Modules\Products\Enums\OrdersEnum;
 use App\Modules\Products\Exports\OrdersExports;
 use App\Modules\Products\Imports\OrdersImport;
 use App\Modules\Products\Models\Order;
+use App\Modules\Products\Models\Productspecvalue;
 use App\Modules\Products\Requests\OrderRequest;
 use App\Modules\Users\Enums\UserEnum;
 use App\Modules\Users\User;
@@ -82,6 +83,14 @@ class OrderController extends Controller {
                 $related_element_type = Order::class;
                 create_new_notification($description , $to , $row->user_id ,$related_element_id ,$related_element_type);
                 $user->increment('available_balance',$row->total_price);
+            }elseif ($row->status == GeneralEnum::NOT_SERIOUS || $row->status == GeneralEnum::RETURNED_TO_STOCK){
+                //Todo to increase amount again
+                if (count($row->orderProducts)){
+                    foreach ($row->orderProducts as $product){
+                        $product_spec_value=Productspecvalue::findOrFail($product->pivot->product_spec_value_id);
+                        $product_spec_value->increment('stock' , $product->amount);
+                    }
+                }
             }
             flash(trans('app.update successfully'))->success();
             return back();

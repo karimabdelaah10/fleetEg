@@ -26,6 +26,8 @@ class ProductAdminOrdersIds
             if (in_array($request->id , $ids)){
                 return $next($request);
             }
+        }elseif($user->getRawOriginal('type') == UserEnum::SUPER_ADMIN){
+            return $next($request);
         }
         abort(403, 'Unauthorized action.');
     }

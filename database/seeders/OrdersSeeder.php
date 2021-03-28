@@ -2,14 +2,14 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use App\Modules\Governorate\Models\Governorate;
 use App\Modules\Products\Enums\OrdersEnum;
 use App\Modules\Products\Models\Order;
 use App\Modules\Products\Models\Orderproduct;
-use App\Modules\Products\Models\Orderproductdetail;
 use App\Modules\Products\Models\Product;
+use App\Modules\Products\Models\Productspecvalue;
 use App\Modules\Products\Models\Specvalue;
+use App\Modules\Users\User;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 use Illuminate\Support\Arr;
@@ -30,8 +30,24 @@ class OrdersSeeder extends Seeder
 
         $faker =Faker::create('ar_JO');
         $orders =[];
-        for ($i =0; $i< 10 ;$i++){
-            array_push($orders ,             [
+        for ($i=0; $i<30 ;$i++){
+            $products=[];
+              for ($e =0; $e< 5 ;$e++){
+                  $product = Product::whereHas('specsvalues')->inRandomOrder()->first();
+                  $product_spec_value =Productspecvalue::where('product_id' , $product->id)->inRandomOrder()->first();
+                  if ($product_spec_value->parent_spec_value_id){
+                      $details =$product_spec_value->parent->value->title . ',' .$details =$product_spec_value->value->title;
+                  }else{
+                      $details =$product_spec_value->value->title;
+                  }
+                  array_push($products ,  [
+                    'id' => $product->id ,
+                    'amount' =>$faker->numberBetween(1,10),
+                    'detail'=> $details,
+                    'product_spec_value_id'=>$product_spec_value->id,
+                ]);
+            }
+                array_push($orders ,[
                 'customer_name'=>$faker->name,
                 'customer_mobile_number'=>$faker->phoneNumber,
                 'customer_area'=>$faker->city,
@@ -40,39 +56,11 @@ class OrdersSeeder extends Seeder
                 'store_name'=>$faker->company,
                 'status' =>OrdersEnum::ordersStatuses()[array_rand(OrdersEnum::ordersStatuses())],
                 'total_price'=>$faker->numberBetween(100,1000),
-                'governorate_id'=>Governorate::all()->random()->id,
-                'user_id'=>User::all()->random()->id,
-                'products'=>[
-                    [
-                        'id' => Product::all()->random()->id ,
-                        'amount' =>$faker->numberBetween(1,10),
-                        'detail'=> Specvalue::all()->random()->title. ' , '. Specvalue::all()->random()->title
-                    ],
-                    [
-                        'id' => Product::all()->random()->id ,
-                        'amount' =>$faker->numberBetween(1,10),
-                        'detail'=> Specvalue::all()->random()->title. ' , '. Specvalue::all()->random()->title
-                    ],
-                    [
-                        'id' => Product::all()->random()->id ,
-                        'amount' =>$faker->numberBetween(1,10),
-                        'detail'=> Specvalue::all()->random()->title. ' , '. Specvalue::all()->random()->title
-                    ],
-                    [
-                        'id' => Product::all()->random()->id ,
-                        'amount' =>$faker->numberBetween(1,10),
-                        'detail'=> Specvalue::all()->random()->title. ' , '. Specvalue::all()->random()->title
-                    ],
-                    [
-                        'id' => Product::all()->random()->id ,
-                        'amount' =>$faker->numberBetween(1,10),
-                        'detail'=> Specvalue::all()->random()->title. ' , '. Specvalue::all()->random()->title
-                    ],
-                ],
-            ]
-        );
+                'governorate_id'=>Governorate::inRandomOrder()->first()->id,
+                'user_id'=>User::Customer()->inRandomOrder()->first()->id,
+                'products'=>$products,
+            ]);
         }
-
         foreach ($orders as $order){
             $products = $order['products'];
             $order =Arr::except($order, ['products']);
@@ -82,7 +70,8 @@ class OrdersSeeder extends Seeder
                     'order_id' =>$newOrder->id,
                     'product_id'=> $product['id'],
                     'amount' =>$product['amount'],
-                    'detail' =>$product['detail']
+                    'detail' =>$product['detail'],
+                    'product_spec_value_id' => $product['product_spec_value_id']
                 ]);
             }
         }

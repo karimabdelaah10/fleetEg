@@ -46,6 +46,7 @@ class Order extends Model
     'product_id',
             'amount',
             'detail',
+            'product_spec_value_id',
         );
     }
 
