@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Modules\Products\Models\Spec;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class SpecsSeeder extends Seeder
 {
@@ -14,6 +15,8 @@ class SpecsSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('specs')->delete();
+
         $specs=[
             [
                 'title'=>'مقاسات',

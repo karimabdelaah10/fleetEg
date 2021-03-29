@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Modules\Governorate\Models\Governorate;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class GovernorateSeeder extends Seeder
 {
@@ -14,6 +15,8 @@ class GovernorateSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('governorates')->delete();
+
         $g = [  [
                     "title" => "القاهرة",
                     "shipping_coast" => rand(10 , 100),

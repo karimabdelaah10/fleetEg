@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Modules\Products\Models\Category;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CategoriesSeeder extends Seeder
 {
@@ -14,6 +15,7 @@ class CategoriesSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('categories')->delete();
         $categories=[
             [
                 'title'=>'احذيه رجالى',

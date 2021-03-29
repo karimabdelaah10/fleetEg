@@ -6,6 +6,7 @@ use App\Modules\Users\Enums\AdminEnum;
 use App\Modules\Users\Enums\UserEnum;
 use App\Modules\Users\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
@@ -17,6 +18,8 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('users')->delete();
+
         $users = [
             [
                 'name'              =>'super admin',

@@ -7,6 +7,7 @@ use App\Modules\MoneyProcess\Models\Moneyrequest;
 use App\Modules\Users\Enums\UserEnum;
 use App\Modules\Users\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class MoneyRequestsSeeder extends Seeder
@@ -18,6 +19,7 @@ class MoneyRequestsSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('moneyrequests')->delete();
 
         $available_balance=[10000 , 11000 , 12000 ,13000 ,14000 ,15000];
         $requested_amount =[1000 , 2000 , 3000 , 4000 ,5000];
