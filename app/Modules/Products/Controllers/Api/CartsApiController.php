@@ -93,6 +93,7 @@ class CartsApiController extends Controller {
 
     public function checkout(Request $request)
     {
+        return'done';
         $carts = Cart::where('user_id' ,$request->user_id)
             ->with(['innerSpecValue','specValue','product'])
             ->get();
@@ -102,30 +103,38 @@ class CartsApiController extends Controller {
             $products=[];
             foreach ($carts as $cart){
                 $detail='';
+                $spec_value_id='';
                 if (isset($cart->specValue)){
-                    $detail =$cart->specValue->title;
+                    $detail=$cart->specValue->title;
+                    $spec_value_id =$cart->spec_value_id;
                 }
                 if (isset($cart->innerSpecValue)){
                     $detail = $detail.' , '.$cart->innerSpecValue->title;
+                    $spec_value_id =$cart->inner_spec_value_id;
                 }
-                $record =[
+                $product_spec_value=Productspecvalue::
+                    where('product_id',  $cart->product_id)
+                    ->where('spec_value_id' , $spec_value_id)
+                    ->first();
+                $product_spec_value->decrement('stock', $cart->amount);
+
+                   $record =[
                     'product_id' =>$cart->product_id,
                     'amount' =>$cart->amount,
-                    'detail' => $detail
+                    'detail' => $detail,
+                    'product_spec_value_id' => $product_spec_value->id
                 ];
                 array_push($products , $record);
             }
+            $newOrder->orderProducts()->attach($products);
+            Cart::where('user_id' ,$request->user_id)->delete();
+            //Todo to send notification to admin about new order
+            $description=trans('notifications.notification_new_order_txt');
+            $to= UserEnum::ADMIN;
+            $related_element_id = $newOrder->id;
+            $related_element_type = Order::class;
+            create_new_notification($description , $to , null ,$related_element_id ,$related_element_type);
         }
-
-        $newOrder->orderProducts()->attach($products);
-
-        Cart::where('user_id' ,$request->user_id)->delete();
-        //Todo to send notification to admin about new order
-        $description=trans('notifications.notification_new_order_txt');
-        $to= UserEnum::ADMIN;
-        $related_element_id = $newOrder->id;
-        $related_element_type = Order::class;
-        create_new_notification($description , $to , null ,$related_element_id ,$related_element_type);
         return'done';
 
     }

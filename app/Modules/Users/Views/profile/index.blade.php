@@ -16,19 +16,20 @@
                                         <div class="d-flex justify-content-start">
                                             <img
                                                 class="img-fluid rounded"
-                                                src="{{$row->profile_picture}}"
+                                                src="{{@$row->profile_picture}}"
                                                 height="104"
                                                 width="104"
                                                 alt="User avatar"
                                             />
                                             <div class="d-flex flex-column ml-1">
                                                 <div class="user-info mb-1">
-                                                    <h4 class="mb-0">{{$row->name}}</h4>
-                                                    <span class="card-text">{{$row->email}}</span>
+                                                    <h4 class="mb-0">{{@$row->name}}</h4>
+                                                    <span class="card-text">{{@$row->email}}</span>
                                                 </div>
                                                 <div class="d-flex flex-wrap">
-                                                    <a href="/profile/edit" class="btn btn-primary">{{trans('app.edit')}}</a>
-{{--                                                    <a href="/users/delete/{{$row->id}}" class="btn btn-outline-danger ml-1">{{trans('app.delete')}}</a>--}}
+                                                    <a href="/profile/edit"
+                                                       class="btn btn-primary">
+                                                        {{trans('app.edit')}}</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -60,37 +61,39 @@
                                         <div class="d-flex flex-wrap">
                                             <div class="user-info-title" style="width: 11.785rem;">
                                                 <i data-feather="user" class="mr-1"></i>
-                                                <span class="card-text user-info-title font-weight-bold mb-0">{{trans('user.address')}}</span>
+                                                <span class="card-text
+                                                user-info-title font-weight-bold mb-0">
+                                                    {{trans('user.address')}}</span>
                                             </div>
-                                            <p class="card-text mb-0">{{$row->address}}</p>
+                                            <p class="card-text mb-0">{{@$row->address}}</p>
                                         </div>
                                         <div class="d-flex flex-wrap my-50">
                                             <div class="user-info-title" style="width: 11.785rem;">
                                                 <i data-feather="check" class="mr-1"></i>
                                                 <span class="card-text user-info-title font-weight-bold mb-0">{{trans('app.status')}}</span>
                                             </div>
-                                            <p class="card-text mb-0">{{$row->is_active ? trans('app.active') : trans('app.inactive')}}</p>
+                                            <p class="card-text mb-0">{{@$row->is_active ? trans('app.active') : trans('app.inactive')}}</p>
                                         </div>
                                         <div class="d-flex flex-wrap my-50">
                                             <div class="user-info-title" style="width: 11.785rem;">
                                                 <i data-feather="star" class="mr-1"></i>
                                                 <span class="card-text user-info-title font-weight-bold mb-0">{{trans('user.role')}}</span>
                                             </div>
-                                            <p class="card-text mb-0">{{$row->type}}</p>
+                                            <p class="card-text mb-0">{{@$row->type}}</p>
                                         </div>
                                         <div class="d-flex flex-wrap my-50">
                                             <div class="user-info-title" style="width: 11.785rem;">
                                                 <i data-feather="dollar-sign" class="mr-1"></i>
                                                 <span class="card-text user-info-title font-weight-bold mb-0">{{trans('user.available_balance')}}</span>
                                             </div>
-                                            <p class="card-text mb-0">{{$row->available_balance}} {{trans('app.egyptian_pound')}}</p>
+                                            <p class="card-text mb-0">{{@$row->available_balance}} {{trans('app.egyptian_pound')}}</p>
                                         </div>
                                         <div class="d-flex flex-wrap">
                                             <div class="user-info-title" style="width: 11.785rem;">
                                                 <i data-feather="phone" class="mr-1"></i>
                                                 <span class="card-text user-info-title font-weight-bold mb-0">{{trans('user.mobile_number')}}</span>
                                             </div>
-                                            <p class="card-text mb-0">{{$row->mobile_number}}</p>
+                                            <p class="card-text mb-0">{{@$row->mobile_number}}</p>
                                         </div>
                                         @if(is_user())
                                         <div class="d-flex flex-wrap">
@@ -99,7 +102,9 @@
                                                 <span class="card-text user-info-title font-weight-bold mb-0">
                                                     {{trans('paymentmethods.default method')}}</span>
                                             </div>
-                                            <p class="card-text mb-0">{{trans('paymentmethods.'.$payment_method->type)}}</p>
+                                            @if($payment_method)
+                                                <p class="card-text mb-0">{{trans('paymentmethods.'.$payment_method->type)}}</p>
+                                            @endif
                                         </div>
                                         @endif
                                     </div>

@@ -87,17 +87,18 @@
                                     class="img-fluid card-img-top list-products-img"
                                     :src="item.image"
                                     alt="img-placeholder"
-                                /></a>
+                                />
+                            </a>
                         </div>
                         <div class="card-body">
                             <div class="item-wrapper">
                                 <div class="item-rating">
                                     <h6 class="item-price">
-                                        <h6 class="item-price">@{{item.commission}}</h6>
+                                        <h6 class="item-price">{{ row.trans.price }} : {{item.price}}</h6>
                                     </h6>
                                 </div>
                                 <div>
-                                    <h6 class="item-price">${{item.price}}</h6>
+                                    <h6 class="item-price">{{row.trans.commission}} : {{item.commission}}</h6>
                                 </div>
                             </div>
                             <h4 class="item-name">
@@ -113,16 +114,16 @@
                         <div class="item-options text-center">
                             <div class="item-wrapper">
                                 <div class="item-cost">
-                                    <h4 class="item-price">${{item.price}}</h4>
+                                    <h4 class="item-price">{{ row.trans.price }} : {{item.price}}</h4>
                                 </div>
                             </div>
-                            <a v-on:click="toggleFavProduct(item.id ,item)"
+                            <a v-on:click="toggleFavProduct(item)"
                                v-if="!item.is_favourite"
                                class="btn btn-light btn-wishlist">
                                 <heart-icon size="1.5x" fill="none" class="custom-class"></heart-icon>
                                 <span>{{ row.trans.add_to_wish_list }}</span>
                             </a>
-                            <a  v-on:click="toggleFavProduct(item.id , item)"
+                            <a  v-on:click="toggleFavProduct(item)"
                                 v-if="item.is_favourite"
                                 class="btn btn-light btn-wishlist">
                                 <heart-icon size="1.5x" fill="true" class="custom-class"></heart-icon>
@@ -248,10 +249,7 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
         },
         mounted() {
             feather.replace();
-        },
-        beforeMount() {
             this.fetch();
-
         },
         watch: {
             selected_price: function(newVal, oldVal) {
@@ -274,6 +272,7 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
                     '&selected_price='+this.selected_price+
                     '&selected_category='+this.selected_category+
                     '&search_key='+this.search_key;
+                console.log(this.products.length)
                 await axios.get(url).then(response => {
                             this.products.push(...response.data.data);
                             this.pagination =response.data.pagination
@@ -287,9 +286,9 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
                 this.page++
                 this.fetch()
             },
-            async toggleFavProduct(id ,item){
+            async toggleFavProduct(item){
                 let data = {
-                    'product_id':id,
+                    'product_id':item.id,
                     'user_id': this.row.user.id
                 };
                 await axios.post('/api/v1/products/fav' ,data)

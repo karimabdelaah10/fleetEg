@@ -5,11 +5,12 @@
         <div
             aria-live="polite"
             aria-atomic="true"
+            id="toast-div"
             class="toast-placement d-flex justify-content-center align-items-center"
             data-autohide="true"
         >
             <div
-                style="position: fixed; top: 1rem; z-index: 1030">
+                style="position: fixed; top: 1rem;right: 50%; z-index: 1030">
                 <div class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
                     <div class="toast-header">
                         <strong class="mr-auto">{{data.title}}</strong>

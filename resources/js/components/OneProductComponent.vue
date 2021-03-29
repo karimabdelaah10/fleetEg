@@ -230,6 +230,9 @@ import NumberInputSpinner from 'vue-number-input-spinner'
         },
         computed: {
             isDisabled: function(){
+                if (this.selectdData.spec_value_id == null){
+                    return true
+                }
                 return !this.addToCaryBtn;
             },
             totalPrice:function (){
@@ -264,14 +267,14 @@ import NumberInputSpinner from 'vue-number-input-spinner'
         },
         watch: {},
         methods:{
-            async fetch () {
+      async fetch () {
                 let url = '/api/v1/products/view/'+ this.row.product.id+'?user_id='+this.row.user.id;
                await axios.get(url).then(response => {
                    this.product = response.data.data;
                    this.image = this.product.image;
                });
             },
-           async toggleFavProduct(item){
+      async toggleFavProduct(item){
                 let data = {
                     'product_id':item.id,
                     'user_id': this.row.user.id
@@ -283,7 +286,7 @@ import NumberInputSpinner from 'vue-number-input-spinner'
                         }
                     });
             },
-           async selectSpecValue(specValue){
+      async selectSpecValue(specValue){
                 let newImage ='#';
                 let newStock = '#';
                 let url = '/api/v1/products/inner-spec-values/'+specValue.pivot_id+'?product_id='+this.product.id;
@@ -316,7 +319,7 @@ import NumberInputSpinner from 'vue-number-input-spinner'
                 this.stock = stock
 
             },
-             async addProductToCart() {
+      async addProductToCart() {
                  this.selectdData.product_id = this.product.id
                  this.selectdData.commission = this.totalCommission   // calculated in computed
                  this.selectdData.price = this.totalPrice             // calculated in computed
@@ -347,6 +350,9 @@ import NumberInputSpinner from 'vue-number-input-spinner'
 
                 $(".toast-placement .toast").toast("show");
 
+                setTimeout(()=>{
+                    $(".toast-placement .toast").toast("hide");
+                } , 3000)
             },
             resetSelectedData(){
                 this.selectdData ={

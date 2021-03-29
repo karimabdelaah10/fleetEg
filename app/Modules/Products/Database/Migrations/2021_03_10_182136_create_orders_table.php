@@ -25,7 +25,7 @@ class CreateOrdersTable extends Migration
             $table->string('store_name')->nullable();
             $table->float('total_price')->default(0);
             $table->float('total_commission')->default(0);
-            $table->enum('status', OrdersEnum::ordersStatuses() );
+            $table->enum('status', OrdersEnum::ordersStatuses() )->default(\App\Modules\BaseApp\Enums\GeneralEnum::UNDER_REVIEW);
             $table->unsignedBigInteger('governorate_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
 

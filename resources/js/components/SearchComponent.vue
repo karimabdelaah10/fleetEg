@@ -117,16 +117,16 @@ export default {
             this.searchKey =''
         },
         async fetch() {
+            this.products.length =0
+            this.members.length =0
             let url = '/api/v1/Basic/search/' + this.searchKey + '?user_id=' + this.user.id;
             await axios.get(url).then(response => {
                 this.products = response.data.products
                 this.members = response.data.users
-
             });
         },
         async init() {
             let url = '/api/v1/Basic/init/';
-            // this.carts.length = 0
             await axios.get(url).then(response => {
                 this.trans = response.data.trans
 

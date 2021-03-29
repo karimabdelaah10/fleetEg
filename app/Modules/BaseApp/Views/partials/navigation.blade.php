@@ -171,7 +171,7 @@
                 <a class="d-flex align-items-center" href="/customer-product/">
                     <i data-feather="grid"></i>
                     <span class="menu-title text-truncate" data-i18n="Products">{{trans('navigation.products')}}</span>
-                    <span class="badge badge-light-warning badge-pill ml-auto mr-1">3</span></a>
+                    <span class="badge badge-light-warning badge-pill ml-auto mr-1">2</span></a>
                 <ul class="menu-content">
                     <li>
                         <a class="d-flex align-items-center" href="/customer-product/">
@@ -180,7 +180,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="d-flex align-items-center" href="/product/favourite-list">
+                        <a class="d-flex align-items-center" href="/customer-product/favourite-list">
                             <i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="FavouriteProducts">{{trans('navigation.favourite products')}}</span></a>
                     </li>

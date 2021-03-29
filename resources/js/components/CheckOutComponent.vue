@@ -2,11 +2,11 @@
 <div>
  <!-- Wizard starts -->
  <div class="bs-stepper-header">
-     <toast-component
-         :data ="toastData"
-     ></toast-component>
      <!-- Product Details starts -->
     <div class="step" data-target="#step-cart">
+        <toast-component
+            :data ="toastData"
+        ></toast-component>
         <button type="button" class="step-trigger">
             <span class="bs-stepper-box">
               <i data-feather="shopping-cart"
@@ -375,7 +375,7 @@
         computed: {
             total: function () {
                 return this.carts.reduce(function (total, item) {
-                    return total + item.price + item.commission;
+                    return total + item.price;
                 }, 0);
             },
             totalCommission: function () {
@@ -422,6 +422,9 @@
                 await axios.get(url).then(response => {
                     this.carts = response.data.data
                     this.discountDetails = response.data.product_discounts_details
+                    if (this.carts.length === 0 ){
+                        location.reload()
+                    }
                 });
                 },
             async deleteProductFromCarts(product_id){
@@ -447,13 +450,14 @@
                     total_commission :this.totalCommission,
                 };
                 await axios.post(url , data).then(response => {
+                    this.$store.commit('incementNewOrder')
                     this.displayToast(this.row.trans.order_saved_title ,
                         this.row.trans.order_saved_message,
                         this.row.trans.just_now)
-                    this.getThisUserCarts()
-                    this.$store.commit('incementNewOrder')
-                    location.replace("/")
-
+                    setTimeout(() =>{
+                            location.replace("/customer-orders")
+                    }
+                        , 2000);
                 });
             } ,
             displayToast(title ,  message ,time){
@@ -462,7 +466,9 @@
                 this.toastData.message = message
 
                 $(".toast-placement .toast").toast("show");
-
+                setTimeout(()=>{
+                    $(".toast-placement .toast").toast("hide");
+                } , 3000)
             },
 
 

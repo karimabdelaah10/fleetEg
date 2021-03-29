@@ -54,8 +54,14 @@ class ProductsApiController extends Controller {
     {
         $user= User::findOrFail($user_id);
         Auth::login($user);
-        $product_ids= Favouriteproduct::where('user_id', $user_id)->pluck('product_id');
-        $products =  $this->model->Filtered()->whereIn('id' ,$product_ids)->with('category')->orderBy("id","DESC")->paginate(request('per_page'));
+        $product_ids= Favouriteproduct::where('user_id', $user_id)
+            ->pluck('product_id');
+        $products =  $this->model->Filtered()
+            ->whereHas('specsvalues')
+            ->whereIn('id' ,$product_ids)
+            ->with('category')
+            ->orderBy("id","DESC")
+            ->paginate(request('per_page'));
         return new ProductsResourcePagination($products);
 
     }
@@ -74,7 +80,8 @@ class ProductsApiController extends Controller {
     {
         $data=[];
         $specs_values_list=[];
-        $specsIds =Productspecvalue::where('parent_spec_value_id' ,$parent_spec_value_id)->where('product_id', \request()->product_id)
+        $specsIds =Productspecvalue::where('parent_spec_value_id' ,$parent_spec_value_id)
+            ->where('product_id', \request()->product_id)
             ->pluck('spec_id');
         $specs =  Spec::whereIn('id' , $specsIds)->with('productspecsvalues')->get();
 
@@ -84,11 +91,11 @@ class ProductsApiController extends Controller {
                 if (!empty($inner_spec_values)){
                     foreach ($inner_spec_values as $inner_spec_value){
                         $spec_value_record =[
-                            'id'            => $inner_spec_value->id,
-                            'value_id'         => $inner_spec_value->value->id,
-                            'title'         => $inner_spec_value->value->title,
+                            'id'            => @$inner_spec_value->id,
+                            'value_id'      => @$inner_spec_value->value->id,
+                            'title'         => @$inner_spec_value->value->title,
                             'stock'         => @$inner_spec_value->stock,
-                            'image'         =>  image($inner_spec_value->image , 'large') ,
+                            'image'         =>  image(@$inner_spec_value->image , 'large') ,
                         ];
                         array_push($specs_values_list , $spec_value_record);
                     }
@@ -96,8 +103,8 @@ class ProductsApiController extends Controller {
                 $spec_record =[
                     'id'            => $spec->id,
                     'title'         => $spec->title,
-                    'is_active'     =>$spec->is_active,
-                    'specs_values'  =>$specs_values_list
+                    'is_active'     => $spec->is_active,
+                    'specs_values'  => $specs_values_list
                 ];
 
 
