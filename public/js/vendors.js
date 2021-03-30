@@ -3896,14 +3896,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      in_stock: 0,
-      with_shipping_company: 0,
-      delivered: 0,
-      pending: 0,
       under_review: 0,
+      with_shipping_company: 0,
+      no_answer: 0,
+      not_serious: 0,
+      refused: 0,
+      returned_to_stock: 0,
+      delivered: 0,
       trans: []
     };
   },
@@ -3917,11 +3936,13 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get('/api/v1/carts/orders_number/' + this.user.id).then(function (response) {
-        _this.in_stock = response.data.data.in_stock;
         _this.under_review = response.data.data.under_review;
-        _this.pending = response.data.data.pending;
-        _this.delivered = response.data.data.delivered;
         _this.with_shipping_company = response.data.data.with_shipping_company;
+        _this.no_answer = response.data.data.no_answer;
+        _this.not_serious = response.data.data.not_serious;
+        _this.refused = response.data.data.refused;
+        _this.returned_to_stock = response.data.data.returned_to_stock;
+        _this.delivered = response.data.data.delivered;
         _this.trans = response.data.trans;
       });
     }
@@ -25179,7 +25200,7 @@ var render = function() {
         [
           _c("span", { staticClass: "bullet bullet-sm bullet-warning mr-1" }),
           _vm._v(
-            "\n            " + _vm._s(_vm.trans.pending) + "\n            "
+            "\n            " + _vm._s(_vm.trans.under_review) + "\n            "
           ),
           _c(
             "span",
@@ -25188,7 +25209,9 @@ var render = function() {
             },
             [
               _vm._v(
-                "\n                " + _vm._s(_vm.pending) + "\n            "
+                "\n                " +
+                  _vm._s(_vm.under_review) +
+                  "\n            "
               )
             ]
           )
@@ -25203,9 +25226,11 @@ var render = function() {
           attrs: { href: "javascript:void(0)" }
         },
         [
-          _c("span", { staticClass: "bullet bullet-sm bullet-primary  mr-1" }),
+          _c("span", { staticClass: "bullet bullet-sm bullet-dark  mr-1" }),
           _vm._v(
-            "\n            " + _vm._s(_vm.trans.under_review) + "\n            "
+            "\n            " +
+              _vm._s(_vm.trans.with_shipping_company) +
+              "\n            "
           ),
           _c(
             "span",
@@ -25214,7 +25239,9 @@ var render = function() {
             },
             [
               _vm._v(
-                "\n            " + _vm._s(_vm.under_review) + "\n            "
+                "\n            " +
+                  _vm._s(_vm.with_shipping_company) +
+                  "\n            "
               )
             ]
           )
@@ -25231,14 +25258,18 @@ var render = function() {
         [
           _c("span", { staticClass: "bullet bullet-sm bullet-danger mr-1" }),
           _vm._v(
-            "\n            " + _vm._s(_vm.trans.in_stock) + "\n            "
+            "\n            " + _vm._s(_vm.trans.no_answer) + "\n            "
           ),
           _c(
             "span",
             {
               staticClass: "badge badge-light-warning badge-pill ml-auto mr-1"
             },
-            [_vm._v("\n            " + _vm._s(_vm.in_stock) + "\n            ")]
+            [
+              _vm._v(
+                "\n            " + _vm._s(_vm.no_answer) + "\n            "
+              )
+            ]
           )
         ]
       ),
@@ -25251,10 +25282,58 @@ var render = function() {
           attrs: { href: "javascript:void(0)" }
         },
         [
-          _c("span", { staticClass: "bullet bullet-sm bullet-info mr-1" }),
+          _c("span", { staticClass: "bullet bullet-sm bullet-danger mr-1" }),
+          _vm._v(
+            "\n            " + _vm._s(_vm.trans.not_serious) + "\n            "
+          ),
+          _c(
+            "span",
+            {
+              staticClass: "badge badge-light-warning badge-pill ml-auto mr-1"
+            },
+            [
+              _vm._v(
+                "\n            " + _vm._s(_vm.not_serious) + "\n            "
+              )
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass:
+            "list-group-item list-group-item-action d-flex align-items-center",
+          attrs: { href: "javascript:void(0)" }
+        },
+        [
+          _c("span", { staticClass: "bullet bullet-sm bullet-danger mr-1" }),
+          _vm._v(
+            "\n            " + _vm._s(_vm.trans.refused) + "\n            "
+          ),
+          _c(
+            "span",
+            {
+              staticClass: "badge badge-light-warning badge-pill ml-auto mr-1"
+            },
+            [_vm._v("\n            " + _vm._s(_vm.refused) + "\n            ")]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass:
+            "list-group-item list-group-item-action d-flex align-items-center",
+          attrs: { href: "javascript:void(0)" }
+        },
+        [
+          _c("span", { staticClass: "bullet bullet-sm bullet-warning mr-1" }),
           _vm._v(
             "\n            " +
-              _vm._s(_vm.trans.with_shipping_company) +
+              _vm._s(_vm.trans.returned_to_stock) +
               "\n            "
           ),
           _c(
@@ -25265,7 +25344,7 @@ var render = function() {
             [
               _vm._v(
                 "\n            " +
-                  _vm._s(_vm.with_shipping_company) +
+                  _vm._s(_vm.returned_to_stock) +
                   "\n            "
               )
             ]

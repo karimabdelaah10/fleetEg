@@ -93,7 +93,6 @@ class CartsApiController extends Controller {
 
     public function checkout(Request $request)
     {
-        return'done';
         $carts = Cart::where('user_id' ,$request->user_id)
             ->with(['innerSpecValue','specValue','product'])
             ->get();
@@ -143,11 +142,13 @@ class CartsApiController extends Controller {
     {
         $trans=OrdersEnum::ordersStatusesForSelector();
          $data =[
-             GeneralEnum::IN_STOCK => Order::where('user_id' , $user_id)->where('status' , GeneralEnum::IN_STOCK)->count(),
              GeneralEnum::UNDER_REVIEW => Order::where('user_id' , $user_id)->where('status' , GeneralEnum::UNDER_REVIEW)->count(),
-             GeneralEnum::PENDING => Order::where('user_id' , $user_id)->where('status' , GeneralEnum::PENDING)->count(),
-             GeneralEnum::DELIVERED => Order::where('user_id' , $user_id)->where('status' , GeneralEnum::DELIVERED)->count(),
              GeneralEnum::WITH_SHIPPING_COMPANY => Order::where('user_id' , $user_id)->where('status' , GeneralEnum::WITH_SHIPPING_COMPANY)->count(),
+             GeneralEnum::NO_ANSWER => Order::where('user_id' , $user_id)->where('status' , GeneralEnum::NO_ANSWER)->count(),
+             GeneralEnum::NOT_SERIOUS => Order::where('user_id' , $user_id)->where('status' , GeneralEnum::NOT_SERIOUS)->count(),
+             GeneralEnum::REFUSED => Order::where('user_id' , $user_id)->where('status' , GeneralEnum::REFUSED)->count(),
+             GeneralEnum::RETURNED_TO_STOCK => Order::where('user_id' , $user_id)->where('status' , GeneralEnum::RETURNED_TO_STOCK)->count(),
+             GeneralEnum::DELIVERED => Order::where('user_id' , $user_id)->where('status' , GeneralEnum::DELIVERED)->count(),
          ];
 
          return [

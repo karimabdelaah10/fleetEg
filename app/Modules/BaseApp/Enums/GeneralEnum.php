@@ -5,15 +5,19 @@ namespace App\Modules\BaseApp\Enums;
 abstract class GeneralEnum
 {
     const PENDING = 'pending',
-          UNDER_REVIEW='under_review',
           TRANSFORMED='transformed',
-          WITH_SHIPPING_COMPANY='with_shipping_company',
-          DELIVERED ='delivered',
           IN_STOCK='in_stock',
-          REFUSED='refused',
+
+          UNDER_REVIEW='under_review',
+          WITH_SHIPPING_COMPANY='with_shipping_company',
+          NO_ANSWER='no_answer',
           NOT_SERIOUS='not_serious',
+          REFUSED='refused',
           RETURNED_TO_STOCK='returned_to_stock',
-          NO_ANSWER='no_answer'
+          DELIVERED ='delivered'
+
+
+
     ;
 
 }

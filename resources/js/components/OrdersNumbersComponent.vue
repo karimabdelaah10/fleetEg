@@ -4,33 +4,50 @@
             <a href="javascript:void(0)"
                class="list-group-item list-group-item-action d-flex align-items-center">
                 <span class="bullet bullet-sm bullet-warning mr-1"></span>
-                {{trans.pending}}
+                {{trans.under_review}}
                 <span class="badge badge-light-warning badge-pill ml-auto mr-1">
-                    {{pending}}
+                    {{ under_review }}
                 </span>
             </a>
             <a href="javascript:void(0)"
                class="list-group-item list-group-item-action d-flex align-items-center">
-                <span class="bullet bullet-sm bullet-primary  mr-1"></span>
-                {{trans.under_review}}
+                <span class="bullet bullet-sm bullet-dark  mr-1"></span>
+                {{trans.with_shipping_company}}
                 <span class="badge badge-light-warning badge-pill ml-auto mr-1">
-                {{ under_review }}
+                {{with_shipping_company}}
                 </span>
             </a>
             <a href="javascript:void(0)"
                class="list-group-item list-group-item-action d-flex align-items-center">
                 <span class="bullet bullet-sm bullet-danger mr-1"></span>
-                {{trans.in_stock}}
+                {{trans.no_answer}}
                 <span class="badge badge-light-warning badge-pill ml-auto mr-1">
-                {{in_stock}}
+                {{no_answer}}
                 </span>
             </a>
             <a href="javascript:void(0)"
                class="list-group-item list-group-item-action d-flex align-items-center">
-                <span class="bullet bullet-sm bullet-info mr-1"></span>
-                {{trans.with_shipping_company}}
+                <span class="bullet bullet-sm bullet-danger mr-1"></span>
+                {{trans.not_serious}}
                 <span class="badge badge-light-warning badge-pill ml-auto mr-1">
-                {{with_shipping_company}}
+                {{not_serious}}
+                </span>
+            </a>
+            <a href="javascript:void(0)"
+               class="list-group-item list-group-item-action d-flex align-items-center">
+                <span class="bullet bullet-sm bullet-danger mr-1"></span>
+                {{trans.refused}}
+                <span class="badge badge-light-warning badge-pill ml-auto mr-1">
+                {{refused}}
+                </span>
+            </a>
+
+            <a href="javascript:void(0)"
+               class="list-group-item list-group-item-action d-flex align-items-center">
+                <span class="bullet bullet-sm bullet-warning mr-1"></span>
+                {{trans.returned_to_stock}}
+                <span class="badge badge-light-warning badge-pill ml-auto mr-1">
+                {{returned_to_stock}}
                 </span>
             </a>
             <a href="javascript:void(0)"
@@ -51,11 +68,14 @@
 
         data () {
             return {
-                in_stock:0,
-                with_shipping_company:0,
-                delivered:0,
-                pending:0,
                 under_review:0,
+                with_shipping_company:0,
+                no_answer:0,
+                not_serious:0,
+                refused:0,
+                returned_to_stock:0,
+                delivered:0,
+
                 trans:[],
 
             };
@@ -72,12 +92,15 @@
             getOrdersNumbers(){
                 axios.get('/api/v1/carts/orders_number/'+this.user.id)
                     .then((response)=> {
-                             this.in_stock = response.data.data.in_stock;
-                             this.under_review = response.data.data.under_review;
-                             this.pending = response.data.data.pending;
-                             this.delivered = response.data.data.delivered;
-                             this.with_shipping_company = response.data.data.with_shipping_company;
-                             this.trans = response.data.trans;
+                        this.under_review = response.data.data.under_review;
+                        this.with_shipping_company = response.data.data.with_shipping_company;
+                        this.no_answer = response.data.data.no_answer;
+                        this.not_serious = response.data.data.not_serious;
+                        this.refused = response.data.data.refused;
+                        this.returned_to_stock = response.data.data.returned_to_stock;
+                        this.delivered = response.data.data.delivered;
+
+                        this.trans = response.data.trans;
                     });
             }
         }

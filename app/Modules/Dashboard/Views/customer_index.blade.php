@@ -87,7 +87,7 @@
                                             </div>
                                             <div class="media-body my-auto">
                                                 <h4 class="font-weight-bolder mb-0">{{$numbers->total_commission}}</h4>
-                                                <p class="card-text font-small-3 mb-0">اجمالى العموالات الخاصه بك</p>
+                                                <p class="card-text font-small-3 mb-0">{{trans('app.total_user_commission')}}</p>
                                             </div>
                                         </div>
                                     </div>
