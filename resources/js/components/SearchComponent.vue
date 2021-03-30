@@ -121,8 +121,14 @@ export default {
             this.members.length =0
             let url = '/api/v1/Basic/search/' + this.searchKey + '?user_id=' + this.user.id;
             await axios.get(url).then(response => {
-                this.products = response.data.products
-                this.members = response.data.users
+                if (response.data.code === 200){
+                    this.products = response.data.data.products
+                    this.members = response.data.data.users
+                    console.log(this.members)
+                }
+                else{
+                    alert(response.data.message)
+                }
             });
         },
         async init() {

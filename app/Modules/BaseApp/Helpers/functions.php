@@ -316,7 +316,9 @@ if (! function_exists('profile_picture')) {
         if (!empty(auth()->user()) && !empty(auth()->user()->profile_picture)){
            return image(auth()->user()->profile_picture , 'large');
         }
-        return  'https://via.placeholder.com/150';
+        return  url('/images/150.PNG');
+
+//        return  'https://via.placeholder.com/150';
     }
 }
 
@@ -1027,6 +1029,18 @@ if (! function_exists('is_user')) {
     function is_user()
     {
         return auth()->user()->type == UserEnum::CUSTOMER ? true : false;
+    }
+}
+
+if (! function_exists('custome_response')) {
+    function custome_response($code , $data , $message='' , $extra =[])
+    {
+        return [
+            'code'      =>$code,
+            'data'      =>$data,
+            'message'   =>$message,
+            'extra'     =>$extra
+        ];
     }
 }
 

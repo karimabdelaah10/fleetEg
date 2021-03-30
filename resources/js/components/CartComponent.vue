@@ -102,23 +102,31 @@ import {XIcon ,ShoppingCartIcon } from "vue-feather-icons";
                 let url = '/api/v1/carts/'+user_id;
                 this.carts.length = 0
                 await axios.get(url).then(response => {
-                    this.carts = response.data.data
-                    this.trans = response.data.trans
+                    if (response.data.code === 200){
+                        this.carts = response.data.data.data
+                        this.trans = response.data.data.trans
+                    }else{
+                        alert(response.data.message)
+
+                    }
                 });
-
-
-                },
-            reload(){
+           },
+           reload(){
                this.carts.length =0;
                this.getThisUserCarts()
             },
-            async deleteProductFromCarts(product_id){
+           async deleteProductFromCarts(product_id){
                 let url = '/api/v1/carts/delete/'+product_id;
                 await axios.get(url).then(response => {
-                    this.reload()
+                    if (response.data.code === 200){
+                        this.reload()
+                    }else{
+                        alert(response.data.message)
+
+                    }
                 });
 
-            }
+            },
         }
     }
 </script>

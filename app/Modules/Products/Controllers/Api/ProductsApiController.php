@@ -25,99 +25,170 @@ class ProductsApiController extends Controller {
     }
 
     public function getFilteredProducts($user_id) {
-       $user= User::findOrFail($user_id);
-       Auth::login($user);
-     $products =  $this->model->Filtered()
-         ->whereHas('specsvalues')
-         ->with('category')
-         ->orderBy("id","DESC")
-         ->paginate(request('per_page'));
-     return new ProductsResourcePagination($products);
+        $data=[];
+        try {
+            $user= User::findOrFail($user_id);
+            Auth::login($user);
+             $products =  $this->model->Filtered()
+                 ->whereHas('specsvalues')
+                 ->with('category')
+                 ->orderBy("id","DESC")
+                 ->paginate(request('per_page'));
+                $data =new ProductsResourcePagination($products);
+                return custome_response(200 ,$data , '' ,[]);
+            }catch(\Exception $e){
+            $title = trans('app.wrong action');
+            $message = trans('app.wrong action message');
+            if (env('app_debug')){
+                $message = $e->getMessage();
+                $message .='    in '.$e->getFile();
+                $message .='    line '.$e->getLine();
+            }
+            return custome_response(500 ,$data , $title.'     '.$message ,[]);
+
+        }
     }
 
     public function favProduct(Request $request)
     {
-     $row=  Favouriteproduct::where([['product_id', $request->product_id],['user_id',$request->user_id]])->first();
-        if ($row){
-            $row->delete();
-        }else{
-            Favouriteproduct::create($request->all());
+        $data=[];
+        try {
+            $row=  Favouriteproduct::where([['product_id', $request->product_id],['user_id',$request->user_id]])->first();
+            if ($row){
+                $row->delete();
+            }else{
+                Favouriteproduct::create($request->all());
+            }
+        return custome_response(200 ,$data , '' ,[]);
+        }catch(\Exception $e) {
+            $title = trans('app.wrong action');
+            $message = trans('app.wrong action message');
+            if (env('app_debug')) {
+                $message = $e->getMessage();
+                $message .= '    in ' . $e->getFile();
+                $message .= '    line ' . $e->getLine();
+            }
+            return custome_response(500, $data, $title.'  '.$message, []);
         }
-
-        return [
-            'status' => 200,
-            'message'=>'Done'
-        ];
     }
 
     public function getFavouriteProducts($user_id)
     {
-        $user= User::findOrFail($user_id);
-        Auth::login($user);
-        $product_ids= Favouriteproduct::where('user_id', $user_id)
-            ->pluck('product_id');
-        $products =  $this->model->Filtered()
-            ->whereHas('specsvalues')
-            ->whereIn('id' ,$product_ids)
-            ->with('category')
-            ->orderBy("id","DESC")
-            ->paginate(request('per_page'));
-        return new ProductsResourcePagination($products);
+        $data=[];
+        try {
+            $user= User::findOrFail($user_id);
+            Auth::login($user);
+            $product_ids= Favouriteproduct::where('user_id', $user_id)
+                ->pluck('product_id');
+            $products =  $this->model->Filtered()
+                ->whereHas('specsvalues')
+                ->whereIn('id' ,$product_ids)
+                ->with('category')
+                ->orderBy("id","DESC")
+                ->paginate(request('per_page'));
+            $data =new ProductsResourcePagination($products);
 
+        return custome_response(200 ,$data , '' ,[]);
+        }catch(\Exception $e) {
+            $title = trans('app.wrong action');
+            $message = trans('app.wrong action message');
+            if (env('app_debug')) {
+                $message = $e->getMessage();
+                $message .= '    in ' . $e->getFile();
+                $message .= '    line ' . $e->getLine();
+            }
+            return custome_response(500, $data, $title.'  '.$message, []);
+        }
     }
 
     public function getView($product_id)
     {
-        $user= User::findOrFail(\request()->user_id);
-        Auth::login($user);
-        $product =  $this->model->findOrFail($product_id);
-        return[
-            'data' =>new ProductsResource($product),
-        ];
+        $data=[];
+        try {
+            $user= User::findOrFail(\request()->user_id);
+            Auth::login($user);
+            $product =  $this->model->findOrFail($product_id);
+            $data =new ProductsResource($product);
+
+            return custome_response(200 ,$data , '' ,[]);
+        }catch(\Exception $e) {
+            $title = trans('app.wrong action');
+            $message = trans('app.wrong action message');
+            if (env('app_debug')) {
+                $message = $e->getMessage();
+                $message .= '    in ' . $e->getFile();
+                $message .= '    line ' . $e->getLine();
+            }
+            return custome_response(500, $data, $title.'  '.$message, []);
+        }
     }
 
     public function getInnerSpecValues($parent_spec_value_id)
     {
         $data=[];
-        $specs_values_list=[];
-        $specsIds =Productspecvalue::where('parent_spec_value_id' ,$parent_spec_value_id)
-            ->where('product_id', \request()->product_id)
-            ->pluck('spec_id');
-        $specs =  Spec::whereIn('id' , $specsIds)->with('productspecsvalues')->get();
+        try {
+            $specs_values_list=[];
+            $specsIds =Productspecvalue::where('parent_spec_value_id' ,$parent_spec_value_id)
+                ->where('product_id', \request()->product_id)
+                ->pluck('spec_id');
+            $specs =  Spec::whereIn('id' , $specsIds)->with('productspecsvalues')->get();
 
-        if (!empty($specs)){
-            foreach ($specs as $spec){
-                $inner_spec_values = $spec->productspecsvalues->where('parent_spec_value_id' ,$parent_spec_value_id)->where('product_id', \request()->product_id);
-                if (!empty($inner_spec_values)){
-                    foreach ($inner_spec_values as $inner_spec_value){
-                        $spec_value_record =[
-                            'id'            => @$inner_spec_value->id,
-                            'value_id'      => @$inner_spec_value->value->id,
-                            'title'         => @$inner_spec_value->value->title,
-                            'stock'         => @$inner_spec_value->stock,
-                            'image'         =>  image(@$inner_spec_value->image , 'large') ,
-                        ];
-                        array_push($specs_values_list , $spec_value_record);
+            if (!empty($specs)){
+                foreach ($specs as $spec){
+                    $inner_spec_values = $spec->productspecsvalues->where('parent_spec_value_id' ,$parent_spec_value_id)->where('product_id', \request()->product_id);
+                    if (!empty($inner_spec_values)){
+                        foreach ($inner_spec_values as $inner_spec_value){
+                            $spec_value_record =[
+                                'id'            => @$inner_spec_value->id,
+                                'value_id'      => @$inner_spec_value->value->id,
+                                'title'         => @$inner_spec_value->value->title,
+                                'stock'         => @$inner_spec_value->stock,
+                                'image'         =>  image(@$inner_spec_value->image , 'large') ,
+                            ];
+                            array_push($specs_values_list , $spec_value_record);
+                        }
                     }
+                    $spec_record =[
+                        'id'            => $spec->id,
+                        'title'         => $spec->title,
+                        'is_active'     => $spec->is_active,
+                        'specs_values'  => $specs_values_list
+                    ];
+
+
+                    array_push($data , $spec_record);
+                    $specs_values_list=[];
                 }
-                $spec_record =[
-                    'id'            => $spec->id,
-                    'title'         => $spec->title,
-                    'is_active'     => $spec->is_active,
-                    'specs_values'  => $specs_values_list
-                ];
-
-
-                array_push($data , $spec_record);
-                $specs_values_list=[];
             }
+            return custome_response(200 ,$data , '' ,[]);
+        }catch(\Exception $e) {
+            $title = trans('app.wrong action');
+            $message = trans('app.wrong action message');
+            if (env('app_debug')) {
+                $message = $e->getMessage();
+                $message .= '    in ' . $e->getFile();
+                $message .= '    line ' . $e->getLine();
+            }
+            return custome_response(500, $data, $title.'  '.$message, []);
         }
-        return  $data;
     }
 
     public function addProductToCart(Request  $request)
     {
-        $row = Cart::create($request->all());
-        return $row;
+        $data=[];
+        try {
+            $data = Cart::create($request->all());
+            return custome_response(200 ,$data , '' ,[]);
+        }catch(\Exception $e) {
+            $title = trans('app.wrong action');
+            $message = trans('app.wrong action message');
+            if (env('app_debug')) {
+                $message = $e->getMessage();
+                $message .= '    in ' . $e->getFile();
+                $message .= '    line ' . $e->getLine();
+            }
+            return custome_response(500, $data, $title.'  '.$message, []);
+        }
+
     }
 }

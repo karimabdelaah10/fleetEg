@@ -57,13 +57,17 @@ import { MessageCircleIcon } from 'vue-feather-icons'
             getSocialUrls(){
                 axios.get('/api/v1/configs/')
                     .then((response)=> {
-                             this.facebook_url = response.data.facebook_url;
-                             this.youtube_url = response.data.youtube_url;
-                             this.email = 'mailto:'+response.data.email;
-                             this.mobile_number = 'tel:'+response.data.mobile_number;
-                             this.whatsapp_number = 'https://wa.me/'+response.data.whatsapp_number;
-                             this.messenger_url = 'https://m.me/'+response.data.messenger_url;
-
+                        if (response.data.code === 200){
+                            this.facebook_url = response.data.data.facebook_url;
+                            this.youtube_url = response.data.data.youtube_url;
+                            this.email = 'mailto:'+response.data.data.email;
+                            this.mobile_number = 'tel:'+response.data.data.mobile_number;
+                            this.whatsapp_number = 'https://wa.me/'+response.data.data.whatsapp_number;
+                            this.messenger_url = 'https://m.me/'+response.data.data.messenger_url;
+                        }
+                        else{
+                            alert(response.data.message)
+                        }
                     });
             }
         }

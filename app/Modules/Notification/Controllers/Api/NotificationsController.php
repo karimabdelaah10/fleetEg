@@ -25,48 +25,63 @@ class NotificationsController extends Controller {
         $this->model = $model;
     }
     public function getUserNotification($user_id){
-    $user = User::findOrFail($user_id);
-    Auth::login($user);
+        $data=[];
+        try {
+            $user = User::findOrFail($user_id);
+            Auth::login($user);
 
-    if ($user->getRawOriginal('type') == UserEnum::CUSTOMER){
-       $notifications = Notification::where([['to' , UserEnum::CUSTOMER] ,['user_id' , $user_id]])
-           ->orderBy('id' ,'desc')
-           ->with('user')
-           ->get();
-       $unseen = $notifications->where('seen' , 0)->count();
+            if ($user->getRawOriginal('type') == UserEnum::CUSTOMER){
+                $notifications = Notification::where([['to' , UserEnum::CUSTOMER] ,['user_id' , $user_id]])
+                    ->orderBy('id' ,'desc')
+                    ->with('user')
+                    ->get();
+                $unseen = $notifications->where('seen' , 0)->count();
 
-    }
-    else{
-        if ($user->getRawOriginal('type') == UserEnum::SUPER_ADMIN){
-            $query = Notification::where([['to' , UserEnum::ADMIN]]);
-        }elseif($user->admin_type == AdminEnum::FINANCIAL_ADMIN){
-            $query = Notification::where([['to' , UserEnum::ADMIN] ,['related_element_type' ,Moneyrequest::class]]);
-        }
-        elseif($user->admin_type == AdminEnum::PRODUCT_ADMIN){
+            }
+            else{
+                if ($user->getRawOriginal('type') == UserEnum::SUPER_ADMIN){
+                    $query = Notification::where([['to' , UserEnum::ADMIN]]);
+                }elseif($user->admin_type == AdminEnum::FINANCIAL_ADMIN){
+                    $query = Notification::where([['to' , UserEnum::ADMIN] ,['related_element_type' ,Moneyrequest::class]]);
+                }
+                elseif($user->admin_type == AdminEnum::PRODUCT_ADMIN){
 //            $productIds = $user->adminProducts->pluck('id');
 //            $query = Notification::where([['to' , UserEnum::ADMIN]
 //                ,['related_element_type' ,Moneyrequest::class]]);
+                }
+
+
+
+                $notifications =$query->orderBy('id' ,'desc')->with('user')->get();
+                $unseen = $notifications->where('seen' , 0)->count();
+            }
+            $trans =[
+                'notifications' => trans('notifications.notifications'),
+                'new_notifications' => trans('notifications.new_notifications'),
+                'read_all_notifications' => trans('notifications.read_all_notifications'),
+            ];
+
+            $data =$notifications;
+            return custome_response(200 ,$data , '' ,[
+                'unseen' =>$unseen,
+                'trans'=>$trans
+            ]);
+        }catch(\Exception $e) {
+            $title = trans('app.wrong action');
+            $message = trans('app.wrong action message');
+            if (env('app_debug')) {
+                $message = $e->getMessage();
+                $message .= '    in ' . $e->getFile();
+                $message .= '    line ' . $e->getLine();
+            }
+            return custome_response(500, $data, $title.'  '.$message, []);
         }
-
-
-
-        $notifications =$query->orderBy('id' ,'desc')->with('user')->get();
-        $unseen = $notifications->where('seen' , 0)->count();
-    }
-    $trans =[
-        'notifications' => trans('notifications.notifications'),
-        'new_notifications' => trans('notifications.new_notifications'),
-        'read_all_notifications' => trans('notifications.read_all_notifications'),
-    ];
-    return [
-        'data' =>$notifications,
-        'unseen' =>$unseen,
-        'trans'=>$trans
-    ];
     }
 
     public function deleteAllNotifications($user_id)
     {
+        $data=[];
+        try {
         $user = User::findOrFail($user_id);
         Auth::login($user);
 
@@ -76,6 +91,17 @@ class NotificationsController extends Controller {
             Notification::where(['to' , UserEnum::ADMIN])->delete();
         }
 
-        return 'done';
+
+        return custome_response(200 ,$data , '' ,[]);
+        }catch(\Exception $e) {
+            $title = trans('app.wrong action');
+            $message = trans('app.wrong action message');
+            if (env('app_debug')) {
+            $message = $e->getMessage();
+            $message .= '    in ' . $e->getFile();
+            $message .= '    line ' . $e->getLine();
+            }
+            return custome_response(500, $data, $title.'  '.$message, []);
+        }
     }
 }

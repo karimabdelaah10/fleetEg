@@ -4,9 +4,9 @@
  <div class="bs-stepper-header">
      <!-- Product Details starts -->
     <div class="step" data-target="#step-cart">
-        <toast-component
-            :data ="toastData"
-        ></toast-component>
+<!--        <toast-component-->
+<!--            :data ="toastData"-->
+<!--        ></toast-component>-->
         <button type="button" class="step-trigger">
             <span class="bs-stepper-box">
               <i data-feather="shopping-cart"
@@ -412,7 +412,12 @@
                 let url = '/api/v1/governorates/';
                 this.carts.length = 0
                 await axios.get(url).then(response => {
-                    this.governorates = response.data
+                    if (response.data.code === 200){
+                        this.governorates = response.data.data
+                    }else{
+                        this.displayToast(response.data.message.title ,
+                            response.data.message.message, '');
+                    }
                 });
             },
            async getThisUserCarts() {
@@ -420,18 +425,28 @@
                 let url = '/api/v1/carts/'+user_id;
                 this.carts.length = 0
                 await axios.get(url).then(response => {
-                    this.carts = response.data.data
-                    this.discountDetails = response.data.product_discounts_details
-                    if (this.carts.length === 0 ){
-                        location.reload()
+                    if (response.data.code === 200){
+                        this.carts = response.data.data.data
+                        this.discountDetails = response.data.data.product_discounts_details
+                        if (this.carts.length === 0 ){
+                            location.reload()
+                        }
+                    }else{
+                        this.displayToast(response.data.message.title ,
+                            response.data.message.message, '');
                     }
                 });
                 },
             async deleteProductFromCarts(product_id){
                 let url = '/api/v1/carts/delete/'+product_id;
                 await axios.get(url).then(response => {
-                    this.getThisUserCarts()
-                    this.$store.commit('incementNewOrder')
+                    if (response.data.code === 200){
+                        this.getThisUserCarts()
+                        this.$store.commit('incementNewOrder')
+                    }else{
+                        this.displayToast(response.data.message.title ,
+                            response.data.message.message, '');
+                    }
                 });
             },
 
@@ -450,14 +465,19 @@
                     total_commission :this.totalCommission,
                 };
                 await axios.post(url , data).then(response => {
-                    this.$store.commit('incementNewOrder')
-                    this.displayToast(this.row.trans.order_saved_title ,
-                        this.row.trans.order_saved_message,
-                        this.row.trans.just_now)
-                    setTimeout(() =>{
-                            location.replace("/customer-orders")
+                    if (response.data.code === 200){
+                        this.$store.commit('incementNewOrder')
+                        this.displayToast(this.row.trans.order_saved_title ,
+                            this.row.trans.order_saved_message,
+                            this.row.trans.just_now)
+                        setTimeout(() =>{
+                                location.replace("/customer-orders")
+                            }
+                            , 2000);
+                    }else{
+                        this.displayToast(response.data.message.title ,
+                            response.data.message.message, '');
                     }
-                        , 2000);
                 });
             } ,
             displayToast(title ,  message ,time){
@@ -470,8 +490,6 @@
                     $(".toast-placement .toast").toast("hide");
                 } , 3000)
             },
-
-
         }
     }
 </script>

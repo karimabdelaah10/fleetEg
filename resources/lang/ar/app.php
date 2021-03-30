@@ -9,6 +9,7 @@ return [
     'from' => 'من',
     'to' => 'الى',
     'wrong action' => 'حدث خطأ ما',
+    'wrong action message' => 'حدث خطأ ما اثناء معالجه البيانات الرجاء التواصل معنا',
     'success message' => 'تم',
     'list' => 'عرض بيانات',
     'edit'  =>'تعديل',

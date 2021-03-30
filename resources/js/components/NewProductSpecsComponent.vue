@@ -51,7 +51,12 @@
             getSpecs(){
                 axios.get('/api/v1/specs')
                     .then((response)=>{
-                        this.specs = response.data;
+                        if (response.data.code === 200){
+                            this.specs = response.data.data;
+                        }
+                        else{
+                            alert(response.data.message)
+                        }
                     })
             },
             pushNewValue:function (){

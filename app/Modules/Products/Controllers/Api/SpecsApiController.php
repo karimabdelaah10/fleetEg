@@ -4,6 +4,7 @@ namespace App\Modules\Products\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Modules\Products\Models\Category;
+use App\Modules\Products\Models\Favouriteproduct;
 use App\Modules\Products\Models\Spec;
 use App\Modules\Products\Models\Specvalue;
 use App\Modules\Products\Requests\CategoryRequest;
@@ -19,9 +20,37 @@ class SpecsApiController extends Controller {
     }
 
     public function getSpecsValues($id) {
-     return Specvalue::where('spec_id' , $id)->Active()->orderBy('id','desc')->get();
+        $data=[];
+        try {
+            $data= Specvalue::where('spec_id' , $id)->Active()->orderBy('id','desc')->get();
+
+            return custome_response(200 ,$data , '' ,[]);
+        }catch(\Exception $e) {
+            $title = trans('app.wrong action');
+            $message = trans('app.wrong action message');
+            if (env('app_debug')) {
+                $message = $e->getMessage();
+                $message .= '    in ' . $e->getFile();
+                $message .= '    line ' . $e->getLine();
+            }
+            return custome_response(500, $data, $title.'  '.$message, []);
+        }
     }
     public function index() {
-       return $this->model->Active()->orderBy('id','desc')->get();
+        $data=[];
+        try {
+            $data = $this->model->Active()->orderBy('id','desc')->get();
+            return custome_response(200 ,$data , '' ,[]);
+        }catch(\Exception $e) {
+            $title = trans('app.wrong action');
+            $message = trans('app.wrong action message');
+            if (env('app_debug')) {
+                $message = $e->getMessage();
+                $message .= '    in ' . $e->getFile();
+                $message .= '    line ' . $e->getLine();
+            }
+            return custome_response(500, $data, $title.'  '.$message, []);
+        }
+
     }
 }

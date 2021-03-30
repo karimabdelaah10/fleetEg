@@ -91,7 +91,12 @@
             getMethods(){
                 axios.get('/api/v1/payment_methods/'+this.row.user.id)
                     .then((response)=>{
-                        this.methods = response.data;
+                        if (response.data.code === 200){
+                            this.methods = response.data.data;
+                        }
+                        else{
+                            alert(response.data.message)
+                        }
                     })
             },
         }

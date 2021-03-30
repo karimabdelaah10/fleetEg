@@ -1,6 +1,9 @@
 <template>
     <div>
         <div class="content-detached content-right">
+<!--            <toast-component-->
+<!--                :data ="toastData"-->
+<!--            ></toast-component>-->
             <div class="content-body">
                 <section id="ecommerce-header">
                     <div class="row">
@@ -237,6 +240,11 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
                 selected_price:'all',
                 selected_category:'all',
                 search_key:'',
+                toastData:{
+                    title:null,
+                    message:null,
+                    time:null
+                },
             };
         },
         components: {
@@ -272,13 +280,30 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
                     '&selected_price='+this.selected_price+
                     '&selected_category='+this.selected_category+
                     '&search_key='+this.search_key;
-                console.log(this.products.length)
                 await axios.get(url).then(response => {
-                            this.products.push(...response.data.data);
-                            this.pagination =response.data.pagination
-                            this.resultsCount = this.pagination.total
-                            this.last_page = this.pagination.last_page
-                        });
+                    if (response.data.code === 200){
+                        this.products.push(...response.data.data.data);
+                        this.pagination =response.data.data.pagination
+                        this.resultsCount = this.pagination.total
+                        this.last_page = this.pagination.last_page
+                    }else{
+                        console.log( )
+                        this.displayToast(response.data.message.title ,
+                            response.data.message.message
+                            , '');
+                    }
+                });
+            },
+            displayToast(title ,  message ,time){
+                this.toastData.title = title
+                this.toastData.time = time
+                this.toastData.message = message
+
+                $(".toast-placement .toast").toast("show");
+
+                setTimeout(()=>{
+                    $(".toast-placement .toast").toast("hide");
+                } , 3000)
             },
             handleScrolledToBottom(isVisible){
                 if (!isVisible) { return }
@@ -293,8 +318,10 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
                 };
                 await axios.post('/api/v1/products/fav' ,data)
                     .then(response => {
-                        if (response.data.status === 200){
+                        if (response.data.code === 200){
                             item.is_favourite = !item.is_favourite;
+                        }else{
+                                                   alert(response.data.message)
                         }
                     });
             }

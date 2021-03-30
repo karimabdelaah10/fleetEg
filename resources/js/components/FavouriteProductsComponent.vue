@@ -199,10 +199,16 @@ export default {
                 '&selected_category='+this.selected_category+
                 '&search_key='+this.search_key;
             await axios.get(url).then(response => {
-                this.products.push(...response.data.data);
-                this.pagination =response.data.pagination
-                this.resultsCount = this.pagination.total
-                this.last_page = this.pagination.last_page
+                if (response.data.code === 200){
+                    this.products.push(...response.data.data);
+                    this.pagination =response.data.pagination
+                    this.resultsCount = this.pagination.total
+                    this.last_page = this.pagination.last_page
+
+                }
+                else{
+                    alert(response.data.message)
+                }
             });
         },
         handleScrolledToBottom(isVisible){
@@ -218,8 +224,11 @@ export default {
             };
             await axios.post('/api/v1/products/fav' ,data)
                 .then(response => {
-                    if (response.data.status === 200){
+                    if (response.data.code === 200){
                         item.is_favourite = !item.is_favourite;
+                    }
+                    else{
+                        alert(response.data.message)
                     }
                 });
         }

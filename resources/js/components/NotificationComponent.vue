@@ -76,16 +76,26 @@ export default {
              let url = '/api/v1/notifications/'+user_id;
              this.notifications.length = 0
              await axios.get(url).then(response => {
-                 this.notifications = response.data.data
-                 this.unseen = response.data.unseen
-                 this.trans = response.data.trans
+                 if (response.data.code === 200){
+                     this.notifications = response.data.data
+                     this.unseen = response.data.extra.unseen
+                     this.trans = response.data.extra.trans
+                 }
+                 else{
+                     alert(response.data.message)
+                 }
+
              });
              },
          async deleteAllNotifications(){
              let user_id =this.user.id;
              let url = '/api/v1/notifications/delete/'+user_id;
              await axios.get(url).then(response => {
-                 this.getThisUserNotifications()
+                 if (response.data.code === 200){
+                     this.getThisUserNotifications()
+                 }else{
+                     alert(response.data.message)
+                 }
              });
 
          }

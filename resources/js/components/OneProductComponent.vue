@@ -3,9 +3,9 @@
 <!-- app e-commerce details start -->
 <section class="app-ecommerce-details">
   <div class="card">
-      <toast-component
-          :data ="toastData"
-      ></toast-component>
+<!--      <toast-component-->
+<!--          :data ="toastData"-->
+<!--      ></toast-component>-->
       <!-- Product Details starts -->
     <div class="card-body">
         <div class="row my-2">
@@ -270,8 +270,12 @@ import NumberInputSpinner from 'vue-number-input-spinner'
       async fetch () {
                 let url = '/api/v1/products/view/'+ this.row.product.id+'?user_id='+this.row.user.id;
                await axios.get(url).then(response => {
-                   this.product = response.data.data;
-                   this.image = this.product.image;
+                   if (response.data.code === 200){
+                       this.product = response.data.data;
+                       this.image = this.product.image;
+                   }else{
+                       alert(response.data.message)
+                   }
                });
             },
       async toggleFavProduct(item){
@@ -281,8 +285,10 @@ import NumberInputSpinner from 'vue-number-input-spinner'
                 };
                 await axios.post('/api/v1/products/fav' ,data)
                     .then(response => {
-                        if (response.data.status === 200){
+                        if (response.data.code === 200){
                             item.is_favourite = !item.is_favourite;
+                        }else{
+                           alert(response.data.message)
                         }
                     });
             },
@@ -291,21 +297,25 @@ import NumberInputSpinner from 'vue-number-input-spinner'
                 let newStock = '#';
                 let url = '/api/v1/products/inner-spec-values/'+specValue.pivot_id+'?product_id='+this.product.id;
                 await axios.get(url).then(response => {
-                    this.inner_specs_values = response.data;
-                    this.selectdData.spec_value_id =specValue.id;
-                    this.selectdData.inner_spec_value_id =null;
+                    if (response.data.code === 200){
+                        this.inner_specs_values = response.data;
+                        this.selectdData.spec_value_id =specValue.id;
+                        this.selectdData.inner_spec_value_id =null;
                         if (this.inner_specs_values.length === 0){
                             this.addToCaryBtn = true;
-                             newImage = specValue.image;
-                             newStock = specValue.stock;
-                        }else{
+                            newImage = specValue.image;
+                            newStock = specValue.stock;
+                        }
+                        else{
                             this.addToCaryBtn = false;
 
                             newImage = specValue.image;
                             newStock = '#';
                         }
-                    this.toggleImageAndStock(newImage , newStock);
-
+                        this.toggleImageAndStock(newImage , newStock);
+                    }else{
+                        alert(response.data.message)
+                    }
                 });
 
             },
@@ -328,11 +338,15 @@ import NumberInputSpinner from 'vue-number-input-spinner'
                  // console.log(this.selectdData)
                  let url = '/api/v1/products/add-to-cart/';
                  await axios.post(url , this.selectdData).then(response => {
-                     this.displayToast(this.row.trans.product_added_to_cart_title ,
-                         this.row.trans.product_added_to_cart_message,
-                         this.row.trans.just_now)
-                     this.$store.commit('incementNewOrder')
-                     this.resetSelectedData();
+                     if (response.data.code === 200){
+                         this.displayToast(this.row.trans.product_added_to_cart_title ,
+                             this.row.trans.product_added_to_cart_message,
+                             this.row.trans.just_now)
+                         this.$store.commit('incementNewOrder')
+                         this.resetSelectedData();
+                     }else{
+                         alert(response.data.message)
+                     }
                  });
             },
             getCommissionMax(){

@@ -128,7 +128,15 @@
                                                 {{$errors->first('password')}}
                                             </span>
                                     @endif
-
+                                    @if($errors->has('user_inactive') || $errors->has('user_inactive'))
+                                        <div class="form-group">
+                                            @foreach ($errors->get('user_inactive') as $message)
+                                                <span class="text-danger">
+                                                    {{$message}}
+                                            </span>
+                                            @endforeach
+                                        </div>
+                                    @endif
                                     <button class="btn btn-primary btn-block" tabindex="5">تسجيل البيانات</button>
                                 </form>
                                 <p class="text-center mt-2">

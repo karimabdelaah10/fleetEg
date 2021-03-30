@@ -52,7 +52,7 @@ class User extends Authenticatable
         if (!empty($value)){
             return image($value , 'large');
         }
-        return  'https://via.placeholder.com/150';
+        return  url('/images/150.PNG');
     }
     public function gettypeAttribute($value)
     {

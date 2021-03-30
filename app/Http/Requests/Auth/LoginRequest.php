@@ -64,7 +64,6 @@ class LoginRequest extends FormRequest
             Auth::logout();
             throw ValidationException::withMessages([
                 'user_inactive' => __('auth.user_inactive'),
-
             ]);
         }
         $config = Config::where('title' , ConfigsEnum::AUTO_REGISTER)->first();

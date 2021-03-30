@@ -33,7 +33,10 @@ import { StarIcon } from 'vue-feather-icons'
                 $(event.target).attr('fill' ,'true')
                 await axios.get('/api/v1/payment_methods/update_default/'+method_id)
                     .then((response)=>{
-                        console.log(response);
+                        if (response.data.code === 200){}
+                        else{
+                            alert(response.data.message)
+                        }
                     })
             },
         }
