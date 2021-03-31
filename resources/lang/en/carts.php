@@ -2,6 +2,8 @@
 
 return [
 
-   'my_carts'=>'عربه التسوق الخاصه بى',
+   'my_carts'=>'Your Cart',
+   'total'=>'Total Price',
+   'checkout'=>'Checkout',
    ''=>''
 ];

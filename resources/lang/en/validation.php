@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Validation Language Lines
@@ -146,7 +145,15 @@ return [
     | of "email". This simply helps us make our message more expressive.
     |
     */
-
-    'attributes' => [],
-
+    'attributes' => [
+        'old_password'  => 'Old Password',
+        'password'      => 'Password',
+        'mobile_number' =>'Mobile Number',
+        'email'         =>'Email',
+        'name'          => 'Name',
+        'image'         =>'Image',
+        'shipping_coast'=>'Shipping Coast',
+        'spec_id'       =>'Spec',
+        'spec_value_id' =>'Spec Value',
+    ],
 ];
