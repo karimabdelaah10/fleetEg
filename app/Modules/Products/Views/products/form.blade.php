@@ -37,18 +37,19 @@
 @include('BaseApp::form.input',[
     'name'=>'price',
      'value'=> $row->price ?? null,
-     'type'=>'text',
+     'type'=>'number',
      'attributes'=>[
          'id'=>'price',
          'class'=>'form-control',
      'label'=>trans('products.price'),
      'placeholder'=>trans('products.price'),
-     'required'=>1]
+     'required'=>1,
+     'min'=>1]
      ])
 @include('BaseApp::form.input',[
     'name'=>'commission',
      'value'=> $row->commission ?? null,
-     'type'=>'text',
+     'type'=>'number',
      'attributes'=>[
          'id'=>'commission',
          'class'=>'form-control',

@@ -8,7 +8,7 @@
 
 @include('BaseApp::form.input',['name'=>'mobile_number',
      'value'=> $row->mobile_number ?? null,
-     'type'=>'text','attributes'=>['id'=>'mobile_number','class'=>'form-control',
+     'type'=>'number','attributes'=>['id'=>'mobile_number','class'=>'form-control',
      'label'=>trans('user.mobile_number'),
      'placeholder'=>trans('user.mobile_number'),
      'required'=>1]
@@ -57,7 +57,8 @@
             'id'=>'admin_type',
             'class'=>'form-control',
             'label'=>trans('admin.admin_type'),
-            'placeholder'=>trans('admin.admin_type')
+            'placeholder'=>trans('admin.admin_type'),
+            'required'=>1
         ]
     ])
 

@@ -13,7 +13,8 @@ abstract class AdminEnum
     public static function adminsTypes()
     {
         return [self::PRODUCT_ADMIN, self::FINANCIAL_ADMIN ];
-    }    public static function usersTypesForSelector()
+    }
+    public static function usersTypesForSelector()
     {
         return [
             self::PRODUCT_ADMIN  => trans('admin.'.self::PRODUCT_ADMIN),

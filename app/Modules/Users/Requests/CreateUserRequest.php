@@ -2,12 +2,12 @@
 
 namespace App\Modules\Users\Requests;
 
+use App\Modules\Users\Enums\AdminEnum;
 use App\Modules\Users\Enums\CustomersEnum;
 use App\Rules\Mobile;
 use Carbon\Carbon;
 use App\Modules\Users\User;
 use Illuminate\Validation\Rule;
-use App\Modules\Users\UserEnums;
 use Illuminate\Support\Facades\Auth;
 use App\Modules\BaseApp\Requests\BaseAppRequest;
 
@@ -28,6 +28,7 @@ class CreateUserRequest extends BaseAppRequest
             'mobile_number' => 'required|string|max:255|unique:users',
             'password' => 'required|string|confirmed|min:8',
             'profile_picture'=>'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'admin_type'=>'required',Rule::in(AdminEnum::adminsTypes())
         ];
     }
 

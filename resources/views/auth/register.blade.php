@@ -78,7 +78,7 @@
                                         <label class="form-label" for="register-email"> رقم الهاتف</label>
                                         <input class="form-control"
                                                id="mobile_number"
-                                               type="text"
+                                               type="number"
                                                name="mobile_number"
                                                value="{{old('mobile_number')}}"
                                                placeholder="010xxxxxxxx"
