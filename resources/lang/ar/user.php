@@ -28,6 +28,7 @@ return [
     'list one order' => 'عرض بيانات الطلب',
     'available_balance'=>'الرصيد المتاح للتصفيه',
     'your_numbers' =>'الارقام الاحصائيه الخاصه بك',
+    'admin_numbers' =>'الارقام الاحصائية',
 
     ''=>''
 ];

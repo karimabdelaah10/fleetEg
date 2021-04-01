@@ -28,6 +28,7 @@ return [
     'list one order' => 'List One Order',
     'available_balance'=>'Available Balance',
     'your_numbers' =>'Your Numbers',
+    'admin_numbers' =>'Statistics Numbers',
 
     ''=>''
 ];

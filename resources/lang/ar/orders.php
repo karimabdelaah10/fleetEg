@@ -36,6 +36,7 @@ return [
     'shipping_number'=>'رقم بوليسه الشحن',
     'delivered_orders_count'=>'عدد الطلبات التى تم تسليمها',
     'pending_orders_count'=>'عدد الطلبات قيد الانتظار ',
+    'under_review_orders'=>'عدد الطلبات قيد المراجعه ',
 
     'check_out_page_title'=>' صفحه تنفيذ الطلب',
     'cart'=>'سله الطلبات',

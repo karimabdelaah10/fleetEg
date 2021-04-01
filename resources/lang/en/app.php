@@ -80,5 +80,7 @@ return [
     'insufficient balance'=>'Insufficient Balance',
     'favourite products count'=>'Favourite Products Count',
     'just_now'=>'Just Now',
+    'welcome'=>'Welcome ',
+    'list orders'=>'list all orders',
     ''=>''
 ];

@@ -80,5 +80,7 @@ return [
     'insufficient balance'=>'رصيدك الحالى غير كاف',
     'favourite products count'=>'عدد المنتجات المفضله لك',
     'just_now'=>'حالا',
+    'welcome'=>'اهلا ',
+    'list orders'=>'متابعه الطلبات من هنا',
     ''=>''
 ];

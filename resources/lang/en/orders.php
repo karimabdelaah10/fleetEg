@@ -36,6 +36,7 @@ return [
     'shipping_number'=>'Shipping Number',
     'delivered_orders_count'=>'Delivered Orders Count',
     'pending_orders_count'=>'Pending Orders Count',
+    'under_review_orders'=>'Under review orders count',
 
     'check_out_page_title'=>'CheckOut Page',
     'cart'=>'Cart',

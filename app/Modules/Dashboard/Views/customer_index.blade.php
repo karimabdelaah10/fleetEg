@@ -13,7 +13,7 @@
                     <div class="col-xl-4 col-md-6 col-12">
                         <div class="card card-congratulation-medal">
                             <div class="card-body">
-                                <p>اهلا 🎉 {{auth()->user()->name}} ! </p>
+                                <p>{{trans('app.welcome')}}  {{auth()->user()->name}}  🎉 !! </p>
                                 <h3 class="mb-75 mt-2 pt-50">
                                     {{trans('user.available_balance')}}
                                     <a href="javascript:void(0);">
@@ -60,8 +60,8 @@
                                                 </div>
                                             </div>
                                             <div class="media-body my-auto">
-                                                <h4 class="font-weight-bolder mb-0">{{$numbers->pending_orders}}</h4>
-                                                <p class="card-text font-small-3 mb-0">{{trans('orders.pending_orders_count')}}</p>
+                                                <h4 class="font-weight-bolder mb-0">{{$numbers->delivered_orders}}</h4>
+                                                <p class="card-text font-small-3 mb-0">{{trans('orders.delivered_orders_count')}}</p>
                                             </div>
                                         </div>
                                     </div>
