@@ -412,6 +412,7 @@
                 let url = '/api/v1/governorates/';
                 this.carts.length = 0
                 await axios.get(url).then(response => {
+                    console.log(response)
                     if (response.data.code === 200){
                         this.governorates = response.data.data
                     }else{

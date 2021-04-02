@@ -298,17 +298,16 @@ import NumberInputSpinner from 'vue-number-input-spinner'
                 let url = '/api/v1/products/inner-spec-values/'+specValue.pivot_id+'?product_id='+this.product.id;
                 await axios.get(url).then(response => {
                     if (response.data.code === 200){
-                        this.inner_specs_values = response.data;
+                        this.inner_specs_values = response.data.data;
                         this.selectdData.spec_value_id =specValue.id;
                         this.selectdData.inner_spec_value_id =null;
-                        if (this.inner_specs_values.length === 0){
+                       if (this.inner_specs_values.length === 0){
                             this.addToCaryBtn = true;
                             newImage = specValue.image;
                             newStock = specValue.stock;
                         }
                         else{
                             this.addToCaryBtn = false;
-
                             newImage = specValue.image;
                             newStock = '#';
                         }

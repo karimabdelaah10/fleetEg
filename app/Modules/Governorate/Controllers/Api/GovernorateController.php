@@ -18,7 +18,10 @@ class GovernorateController extends Controller {
     }
 
     public function getIndex() {
-        return  $this->model->Active()->orderBy('id' , 'desc')->get();
-        }
+        $data=[];
+        $data =  $this->model->Active()->orderBy('id' , 'desc')->get();
+
+        return custome_response(200 , $data , '' , []);
+    }
 
 }
