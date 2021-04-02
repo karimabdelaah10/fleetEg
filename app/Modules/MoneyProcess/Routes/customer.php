@@ -9,7 +9,7 @@ Route::group([
         Route::get('/', 'Customer\MoneyRequestsController@getIndex');
 
         Route::get('/create-request/', 'Customer\MoneyRequestsController@getCreate');
-        Route::put('/create-request/', 'Customer\MoneyRequestsController@postCreate');
+        Route::post('/create-request/', 'Customer\MoneyRequestsController@postCreate');
 
         Route::get('/edit/{id}', 'Customer\MoneyRequestsController@getEdit');
         Route::post('/edit/{id}', 'Customer\MoneyRequestsController@postEdit');

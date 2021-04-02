@@ -88,7 +88,7 @@ class NotificationsController extends Controller {
         if ($user->getRawOriginal('type') == UserEnum::CUSTOMER){
             Notification::where([['to' , UserEnum::CUSTOMER] ,['user_id' , $user_id]])->delete();
         }else{
-            Notification::where(['to' , UserEnum::ADMIN])->delete();
+            Notification::where('to' , UserEnum::ADMIN)->delete();
         }
 
 

@@ -16,7 +16,6 @@
         </div>
         <div class="modal-body flex-grow-1">
             @include($views.'.form',$row)
-            <product-discount :row="{{ $row }}"></product-discount>
             <button type="submit" class="btn btn-primary data-submit mr-1">{{trans('app.save')}}</button>
                 <button type="reset" class="btn btn-outline-secondary" data-dismiss="modal">{{trans('app.cancel')}}</button>
 

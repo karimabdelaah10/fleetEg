@@ -21,5 +21,5 @@
          'class'=>'form-control',
      'label'=>trans('orders.shipping_number'),
      'placeholder'=>trans('orders.shipping_number'),
-     'required'=>0]
+     ]
      ])

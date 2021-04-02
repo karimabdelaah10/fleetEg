@@ -54,7 +54,7 @@
 {{--                                    </div>--}}
 {{--                                </div>--}}
                                 <div class="row mt-1">
-                                    <div class="mb-2 col-3">
+                                    <div class="mb-2 col-2">
                                         <select class="form-control" name="status" id="add-type">
                                             <option @if(!request()->status) selected @endif disabled>{{trans('orders.status')}}</option>
                                             @forelse(\App\Modules\Products\Enums\OrdersEnum::ordersStatusesForSelector() as $key =>$val)
@@ -84,8 +84,8 @@
                                             value="{{request()->to}}"
                                         />
                                     </div>
-                                    <div class="mb-2 col-2">
-                                        <button type="submit" class="btn btn-primary data-submit mr-1">{{trans('app.filter')}}</button>
+                                    <div class="mb-2 col-3">
+                                        <button type="submit" class="btn btn-primary data-submit">{{trans('app.filter')}}</button>
                                         <a href="{{$module_url}}" type="reset" class="btn btn-outline-secondary">{{trans('app.cancel')}}</a>
                                     </div>
 

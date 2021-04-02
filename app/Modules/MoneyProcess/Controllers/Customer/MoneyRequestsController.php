@@ -76,8 +76,8 @@ class MoneyRequestsController extends Controller {
             $to= UserEnum::ADMIN;
             $related_element_id = $row->id;
             $related_element_type = Moneyrequest::class;
-            create_new_notification($description , $to , null ,$related_element_id ,$related_element_type);
-            flash(trans('app.update successfully'))->success();
+            create_new_notification($description , $to , auth()->id() ,$related_element_id ,$related_element_type);
+            flash(trans('app.created successfully'))->success();
             return redirect($this->module_url);
         }
     }
@@ -110,7 +110,7 @@ class MoneyRequestsController extends Controller {
             $to= UserEnum::ADMIN;
             $related_element_id = $row->id;
             $related_element_type = Moneyrequest::class;
-            create_new_notification($description , $to , null ,$related_element_id ,$related_element_type);
+            create_new_notification($description , $to , auth()->id() ,$related_element_id ,$related_element_type);
 
             flash(trans('app.update successfully'))->success();
             return redirect($this->module_url);
