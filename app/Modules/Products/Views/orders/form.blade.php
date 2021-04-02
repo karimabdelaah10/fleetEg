@@ -15,7 +15,7 @@
 @include('BaseApp::form.input',[
     'name'=>'shipping_number',
      'value'=> $row->shipping_number ?? null,
-     'type'=>'text',
+     'type'=>'number',
      'attributes'=>[
          'id'=>'shipping_number',
          'class'=>'form-control',
