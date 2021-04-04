@@ -19,7 +19,7 @@ class ConfigApiController
         catch(\Exception $e) {
             $title = trans('app.wrong action');
             $message = trans('app.wrong action message');
-            if (env('app_debug')) {
+            if (env('APP_DEBUG')) {
                 $message = $e->getMessage();
                 $message .= '    in ' . $e->getFile();
                 $message .= '    line ' . $e->getLine();
