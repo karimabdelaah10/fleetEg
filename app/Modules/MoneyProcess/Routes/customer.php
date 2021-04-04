@@ -21,7 +21,7 @@ Route::group([
     Route::group(['prefix' => 'customer-payment-methods' , 'as' => 'customer-payment-methods.'], function () {
         Route::get('/', 'Customer\PaymentMethodsController@getIndex');
         Route::get('/create/', 'Customer\PaymentMethodsController@getCreate');
-        Route::put('/create/', 'Customer\PaymentMethodsController@postCreate');
+        Route::post('/create/', 'Customer\PaymentMethodsController@postCreate');
 
         Route::get('/edit/{id}', 'Customer\PaymentMethodsController@getEdit');
         Route::post('/edit/{id}', 'Customer\PaymentMethodsController@postEdit');
