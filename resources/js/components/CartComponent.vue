@@ -106,7 +106,7 @@ import {XIcon ,ShoppingCartIcon } from "vue-feather-icons";
                         this.carts = response.data.data.data
                         this.trans = response.data.data.trans
                     }else{
-                        alert(response.data.message)
+                        alert(response.data.message);console.log(response.data.message)
 
                     }
                 });
@@ -121,7 +121,7 @@ import {XIcon ,ShoppingCartIcon } from "vue-feather-icons";
                     if (response.data.code === 200){
                         this.reload()
                     }else{
-                        alert(response.data.message)
+                        alert(response.data.message);console.log(response.data.message)
 
                     }
                 });

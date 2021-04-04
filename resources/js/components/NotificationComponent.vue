@@ -82,7 +82,7 @@ export default {
                      this.trans = response.data.extra.trans
                  }
                  else{
-                     alert(response.data.message)
+                     alert(response.data.message);console.log(response.data.message)
                  }
 
              });
@@ -94,7 +94,7 @@ export default {
                  if (response.data.code === 200){
                      this.getThisUserNotifications()
                  }else{
-                     alert(response.data.message)
+                     alert(response.data.message);console.log(response.data.message)
                  }
              });
 

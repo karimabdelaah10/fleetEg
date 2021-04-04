@@ -207,7 +207,7 @@ export default {
 
                 }
                 else{
-                    alert(response.data.message)
+                    alert(response.data.message);console.log(response.data.message)
                 }
             });
         },
@@ -228,7 +228,7 @@ export default {
                         item.is_favourite = !item.is_favourite;
                     }
                     else{
-                        alert(response.data.message)
+                        alert(response.data.message);console.log(response.data.message)
                     }
                 });
         }

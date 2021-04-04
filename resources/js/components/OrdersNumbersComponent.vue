@@ -107,7 +107,7 @@
 
                             this.trans = response.data.extra.trans;
                         }else{
-                            alert(response.data.message)
+                            alert(response.data.message);console.log(response.data.message)
                         }
                     });
             },

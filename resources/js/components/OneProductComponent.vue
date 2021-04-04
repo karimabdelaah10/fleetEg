@@ -274,7 +274,7 @@ import NumberInputSpinner from 'vue-number-input-spinner'
                        this.product = response.data.data;
                        this.image = this.product.image;
                    }else{
-                       alert(response.data.message)
+                       alert(response.data.message);console.log(response.data.message)
                    }
                });
             },
@@ -288,7 +288,7 @@ import NumberInputSpinner from 'vue-number-input-spinner'
                         if (response.data.code === 200){
                             item.is_favourite = !item.is_favourite;
                         }else{
-                           alert(response.data.message)
+                           alert(response.data.message);console.log(response.data.message)
                         }
                     });
             },
@@ -313,7 +313,7 @@ import NumberInputSpinner from 'vue-number-input-spinner'
                         }
                         this.toggleImageAndStock(newImage , newStock);
                     }else{
-                        alert(response.data.message)
+                        alert(response.data.message);console.log(response.data.message)
                     }
                 });
 
@@ -344,7 +344,7 @@ import NumberInputSpinner from 'vue-number-input-spinner'
                          this.$store.commit('incementNewOrder')
                          this.resetSelectedData();
                      }else{
-                         alert(response.data.message)
+                         alert(response.data.message);console.log(response.data.message)
                      }
                  });
             },

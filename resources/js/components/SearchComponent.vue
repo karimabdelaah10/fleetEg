@@ -127,7 +127,7 @@ export default {
                     console.log(this.members)
                 }
                 else{
-                    alert(response.data.message)
+                    alert(response.data.message);console.log(response.data.message)
                 }
             });
         },

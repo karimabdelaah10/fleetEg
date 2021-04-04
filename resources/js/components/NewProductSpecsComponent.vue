@@ -55,7 +55,7 @@
                             this.specs = response.data.data;
                         }
                         else{
-                            alert(response.data.message)
+                            alert(response.data.message);console.log(response.data.message)
                         }
                     })
             },

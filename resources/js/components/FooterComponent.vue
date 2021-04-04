@@ -66,7 +66,7 @@ import { MessageCircleIcon } from 'vue-feather-icons'
                             this.messenger_url = 'https://m.me/'+response.data.data.messenger_url;
                         }
                         else{
-                            alert(response.data.message)
+                            alert(response.data.message);console.log(response.data.message)
                         }
                     });
             }

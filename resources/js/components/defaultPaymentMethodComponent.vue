@@ -35,7 +35,7 @@ import { StarIcon } from 'vue-feather-icons'
                     .then((response)=>{
                         if (response.data.code === 200){}
                         else{
-                            alert(response.data.message)
+                            alert(response.data.message);console.log(response.data.message)
                         }
                     })
             },

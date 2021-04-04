@@ -321,7 +321,7 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
                         if (response.data.code === 200){
                             item.is_favourite = !item.is_favourite;
                         }else{
-                                                   alert(response.data.message)
+                                                   alert(response.data.message);console.log(response.data.message)
                         }
                     });
             }
