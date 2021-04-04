@@ -375,19 +375,19 @@
         computed: {
             total: function () {
                 return this.carts.reduce(function (total, item) {
-                    return total + item.price;
+                    return parseInt(total) + parseInt(item.price);
                 }, 0);
             },
             totalCommission: function () {
                 return this.carts.reduce(function (totalCommission, item) {
-                    return totalCommission + item.commission;
+                    return parseInt(totalCommission) + parseInt(item.commission);
                 }, 0);
             },
             totalPrice:function (){
               let totalDiscount = this.discountDetails.reduce(function (sum, item) {
-                    return sum + item.discount;
+                    return parseInt(sum) + parseInt(item.discount);
                 }, 0);
-              return     this.total - totalDiscount + this.shippingCoast;
+              return     parseInt(this.total) - parseInt(totalDiscount) + parseInt(this.shippingCoast);
             },
             checkOutBtnDisables:function (){
                 if( this.selectedData.customer_name &&
