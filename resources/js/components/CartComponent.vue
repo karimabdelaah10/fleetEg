@@ -24,10 +24,13 @@
                 <li class="scrollable-container media-list">
                     <div v-for="(item , index) in carts" :key="index"
                          class="media align-items-center">
-                        <img alt="donuts"
-                           class="d-block rounded mr-1"
-                           :src="item.image"
-                           width="62">
+                        <div class="avatar m-1">
+                            <img alt="avatar"
+                                 height="32"
+                                 :src="item.image"
+                                 width="32">
+                        </div>
+
                         <div class="media-body">
                             <div class="media-heading">
                                 <h6 class="cart-item-title">
@@ -47,7 +50,6 @@
                         </div>
                     </div>
                 </li>
-                <br>
                 <br>
                 <li class="dropdown-menu-footer">
                     <div class="d-flex justify-content-between mb-1">
