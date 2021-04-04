@@ -24,7 +24,7 @@ import { StarIcon } from 'vue-feather-icons'
 
         created() {
             if (this.row.default === 1){
-                this.defaultFlag = true
+                this.defaultFlag = 'true'
             }
         },
         methods:{
