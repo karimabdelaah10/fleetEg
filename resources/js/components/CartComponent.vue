@@ -87,7 +87,7 @@ import {XIcon ,ShoppingCartIcon } from "vue-feather-icons";
         computed: {
             total: function () {
                 return this.carts.reduce(function (total, item) {
-                    return total + item.price;
+                    return parseInt(total) + parseInt(item.price);
                 }, 0);
             },
             newOrder:function (){
