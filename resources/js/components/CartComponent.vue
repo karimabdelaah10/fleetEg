@@ -47,6 +47,8 @@
                         </div>
                     </div>
                 </li>
+                <br>
+                <br>
                 <li class="dropdown-menu-footer">
                     <div class="d-flex justify-content-between mb-1">
                         <h6 class="font-weight-bolder mb-0">{{trans.total}}:</h6>
