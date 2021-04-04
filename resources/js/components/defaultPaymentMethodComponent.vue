@@ -1,6 +1,11 @@
 <template>
     <div>
-        <star-icon size="1.5x"  v-on:click="updateDefaultMethod(row.id , $event)" :fill="defaultFlag" class="custom-class"></star-icon>
+        <star-icon size="1.5x"
+                   v-on:click="updateDefaultMethod(row.id , $event)"
+                   :fill="defaultFlag"
+                   class="custom-class">
+
+        </star-icon>
     </div>
 
 </template>
@@ -23,8 +28,13 @@ import { StarIcon } from 'vue-feather-icons'
         props: ['row'],
 
         created() {
-            if (this.row.default === 1){
+            console.log('row.default === '+this.row.default)
+            if (this.row.default == 1){
                 this.defaultFlag = 'true'
+                console.log('defaultFlag === '+this.defaultFlag)
+            }else {
+                this.defaultFlag = 'none'
+                console.log('defaultFlag === '+this.defaultFlag)
             }
         },
         methods:{
