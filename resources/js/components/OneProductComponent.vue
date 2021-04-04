@@ -335,7 +335,7 @@ import NumberInputSpinner from 'vue-number-input-spinner'
                  this.selectdData.image = this.image
                  this.selectdData.user_id = this.row.user.id
                  // console.log(this.selectdData)
-                 let url = '/api/v1/products/add-to-cart/';
+                 let url = '/api/v1/products/add-to-cart';
                  await axios.post(url , this.selectdData).then(response => {
                      if (response.data.code === 200){
                          this.displayToast(this.row.trans.product_added_to_cart_title ,

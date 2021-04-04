@@ -18,5 +18,4 @@ Route::group([
     Route::get('/get-favourite-products/{user_id}', 'Api\ProductsApiController@getFavouriteProducts');
     Route::post('/fav', 'Api\ProductsApiController@favProduct');
     Route::post('/add-to-cart/', 'Api\ProductsApiController@addProductToCart');
-    Route::get('/add-to-cart/', 'Api\ProductsApiController@addProductToCart');
 });
