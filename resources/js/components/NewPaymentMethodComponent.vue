@@ -30,7 +30,7 @@
                                :placeholder="row.trans.bank_account_number"
                                required="required"
                                name="bank_account_number"
-                               type="text"
+                               type="number"
                                class="form-control col-sm-10">
                 </div>
             </div>
@@ -46,7 +46,7 @@
                                :placeholder="row.trans.e_wallet_number"
                                required="required"
                                name="e_wallet_number"
-                               type="text"
+                               type="number"
                                class="form-control col-sm-10">
                 </div>
             </div>
@@ -62,7 +62,7 @@
                                :placeholder="row.trans.national_id"
                                required="required"
                                name="national_id"
-                               type="text"
+                               type="number"
                                class="form-control col-sm-10">
                 </div>
             </div>
