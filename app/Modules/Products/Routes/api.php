@@ -17,5 +17,5 @@ Route::group([
     Route::get('/inner-spec-values/{parent_spec_value_id}', 'Api\ProductsApiController@getInnerSpecValues');
     Route::get('/get-favourite-products/{user_id}', 'Api\ProductsApiController@getFavouriteProducts');
     Route::post('/fav', 'Api\ProductsApiController@favProduct');
-    Route::post('/add-to-cart/', 'Api\ProductsApiController@addProductToCart');
+    Route::post('/add-to-cart', 'Api\ProductsApiController@addProductToCart');
 });

@@ -20,9 +20,9 @@ class OrdersImport implements ToModel,WithHeadingRow
     */
     public function model(array $row)
     {
-
+        $adminIds = get_product_admin_orders()->toArray();
         if (!empty($row['id'])){
-            if (in_array($row['row'] ,get_product_admin_orders())){
+            if (in_array($row['id'] ,$adminIds)){
                 $order = Order::find($row['id']);
                 if ($order){
                     $rowToUpdate=[
@@ -45,7 +45,7 @@ class OrdersImport implements ToModel,WithHeadingRow
                         $related_element_id = $row['id'];
                         $related_element_type = Order::class;
                         create_new_notification($description , $to , $order->user_id ,$related_element_id ,$related_element_type);
-                        $user->increment('available_balance',$order->total_price);
+                        $user->increment('available_balance',$order->total_commission);
                     }
                     elseif ($order->status == GeneralEnum::NOT_SERIOUS || $order->status == GeneralEnum::RETURNED_TO_STOCK){
                         //Todo to increase amount again

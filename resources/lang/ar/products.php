@@ -31,7 +31,7 @@ return [
     'add spec'=>'اضافه صفه',
     'view spec values'=>'عرض قيم الصفه',
     'add_product_spec'=>'اضافه صفه للمنتج',
-    'add spec value'=>'اضافه قيمه اخرى للصفه',
+    'add spec value'=>'اضافه قيمه للصفه',
     'edit product spec value'=>'تعديل القيمه ',
     'in_stock'=>'المتاح فى المخزن',
     'ordered_amount'=>'الكميه المطلوبه',

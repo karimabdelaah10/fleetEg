@@ -203,6 +203,7 @@ class ProductController extends Controller {
     public function getAddProductSpecValue($product_spec_id)
     {
         $productSpecs =Productspec::findOrFail($product_spec_id);
+        $productSpecsValuesIds =Productspecvalue::where('product_id' ,$productSpecs->product_id)->pluck('spec_value_id');
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
@@ -212,12 +213,16 @@ class ProductController extends Controller {
             trans('app.view') .' '.$this->title =>$this->module_url.'/view/'.$productSpecs->product_id,
             trans('products.view spec values')=>$this->module_url.'/view_product_spec_values/'.$product_spec_id
             ];
-        $data['specs_values'] = Productspecvalue::where([['product_id',$productSpecs->product_id],
-            ['spec_id' ,$productSpecs->spec_id]])->get();
-        $data['rows'] = Specvalue::where('spec_id',$productSpecs->spec_id)->Active()->get();
+//        $data['specs_values'] = Productspecvalue::where([['product_id',$productSpecs->product_id],
+//            ['spec_id' ,$productSpecs->spec_id]])->get();
+        $data['rows'] = Specvalue::where('spec_id',$productSpecs->spec_id)
+            ->whereNotIn('id' ,$productSpecsValuesIds)
+            ->Active()
+            ->get();
         $data['row']=$this->model;
         $data['row']->product_id=$productSpecs->product_id;
         $data['row']->spec_id=$productSpecs->spec_id;
+        $data['specs_values'] =[];
         return view($this->views . '.create_product_spec_value', $data);
     }
     public function postAddProductSpecValue(ProductSpecValueRequest $request,$product_spec_id)
@@ -265,6 +270,7 @@ class ProductController extends Controller {
     {
         $productSpecValue =Productspecvalue::findOrFail($product_spec_value_id);
         $productSpec=Productspec::where([['product_id',$productSpecValue->product_id],['spec_id',$productSpecValue->spec_id]])->first();
+        $productSpecsValuesIds =Productspecvalue::where('product_id' ,$productSpecValue->product_id)->pluck('spec_value_id');
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
@@ -275,7 +281,10 @@ class ProductController extends Controller {
             trans('products.view spec values')=>$this->module_url.'/view_product_spec_values/'.$productSpec->id,
             trans('products.view inner spec value')=>$this->module_url.'/view_product_spec_values_inner/'.$product_spec_value_id
         ];
-        $data['rows'] = Specvalue::Active()->get();
+        $data['rows'] = Specvalue::Active()
+            ->where('spec_id','!=' ,$productSpecValue->spec_id)
+            ->whereNotIn('id' ,$productSpecsValuesIds)
+            ->get();
         $data['row']=$this->model;
         $data['row']->product_id=$productSpecValue->product_id;
         $data['row']->product_spec_value_id=$product_spec_value_id;

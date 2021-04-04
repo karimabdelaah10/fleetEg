@@ -452,7 +452,7 @@
             },
 
             async checkout(){
-                let url = '/api/v1/carts/checkout/';
+                let url = '/api/v1/carts/checkout';
                 let data = {
                     customer_name:this.selectedData.customer_name,
                     customer_mobile_number:this.selectedData.customer_mobile_number,
