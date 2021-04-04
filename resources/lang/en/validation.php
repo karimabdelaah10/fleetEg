@@ -155,5 +155,7 @@ return [
         'shipping_coast'=>'Shipping Coast',
         'spec_id'       =>'Spec',
         'spec_value_id' =>'Spec Value',
+        'stock' =>'Stock',
+
     ],
 ];

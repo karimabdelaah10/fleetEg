@@ -226,6 +226,8 @@ export default {
                 .then(response => {
                     if (response.data.code === 200){
                         item.is_favourite = !item.is_favourite;
+                        this.products.length=0;
+                        this.fetch();
                     }
                     else{
                         alert(response.data.message);console.log(response.data.message)

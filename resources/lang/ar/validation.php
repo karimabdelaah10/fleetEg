@@ -155,5 +155,6 @@ return [
         'shipping_coast'=>'تكلفه الشحن',
         'spec_id'       =>'الصفات',
         'spec_value_id' =>'قيمه للصفات ',
+        'stock' =>'الكميه',
     ],
 ];

@@ -25,6 +25,7 @@ return [
     'logout'=>'Logout',
     'go home page'=>'Go Home Page',
     'total_user_commission'=>'Total Commission',
+    'total_commission'=>'Total Commission',
 
     'created_at'=>'Created At',
     'updated_at'=>'Updated At',

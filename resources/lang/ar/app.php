@@ -25,6 +25,7 @@ return [
     'logout'=>'تسجيل الخروج',
     'go home page'=>'الذهاب الى الصفحه الرئيسيه',
     'total_user_commission'=>'اجمالى العموالات الخاصه بك',
+    'total_commission'=>'أجمالى العمولات',
 
     'created_at'=>'تاريخ الانشاء',
     'updated_at'=>'تاريخ التعديل',

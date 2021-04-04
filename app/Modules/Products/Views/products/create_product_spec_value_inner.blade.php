@@ -35,8 +35,15 @@
                 <div class="form-group">
                     <label for="title" class="form-label">
                         {{trans('products.amount')}}
+                        <span class="text-danger">*</span>
+
                     </label>
-                    <input id="title"  placeholder="{{trans('products.amount')}}"  name="stock" type="text" class="form-control">
+                    <input id="title"
+                           placeholder="{{trans('products.amount')}}"
+                           required
+                           name="stock"
+                           type="number"
+                           class="form-control">
                 </div>
                 @include('BaseApp::form.file',[
                          'name'=>'image',
@@ -48,8 +55,9 @@
                                 'height'=>empty($row->getRawOriginal('image')) ? 50 :300,    // create new bannar id row->image empty
                                 'width'=>empty($row->getRawOriginal('image')) ? 50 :300,
                                 'label'=>trans('products.image'),
-                                'value'=>$row->getRawOriginal('image')
-                                ]
+                                'value'=>$row->getRawOriginal('image'),
+                                'required'=>1
+    ]
                          ])
                 <input type="hidden" name="product_id" value="{{$row->product_id}}">
                 <input type="hidden" name="parent_spec_value_id" value="{{$row->product_spec_value_id}}">
