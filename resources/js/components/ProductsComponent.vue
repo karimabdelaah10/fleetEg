@@ -275,7 +275,7 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
         },
         methods:{
             async fetch () {
-                let url = '/api/v1/products/'+ this.row.user.id+
+                let url = '/api/v1/products/get-filtered-products/'+ this.row.user.id+
                     '?page='+ this.page+'&per_page='+this.per_page+
                     '&selected_price='+this.selected_price+
                     '&selected_category='+this.selected_category+

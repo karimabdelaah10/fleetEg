@@ -423,7 +423,7 @@
             },
            async getThisUserCarts() {
                 let user_id =this.row.user.id;
-                let url = '/api/v1/carts/'+user_id;
+                let url = '/api/v1/carts/get-user-carts/'+user_id;
                 this.carts.length = 0
                 await axios.get(url).then(response => {
                     if (response.data.code === 200){
