@@ -181,12 +181,12 @@ class ProductsApiController extends Controller {
             return custome_response(200 ,$data , '' ,[]);
         }catch(\Exception $e) {
             $title = trans('app.wrong action');
-            $message = trans('app.wrong action message');
-            if (env('APP_DEBUG')) {
+//            $message = trans('app.wrong action message');
+//            if (env('APP_DEBUG')) {
                 $message = $e->getMessage();
                 $message .= '    in ' . $e->getFile();
                 $message .= '    line ' . $e->getLine();
-            }
+//            }
             return custome_response(500, $data, $title.'  '.$message, []);
         }
 
