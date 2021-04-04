@@ -53,6 +53,9 @@ class OrderController extends Controller {
         $data['page_title'] = trans('app.view') . " " . $this->title;
         $data['page_description'] =  trans('app.list') . " " . $this->title;
         $data['breadcrumb'] = [$this->title => $this->module_url];
+        if (in_array($data['row']->status ,OrdersEnum::ordersFinalsStatuses())){
+            return back();
+        }
         return view($this->views . '.view', $data);
     }
     public function getEdit($id) {

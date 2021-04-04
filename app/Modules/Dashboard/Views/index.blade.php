@@ -107,12 +107,16 @@
 
                                     </td>
                                     <td>
-                                        <div class="dropdown chart-dropdown">
-                                            <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-toggle="dropdown"></i>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="/orders/view/{{@$element->id}}">{{trans('user.list one order')}}</a>
+                                        @if(in_array($element->status , \App\Modules\Products\Enums\OrdersEnum::ordersFinalsStatuses()))
+                                            {!! get_status_for_blade($element->status) !!}
+                                        @else
+                                            <div class="dropdown chart-dropdown">
+                                                <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-toggle="dropdown"></i>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="/orders/view/{{@$element->id}}">{{trans('user.list one order')}}</a>
+                                                </div>
                                             </div>
-                                        </div>
+                                        @endif
                                     </td>
                                 </tr>
                             @empty

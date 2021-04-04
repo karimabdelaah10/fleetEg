@@ -245,8 +245,10 @@ class ProductController extends Controller {
         $data['breadcrumb'] = [
             $this->title => $this->module_url ,
             trans('app.view') .' '.$this->title =>$this->module_url.'/view/'.$data['row']->product_id,
-            trans('products.view spec values')=>$this->module_url.'/view_product_spec_values/'.$product_spec->id
         ];
+        if (isset($product_spec)){
+            $data['breadcrumb'][trans('products.view spec values')] =$this->module_url.'/view_product_spec_values/'.$product_spec->id;
+        }
         return view($this->views . '.edit_product_spec_value', $data);
     }
     public function postEditProductSpecValue(Request $request ,$product_spec_value_id )
