@@ -23,17 +23,19 @@ import { StarIcon } from 'vue-feather-icons'
         props: ['row'],
 
         created() {
-            if (this.row.default){
+            if (this.row.default === 1){
                 this.defaultFlag = true
             }
         },
         methods:{
            async updateDefaultMethod(method_id , event){
-               $(".feather-star").attr('fill' ,'none')
-                $(event.target).attr('fill' ,'true')
                 await axios.get('/api/v1/payment_methods/update_default/'+method_id)
                     .then((response)=>{
-                        if (response.data.code === 200){}
+                        if (response.data.code === 200){
+                            location.reload()
+                            // $(".feather-star").attr('fill' ,'none')
+                            // $(event.target).attr('fill' ,'true')
+                        }
                         else{
                             alert(response.data.message);console.log(response.data.message)
                         }
