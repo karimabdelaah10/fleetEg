@@ -175,20 +175,20 @@ class ProductsApiController extends Controller {
 
     public function addProductToCart(Request  $request)
     {
-        $data=[];
-        try {
+//        $data=[];
+//        try {
             $data = Cart::create($request->all());
             return custome_response(200 ,$data , '' ,[]);
-        }catch(\Exception $e) {
-            $title = trans('app.wrong action');
+//        }catch(\Exception $e) {
+//            $title = trans('app.wrong action');
 //            $message = trans('app.wrong action message');
 //            if (env('APP_DEBUG')) {
-                $message = $e->getMessage();
-                $message .= '    in ' . $e->getFile();
-                $message .= '    line ' . $e->getLine();
+//                $message = $e->getMessage();
+//                $message .= '    in ' . $e->getFile();
+//                $message .= '    line ' . $e->getLine();
 //            }
-            return custome_response(500, $data, $title.'  '.$message, []);
-        }
+//            return custome_response(500, $data, $title.'  '.$message, []);
+//        }
 
     }
 }
