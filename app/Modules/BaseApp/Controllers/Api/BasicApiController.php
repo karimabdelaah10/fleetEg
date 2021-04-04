@@ -50,7 +50,7 @@ class BasicApiController
                 'products' => new ProductsListResource($products),
                 'users'    =>new UsersListResource($users),
             ];
-            return custome_response(200 ,$data , '' ,[]);
+            return custom_response(200 ,$data , '' ,[]);
         }catch(\Exception $e) {
             $title = trans('app.wrong action');
             $message = trans('app.wrong action message');
@@ -59,7 +59,7 @@ class BasicApiController
                 $message .= '    in ' . $e->getFile();
                 $message .= '    line ' . $e->getLine();
             }
-            return custome_response(500, $data, $title.' '. $message, []);
+            return custom_response(500, $data, $title.' '. $message, []);
         }
     }
 }

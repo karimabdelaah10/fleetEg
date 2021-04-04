@@ -14,7 +14,7 @@ class ConfigApiController
         $data=[];
         try {
             $data  =Config::pluck('value' ,'title');
-            return custome_response(200 ,$data , '' ,[]);
+            return custom_response(200 ,$data , '' ,[]);
         }
         catch(\Exception $e) {
             $title = trans('app.wrong action');
@@ -24,7 +24,7 @@ class ConfigApiController
                 $message .= '    in ' . $e->getFile();
                 $message .= '    line ' . $e->getLine();
             }
-            return custome_response(500, $data,  $title. '   '.$message, []);
+            return custom_response(500, $data,  $title. '   '.$message, []);
         }
     }
 }

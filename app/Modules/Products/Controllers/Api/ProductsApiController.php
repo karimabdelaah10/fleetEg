@@ -35,7 +35,7 @@ class ProductsApiController extends Controller {
                  ->orderBy("id","DESC")
                  ->paginate(request('per_page'));
                 $data =new ProductsResourcePagination($products);
-                return custome_response(200 ,$data , '' ,[]);
+                return custom_response(200 ,$data , '' ,[]);
             }catch(\Exception $e){
             $title = trans('app.wrong action');
             $message = trans('app.wrong action message');
@@ -44,7 +44,7 @@ class ProductsApiController extends Controller {
                 $message .='    in '.$e->getFile();
                 $message .='    line '.$e->getLine();
             }
-            return custome_response(500 ,$data , $title.'     '.$message ,[]);
+            return custom_response(500 ,$data , $title.'     '.$message ,[]);
 
         }
     }
@@ -59,7 +59,7 @@ class ProductsApiController extends Controller {
             }else{
                 Favouriteproduct::create($request->all());
             }
-        return custome_response(200 ,$data , '' ,[]);
+        return custom_response(200 ,$data , '' ,[]);
         }catch(\Exception $e) {
             $title = trans('app.wrong action');
             $message = trans('app.wrong action message');
@@ -68,7 +68,7 @@ class ProductsApiController extends Controller {
                 $message .= '    in ' . $e->getFile();
                 $message .= '    line ' . $e->getLine();
             }
-            return custome_response(500, $data, $title.'  '.$message, []);
+            return custom_response(500, $data, $title.'  '.$message, []);
         }
     }
 
@@ -88,7 +88,7 @@ class ProductsApiController extends Controller {
                 ->paginate(request('per_page'));
             $data =new ProductsResourcePagination($products);
 
-        return custome_response(200 ,$data , '' ,[]);
+        return custom_response(200 ,$data , '' ,[]);
         }catch(\Exception $e) {
             $title = trans('app.wrong action');
             $message = trans('app.wrong action message');
@@ -97,7 +97,7 @@ class ProductsApiController extends Controller {
                 $message .= '    in ' . $e->getFile();
                 $message .= '    line ' . $e->getLine();
             }
-            return custome_response(500, $data, $title.'  '.$message, []);
+            return custom_response(500, $data, $title.'  '.$message, []);
         }
     }
 
@@ -110,7 +110,7 @@ class ProductsApiController extends Controller {
             $product =  $this->model->findOrFail($product_id);
             $data =new ProductsResource($product);
 
-            return custome_response(200 ,$data , '' ,[]);
+            return custom_response(200 ,$data , '' ,[]);
         }catch(\Exception $e) {
             $title = trans('app.wrong action');
             $message = trans('app.wrong action message');
@@ -119,7 +119,7 @@ class ProductsApiController extends Controller {
                 $message .= '    in ' . $e->getFile();
                 $message .= '    line ' . $e->getLine();
             }
-            return custome_response(500, $data, $title.'  '.$message, []);
+            return custom_response(500, $data, $title.'  '.$message, []);
         }
     }
 
@@ -160,7 +160,7 @@ class ProductsApiController extends Controller {
                     $specs_values_list=[];
                 }
             }
-            return custome_response(200 ,$data , '' ,[]);
+            return custom_response(200 ,$data , '' ,[]);
         }catch(\Exception $e) {
             $title = trans('app.wrong action');
             $message = trans('app.wrong action message');
@@ -169,7 +169,7 @@ class ProductsApiController extends Controller {
                 $message .= '    in ' . $e->getFile();
                 $message .= '    line ' . $e->getLine();
             }
-            return custome_response(500, $data, $title.'  '.$message, []);
+            return custom_response(500, $data, $title.'  '.$message, []);
         }
     }
 
@@ -178,7 +178,7 @@ class ProductsApiController extends Controller {
 //        $data=[];
 //        try {
             $data = Cart::create($request->all());
-            return custome_response(200 ,$data , '' ,[]);
+            return custom_response(200 ,$data , '' ,[]);
 //        }catch(\Exception $e) {
 //            $title = trans('app.wrong action');
 //            $message = trans('app.wrong action message');
@@ -187,7 +187,7 @@ class ProductsApiController extends Controller {
 //                $message .= '    in ' . $e->getFile();
 //                $message .= '    line ' . $e->getLine();
 //            }
-//            return custome_response(500, $data, $title.'  '.$message, []);
+//            return custom_response(500, $data, $title.'  '.$message, []);
 //        }
 
     }

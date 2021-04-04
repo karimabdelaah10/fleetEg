@@ -87,7 +87,7 @@ class CartsApiController extends Controller {
             $data['trans'] = $trans;
             $data['product_discounts'] = $product_discounts;
             $data['product_discounts_details'] = $product_discounts_details;
-            return custome_response(200 ,$data , '' ,[]);
+            return custom_response(200 ,$data , '' ,[]);
         }catch(\Exception $e) {
             $title = trans('app.wrong action');
             $message = trans('app.wrong action message');
@@ -96,14 +96,14 @@ class CartsApiController extends Controller {
                 $message .= '    in ' . $e->getFile();
                 $message .= '    line ' . $e->getLine();
             }
-            return custome_response(500, $data, $title.'  '.$message, []);
+            return custom_response(500, $data, $title.'  '.$message, []);
         }
     }
     public function delete($product_id) {
         $data=[];
         try {
             Cart::findOrFail($product_id)->delete();
-            return custome_response(200 ,[] , [] ,[]);
+            return custom_response(200 ,[] , [] ,[]);
         }catch(\Exception $e) {
             $title = trans('app.wrong action');
             $message = trans('app.wrong action message');
@@ -112,7 +112,7 @@ class CartsApiController extends Controller {
                 $message .= '    in ' . $e->getFile();
                 $message .= '    line ' . $e->getLine();
             }
-            return custome_response(500, $data, $title.'  '.$message, []);
+            return custom_response(500, $data, $title.'  '.$message, []);
         }
     }
     public function checkout(Request $request)
@@ -159,7 +159,7 @@ class CartsApiController extends Controller {
                 $related_element_type = Order::class;
                 create_new_notification($description , $to , $newOrder->user_id ,$related_element_id ,$related_element_type);
             }
-            return custome_response(200 ,[] , [] ,[]);
+            return custom_response(200 ,[] , [] ,[]);
         }catch(\Exception $e) {
             $title = trans('app.wrong action');
             $message = trans('app.wrong action message');
@@ -168,7 +168,7 @@ class CartsApiController extends Controller {
                 $message .= '    in ' . $e->getFile();
                 $message .= '    line ' . $e->getLine();
             }
-            return custome_response(500, $data, $title.'  '.$message, []);
+            return custom_response(500, $data, $title.'  '.$message, []);
         }
     }
     public function getOrdersNumbers($user_id)
@@ -185,7 +185,7 @@ class CartsApiController extends Controller {
                 GeneralEnum::RETURNED_TO_STOCK => Order::where('user_id' , $user_id)->where('status' , GeneralEnum::RETURNED_TO_STOCK)->count(),
                 GeneralEnum::DELIVERED => Order::where('user_id' , $user_id)->where('status' , GeneralEnum::DELIVERED)->count(),
             ];
-            return custome_response(200 ,$data , '' ,[
+            return custom_response(200 ,$data , '' ,[
                 'trans'=>$trans
             ]);
         }
@@ -197,7 +197,7 @@ class CartsApiController extends Controller {
                 $message .= '    in ' . $e->getFile();
                 $message .= '    line ' . $e->getLine();
             }
-            return custome_response(500, $data,  $title. '   '.$message, []);
+            return custom_response(500, $data,  $title. '   '.$message, []);
         }
     }
 }

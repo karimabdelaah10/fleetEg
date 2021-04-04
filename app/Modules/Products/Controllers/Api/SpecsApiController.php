@@ -24,7 +24,7 @@ class SpecsApiController extends Controller {
         try {
             $data= Specvalue::where('spec_id' , $id)->Active()->orderBy('id','desc')->get();
 
-            return custome_response(200 ,$data , '' ,[]);
+            return custom_response(200 ,$data , '' ,[]);
         }catch(\Exception $e) {
             $title = trans('app.wrong action');
             $message = trans('app.wrong action message');
@@ -33,14 +33,14 @@ class SpecsApiController extends Controller {
                 $message .= '    in ' . $e->getFile();
                 $message .= '    line ' . $e->getLine();
             }
-            return custome_response(500, $data, $title.'  '.$message, []);
+            return custom_response(500, $data, $title.'  '.$message, []);
         }
     }
     public function index() {
         $data=[];
         try {
             $data = $this->model->Active()->orderBy('id','desc')->get();
-            return custome_response(200 ,$data , '' ,[]);
+            return custom_response(200 ,$data , '' ,[]);
         }catch(\Exception $e) {
             $title = trans('app.wrong action');
             $message = trans('app.wrong action message');
@@ -49,7 +49,7 @@ class SpecsApiController extends Controller {
                 $message .= '    in ' . $e->getFile();
                 $message .= '    line ' . $e->getLine();
             }
-            return custome_response(500, $data, $title.'  '.$message, []);
+            return custom_response(500, $data, $title.'  '.$message, []);
         }
 
     }

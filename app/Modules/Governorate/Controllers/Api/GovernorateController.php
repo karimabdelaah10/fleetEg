@@ -21,7 +21,7 @@ class GovernorateController extends Controller {
         $data=[];
         $data =  $this->model->Active()->orderBy('id' , 'desc')->get();
 
-        return custome_response(200 , $data , '' , []);
+        return custom_response(200 , $data , '' , []);
     }
 
 }

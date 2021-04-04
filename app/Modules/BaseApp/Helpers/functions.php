@@ -1032,8 +1032,8 @@ if (! function_exists('is_user')) {
     }
 }
 
-if (! function_exists('custome_response')) {
-    function custome_response($code , $data , $message='' , $extra =[])
+if (! function_exists('custom_response')) {
+    function custom_response($code , $data , $message='' , $extra =[])
     {
         return [
             'code'      =>$code,
