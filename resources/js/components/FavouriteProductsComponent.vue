@@ -200,8 +200,8 @@ export default {
                 '&search_key='+this.search_key;
             await axios.get(url).then(response => {
                 if (response.data.code === 200){
-                    this.products.push(...response.data.data);
-                    this.pagination =response.data.pagination
+                    this.products.push(...response.data.data.data);
+                    this.pagination =response.data.data.pagination
                     this.resultsCount = this.pagination.total
                     this.last_page = this.pagination.last_page
 

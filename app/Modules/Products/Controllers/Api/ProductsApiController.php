@@ -81,7 +81,6 @@ class ProductsApiController extends Controller {
             $product_ids= Favouriteproduct::where('user_id', $user_id)
                 ->pluck('product_id');
             $products =  $this->model->Filtered()
-                ->whereHas('specsvalues')
                 ->whereIn('id' ,$product_ids)
                 ->with('category')
                 ->orderBy("id","DESC")
