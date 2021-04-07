@@ -20,6 +20,7 @@
                 'name'=>'file',
                 'attributes'=>[
                         'id'=>'file',
+                        'accept'=>'.xls , .xlsx',
                         'class'=>'form-control custom-file-input',
                         'image_class'=>'avatar-group pull-up my-0 mb-2 mt-1',
                         'image_type'=>'large',

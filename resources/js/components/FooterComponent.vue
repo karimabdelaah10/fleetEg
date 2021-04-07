@@ -17,7 +17,7 @@
             <a target="_blank" :href="mobile_number" class="float-right btn-social-icon">
                 <i class="text-muted" data-feather="phone"></i>
             </a>
-            <a target="_blank" :href="whatsapp_number" class="float-right">
+            <a target="_blank" :href="whatsapp_number" class="float-right ">
                 <img src="/images/whatsapp.png" class="whatsapp_image"/>
             </a>
             <a target="_blank" :href="messenger_url" class="float-right btn-social-icon">
@@ -81,14 +81,5 @@ import { MessageCircleIcon } from 'vue-feather-icons'
     height: 20px;
     width: 20px;
     margin-bottom: 1px;
-}
-.btn-social-icon>svg{
-    height: 1.4285rem;
-    width: 1.4285rem;
-    font-size: 1.45rem;
-    margin-left: 1.1rem;
-    -webkit-flex-shrink: 0;
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
 }
 </style>

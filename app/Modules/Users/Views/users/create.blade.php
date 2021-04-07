@@ -57,6 +57,8 @@
                     </div>
                 </div>
             </div>
+            <input type="hidden" name="type" value="{{\App\Modules\Users\Enums\UserEnum::CUSTOMER}}">
+
             <button type="submit" class="btn btn-primary data-submit mr-1">{{trans('app.save')}}</button>
             <button type="reset" class="btn btn-outline-secondary" data-dismiss="modal">{{trans('app.cancel')}}</button>
 

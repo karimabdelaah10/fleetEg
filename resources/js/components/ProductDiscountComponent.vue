@@ -23,7 +23,7 @@
                 <span class="text-danger">* </span>
                 </label>
                 <input id="two_pc_discount" label=" two_pc_discount" :placeholder="row.trans.on_two_pc_discount"  required="required"
-                       v-model="on_two_pc_discount" name="two_pc_discount" type="text" class="form-control">
+                       v-model="on_two_pc_discount" name="two_pc_discount" type="number" class="form-control">
             </div>
             <div class="form-group">
                 <label for="plus_two_pc_discount" class="form-label">
@@ -31,7 +31,8 @@
                     <span class="text-danger">* </span>
                 </label>
                 <input id="plus_two_pc_discount" label="plus_two_pc_discount" :placeholder="row.trans.plus_two_pc_discount"  required="required"
-                       v-model="plus_two_pc_discount" name="plus_two_pc_discount" type="text" class="form-control">
+                       v-model="plus_two_pc_discount" name="plus_two_pc_discount"
+                       type="number" class="form-control">
             </div>
         </div>
     </div>

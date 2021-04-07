@@ -81,7 +81,7 @@ return [
         'string' => 'The :attribute may not be greater than :max characters.',
         'array' => 'The :attribute may not have more than :max items.',
     ],
-    'mimes' => 'The :attribute must be a file of type: :values.',
+    'mimes' => 'خانه :attribute يجب ان يكون واحده من  :values.',
     'mimetypes' => 'The :attribute must be a file of type: :values.',
     'min' => [
         'numeric' => 'The :attribute must be at least :min.',
@@ -97,7 +97,7 @@ return [
     'present' => 'The :attribute field must be present.',
     'regex' => 'The :attribute format is invalid.',
     'required' => ' خانه :attribute مطلوبه',
-    'required_if' => 'The :attribute field is required when :other is :value.',
+    'required_if' => 'خانه :attribute مطلوبه عندما يكون قيمه  :other تساوى :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',
     'required_with' => 'The :attribute field is required when :values is present.',
     'required_with_all' => 'The :attribute field is required when :values are present.',
@@ -155,6 +155,7 @@ return [
         'shipping_coast'=>'تكلفه الشحن',
         'spec_id'       =>'الصفات',
         'spec_value_id' =>'قيمه للصفات ',
-        'stock' =>'الكميه',
+        'stock'         =>'الكميه',
+        'file'          =>'الملف'
     ],
 ];

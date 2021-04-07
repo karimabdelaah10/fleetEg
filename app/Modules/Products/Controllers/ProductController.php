@@ -237,7 +237,7 @@ class ProductController extends Controller {
     {
         $data['row']=Productspecvalue::findOrFail($product_spec_value_id);
         $product_spec=Productspec::where('product_id' , $data['row']->product_id)
-            ->where('spec_id', $data['row']->spec_id )->first();
+            ->where('spec_id', $data['row']->spec_id )->firstOrFail();
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
@@ -271,8 +271,10 @@ class ProductController extends Controller {
     public function getAddProductSpecValueInner($product_spec_value_id)
     {
         $productSpecValue =Productspecvalue::findOrFail($product_spec_value_id);
-        $productSpec=Productspec::where([['product_id',$productSpecValue->product_id],['spec_id',$productSpecValue->spec_id]])->first();
-        $productSpecsValuesIds =Productspecvalue::where('product_id' ,$productSpecValue->product_id)->pluck('spec_value_id');
+        $productSpec=Productspec::where([['product_id',$productSpecValue->product_id],['spec_id',$productSpecValue->spec_id]])->firstOrFail();
+        $productSpecsValuesIds =Productspecvalue::where('product_id' ,$productSpecValue->product_id)
+            ->where('parent_spec_value_id' , $product_spec_value_id )
+            ->pluck('spec_value_id');
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;
@@ -304,7 +306,7 @@ class ProductController extends Controller {
     {
 
         $productSpecValue = Productspecvalue::findOrFail($product_spec_value_id);
-        $productSpec=Productspec::where([['product_id',$productSpecValue->product_id],['spec_id',$productSpecValue->spec_id]])->first();
+        $productSpec=Productspec::where([['product_id',$productSpecValue->product_id],['spec_id',$productSpecValue->spec_id]])->firstOrFail();
         $data['module'] = $this->module;
         $data['module_url'] = $this->module_url;
         $data['views'] = $this->views;

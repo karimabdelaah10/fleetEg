@@ -23,7 +23,7 @@ class UpdateUserRequest extends BaseAppRequest
             'email' => 'required|string|email|max:255|unique:users,email,'.$id,
             'mobile_number' => 'required|string|max:255|unique:users,mobile_number,'.$id,
             'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-            'admin_type'=>'required',Rule::in(AdminEnum::adminsTypes())
+            'admin_type'=>'required_if:type,==,admin',Rule::in(AdminEnum::adminsTypes())
 
         ];
     }

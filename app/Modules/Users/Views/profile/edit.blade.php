@@ -147,7 +147,7 @@
                                                             name="mobile_number"
                                                             required
                                                             placeholder="01*********"
-                                                            type="text"
+                                                            type="number"
                                                             value="{{$row->mobile_number}}"
                                                         />
                                                     </div>

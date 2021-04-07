@@ -10,6 +10,7 @@ use App\Modules\Products\Exports\OrdersExports;
 use App\Modules\Products\Imports\OrdersImport;
 use App\Modules\Products\Models\Order;
 use App\Modules\Products\Models\Productspecvalue;
+use App\Modules\Products\Requests\OrderImportRequest;
 use App\Modules\Products\Requests\OrderRequest;
 use App\Modules\Users\Enums\UserEnum;
 use App\Modules\Users\User;
@@ -122,7 +123,7 @@ class OrderController extends Controller {
         $data['breadcrumb'] = [$this->title => $this->module_url];
         return view($this->views . '.import', $data);
     }
-    public function postImportPage(Request $request)
+    public function postImportPage(OrderImportRequest $request)
     {
         Excel::import(new OrdersImport(), $request->file);
         flash(trans('app.update successfully'))->success();

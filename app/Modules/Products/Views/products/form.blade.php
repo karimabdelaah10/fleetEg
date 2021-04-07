@@ -60,7 +60,7 @@
 @include('BaseApp::form.input',[
     'name'=>'media_url',
      'value'=> $row->media_url ?? null,
-     'type'=>'text',
+     'type'=>'url',
      'attributes'=>[
          'id'=>'media_url',
          'class'=>'form-control',
