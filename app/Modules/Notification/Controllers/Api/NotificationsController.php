@@ -10,6 +10,8 @@ use App\Modules\MoneyProcess\Models\Moneyrequest;
 use App\Modules\MoneyProcess\Models\Paymentmethod;
 use App\Modules\MoneyProcess\Models\Transaction;
 use App\Modules\Notification\Notification;
+use App\Modules\Products\Models\Order;
+use App\Modules\Products\Models\Orderproduct;
 use App\Modules\Users\Enums\AdminEnum;
 use App\Modules\Users\Enums\UserEnum;
 use App\Modules\Users\User;
@@ -45,9 +47,10 @@ class NotificationsController extends Controller {
                     $query = Notification::where([['to' , UserEnum::ADMIN] ,['related_element_type' ,Moneyrequest::class]]);
                 }
                 elseif($user->admin_type == AdminEnum::PRODUCT_ADMIN){
-//            $productIds = $user->adminProducts->pluck('id');
-//            $query = Notification::where([['to' , UserEnum::ADMIN]
-//                ,['related_element_type' ,Moneyrequest::class]]);
+                     $productIds = $user->products->pluck('id');
+                     $ordersIds = Orderproduct::whereIn('product_id',$productIds)->pluck('order_id');
+                     $query = Notification::where([['to' , UserEnum::ADMIN]
+                            ,['related_element_type' ,Order::class]])->whereIn('related_element_id' , $ordersIds);
                 }
 
 
