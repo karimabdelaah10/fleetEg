@@ -20,7 +20,7 @@ class OrdersImport implements ToModel,WithHeadingRow
     */
     public function model(array $row)
     {
-        $adminIds = get_product_admin_orders()->toArray();
+        $adminIds = get_product_admin_orders();
         if (!empty($row['id'])){
             if (in_array($row['id'] ,$adminIds)){
                 $order = Order::find($row['id']);

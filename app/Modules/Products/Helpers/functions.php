@@ -48,10 +48,10 @@ if (! function_exists('get_product_admin_orders')) {
             $product_ids = $user->products->pluck('id');
             $order_ids=Orderproduct::whereIn('product_id',$product_ids)
                 ->pluck('order_id')
-            ->unique();
+            ->unique()->toArray();
             return $order_ids;
         }elseif($user->getRawOriginal('type') == UserEnum::SUPER_ADMIN){
-            return Order::all()->pluck('id');
+            return Order::all()->pluck('id')->toArray();
         }
     }
 }
