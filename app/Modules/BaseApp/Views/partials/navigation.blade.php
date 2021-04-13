@@ -80,7 +80,8 @@
                         </li>
                     </ul>
                 </li>
-            @elseif(auth()->user()->admin_type == \App\Modules\Users\Enums\AdminEnum::PRODUCT_ADMIN)
+
+                @elseif(auth()->user()->admin_type == \App\Modules\Users\Enums\AdminEnum::PRODUCT_ADMIN)
                 <li class=" nav-item">
                     <a class="d-flex align-items-center" href="/product">
                         <i data-feather="grid"></i>

@@ -37,7 +37,7 @@ class DashboardController extends Controller {
             $data['numbers']->delivered_orders = Order::where('status' ,GeneralEnum::DELIVERED)->count();
             $data['numbers']->under_review_orders = Order::where('status' ,GeneralEnum::UNDER_REVIEW)->count();
             $data['numbers']->total_commission = Order::where('status' ,GeneralEnum::DELIVERED)->sum('total_commission');
-            $data['orders']  = Order::take(10)->get();
+            $data['orders']  = Order::whereIn('id', get_product_admin_orders())->take(10)->get();
             $data['money_requests']  = Moneyrequest::take(10)->get();
             return view($this->views . '::index' , $data);
         }

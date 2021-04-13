@@ -74,102 +74,108 @@
         </div>
         <!--/ Statistics Card -->
     </div>
-    @if(count($orders))
-    <div class="row match-height">
-        <div class="col-lg-12 col-12">
-            <div class="card card-company-table">
-                <div class="card-header">
-                    <h4 class="card-title">{{trans('user.last 10 orders')}}</h4>
-                </div>
+    @if(auth()->user()->getRawOriginal('type')  == \App\Modules\Users\Enums\UserEnum::SUPER_ADMIN ||
+              auth()->user()->admin_type == \App\Modules\Users\Enums\AdminEnum::PRODUCT_ADMIN )
+        @if(count($orders))
+        <div class="row match-height">
+            <div class="col-lg-12 col-12">
+                <div class="card card-company-table">
+                    <div class="card-header">
+                        <h4 class="card-title">{{trans('user.last 10 orders')}}</h4>
+                    </div>
 
-                <div class="card-body p-0">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>{{trans('orders.serial')}}</th>
-                                <th>{{trans('orders.user_name')}}</th>
-                                <th>{{trans('orders.price')}}</th>
-                                <th>{{trans('orders.date')}}</th>
-                                <th>{{trans('orders.status')}}</th>
-                                <th>{{trans('app.actions')}}</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @forelse($orders as $element)
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
                                 <tr>
-                                    <td>{{@$element->id}}</td>
-                                    <td>{{@$element->user->name}}</td>
-                                    <td>{{@$element->total_price}}</td>
-                                    <td>{{@$element->created_at ? \Carbon\Carbon::parse($element->created_at)->format('Y-m-d') : '' }}</td>
-                                    <td>
-                                        {!! get_status_for_blade($element->status) !!}
-
-                                    </td>
-                                    <td>
-                                        @if(in_array($element->status , \App\Modules\Products\Enums\OrdersEnum::ordersFinalsStatuses()))
+                                    <th>{{trans('orders.serial')}}</th>
+                                    <th>{{trans('orders.user_name')}}</th>
+                                    <th>{{trans('orders.price')}}</th>
+                                    <th>{{trans('orders.date')}}</th>
+                                    <th>{{trans('orders.status')}}</th>
+                                    <th>{{trans('app.actions')}}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @forelse($orders as $element)
+                                    <tr>
+                                        <td>{{@$element->id}}</td>
+                                        <td>{{@$element->user->name}}</td>
+                                        <td>{{@$element->total_price}}</td>
+                                        <td>{{@$element->created_at ? \Carbon\Carbon::parse($element->created_at)->format('Y-m-d') : '' }}</td>
+                                        <td>
                                             {!! get_status_for_blade($element->status) !!}
-                                        @else
-                                            <div class="dropdown chart-dropdown">
-                                                <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-toggle="dropdown"></i>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="/orders/view/{{@$element->id}}">{{trans('user.list one order')}}</a>
+
+                                        </td>
+                                        <td>
+                                            @if(in_array($element->status , \App\Modules\Products\Enums\OrdersEnum::ordersFinalsStatuses()))
+                                                {!! get_status_for_blade($element->status) !!}
+                                            @else
+                                                <div class="dropdown chart-dropdown">
+                                                    <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-toggle="dropdown"></i>
+                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                        <a class="dropdown-item" href="/orders/view/{{@$element->id}}">{{trans('user.list one order')}}</a>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        @endif
-                                    </td>
-                                </tr>
-                            @empty
-                            @endforelse
-                            </tbody>
-                        </table>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @empty
+                                @endforelse
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </div>
+        </div>
+        @endif
     @endif
-    @if(count($money_requests))
-    <div class="row match-height">
-        <!-- Company Table Card -->
-        <div class="col-lg-12 col-12">
-            <div class="card card-company-table">
-                <div class="card-header">
-                    <h4 class="card-title">{{trans('user.last 10 money requests')}}</h4>
-                </div>
+    @if(auth()->user()->getRawOriginal('type')  == \App\Modules\Users\Enums\UserEnum::SUPER_ADMIN ||
+              auth()->user()->admin_type == \App\Modules\Users\Enums\AdminEnum::FINANCIAL_ADMIN )
+        @if(count($money_requests))
+        <div class="row match-height">
+            <!-- Company Table Card -->
+            <div class="col-lg-12 col-12">
+                <div class="card card-company-table">
+                    <div class="card-header">
+                        <h4 class="card-title">{{trans('user.last 10 money requests')}}</h4>
+                    </div>
 
-                <div class="card-body p-0">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th >#</th>
-                                <th >{{trans('moneyrequest.user')}}</th>
-                                <th >{{trans('moneyrequest.available_balance')}}</th>
-                                <th >{{trans('moneyrequest.requested_amount')}}</th>
-                                <th >{{trans('app.status')}}</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @forelse($money_requests as $element)
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
                                 <tr>
-                                    <td>{{$element->id}}</td>
-                                    <td> {{@$element->user->name}}</td>
-                                    <td> {{$element->available_balance}}</td>
-                                    <td> {{$element->requested_amount}}</td>
-                                    <td> {!! getRequestStatus($element->status) !!} </td>
+                                    <th >#</th>
+                                    <th >{{trans('moneyrequest.user')}}</th>
+                                    <th >{{trans('moneyrequest.available_balance')}}</th>
+                                    <th >{{trans('moneyrequest.requested_amount')}}</th>
+                                    <th >{{trans('app.status')}}</th>
                                 </tr>
-                            @empty
-                            @endforelse
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                @forelse($money_requests as $element)
+                                    <tr>
+                                        <td>{{$element->id}}</td>
+                                        <td> {{@$element->user->name}}</td>
+                                        <td> {{$element->available_balance}}</td>
+                                        <td> {{$element->requested_amount}}</td>
+                                        <td> {!! getRequestStatus($element->status) !!} </td>
+                                    </tr>
+                                @empty
+                                @endforelse
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!--/ Company Table Card -->
         </div>
-        <!--/ Company Table Card -->
-    </div>
+        @endif
     @endif
 
 </div>

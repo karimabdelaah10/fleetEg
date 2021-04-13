@@ -52,6 +52,8 @@ if (! function_exists('get_product_admin_orders')) {
             return $order_ids;
         }elseif($user->getRawOriginal('type') == UserEnum::SUPER_ADMIN){
             return Order::all()->pluck('id')->toArray();
+        }else{
+            return  [];
         }
     }
 }

@@ -67,6 +67,9 @@ class OrderController extends Controller {
         $data['breadcrumb'] = [$this->title => $this->module_url];
         $data['statuses'] = OrdersEnum::ordersStatusesForSelector();
         $data['row'] = $this->model->findOrFail($id);
+        if (in_array($data['row']->status ,OrdersEnum::ordersFinalsStatuses())){
+            return back();
+        }
         return view($this->views . '.edit', $data);
     }
 
