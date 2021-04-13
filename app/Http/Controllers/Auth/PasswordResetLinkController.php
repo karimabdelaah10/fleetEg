@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\ForgetPasswordRequest;
 use App\Modules\Users\Enums\UserEnum;
+use App\Modules\Users\Jobs\SendForgotEMail;
 use App\Modules\Users\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
@@ -37,7 +38,7 @@ class PasswordResetLinkController extends Controller
             'password' => 'password'
         ]);
         // ToDo to SendEmail with new password to this user
-
+        SendForgotEMail::dispatch($user , 'password');
         flash(trans('auth.forget password done'))->success();
 
         return back();

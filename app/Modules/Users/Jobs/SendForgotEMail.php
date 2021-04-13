@@ -43,6 +43,7 @@ class SendForgotEMail implements ShouldQueue {
                     $mail->to($row->email, $row->name);
                 });
         } catch (\Throwable $e) {
+            dd($e);
             \Log::error($e);
         }
     }
