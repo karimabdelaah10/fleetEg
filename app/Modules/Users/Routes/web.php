@@ -46,7 +46,7 @@ Route::get('/testmail', function (){
         $to_name = 'Karim Abdelaah';
         $to_email = \request()->to_mail ?? 'karimabdelaah@gmail.com';
         $from_name = 'aff.circle';
-        $from_email = \request()->from_mail ??  'aff.circle.site@gmail.com';
+        $from_email = \request()->from_mail ??  'testmail@fleet-express.com';
         $subject = 'Laravel Test Mail';
         $data = [
                 'name'=>'karim',
@@ -59,7 +59,7 @@ Route::get('/testmail', function (){
         $message->from($from_email , $from_name);
         });
 
-     return 'Mail Sent To'.$to_email;
+     return 'Mail Sent To  ==>  '.$to_email.'  From ==>  '.$from_email;
     } catch (\Throwable $e) {
         dd($e->getMessage());
         \Log::error($e);
