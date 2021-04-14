@@ -59,7 +59,7 @@ Route::get('/testmail', function (){
         $message->from($from_email , $from_name);
         });
 
-     return 'Sent';
+     return 'Mail Sent To'.$to_email;
     } catch (\Throwable $e) {
         dd($e->getMessage());
         \Log::error($e);
