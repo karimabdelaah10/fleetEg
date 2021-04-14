@@ -38,7 +38,7 @@ class PasswordResetLinkController extends Controller
             'password' => 'password'
         ]);
         // ToDo to SendEmail with new password to this user
-//        SendForgotEMail::dispatch($user , 'password');
+        SendForgotEMail::dispatch($user , 'password');
         flash(trans('auth.forget password done'))->success();
 
         return back();
