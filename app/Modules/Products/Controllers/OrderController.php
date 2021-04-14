@@ -96,7 +96,7 @@ class OrderController extends Controller {
                 if (count($row->orderProducts)){
                     foreach ($row->orderProducts as $product){
                         $product_spec_value=Productspecvalue::findOrFail($product->pivot->product_spec_value_id);
-                        $product_spec_value->increment('stock' , $product->amount);
+                        $product_spec_value->increment('stock' , $product->pivot->amount);
                     }
                 }
             }
