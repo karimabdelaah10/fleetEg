@@ -101,7 +101,7 @@ class OrderController extends Controller {
                 }
             }
             flash(trans('app.update successfully'))->success();
-            return back();
+            return redirect($this->module_url);
         }
     }
 
