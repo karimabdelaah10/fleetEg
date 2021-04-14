@@ -36,12 +36,29 @@ Route::group([
 
 Route::get('/testmail', function (){
     try {
-        \Mail::send('Users::emails.auth.confirm1', [],
-            function ($mail) {
-            $subject = trans('email.Confirmation Code') . " - " . appName();
-            $mail->to('karimabdelaah@gmail.com' ,'karim abdelaah')
-                ->subject('Test Mail');
+//        \Mail::send('Users::emails.auth.confirm1', [],
+//            function ($mail) {
+//            $subject = trans('email.Confirmation Code') . " - " . appName();
+//            $mail->to('karimabdelaah@gmail.com' ,'karim abdelaah')
+//                ->subject('Test Mail');
+//        });
+
+        $to_name = 'Karim Abdelaah';
+        $to_email = 'karimabdelaah@gmail.com';
+        $from_name = 'aff.circel';
+        $from_email = 'aff.cicel@gmail.com';
+        $subject = 'Laravel Test Mail';
+        $data = [
+                'name'=>'karim',
+                'body' => 'A test mail'
+                ];
+        \Mail::send('Users::emails.auth.confirm1',
+            $data, function($message) use ($from_email , $from_name , $to_name, $to_email , $subject) {
+            $message->to($to_email, $to_name)
+                     ->subject($subject);
+        $message->from($from_email , $from_name);
         });
+
      return 'Sent';
     } catch (\Throwable $e) {
         dd($e->getMessage());
