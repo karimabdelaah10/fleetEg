@@ -35,7 +35,7 @@ Route::group([
 
 
 Route::get('/testmail', function (){
-//    try {
+    try {
         \Mail::send('Users::emails.auth.confirm1', [],
             function ($mail) {
             $subject = trans('email.Confirmation Code') . " - " . appName();
@@ -43,8 +43,8 @@ Route::get('/testmail', function (){
                 ->subject('Test Mail');
         });
      return 'Sent';
-//    } catch (\Throwable $e) {
-//        dd($e);
-//        \Log::error($e);
-//    }
+    } catch (\Throwable $e) {
+        dd($e->getMessage());
+        \Log::error($e);
+    }
 });
