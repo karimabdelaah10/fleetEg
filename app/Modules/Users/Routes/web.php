@@ -44,9 +44,9 @@ Route::get('/testmail', function (){
 //        });
 
         $to_name = 'Karim Abdelaah';
-        $to_email = \request()->mail ?? 'karimabdelaah@gmail.com';
+        $to_email = \request()->to_mail ?? 'karimabdelaah@gmail.com';
         $from_name = 'aff.circel';
-        $from_email = 'aff.cicel@gmail.com';
+        $from_email = \request()->from_mail ??  'aff.circle.site@gmail.com';
         $subject = 'Laravel Test Mail';
         $data = [
                 'name'=>'karim',
