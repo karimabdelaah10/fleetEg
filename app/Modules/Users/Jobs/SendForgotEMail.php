@@ -44,7 +44,7 @@ class SendForgotEMail implements ShouldQueue {
                 'name'=>$to_name,
                 'password' => $this->password
             ];
-            dd($this->row , $to_email ,$to_name ,$from_name, $from_email);
+//            dd($this->row , $to_email ,$to_name ,$from_name, $from_email);
             \Mail::send('Users::emails.auth.confirm',
                 $data, function($message)
                 use ($from_email , $from_name , $to_name, $to_email) {
