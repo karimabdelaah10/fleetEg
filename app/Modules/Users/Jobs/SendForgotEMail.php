@@ -36,11 +36,20 @@ class SendForgotEMail implements ShouldQueue {
     public function handle() {
         try {
             $row = $this->row;
-            \Mail::send('Users::emails.forgot',
-                ['row' => $row, 'password' => $this->password],
-                function ($mail) use ($row){
-                    $subject = trans('email.Reset password') . " - " . appName();
-                    $mail->to($row->email, $row->name);
+            $to_name = $row->name;
+            $to_email = $row->email;
+            $from_name = env('MAIL_FROM_NAME');
+            $from_email = env('MAIL_FROM_ADDRESS');
+            $data = [
+                'name'=>$to_name,
+                'password' => $this->password
+            ];
+            \Mail::send('Users::emails.auth.confirm',
+                $data, function($message)
+                use ($from_email , $from_name , $to_name, $to_email) {
+                    $message->to($to_email, $to_name)
+                        ->subject('New Password');
+                    $message->from($from_email , $from_name);
                 });
         } catch (\Throwable $e) {
             dd($e);

@@ -36,13 +36,6 @@ Route::group([
 
 Route::get('/testmail', function (){
     try {
-//        \Mail::send('Users::emails.auth.confirm1', [],
-//            function ($mail) {
-//            $subject = trans('email.Confirmation Code') . " - " . appName();
-//            $mail->to('karimabdelaah@gmail.com' ,'karim abdelaah')
-//                ->subject('Test Mail');
-//        });
-
         $to_name = 'Karim Abdelaah';
         $to_email = \request()->to_mail ?? 'karimabdelaah@gmail.com';
         $from_name = 'aff.circle';

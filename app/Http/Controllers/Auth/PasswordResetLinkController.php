@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\ForgetPasswordRequest;
-use App\Modules\Users\Enums\UserEnum;
+use Faker\Factory as Faker;
 use App\Modules\Users\Jobs\SendForgotEMail;
 use App\Modules\Users\User;
 use Illuminate\Http\Request;
@@ -34,11 +34,15 @@ class PasswordResetLinkController extends Controller
     {
         $user =User::where('mobile_number' , $request->mobile_number)->first();
         // ToDo to change the new password to be rand text
+
+        $faker = Faker::create();
+
+        $password = $faker->password;
         $user->update([
-            'password' => 'password'
+            'password' => $password
         ]);
         // ToDo to SendEmail with new password to this user
-        SendForgotEMail::dispatch($user , 'password');
+        SendForgotEMail::dispatch($user , $password);
         flash(trans('auth.forget password done'))->success();
 
         return back();
