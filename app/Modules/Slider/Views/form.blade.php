@@ -15,13 +15,13 @@
 @include('BaseApp::form.input',[
     'name'=>'link',
      'value'=> $row->link ?? null,
-     'type'=>'url',
+     'type'=>'text',
      'attributes'=>[
          'id'=>'mobile_number',
          'class'=>'form-control',
      'label'=>trans('slider.link'),
      'placeholder'=>trans('slider.link'),
-     'required'=>1]
+     'required'=>0]
      ])
 @include('BaseApp::form.switch',[
     'name'=>'is_active',

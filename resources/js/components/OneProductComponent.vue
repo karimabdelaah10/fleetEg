@@ -26,23 +26,19 @@
                     {{product.category}}
                 </span>
                 <div class="ecommerce-details-price d-flex flex-wrap mt-1">
-                    <h4 class="item-price mr-1">
+                    <h4 class="item-price mr-1 danger">
                         {{row.trans.price}} :
                         {{product.price}}
                         {{row.trans.eg}}
                     </h4>
+                </div>
+                <div class="ecommerce-details-price d-flex flex-wrap mt-1">
                     <h4 class="item-price mr-1 border-left">
                         {{row.trans.commission}} :
                         {{product.commission}}
                         {{row.trans.eg}}
                     </h4>
                 </div>
-                <p class="card-text">
-                    {{row.trans.in_stock}}
-                    -  <span class="text-success">
-                    {{ stock }}
-                    </span>
-                </p>
                 <p class="card-text">
                     {{product.description}}
                 </p>
@@ -125,6 +121,12 @@
                     </div>
                     <br>
                     <hr />
+                </div>
+                <div class="ecommerce-details-price d-flex flex-wrap mt-1">
+                    <h4 class="item-price mr-1 border-left">
+                        {{ row.trans.in_stock}} :
+                        {{ stock }}
+                    </h4>
                 </div>
 
                 <div class="d-flex flex-column flex-sm-row pt-1">
@@ -230,7 +232,7 @@ import NumberInputSpinner from 'vue-number-input-spinner'
         },
         computed: {
             isDisabled: function(){
-                if (this.selectdData.spec_value_id == null){
+                if (this.selectdData.spec_value_id == null || this.stock == 0){
                     return true
                 }
                 return !this.addToCaryBtn;

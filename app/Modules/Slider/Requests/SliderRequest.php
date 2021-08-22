@@ -24,7 +24,7 @@ class SliderRequest extends FormRequest
     public function rules()
     {
         $rules =  [
-            'link'=>'nullable|url',
+            'link'=>'nullable',
             'image' =>   'required|mimes:png,jpg,jpeg'
         ];
         if ($this->route('id')) {

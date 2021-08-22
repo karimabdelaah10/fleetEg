@@ -95,24 +95,25 @@
                         </div>
                         <div class="card-body">
                             <div class="item-wrapper">
-                                <div class="item-rating">
-                                    <h6 class="item-price">
-                                        <h6 class="item-price">{{ row.trans.price }} : {{item.price}}</h6>
-                                    </h6>
-                                </div>
-                                <div>
-                                    <h6 class="item-price">{{row.trans.commission}} : {{item.commission}}</h6>
-                                </div>
+                                <h4 class="item-name">
+                                    <a class="text-body" :href="'/customer-product/view/'+item.id">{{item.title}}</a>
+                                </h4>
+                                <br>
                             </div>
-                            <h4 class="item-name">
-                                <a class="text-body" :href="'/customer-product/view/'+item.id">{{item.title}}</a>
-                            </h4>
                             <h6 class="item-name">
                                 <a class="text-body">{{item.category}}</a>
                             </h6>
-                            <p class="card-text item-description">
-                                {{item.description}}
-                                </p>
+                            <div class="item-rating">
+                                <h6 class="item-price">
+                                    <h6 class="item-price">{{ row.trans.price }} : {{item.price}}</h6>
+                                </h6>
+                            </div>
+                            <div>
+                                <h6 class="item-price">{{row.trans.commission}} : {{item.commission}}</h6>
+                            </div>
+<!--                            <p class="card-text item-description">-->
+<!--                                {{item.description}}-->
+<!--                                </p>-->
                         </div>
                         <div class="item-options text-center">
                             <div class="item-wrapper">

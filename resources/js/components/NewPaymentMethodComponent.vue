@@ -51,7 +51,7 @@
                 </div>
             </div>
         </div>
-        <div v-if="MethodId ==='post'"class="row mg-t-20 mb-1">
+        <div v-if="MethodId ==='post'" class="row mg-t-20 mb-1">
             <label class="col-sm-! form-control-label">
                 {{ row.trans.national_id}}
                 <span class="tx-danger">*
