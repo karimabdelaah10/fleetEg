@@ -11,7 +11,7 @@
                         v-model="selected"
                         :name="'selectedSpecsValues['+selected+'][spec]'"
                     >
-                    <option disabled> اختر القيمه من هنا </option>
+                    <option disabled> اختر القيمة من هنا </option>
                     <option v-for="values in specsValues"
                             :key="values.id"
                             :value="values.id"

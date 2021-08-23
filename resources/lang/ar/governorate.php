@@ -2,12 +2,12 @@
 
 return [
 
-    'page description' => 'قائمه بالمحافظات.',
-    'add governorate' => 'اضافه محافظه',
-    'edit governorate' => 'تعديل محافظه',
+    'page description' => 'قائمة بالمحافظات.',
+    'add governorate' => 'اضافة محافظة',
+    'edit governorate' => 'تعديل محافظة',
 
-    'title'=>'اسم المحافظه',
-    'shipping_coast'=>'تكلفه الشحن',
+    'title'=>'اسم المحافظة',
+    'shipping_coast'=>'تكلفة الشحن',
 
 
 

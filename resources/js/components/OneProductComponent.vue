@@ -39,9 +39,7 @@
                         {{row.trans.eg}}
                     </h4>
                 </div>
-                <p class="card-text">
-                    {{product.description}}
-                </p>
+                <p class="card-text" v-html="product.description"></p>
                 <hr />
 
                 <div class="product-color-options"

@@ -225,7 +225,8 @@
                     <span class="menu-item text-truncate" data-i18n="Account Settings">{{trans('navigation.account settings')}}</span>
                 </a>
             </li>
-            <order-numbers-component :user="{{  auth()->user() }}"></order-numbers-component>
+            {{-- <order-numbers-component :user="{{  auth()->user() }}"></order-numbers-component> --}}
+            <social-links-component></social-links-component>
             @endif
 
         </ul>

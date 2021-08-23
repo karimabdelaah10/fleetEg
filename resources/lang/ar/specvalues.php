@@ -2,12 +2,12 @@
 
 return [
 
-    'page description' => 'قائمه  بقيم صفات المنتجات',
-    'add spec value' => 'اضافه قيمه',
-    'edit spec' => 'تعديل قيمه',
+    'page description' => 'قائمة  بقيم صفات المنتجات',
+    'add spec value' => 'اضافة قيمة',
+    'edit spec' => 'تعديل قيمة',
 
-    'title'=>'القيمه',
-    'spec'=>'الصفه',
+    'title'=>'القيمة',
+    'spec'=>'الصفة',
 
 
     ''=>''

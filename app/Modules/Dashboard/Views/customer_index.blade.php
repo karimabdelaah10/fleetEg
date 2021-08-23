@@ -1,6 +1,6 @@
 @extends('BaseApp::layouts.master')
 @section('page-title')
-الصفحه الرئيسيه
+الصفحة الرئيسية
 @endsection
 @section('content')
     <div class="content-wrapper">

@@ -33,7 +33,7 @@
                                     id="account-pill-general"
                                 >
                                     <i class="font-medium-3 mr-1" data-feather="user"></i>
-                                    <span class="font-weight-bold">البيانات الخاصه بالحساب</span>
+                                    <span class="font-weight-bold">البيانات الخاصة بالحساب</span>
                                 </a>
                             </li>
                             <!-- change password -->
@@ -89,8 +89,8 @@
                                                 <label class="btn btn-sm btn-primary mb-75 mr-75" for="account-upload">
                                                     {{trans('profile.upload')}}</label>
                                                 <input accept="image/*" hidden id="account-upload" type="file" name="profile_picture"/>
-                                                <p>مسموح بتحميل صور بصيغه JPG او  JPEG او PNG</p>
-                                                <p>اقصى حجم للصوره 2MB</p>
+                                                <p>مسموح بتحميل صور بصيغة JPG او  JPEG او PNG</p>
+                                                <p>اقصى حجم للصورة 2MB</p>
                                             </div>
                                             <!--/ upload and reset button -->
                                         </div>

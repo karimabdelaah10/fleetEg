@@ -32,7 +32,7 @@
                             <tr>
                                 <td>{{trans('products.description')}}</td>
                                 <td>
-                                    {{@$row->description}}
+                                    <p> {!! htmlspecialchars_decode(nl2br(@$row->description)) !!}</p>
                                 </td>
                             </tr>
                             <tr>

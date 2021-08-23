@@ -18,15 +18,15 @@ class CategoriesSeeder extends Seeder
         DB::table('categories')->delete();
         $categories=[
             [
-                'title'=>'احذيه رجالى',
+                'title'=>'احذية رجالى',
                 'is_active'=>1
             ],
             [
-                'title'=>'احذيه اطفالى',
+                'title'=>'احذية اطفالى',
                 'is_active'=>1
             ],
             [
-                'title'=>'احذيه حريمى',
+                'title'=>'احذية حريمى',
                 'is_active'=>1
             ],
             [
@@ -42,7 +42,7 @@ class CategoriesSeeder extends Seeder
                 'is_active'=>1
             ],
             [
-                'title'=>'هواتف ذكيه',
+                'title'=>'هواتف ذكية',
                 'is_active'=>1
             ],
             [

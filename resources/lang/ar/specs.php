@@ -2,14 +2,14 @@
 
 return [
 
-    'page description' => 'قائمه بصفات المنتجات',
-    'add spec' => 'اضافه صفه',
-    'edit spec' => 'تعديل صفه',
-    'specs values list' => 'قائمه بقيم هذه الصفه',
-    'add spec value' => 'اضافه قيمه جديده لهذه الصفه',
+    'page description' => 'قائمة بصفات المنتجات',
+    'add spec' => 'اضافة صفة',
+    'edit spec' => 'تعديل صفة',
+    'specs values list' => 'قائمة بقيم هذة الصفة',
+    'add spec value' => 'اضافة قيمة جديدة لهذة الصفة',
     'specs values count' => 'عدد القيم',
 
-    'title'=>'الصفه',
+    'title'=>'الصفة',
 
 
     ''=>''

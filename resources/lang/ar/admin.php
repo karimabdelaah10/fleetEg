@@ -3,7 +3,7 @@
 return [
 
 
-    'page description' =>'قائمه بالمديرين',
+    'page description' =>'قائمة بالمديرين',
     'add admin' =>'اضف مدير',
     'edit admin' =>'تعديل بيانات المديرين',
 
@@ -14,11 +14,11 @@ return [
     'mobile_number' => 'رقم الهاتف',
     'old_password' => 'الرقم السرى القديم',
     'new_password' => 'الرقم السرى الجديد',
-    're_new_password' => 'اعاده الرقم السرى',
-    'profile_picture' => 'الصوره الشخصيه',
-    'admin products'=>'المنتجات الخاصه بالمدير',
+    're_new_password' => 'اعادة الرقم السرى',
+    'profile_picture' => 'الصورة الشخصية',
+    'admin products'=>'المنتجات الخاصة بالمدير',
 
-    'product_admin'=>'مدير خاص بمتابعه المنتجاب',
+    'product_admin'=>'مدير خاص بمتابعة المنتجات',
     'financial_admin'=>'مدير مالى',
     ''=>''
 ];

@@ -25,7 +25,7 @@ class ProfileController extends Controller {
         $this->module = 'Profile';
         $this->module_url = '/profile';
         $this->views = 'Users::profile';
-        $this->title = 'الصفحه الشخصيه';
+        $this->title = 'الصفحة الشخصية';
         $this->model = $model;
     }
 

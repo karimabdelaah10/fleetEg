@@ -2,9 +2,9 @@
 
 return [
 
-    'page description' => 'قائمه بطلبات السحب المالى الخاصه بالعملاء.',
-    'your money requests list' => 'قائمه بطلبات السحب المالى الخاصه بك.',
-    'edit request' => 'تعديل حاله الطلب',
+    'page description' => 'قائمة بطلبات السحب المالى الخاصة بالعملاء.',
+    'your money requests list' => 'قائمة بطلبات السحب المالى الخاصة بك.',
+    'edit request' => 'تعديل حالة الطلب',
     'add request' => 'طلب سحب مالى',
 
     'user'=>'المستخدم',

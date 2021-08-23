@@ -2,7 +2,7 @@
 
 return [
 
-    'home' => 'الصفحه الرئيسيه',
+    'home' => 'الصفحة الرئيسية',
     'users' => 'المستخدمين',
     'not_verified_users' => ' الغير مفعلين',
     'products' => 'المنتجات',
@@ -15,12 +15,12 @@ return [
     'governorates' => 'المحافظات',
     'admins' => 'المديرين',
     'all products' => 'كل المنتجات',
-    'favourite products' => 'المنتجات المفضله',
-    'financial processes' => 'المعاملات الماليه',
+    'favourite products' => 'المنتجات المفضلة',
+    'financial processes' => 'المعاملات المالية',
     'payment methods' => 'طرق الدفع',
-    'wallet history' => 'تاريخ المحفظه',
+    'wallet history' => 'تاريخ المحفظة',
     'account settings' => 'اعدادات الحساب',
-    'configs'=>'الاعدادات العامه',
+    'configs'=>'الاعدادات العامة',
 
 
 

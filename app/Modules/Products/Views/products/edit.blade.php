@@ -24,3 +24,9 @@
         {!! Form::close() !!}
     </div>
 @endsection
+@push('js')
+<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+<script>
+                CKEDITOR.replace( 'description' );
+    </script>    
+@endpush

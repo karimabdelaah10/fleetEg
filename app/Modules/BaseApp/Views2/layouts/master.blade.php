@@ -544,7 +544,7 @@
                     <li>
                         <a class="d-flex align-items-center" href="products.html">
                             <i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="FavouriteProducts">المنتجات المفضله</span></a>
+                            <span class="menu-item text-truncate" data-i18n="FavouriteProducts">المنتجات المفضلة</span></a>
                     </li>
                 </ul>
             </li>
@@ -557,13 +557,13 @@
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="products.html">
                     <i data-feather="dollar-sign"></i>
-                    <span class="menu-title text-truncate" data-i18n="Products">المعاملات الماليه</span>
+                    <span class="menu-title text-truncate" data-i18n="Products">المعاملات المالية</span>
                     <span class="badge badge-light-warning badge-pill ml-auto mr-1">3</span></a>
                 <ul class="menu-content">
                     <li>
                         <a class="d-flex align-items-center" href="money-requests.html">
                             <i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="AllProducts">طلبات التصفيه الماليه</span>
+                            <span class="menu-item text-truncate" data-i18n="AllProducts">طلبات التصفية المالية</span>
                         </a>
                     </li>
                     <li>
@@ -575,7 +575,7 @@
                     <li>
                         <a class="d-flex align-items-center" href="wallet-history.html">
                             <i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="FavouriteProducts">تاريخ المحفظه</span></a>
+                            <span class="menu-item text-truncate" data-i18n="FavouriteProducts">تاريخ المحفظة</span></a>
                     </li>
                 </ul>
             </li>
@@ -604,12 +604,12 @@
                     <div class="col-xl-4 col-md-6 col-12">
                         <div class="card card-congratulation-medal">
                             <div class="card-body">
-                                <p>اهلا 🎉 John! الرصيد المتاح للتصفيه</p>
+                                <p>اهلا 🎉 John! الرصيد المتاح للتصفية</p>
                                 <h3 class="mb-75 mt-2 pt-50">
                                     <a href="javascript:void(0);">$48.9k</a>
                                 </h3>
                                 <button class="btn btn-primary" type="button" style="color: #fff">
-                                    <a href="money-requests.html" style="color: #fff">تقدم بطلب للتصفيه</a>
+                                    <a href="money-requests.html" style="color: #fff">تقدم بطلب للتصفية</a>
                                 </button>
                             </div>
                         </div>
@@ -620,7 +620,7 @@
                     <div class="col-xl-8 col-md-6 col-12">
                         <div class="card card-statistics">
                             <div class="card-header">
-                                <h4 class="card-title">الارقام الاحصائيه الخاصه بك</h4>
+                                <h4 class="card-title">الارقام الاحصائية الخاصة بك</h4>
                                 <div class="d-flex align-items-center">
                                     <p class="card-text font-small-2 mr-25 mb-0">يتم تجديد الارقام تلقائيا</p>
                                 </div>
@@ -649,7 +649,7 @@
                                             </div>
                                             <div class="media-body my-auto">
                                                 <h4 class="font-weight-bolder mb-0">8.549k</h4>
-                                                <p class="card-text font-small-3 mb-0">عدد الطلبات فى حاله الانتظار</p>
+                                                <p class="card-text font-small-3 mb-0">عدد الطلبات فى حالة الانتظار</p>
                                             </div>
                                         </div>
                                     </div>
@@ -662,7 +662,7 @@
                                             </div>
                                             <div class="media-body my-auto">
                                                 <h4 class="font-weight-bolder mb-0">1.423k</h4>
-                                                <p class="card-text font-small-3 mb-0">عدد المنتجات المفضله لك</p>
+                                                <p class="card-text font-small-3 mb-0">عدد المنتجات المفضلة لك</p>
                                             </div>
                                         </div>
                                     </div>
@@ -675,7 +675,7 @@
                                             </div>
                                             <div class="media-body my-auto">
                                                 <h4 class="font-weight-bolder mb-0">$9745</h4>
-                                                <p class="card-text font-small-3 mb-0">اجمالى العموالات الخاصه بك</p>
+                                                <p class="card-text font-small-3 mb-0">اجمالى العموالات الخاصة بك</p>
                                             </div>
                                         </div>
                                     </div>

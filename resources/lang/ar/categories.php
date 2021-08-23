@@ -2,11 +2,11 @@
 
 return [
 
-    'page description' => 'قائمه بفئات المنتجات',
-    'add category' => 'اضافه فئه',
-    'edit category' => 'تعديل فئه',
+    'page description' => 'قائمة بفئات المنتجات',
+    'add category' => 'اضافة فئة',
+    'edit category' => 'تعديل فئة',
 
-    'title'=>'الفئه',
+    'title'=>'الفئة',
 
 
     ''=>''
