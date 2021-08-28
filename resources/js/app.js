@@ -46,6 +46,7 @@ Vue.component('new-payment-method', require('./components/NewPaymentMethodCompon
 Vue.component('default-payment-method', require('./components/defaultPaymentMethodComponent.vue').default);
 Vue.component('search-component', require('./components/SearchComponent.vue').default);
 Vue.component('social-links-component', require('./components/SocialLinksComponent.vue').default);
+Vue.component('specs-and-specs-values-filter-component', require('./components/SpecsAndSpecsValuesFilterComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

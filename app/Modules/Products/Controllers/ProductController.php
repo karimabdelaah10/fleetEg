@@ -285,13 +285,18 @@ class ProductController extends Controller {
             trans('products.view spec values')=>$this->module_url.'/view_product_spec_values/'.$productSpec->id,
             trans('products.view inner spec value')=>$this->module_url.'/view_product_spec_values_inner/'.$product_spec_value_id
         ];
-        $data['rows'] = Specvalue::Active()
+        $data['specs'] = Spec::Active()->where('id','!=' ,$productSpecValue->spec_id)->get();
+        $data['specs_values'] = Specvalue::Active()
             ->where('spec_id','!=' ,$productSpecValue->spec_id)
             ->whereNotIn('id' ,$productSpecsValuesIds)
             ->get();
         $data['row']=$this->model;
         $data['row']->product_id=$productSpecValue->product_id;
         $data['row']->product_spec_value_id=$product_spec_value_id;
+        $data['row']->trans=[
+            'specs'=>trans('products.specs'),
+            'specs_values'=>trans('products.specs values')
+        ];
         return view($this->views . '.create_product_spec_value_inner', $data);
     }
     public function postAddProductSpecValueInner(ProductSpecValueRequest $request,$product_spec_value_id)
