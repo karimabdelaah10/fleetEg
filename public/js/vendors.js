@@ -4425,6 +4425,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -5351,23 +5353,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\n.whatsapp_image[data-v-5d6d5b03]{\n 
 /*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProductsComponent.vue?vue&type=style&index=0&id=5ecce49e&scoped=true&lang=css& ***!
   \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#more_btn[data-v-5ecce49e]{\n    width: 100%;\n    background-color: #fff;\n}\n.list-products-img[data-v-5ecce49e]{\nheight: 300px;\n    width: 300px;\n}\n", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
+throw new Error("Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):\nSyntaxError\n\n(360:2) /var/www/fleetEgBackend/resources/js/components/ProductsComponent.vue Unknown word\n\n \u001b[90m 358 | \u001b[39m    color\u001b[33m:\u001b[39m \u001b[35m#fff\u001b[39m !important\u001b[33m;\u001b[39m\n \u001b[90m 359 | \u001b[39m\n\u001b[1m\u001b[31m>\u001b[39m\u001b[22m\u001b[90m 360 | \u001b[39m\u001b[33m}\u001b[39mk\n \u001b[90m     | \u001b[39m \u001b[1m\u001b[31m^\u001b[39m\u001b[22m\n \u001b[90m 361 | \u001b[39m\n \u001b[90m 362 | \u001b[39m\n");
 
 /***/ }),
 
@@ -26214,7 +26202,15 @@ var render = function() {
                         attrs: { src: item.image, alt: "img-placeholder" }
                       })
                     ]
-                  )
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "category" }, [
+                    _c("h6", { staticClass: "item-name category-item" }, [
+                      _c("a", { staticClass: "text-body category-text-body" }, [
+                        _vm._v(_vm._s(item.category))
+                      ])
+                    ])
+                  ])
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "card-body" }, [
@@ -26231,12 +26227,6 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("br")
-                  ]),
-                  _vm._v(" "),
-                  _c("h6", { staticClass: "item-name" }, [
-                    _c("a", { staticClass: "text-body" }, [
-                      _vm._v(_vm._s(item.category))
-                    ])
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "item-rating" }, [

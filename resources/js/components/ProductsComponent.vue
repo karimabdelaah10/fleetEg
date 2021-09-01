@@ -92,6 +92,11 @@
                                     alt="img-placeholder"
                                 />
                             </a>
+                            <div class="category">
+                                <h6 class="item-name category-item">
+                                    <a class="text-body category-text-body">{{item.category}}</a>
+                                </h6>
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="item-wrapper">
@@ -100,9 +105,6 @@
                                 </h4>
                                 <br>
                             </div>
-                            <h6 class="item-name">
-                                <a class="text-body">{{item.category}}</a>
-                            </h6>
                             <div class="item-rating">
                                 <h6 class="item-price">
                                     <h6 class="item-price">{{ row.trans.price }} : {{item.price}}</h6>
@@ -340,4 +342,21 @@ import {HeartIcon ,ArrowRightIcon } from 'vue-feather-icons'
 height: 300px;
     width: 300px;
 }
+.category{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    margin: 0px;
+    background-color: #756def;
+    padding: 10px;
+    color: #fff;
+}
+.category-item{
+    margin: 0 !important;
+}
+.category-text-body{
+    color: #fff !important;
+
+}k
+
 </style>
