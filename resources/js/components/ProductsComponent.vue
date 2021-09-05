@@ -357,6 +357,6 @@ height: 300px;
 .category-text-body{
     color: #fff !important;
 
-}k
+}
 
 </style>
